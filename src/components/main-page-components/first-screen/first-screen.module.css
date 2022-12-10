@@ -1,0 +1,83 @@
+.screen {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-image: url(../../../images/firstScreenBg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-attachment: fixed;
+    position: relative;
+    margin: 0 auto;
+    padding: 90px 100px;
+}
+
+.blur_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(3px);
+}
+
+.trapezoid {
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    left: -100px;
+    top: -150px;
+    background: linear-gradient(180deg, #21CEB6 43.36%, rgba(11, 88, 206, 0.74) 117.9%);
+    transform: skewY(-11deg);
+    /*box-shadow: 15px 15px 20px #383838; */
+}
+
+
+
+.main_text_block {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+
+
+.text_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 5;
+}
+
+.text_wrapper:last-of-type {
+    align-items: flex-end;
+}
+
+
+.caption {
+    color: #E3E4E3;
+    z-index: 5;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 200;
+    text-align: left;
+}
+
+.caption:last-of-type {
+    text-align: right;
+}
+
+
+
+.logo {
+    width: 300px;
+    z-index: 5;
+}
