@@ -1,12 +1,69 @@
 .screen {
     width: 100%;
-    height: 100vh;
     box-sizing: border-box;
-   
+    position: relative;
     margin: 0 auto;
-    padding: 0;
+    padding: 60px 120px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
+    text-align: left;
+    align-self: flex-start;
+    color: #383838;
+    z-index: 2;
+}
+
+.cards_block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 50px;
+    margin: 50px 0 100px;
+    z-index: 2;
+}
+
+
+.card {
+    background-color: white;
+    width: 600px;
+    height: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+    z-index: 2;
+}
+
+.button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #383838;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 200;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    z-index: 2;
+}
+
+
+.trapezoid {
+    z-index: -1;
+    height: 1000px;
+    width: 600px;
+    position: absolute;
+    right: -100px;
+    top: 60%;
+    background: linear-gradient(180deg, #21CEB6 23.22%, rgba(11, 88, 206, 0.74) 63.14%);
+    transform: skewY(-11deg);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
 }
