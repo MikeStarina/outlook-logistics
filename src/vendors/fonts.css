@@ -1,0 +1,68 @@
+@font-face {
+
+	src: url("fonts/Inter/Inter-Regular.woff2") format("woff2"),
+       url("fonts/Inter/Inter-Regular.woff") format("woff");
+
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 200;
+
+}
+
+@font-face {
+
+	src: url("fonts/Inter/Inter-SemiBold.woff2") format("woff2"),
+       url("fonts/Inter/Inter-SemiBold.woff") format("woff");
+
+  font-family: 'Inter';
+  font-style:  bolder;
+  font-weight: 600;
+
+}
+
+@font-face {
+
+	src: url("fonts/Inter/Inter-Bold.woff2") format("woff2"),
+       url("fonts/Inter/Inter-Bold.woff") format("woff");
+
+  font-family: 'Inter';
+  font-style:  bold;
+  font-weight: 700;
+
+}
+
+/*
+@font-face {
+
+	src: url("../../vendors/fonts/Inter/Inter-Regular.woff2") format("woff2"),
+       url("../../vendors/fonts/Inter/Inter-Regular.woff") format("woff");
+
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 200;
+
+}
+
+@font-face {
+
+	src: url("../../vendors/fonts/Inter/Inter-SemiBold.woff2") format("woff2"),
+       url("../../vendors/fonts/Inter/Inter-SemiBold.woff") format("woff");
+
+  font-family: 'Inter';
+  font-style:  bolder;
+  font-weight: 600;
+
+}
+
+@font-face {
+
+	src: url("../../vendors/fonts/Inter/Inter-Bold.woff2") format("woff2"),
+       url("../../vendors/fonts/Inter/Inter-Bold.woff") format("woff");
+
+  font-family: 'Inter';
+  font-style:  bold;
+  font-weight: 700;
+
+}
+
+*/
