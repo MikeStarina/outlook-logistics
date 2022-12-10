@@ -10,8 +10,14 @@
     background-attachment: fixed;
     position: relative;
     margin: 0 auto;
-    padding: 90px 100px;
+    padding: 90px 100px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
+
+/* bgs & effects */
 
 .blur_box {
     position: absolute;
@@ -19,6 +25,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    background-color: rgba(0, 0, 0, .2);
     backdrop-filter: blur(3px);
 }
 
@@ -31,8 +38,13 @@
     background: linear-gradient(180deg, #21CEB6 43.36%, rgba(11, 88, 206, 0.74) 117.9%);
     transform: skewY(-11deg);
     /*box-shadow: 15px 15px 20px #383838; */
+    background-attachment: fixed;
 }
 
+
+
+
+/* main text */
 
 
 .main_text_block {
@@ -79,5 +91,105 @@
 
 .logo {
     width: 300px;
+    z-index: 5;
+}
+
+
+/* counters block*/
+
+
+.counters_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    z-index: 5;
+    margin: 60px 0;
+    width: 100%;
+}
+
+.counter_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 5;
+    gap: 10px;
+}
+
+.top_line {
+    width: 2px;
+    height: 70px;
+    background-color: #E3E4E3;
+    transform: translateX(-35px) rotate(-45deg);
+    z-index: 5;
+    border: none;
+    border-radius: 2px;
+}
+
+.counter {
+    color: #E3E4E3;
+    font-size: 120px;
+    line-height: 120px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.counter_caption {
+    color: #E3E4E3;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 200;
+    text-align: left;
+    max-width: 165px;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom_line {
+    width: 2px;
+    height: 70px;
+    background-color: #E3E4E3;
+    transform: translateX(35px) rotate(-45deg);
+    z-index: 5;
+    border: none;
+    border-radius: 2px;
+}
+
+
+
+/* other */
+
+.calc_button {
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #E3E4E3;
+    border-radius: 30px;
+    color: #E3E4E3;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 200;
+    text-align: center;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.calc_line {
+    margin-top: 30px;
+    width: 2px;
+    height: 35px;
+    border: none;
+    border-radius: 1px;
+    background-color: #E3E4E3;
     z-index: 5;
 }

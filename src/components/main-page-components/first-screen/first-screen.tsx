@@ -24,7 +24,47 @@ const FirstScreen: React.FC = () => {
                     <p className={styles.caption}>info@<i>outlook</i>-logistics.ru</p>
                 </div>
             </div>
-            
+
+
+
+            <div className={styles.counters_block}>
+                <div className={styles.counter_box}>
+                    <div className={styles.top_line}></div>
+                    <p className={styles.counter}>1120</p>
+                    <div className={styles.bottom_wrapper}>
+                        <p className={styles.counter_caption}><i>ТОНН</i> ГРУЗА В ПУТИ</p>
+                        <div className={styles.bottom_line}></div>
+                    </div>
+                </div>
+                <div className={styles.counter_box}>
+                    <div className={styles.top_line}></div>
+                    <p className={styles.counter}>60</p>
+                    <div className={styles.bottom_wrapper}>
+                        <p className={styles.counter_caption}><i>ТОНН</i> ГРУЗА В ПУТИ</p>
+                        <div className={styles.bottom_line}></div>
+                    </div>
+                </div>
+                <div className={styles.counter_box}>
+                    <div className={styles.top_line}></div>
+                    <p className={styles.counter}>15</p>
+                    <div className={styles.bottom_wrapper}>
+                        <p className={styles.counter_caption}><i>ТОНН</i> ГРУЗА В ПУТИ</p>
+                        <div className={styles.bottom_line}></div>
+                    </div>
+                </div>
+                <div className={styles.counter_box}>
+                    <div className={styles.top_line}></div>
+                    <p className={styles.counter}>20</p>
+                    <div className={styles.bottom_wrapper}>
+                        <p className={styles.counter_caption}><i>ТОНН</i> ГРУЗА В ПУТИ</p>
+                        <div className={styles.bottom_line}></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <button type='button' className={styles.calc_button}>Рассчитать</button>
+            <div className={styles.calc_line}></div>
         </section>
     )
 }
