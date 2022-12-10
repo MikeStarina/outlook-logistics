@@ -11,12 +11,12 @@ const FirstScreen: React.FC = () => {
     return (
         <section className={styles.screen}>
             <div className={styles.blur_box}></div>
-            <div className={styles.trapezoid}><p>your best logistics partner</p></div>
+            <div className={styles.trapezoid}><p>your best logistic partner</p></div>
 
             <div className={styles.main_text_block}>
                 <div className={styles.text_wrapper}>
                     <p className={styles.caption}>Your <i>best</i></p>
-                    <p className={styles.caption}><i>logistics</i> partner</p>
+                    <p className={styles.caption}><i>logistic</i> partner</p>
                 </div>
                 <img src={full_logo440px_white} alt='outlook_logo' className={styles.logo}></img>
                 <div className={styles.text_wrapper}>
@@ -40,7 +40,7 @@ const FirstScreen: React.FC = () => {
                     <div className={styles.top_line}></div>
                     <p className={styles.counter}>60</p>
                     <div className={styles.bottom_wrapper}>
-                        <p className={styles.counter_caption}><i>ТОНН</i> ГРУЗА В ПУТИ</p>
+                        <p className={styles.counter_caption}><i>МАШИН</i> В ПУТИ</p>
                         <div className={styles.bottom_line}></div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@ const FirstScreen: React.FC = () => {
                     <div className={styles.top_line}></div>
                     <p className={styles.counter}>15</p>
                     <div className={styles.bottom_wrapper}>
-                        <p className={styles.counter_caption}><i>ТОНН</i> ГРУЗА В ПУТИ</p>
+                        <p className={styles.counter_caption}><i>ЗАКАЗОВ</i> СЕГОДНЯ</p>
                         <div className={styles.bottom_line}></div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ const FirstScreen: React.FC = () => {
                     <div className={styles.top_line}></div>
                     <p className={styles.counter}>20</p>
                     <div className={styles.bottom_wrapper}>
-                        <p className={styles.counter_caption}><i>ТОНН</i> ГРУЗА В ПУТИ</p>
+                        <p className={styles.counter_caption}><i>МАШИН</i> СВОБОДНО</p>
                         <div className={styles.bottom_line}></div>
                     </div>
                 </div>

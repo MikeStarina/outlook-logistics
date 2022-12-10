@@ -31,13 +31,13 @@
 
 .trapezoid {
     width: 600px;
-    height: 500px;
+    height: 650px;
     position: absolute;
     left: -100px;
     top: -150px;
     background: linear-gradient(180deg, #21CEB6 43.36%, rgba(11, 88, 206, 0.74) 117.9%);
     transform: skewY(-11deg);
-    /*box-shadow: 15px 15px 20px #383838; */
+    box-shadow: 0 0 30px rgba(0, 0, 0, .25); 
     background-attachment: fixed;
 }
 
@@ -50,11 +50,12 @@
 .main_text_block {
     width: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 5;
+    box-sizing: border-box;
 }
 
 
@@ -65,6 +66,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     z-index: 5;
+    width: 180px;
 }
 
 .text_wrapper:last-of-type {
@@ -77,8 +79,8 @@
     z-index: 5;
     margin: 0;
     padding: 0;
-    font-size: 25px;
-    line-height: 25px;
+    font-size: 15px;
+    line-height: 20px;
     font-weight: 200;
     text-align: left;
 }
@@ -90,7 +92,7 @@
 
 
 .logo {
-    width: 300px;
+    width: 200px;
     z-index: 5;
 }
 
@@ -103,10 +105,11 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 150px;
     z-index: 5;
-    margin: 60px 0;
+    margin: 100px 0;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .counter_box {
@@ -119,7 +122,7 @@
 }
 
 .top_line {
-    width: 2px;
+    width: 1px;
     height: 70px;
     background-color: #E3E4E3;
     transform: translateX(-35px) rotate(-45deg);
@@ -130,11 +133,12 @@
 
 .counter {
     color: #E3E4E3;
-    font-size: 120px;
-    line-height: 120px;
+    font-size: 80px;
+    line-height: 80px;
     font-weight: 700;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 .bottom_wrapper {
@@ -146,17 +150,17 @@
 
 .counter_caption {
     color: #E3E4E3;
-    font-size: 25px;
-    line-height: 25px;
+    font-size: 15px;
+    line-height: 15px;
     font-weight: 200;
     text-align: left;
-    max-width: 165px;
+    max-width: 100px;
     margin: 0;
     padding: 0;
 }
 
 .bottom_line {
-    width: 2px;
+    width: 1px;
     height: 70px;
     background-color: #E3E4E3;
     transform: translateX(35px) rotate(-45deg);
@@ -170,23 +174,28 @@
 /* other */
 
 .calc_button {
-    width: 200px;
-    height: 50px;
+    width: 150px;
+    height: 40px;
     background-color: transparent;
-    border: 2px solid #E3E4E3;
+    border: 1px solid #E3E4E3;
     border-radius: 30px;
     color: #E3E4E3;
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 15px;
     font-weight: 200;
     text-align: center;
     z-index: 5;
     cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+
+.calc_button:hover {
+    background-color: rgba(255, 255, 255, .1);
 }
 
 .calc_line {
     margin-top: 30px;
-    width: 2px;
+    width: 1px;
     height: 35px;
     border: none;
     border-radius: 1px;
