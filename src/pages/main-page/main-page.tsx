@@ -7,6 +7,11 @@ import FeaturesScreen from '../../components/main-page-components/features-scree
 import CalcScreen from '../../components/main-page-components/calc-screen/calc-screen';
 import StagesScreen from '../../components/main-page-components/stages-screen/stages-screen';
 import AboutScreen from '../../components/main-page-components/about-screen/about-screen';
+import ClientsScreen from '../../components/main-page-components/clients-screen/clients-screen';
+import OptionsScreen from '../../components/main-page-components/options-screen/options-screen';
+import BlogScreen from '../../components/main-page-components/blog-screen/blog-screen';
+import FormScreen from '../../components/main-page-components/form-screen/form-screen';
+import ContactsScreen from '../../components/main-page-components/contacts-screen/contacts-screen';
 
 
 const MainPage: React.FC = () => {
@@ -18,6 +23,11 @@ const MainPage: React.FC = () => {
             <CalcScreen />
             <StagesScreen />
             <AboutScreen />
+            <ClientsScreen />
+            <OptionsScreen />
+            <BlogScreen />
+            <FormScreen />
+            <ContactsScreen />
         </main>
     )
 }

@@ -1,0 +1,44 @@
+.screen {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    padding: 100px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #e5e5e5;
+    z-index: -1;
+}
+
+.cards_block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 50px;
+    margin: 50px 0 100px;
+    z-index: 2;
+}
+
+
+.card {
+    background-color: white;
+    width: 600px;
+    height: 300px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+    z-index: 2;
+    background-color: #e5e5e5;
+}
+
+.geolabel {
+    width: 600px;
+    height: 900px;
+    position: absolute;
+    right: -100px;
+    top: 20%;
+    background: linear-gradient(190deg, #21CEB6 3.79%, #0B58CE 140.92%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
+    transform: skewY(-11deg);
+}
+
