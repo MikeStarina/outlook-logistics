@@ -15,6 +15,7 @@ const Footer: React.FC = () => {
         <footer className={styles.footer}>
 
             <h3>(c) 2022 OUTLOOK <i>LOGISTICS</i></h3>
+            
         </footer>
     )
 }
