@@ -4,11 +4,34 @@
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    padding: 100px 120px;
+    padding: 0;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
+}
+
+.contacts_block {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5e5e5;
+}
+
+.map_block {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    filter: grayscale(100);
+}
+
+.map {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -42,7 +65,7 @@
     height: 1260px;
     position: absolute;
     right: -750px;
-    top: 35%;
+    top: -400px;
     background: linear-gradient(180deg, #21CEB6 23.22%, rgba(11, 88, 206, 0.74) 63.14%);
     border-radius: 50%;
     z-index: -1;
@@ -57,4 +80,5 @@
     height: 1000px;
     border-radius: 50%;
     background-color: white;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, .35); 
 }
