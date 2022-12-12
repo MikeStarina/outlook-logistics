@@ -1,6 +1,5 @@
 .screen {
     width: 100%;
-    height: 100vh;
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
@@ -10,6 +9,8 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+/* digits */
 
 .digits {
     display: flex;
@@ -27,8 +28,129 @@
     align-items: flex-end;
 }
 
+
+.counter {
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    line-height: 65px;
+    font-weight: 600;
+    text-align: right;
+    color: #383838;
+}
+
+.description {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 200;
+    text-align: right;
+    color: #383838;
+}
+
 .line {
     width: calc(100% + 240px + 100px);
     height: 5px;
-    background-color: black;
+    background: linear-gradient(90deg, #21CEB6 3.79%, #0B58CE 140.92%);
 }
+
+
+/* CEO & text */
+
+
+.about_block {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-start;
+    margin-top: 75px;
+}
+
+.left_column {
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.avatar_wrapper {
+    width: 200px;
+    height: 200px;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(190deg, #21CEB6 3.79%, #0B58CE 140.92%);
+}
+
+.avatar {
+    width: 200px;
+    transform: translateX(-40px) rotate(-10deg);
+}
+
+.credits_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 0 0 30px
+}
+
+.credits {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 200;
+    text-align: left;
+    color: #383838;
+}
+
+
+.right_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.text {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 200;
+    text-align: justify;
+    color: #383838;
+}
+
+
+.buttons_wrapper {
+    width: 100%;
+    margin: 100px 0 0 0;
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    gap: 50px;
+}
+
+.button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #383838;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 200;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .25);
+    z-index: 2;
+}
+
+

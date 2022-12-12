@@ -3,11 +3,12 @@
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    padding: 100px 120px;
+    padding: 100px 120px 200px 120px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    
 }
 
 .title {
@@ -92,12 +93,7 @@
     outline: 1px solid #383838;    
 }
 
-.input_option {
-    font-size: 15px;
-    line-height: 20px;
-    color: #383838;
-    font-weight: 200;
-}
+
 
 
 
@@ -117,26 +113,9 @@
     z-index: 2;
 }
 
-.circle {
-    width: 1260px;
-    height: 1260px;
-    position: absolute;
-    left: -750px;
-    top: 35%;
-    background: linear-gradient(180deg, #21CEB6 23.22%, rgba(11, 88, 206, 0.74) 63.14%);
-    border-radius: 50%;
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
-}
 
-.inner_circle {
-    width: 1000px;
-    height: 1000px;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, .35); 
-}
+
+
+
+
 

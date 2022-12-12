@@ -3,23 +3,13 @@
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    padding: 60px 120px;
+    padding: 100px 120px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-}
-
-.title {
-    margin: 0;
-    padding: 0;
-    font-size: 40px;
-    line-height: 40px;
-    font-weight: 600;
-    text-align: left;
-    align-self: flex-start;
-    color: #383838;
-    z-index: 2;
+    background-color: #e5e5e5;
+    z-index: -1;
 }
 
 .cards_block {
@@ -33,11 +23,11 @@
 
 
 .card {
-    background-color: white;
     width: 600px;
     height: 300px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .25);
     z-index: 2;
+    background-color: #e5e5e5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -75,30 +65,14 @@
     align-self: flex-end;
 }
 
-.button {
-    width: 150px;
-    height: 40px;
-    border: none;
-    border-radius: 8px;
-    background-color: #383838;
-    color: white;
-    font-family: inherit;
-    font-size: 15px;
-    line-height: 15px;
-    font-weight: 200;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
-    z-index: 2;
-}
-
-
-.trapezoid {
-    z-index: -1;
-    height: 1000px;
+.geolabel {
     width: 600px;
+    height: 900px;
     position: absolute;
     right: -100px;
-    top: 60%;
-    background: linear-gradient(180deg, #21CEB6 23.22%, rgba(11, 88, 206, 0.74) 63.14%);
-    transform: skewY(-11deg);
+    top: 20%;
+    background: linear-gradient(190deg, #21CEB6 3.79%, #0B58CE 140.92%);
     box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
+    transform: skewY(-11deg);
 }
+

@@ -1,0 +1,135 @@
+.screen {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    padding: 100px 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
+    text-align: left;
+    color: #383838;
+    z-index: 2;
+    align-self: flex-start;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 200;
+    padding: 0;
+    margin: 30px 0 0 0;
+    max-width: 490px;
+    text-align: left;
+    align-self: flex-start;
+}
+
+.cards_block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    margin: 150px 0 100px 0;
+}
+
+.card {
+
+    position: relative;
+    width: 300px;
+    height: 500px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .25);
+    background-color: #e5e5e5;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    box-sizing: border-box;
+    
+}
+
+.post_cover {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(2px);
+    filter: brightness(50%);
+    opacity: .8;
+}
+
+.card_title {
+    width: 210px;
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 200;
+    z-index: 2;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.line {
+    width: 1px;
+    height: 70px;
+    background-color: white;
+    transform: translateX(-35px) rotate(-45deg);
+    z-index: 2;
+    align-self: flex-end;
+}
+
+
+.button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #383838;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 200;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+    z-index: 2;
+}
+
+
+.geolabel {
+    width: 1000px;
+    height: 1400px;
+    background: linear-gradient(180deg, #21CEB6 23.22%, rgba(11, 88, 206, 0.74) 63.14%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
+    position: absolute;
+    left: -100px;
+    top: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    border-top-right-radius: 500px;
+    border-top-left-radius: 500px;
+    transform: translateX(-500px) rotate(30deg);
+}
+
+.inner {
+    width: 800px;
+    height: 1200px;
+    background: white;
+    border-top-right-radius: 400px;
+    border-top-left-radius: 400px;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, .35); 
+}

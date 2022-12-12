@@ -15,7 +15,20 @@ const CalcScreen: React.FC = () => {
             </p>
 
             <div className={styles.calc_box}>
+                <form className={styles.calc_form}>
+                    <div className={styles.input_wrapper}>
+                        <label htmlFor='from' className={styles.input_label}>Откуда:</label>
+                        <input type='text' className={styles.input} name='from' id='from'></input>
+                        <span className={styles.input_option}>Москва, Санкт-Петербург, Алматы</span>
+                    </div>
+                    <div className={styles.input_wrapper}>
+                        <label htmlFor='to' className={styles.input_label}>Куда:</label>
+                        <input type='text' className={styles.input} name='to' id='to'></input>
+                        <span className={styles.input_option}>Москва, Санкт-Петербург, Алматы</span>
+                    </div>
 
+                    <button type='submit' className={styles.submit_button}>Рассчитать</button>
+                </form>
             </div>
 
             <div className={styles.circle}>

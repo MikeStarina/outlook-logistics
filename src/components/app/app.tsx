@@ -3,16 +3,18 @@ import { useLocation } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import MainPage from "../../pages/main-page/main-page";
 import MenuButton from "../menu-button/menu-button";
+import Footer from "../footer/footer";
 
 
 
 
 const App: React.FC = () => {
 
-    const location = useLocation()
+    const { pathname } = useLocation();
+    //console.log(location);
 
 
-    useEffect(() => {window.scrollTo(0, 0)}, [location]);
+    useEffect(() => {window.scrollTo(0, 0)}, [pathname]);
 
     return (
         <>
@@ -20,6 +22,7 @@ const App: React.FC = () => {
             <Routes>
                 <Route path={"/"} element={<MainPage />} />
             </Routes>
+            <Footer />
         </>
     )
 } 
