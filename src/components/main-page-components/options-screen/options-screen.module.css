@@ -23,12 +23,46 @@
 
 
 .card {
-    background-color: white;
     width: 600px;
     height: 300px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .25);
     z-index: 2;
     background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.card_title {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+.card_subtitle {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+.card_subtitle:first-of-type {
+    margin-top: 30px;
+}
+
+
+.line {
+    width: 1px;
+    height: 70px;
+    background-color: #383838;
+    transform: translateX(-35px) rotate(-45deg);
+    align-self: flex-end;
 }
 
 .geolabel {

@@ -10,10 +10,11 @@ import Footer from "../footer/footer";
 
 const App: React.FC = () => {
 
-    const location = useLocation()
+    const { pathname } = useLocation();
+    //console.log(location);
 
 
-    useEffect(() => {window.scrollTo(0, 0)}, [location]);
+    useEffect(() => {window.scrollTo(0, 0)}, [pathname]);
 
     return (
         <>
