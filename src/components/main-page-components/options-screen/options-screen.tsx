@@ -13,29 +13,29 @@ const OptionsScreen: React.FC = () => {
                 <div className={styles.card}>
                     <div className={styles.card_title_wrapper}>
                         <h4 className={styles.card_title}><i>БОЛЕЕ</i> 5 ЛЕТ</h4>
-                        <p className={styles.card_subtitle}>ЭКСПЕРТИЗЫ В ЛОГИСТИКЕ</p>
+                        <p className={styles.card_subtitle}>Экспертизы в логистике</p>
                     </div>
                     <div className={styles.line}></div>
                 </div>
                 <div className={styles.card}>
                     <div className={styles.card_title_wrapper}>
                         <h4 className={styles.card_title}><i>БАЗОВОЕ</i> СТРАХОВАНИЕ</h4>
-                        <p className={styles.card_subtitle}>УЖЕ ВКЛЮЧЕНО В СТОИМОСТЬ</p>
+                        <p className={styles.card_subtitle}>Уже включено в стоимость</p>
                     </div>
                     <div className={styles.line}></div>
                 </div>
                 <div className={styles.card}>
                     <div className={styles.card_title_wrapper}>
-                        <h4 className={styles.card_title}><i>АВТОМОБИЛЬНЫЕ</i> ПЕРЕВОЗКИ</h4>
-                        <p className={styles.card_subtitle}>ДО 1,5 ТОНН</p>
-                        <p className={styles.card_subtitle}>(ГАЗЕЛЬ)</p>
+                        <h4 className={styles.card_title}><i>ЦЕНООБРАЗОВАНИЕ</i> ПЕРЕВОЗКИ</h4>
+                        <p className={styles.card_subtitle}>Персональный подход</p>
+                  
                     </div>
                     <div className={styles.line}></div>
                 </div>
                 <div className={styles.card}>
                     <div className={styles.card_title_wrapper}>
-                        <h4 className={styles.card_title}><i>УМНЫЙ</i> КОНТРОЛЬ</h4>
-                        <p className={styles.card_subtitle}>ВОДИТЕЛЕЙ</p>
+                        <h4 className={styles.card_title}><i>SMART</i> КОНТРОЛЬ</h4>
+                        <p className={styles.card_subtitle}>Водителей</p>
                     </div>
                     <div className={styles.line}></div>
                 </div>

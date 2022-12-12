@@ -44,22 +44,39 @@
     align-items: flex-start;
     box-sizing: border-box;
     padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.feature_card_cover {
+    width: 100%;
+    filter: grayscale(100%) brightness(75%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
 }
 
 .card_title {
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    line-height: 25px;
-    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 200;
+    color: white;
+    max-width: 300px;
 }
 
 .card_subtitle {
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    line-height: 25px;
-    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 200;
+    color: white;
+    max-width: 300px;
 }
 
 .card_subtitle:first-of-type {
@@ -70,7 +87,7 @@
 .line {
     width: 1px;
     height: 70px;
-    background-color: #383838;
+    background-color: white;
     transform: translateX(-35px) rotate(-45deg);
     align-self: flex-end;
 }

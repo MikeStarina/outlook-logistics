@@ -11,7 +11,7 @@ const FirstScreen: React.FC = () => {
     return (
         <section className={styles.screen}>
             <div className={styles.blur_box}></div>
-            <div className={styles.trapezoid}><p>your best logistic partner</p></div>
+            <div className={styles.trapezoid}></div>
 
             <div className={styles.main_text_block}>
                 <div className={styles.text_wrapper}>
