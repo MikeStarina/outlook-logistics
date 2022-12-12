@@ -9,15 +9,43 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
 }
 
 .contacts_block {
     width: 50%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     background-color: #e5e5e5;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 100px 120px;
+}
+
+.contacts_title {
+    margin: 0 0 200px 0;
+    padding: 0;
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: 600;
+    text-align: left;
+    color: #383838;
+    z-index: 2;
+
+}
+
+.contacts_text {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 200;
+    text-align: left;
+    color: #383838;
+
 }
 
 .map_block {
