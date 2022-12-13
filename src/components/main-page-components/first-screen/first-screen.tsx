@@ -8,6 +8,9 @@ import full_logo440px_white from '../../../images/full_logo440px_white.svg';
 
 const FirstScreen: React.FC = () => {
 
+    
+
+    
     return (
         <section className={styles.screen}>
             <div className={styles.blur_box}></div>
