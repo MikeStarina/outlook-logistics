@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './main-page.module.css';
 
 
@@ -16,8 +16,12 @@ import ContactsScreen from '../../components/main-page-components/contacts-scree
 
 const MainPage: React.FC = () => {
 
+    const handler = () => {
+        //console.log(document.body.scrollTop())
+    }
+
     return (
-        <main className={styles.page}>
+        <main className={styles.page} onWheel={handler}>
             <FirstScreen />
             <FeaturesScreen />
             <CalcScreen />
