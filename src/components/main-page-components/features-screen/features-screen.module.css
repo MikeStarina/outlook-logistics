@@ -1,24 +1,11 @@
-@keyframes height {
-    from {
-        transform: skewY(-11deg) translate(0px, 0px);
-    }
-    25% {
-        transform: skewY(-11deg) translate(-20px, -20px);
-    }
-    50% {
-        transform: skewY(-11deg) translate(40px, 40px);
-    }
-    to {
-        transform: skewY(-11deg) translateX(0px, 0px);
-    }
-}
+
 
 .screen {
     width: 100%;
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    padding: 60px 120px;
+    padding: 60px 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -38,9 +25,10 @@
 }
 
 .cards_block {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: max-content;
     gap: 50px;
     margin: 50px 0 100px;
     z-index: 2;
@@ -49,7 +37,7 @@
 
 .card {
     background-color: white;
-    width: 600px;
+    width: 100%;
     height: 300px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .25);
     z-index: 2;
@@ -67,10 +55,10 @@
 .feature_card_cover {
     width: 100%;
     filter: grayscale(100%) brightness(75%);
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     z-index: -1;
 }
 
@@ -124,13 +112,61 @@
 
 
 .trapezoid {
-    z-index: -1;
-    height: 1000px;
-    width: 600px;
+    z-index: 0;
+    height: 90%;
+    width: calc(40% + 100px);
     position: absolute;
     right: -100px;
     top: 60%;
     background: linear-gradient(180deg, #21CEB6 23.22%, rgba(11, 88, 206, 0.74) 63.14%);
     transform: skewY(-11deg);
     box-shadow: 0 0 30px rgba(0, 0, 0, .35);
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .screen {
+        padding: 50px;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .screen {
+        padding: 30px;
+    }
+
+    .cards_block {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .card {
+        height: 200px;
+        padding: 20px;
+    }
+    
+
+    .card_title {
+       
+        font-size: 20px;
+        line-height: 25px;
+       
+    }
+
+    .card_subtitle {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .title {
+        font-size: 30px;
+        line-height: 30px;
+    }
 }

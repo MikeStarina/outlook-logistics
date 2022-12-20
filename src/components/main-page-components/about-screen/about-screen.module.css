@@ -15,6 +15,7 @@
 .digits {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
     margin: 0 0 75px 0;
@@ -154,3 +155,97 @@
 }
 
 
+
+
+
+
+@media (max-width: 1150px) {
+    .digits {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .about_block {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .left_column {
+        width: 100%;
+    }
+    .right_column {
+        width: 100%;
+        margin-top: 50px;
+    }
+}
+
+
+
+@media (max-width: 650px) {
+    .screen {
+        padding: 50px;
+    }
+
+    
+
+    .counter {
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .description {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .avatar_wrapper {
+        width: 100px;
+        height: 100px;
+    }
+    .avatar {
+        width: 100px;
+        transform: translateX(-30px) rotate(-10deg);
+    }
+    .button {
+        width: 100px;
+        height: 30px;
+        border-radius: 6px;
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .buttons_wrapper {
+        justify-content: center;
+    }
+    
+}
+
+@media (max-width: 380px) {
+    .digits {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .digits_wrapper {
+        align-items: flex-start;
+    }
+
+    .credits {
+        font-size: 10px;
+        line-height: 15px;
+        text-align: right;
+    }
+
+    .text {
+        font-size: 10px;
+        line-height: 15px;
+        
+    }
+
+    .credits_wrapper {
+        margin-left: 20px;
+        align-items: flex-end;
+    }
+}

@@ -31,3 +31,22 @@
     box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
     z-index: 2;
 }
+
+
+@media (max-width: 1000px) {
+    .screen {
+        gap: 50px;
+        padding: 50px;
+    }
+}
+
+@media (max-width: 500px) {
+    .screen {
+        gap: 50px;
+        padding: 20px;
+    }
+
+    .client_logo {
+        max-height: 30px;
+    }
+}

@@ -24,7 +24,7 @@ const StagesScreen: React.FC = () => {
                         <p className={styles.card_timing}>+ 30 секунд</p>
                     </div>
                     <div className={styles.card_description_box}>
-                        <p className={styles.description}>За 30 секунд вы узнаете первичную стоимость перевозки - просто воспользуйтесь нашим калькулятором</p>
+                        <p className={styles.card_description}>За 30 секунд вы узнаете первичную стоимость перевозки - просто воспользуйтесь нашим калькулятором</p>
                         <p className={styles.timer_total}>Всего: 0,5 минут</p>
                     </div>
 
@@ -35,7 +35,7 @@ const StagesScreen: React.FC = () => {
                         <p className={styles.card_timing}>+ 5 минут</p>
                     </div>
                     <div className={styles.card_description_box}>
-                        <p className={styles.description}>Уже через 5 минут наш менеджер свяжется с вами для уточнения деталей перевозки и забронирует для вас необходимый транспорт</p>
+                        <p className={styles.card_description}>Уже через 5 минут наш менеджер свяжется с вами для уточнения деталей перевозки и забронирует для вас необходимый транспорт</p>
                         <p className={styles.timer_total}>Всего: 5,5 минут</p>
                     </div>
 
@@ -46,7 +46,7 @@ const StagesScreen: React.FC = () => {
                         <p className={styles.card_timing}>+ 60 минут</p>
                     </div>
                     <div className={styles.card_description_box}>
-                        <p className={styles.description}>Всего один час уйдет у нас на то, чтобы подготовить все необходимые документы! Проверяйте почту - через 60 минут они будут у вас!</p>
+                        <p className={styles.card_description}>Всего один час уйдет у нас на то, чтобы подготовить все необходимые документы! Проверяйте почту - через 60 минут они будут у вас!</p>
                         <p className={styles.timer_total}>Всего: 65,5 минут</p>
                     </div>
 
@@ -57,7 +57,7 @@ const StagesScreen: React.FC = () => {
                         <p className={styles.card_timing}>+ 30-40 минут</p>
                     </div>
                     <div className={styles.card_description_box}>
-                        <p className={styles.description}>Мы не знаем сколько времени вам потребуется для того, чтобы подписать заявку, но обычно хватает 30-40 минут. Полчаса и машина будет у вас в назначенное время!</p>
+                        <p className={styles.card_description}>Мы не знаем сколько времени вам потребуется для того, чтобы подписать заявку, но обычно хватает 30-40 минут. Полчаса и машина будет у вас в назначенное время!</p>
                         <p className={styles.timer_total}>Всего: 100 минут</p>
                     </div>
 
