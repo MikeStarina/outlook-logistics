@@ -12,18 +12,16 @@ import Footer from "../footer/footer";
 const App: React.FC = () => {
 
     const { pathname } = useLocation();
-    //console.log(location);
-
-
     useEffect(() => {window.scrollTo(0, 0)}, [pathname]);
 
+ 
     return (
         <>
-            {/*<MenuButton />*/}
+            <MenuButton />
             <Routes>
-                <Route path={"/"} element={<TempPage />} />
+                <Route path={"/"} element={<MainPage />} />
             </Routes>
-            {/*<Footer />*/}
+            <Footer />
         </>
     )
 } 

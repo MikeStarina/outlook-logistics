@@ -3,12 +3,11 @@
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    padding: 100px 120px 200px 120px;
+    padding: 100px 120px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    
 }
 
 .title {
@@ -50,12 +49,13 @@
 
 .calc_form {
     width: 100%;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
+
 
 
 .input_wrapper {
@@ -66,6 +66,7 @@
     align-items: flex-start;
     gap: 10px;
     margin-bottom: 50px;
+    
 }
 
 
@@ -87,13 +88,20 @@
     font-family: inherit;
     font-size: 20px;
     color: #383838;
+    box-sizing: border-box;
 }
+
 
 .input:focus {
     outline: 1px solid #383838;    
 }
 
-
+.input_option {
+    font-size: 15px;
+    line-height: 20px;
+    color: #383838;
+    font-weight: 200;
+}
 
 
 
@@ -113,9 +121,109 @@
     z-index: 2;
 }
 
+.circle {
+    width: 1260px;
+    height: 1260px;
+    position: absolute;
+    left: -750px;
+    top: 35%;
+    background: linear-gradient(180deg, #21CEB6 23.22%, rgba(11, 88, 206, 0.74) 63.14%);
+    border-radius: 50%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
+}
+
+.inner_circle {
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, .35); 
+}
 
 
+@media (max-width: 1000px) {
+    .screen { 
+        padding: 50px;
+    }
 
+    .calc_box {        
+        padding: 50px;
+        width: 100%;
+    }
 
+  
+}
 
+@media (max-width: 550px) {
+    .input {
+        height: 30px;
+    }
+    .screen { 
+        padding: 20px;
+    }
+
+    .calc_box {        
+        padding: 50px 60px;
+        width: 100%;
+        align-items: flex-start;
+        height: auto;
+        border-radius: 10px;
+    }
+    .calc_form {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+    .input_wrapper {
+        margin-bottom: 0;
+    }
+
+    .title {
+       
+        font-size: 30px;
+        line-height: 30px;
+        text-align: center;
+       
+    }
+
+    .description {
+        font-size: 10px;
+        line-height: 15px;
+        max-width: 300px;
+    }
+    .submit_button {
+        width: 100px;
+        height: 30px;
+        border-radius: 6px;
+        font-size: 10px;
+        line-height: 10px;
+        margin-top: 20px;
+    }
+
+  
+}
+
+@media (max-width: 400px) {
+    
+
+    .calc_box {        
+        padding: 30px 40px;
+       
+    }
+    
+
+    .input_label {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .input_option {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+  
+}
 
