@@ -16,12 +16,9 @@ import ContactsScreen from '../../components/main-page-components/contacts-scree
 
 const MainPage: React.FC = () => {
 
-    const handler = () => {
-        //console.log(document.body.scrollTop())
-    }
 
     return (
-        <main className={styles.page} onWheel={handler}>
+        <main className={styles.page}>
             <FirstScreen />
             <FeaturesScreen />
             <CalcScreen />

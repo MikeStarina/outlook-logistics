@@ -62,7 +62,30 @@
     height: 100%;
 }
 
+@media (max-width: 1000px) {
+    .contacts_block {
+        padding: 50px;
+    }
+}
 
+@media (max-width: 700px) {
+    .screen {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+    }
+    .contacts_block {
+        width: 100%;
+    }
+    .map {
+        width: 100%;
+        height: auto;
+    }
+    .map_block {
+        width: 100%;
+    }
+}
 
 
 
