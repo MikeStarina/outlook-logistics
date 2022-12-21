@@ -9,9 +9,12 @@ import styles from './features-screen.module.css';
 
 
 
-const FeaturesScreen: React.FC<any> = () => {
+const FeaturesScreen: React.FC = () => {
 
-   
+    
+
+
+    
 
     return (
         <section className={styles.screen}>
@@ -55,7 +58,6 @@ const FeaturesScreen: React.FC<any> = () => {
                 
             </div>
             <button type='button' className={styles.button}>Смотреть все</button>
-
             <div className={styles.trapezoid}></div>
         </section>
     )
