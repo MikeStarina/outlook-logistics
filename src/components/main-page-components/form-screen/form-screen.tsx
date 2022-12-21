@@ -31,9 +31,7 @@ const FormScreen: React.FC = () => {
                 </form>
             </div>
 
-            <div className={styles.circle}>
-                <div className={styles.inner_circle}></div>
-            </div>
+           
         </section>
     )
 }
