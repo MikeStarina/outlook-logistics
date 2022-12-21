@@ -288,8 +288,8 @@
 
 @media (max-width: 450px) {
     .calc_box {
-        padding: 50px;
-        width: calc(100% + 20px);
+        padding: 50px 30px;
+        width: calc(100% + 40px);
     }
 
 
