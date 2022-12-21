@@ -17,7 +17,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: flex-start;
     background-color: #e5e5e5;
     box-sizing: border-box;
@@ -26,7 +26,7 @@
 }
 
 .contacts_title {
-    margin: 0 0 200px 0;
+    margin: 0;
     padding: 0;
     font-size: 40px;
     line-height: 45px;
@@ -42,7 +42,7 @@
     padding: 0;
     font-size: 15px;
     line-height: 20px;
-    font-weight: 200;
+    font-weight: 400;
     text-align: left;
     color: #383838;
 
@@ -77,13 +77,19 @@
     }
     .contacts_block {
         width: 100%;
+        height: 50vh;
     }
     .map {
         width: 100%;
-        height: auto;
+        height: 50vh;
     }
     .map_block {
         width: 100%;
+        height: 50vh;
+    }
+    .contacts_title {
+        font-size: 30px;
+        line-height: 35px;
     }
 }
 
