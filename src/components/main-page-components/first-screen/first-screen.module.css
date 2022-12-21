@@ -14,7 +14,7 @@
     background-attachment: fixed;
     position: relative;
     margin: 0 auto;
-    padding: 20px 30px;
+    padding: 25px 25px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -81,17 +81,22 @@
     width: 150px;
     z-index: 5;
 }
+.icon_logo {
+    height: 33px;
+    z-index: 5;
+    display: none;
+}
 
 
 /* calc block*/
 
 .calc_box {
-    background-color: rgba(56, 56, 56, .8);
+    background-color: rgba(56, 56, 56, .6);
     border: none;
     border-radius: 20px;
     width: minmax(300px, 400px);
     z-index: 5;
-    margin: 50px 0 0 0;
+    margin: 50px 0 0 25px;
     padding: 50px 100px;
     display: flex;
     flex-direction: column;
@@ -99,6 +104,7 @@
     align-items: center;
     backdrop-filter: blur(5px);
     box-shadow: 0 0 20px rgba(0, 0, 0, .25); 
+    box-sizing: border-box;
 }
 
 .calc_title {
@@ -223,11 +229,6 @@
     .screen {
         align-items: center;
     }
-   .main_text_block {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-   }
 
    .text_wrapper {
     margin: 0;
@@ -242,6 +243,24 @@
    .calc_box {
     margin-top: 50px;
    }
+
+   .bg_circle {
+    display: none;
+   }
+
+   .bg_inner_circle {
+    display: none;
+   }
+
+   .text_wrapper {
+    display: none;
+   }
+   .logo {
+    display: none
+   }
+   .icon_logo {
+    display: block;
+   }
     
 }
 
@@ -251,9 +270,13 @@
 
 
 @media (max-width: 650px) {
+    .screen {
+        align-items: center;
+    }
     .calc_box {
         padding: 50px;
         width: 100%;
+        margin-left: 0;
     }
 
     .calc_title {
@@ -266,12 +289,20 @@
 @media (max-width: 450px) {
     .calc_box {
         padding: 50px;
+        width: calc(100% + 20px);
     }
 
-    .calc_title {
-        font-size: 20px;
-        line-height: 25px;
-        text-align: left;
+
+    .input_option {
+        font-size: 10px;
+        line-height: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .calc_box {
+        padding: 50px 20px;
+        width: calc(100% + 50px);
     }
 }
 

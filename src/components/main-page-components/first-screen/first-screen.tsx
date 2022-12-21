@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './first-screen.module.css';
 import full_logo440px_white from '../../../images/full_logo440px_white.svg';
+import icon_logo from '../../../images/icon_logo.svg';
 import cont from '../../../images/cont.jpg';
 
 
@@ -18,6 +19,7 @@ const FirstScreen: React.FC = () => {
 
             <div className={styles.main_text_block}>
                 <img src={full_logo440px_white} alt='outlook_logo' className={styles.logo}></img>
+                <img src={icon_logo} alt='outlook_icon_logo' className={styles.icon_logo}></img>
                 <div className={styles.text_wrapper}>
                     <p className={styles.caption}>8<i>(800)</i>888-99-00</p>
                    

@@ -58,7 +58,8 @@
 }
 .card:last-of-type {
     border: none;
-    background-color: #383838;
+    backdrop-filter: blur(5px);
+    background-color: rgba(56,56,56,.8);
     border-radius: 20px;
     gap: 50px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .25); 
@@ -163,7 +164,7 @@
     }
 
     .card:last-of-type {
-        padding: 20px;
+        padding: 50px;
     }
   
 }
@@ -220,7 +221,7 @@
     }
 
     .card:last-of-type {
-        padding: 20px;
+        padding: 50px 30px;
         gap: 20px;
     }
 
@@ -231,4 +232,13 @@
     .card_description {
         margin-left: 0;
     }
+}
+
+@media (max-width: 600px) {
+    .card:last-of-type {
+        width: calc(100% + 30px);
+        padding: 50px 30px;
+        gap: 20px;
+    }
+
 }
