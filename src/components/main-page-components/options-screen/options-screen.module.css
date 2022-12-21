@@ -29,7 +29,8 @@
     width: 100%;
     gap: 100px;
     z-index: 5;
-    background-color: #383838;
+    background-color: rgba(56, 56, 56, .6);
+    backdrop-filter: blur(5px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
