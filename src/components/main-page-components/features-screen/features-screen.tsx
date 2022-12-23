@@ -1,8 +1,5 @@
 import React from "react";
 import cont1 from '../../../images/cont1.png';
-import cont2 from '../../../images/cont2.png';
-import cont3 from '../../../images/cont3.png';
-import cont4 from '../../../images/cont4.png';
 
 
 import styles from './features-screen.module.css';
@@ -20,7 +17,8 @@ const FeaturesScreen: React.FC = () => {
 
     return (
         <section className={styles.screen}>
-            <h1 className={styles.title}><i>OUTLOOK</i> УСЛУГИ</h1>
+            <h2 className={styles.title}><i>OUTLOOK</i> УСЛУГИ</h2>
+            <p className={styles.subtitle}></p>
             <div className={styles.cards_block}>
                 <div className={styles.card}>
                     <img src={cont1} alt='container' loading='lazy' className={styles.feature_card_cover} width={800} height={600}></img>
