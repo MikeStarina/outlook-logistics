@@ -91,7 +91,7 @@
 /* calc block*/
 
 .calc_box {
-    background-color: rgba(56, 56, 56, .6);
+    background-color: rgba(56, 56, 56, .8);
     border: none;
     border-radius: 20px;
     width: minmax(300px, 400px);
