@@ -1,4 +1,6 @@
 import React from "react";
+//import bgvideo from '../../../images/bgvideo.mp4';
+import vehicle from '../../../images/vehicle.jpg';
 import styles from './calc-screen.module.css';
 
 
@@ -9,26 +11,23 @@ const CalcScreen: React.FC = () => {
 
     return (
         <section className={styles.screen}>
-            <h2 className={styles.title}><i>OUTLOOK</i> СТОИМОСТЬ</h2>
-            <p className={styles.description}>Заполните форму ниже и мы сразу получите стоимость перевозки!
-                Вам останется только подтвердить заявку.
-            </p>
+           
 
-            <div className={styles.calc_box}>
-                <form className={styles.calc_form}>
-                    <div className={styles.input_wrapper}>
-                        <label htmlFor='from' className={styles.input_label}>Откуда:</label>
-                        <input type='text' className={styles.input} name='from' id='from'></input>
-                        <span className={styles.input_option}>Москва, Санкт-Петербург, Алматы</span>
+            <div className={styles.types_box}>
+                <div className={styles.column}>
+                    <img className={styles.image} alt='фура' src={vehicle}></img>
+                </div>
+                <div className={styles.column}>
+                    <h3 className={styles.column_title}>ВИДЫ <i>ПЕРЕВОЗОК</i></h3>
+                    <div className={styles.text_wrapper}>
+                        <p className={styles.link}>АВТОМОБИЛЬНЫЕ ПЕРЕВОЗКИ</p>
+                        <p className={styles.link}>МОРСКИЕ ПЕРЕВОЗКИ</p>
+                        <p className={styles.link}>АВИА ПЕРЕВОЗКИ</p>
+                        <p className={styles.link}>МУЛЬТИМОБАЛЬНЫЕ ПЕРЕВОЗКИ</p>
+                        <p className={styles.link}>FTL / СБОРНЫЙ ГРУЗ</p>
                     </div>
-                    <div className={styles.input_wrapper}>
-                        <label htmlFor='to' className={styles.input_label}>Куда:</label>
-                        <input type='text' className={styles.input} name='to' id='to'></input>
-                        <span className={styles.input_option}>Москва, Санкт-Петербург, Алматы</span>
-                    </div>
-
-                    <button type='submit' className={styles.submit_button}>Рассчитать</button>
-                </form>
+                </div>
+               
             </div>
 
             <div className={styles.circle}>

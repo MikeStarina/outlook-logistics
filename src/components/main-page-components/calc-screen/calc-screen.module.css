@@ -3,123 +3,74 @@
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    padding: 100px 120px;
+    padding: 100px 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 }
 
-.title {
+
+
+.types_box {
     margin: 0;
-    padding: 0;
-    font-size: 40px;
-    line-height: 40px;
-    font-weight: 600;
-    text-align: left;
-    color: #383838;
-    z-index: 2;
-}
-
-.description {
-    font-size: 15px;
-    line-height: 20px;
-    font-weight: 400;
-    padding: 0;
-    margin: 30px 0 0 0;
-    max-width: 490px;
-    text-align: center;
-}
-
-.calc_box {
-    margin: 70px 0 0 0;
-    width: 900px;
-    height: 500px;
+    width: 100%;
+    height: 80vh;
     border: none;
-    border-radius: 20px;
-    background-color: #e5e5e5;
+    background-color: #dbdbdb;
     box-shadow: 0 0 20px rgba(0, 0, 0, .25); 
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 70px 140px;
+    padding: 50px;
+    overflow: hidden;
+    border-radius: 20px;
 }
 
-
-.calc_form {
-    width: 100%;
+.column {
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-
-
-.input_wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 50px;
-    
 }
 
+.column:last-of-type {
+    justify-content: space-between;
+    align-items: flex-end;
+}
 
-.input_label {
-    font-size: 20px;
-    line-height: 25px;
+.image {
+    width: 200%;
+    position: relative;
+    left: -100%;
+}
+
+.column_title {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 600;
+    text-align: right;
     color: #383838;
-    font-weight: 400;
-}
-
-
-.input {
-    width: 100%;
-    height: 46px;
-    border: 1px solid #383838;
-    border-radius: 8px;
-    padding: 0 15px;
-    background-color: #f3f3f3;
-    font-family: inherit;
-    font-size: 20px;
-    color: #383838;
-    box-sizing: border-box;
-}
-
-
-.input:focus {
-    outline: 1px solid #383838;    
-}
-
-.input_option {
-    font-size: 15px;
-    line-height: 20px;
-    color: #383838;
-    font-weight: 400;
-}
-
-
-
-
-.submit_button {
-    width: 150px;
-    height: 40px;
-    border: none;
-    border-radius: 8px;
-    background-color: #383838;
-    color: white;
-    font-family: inherit;
-    font-size: 15px;
-    line-height: 15px;
-    font-weight: 400;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .25);
     z-index: 2;
 }
+
+.link {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+
+
 
 .circle {
     width: 1260px;
@@ -155,7 +106,43 @@
         width: 100%;
     }
 
+    .column_title {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .link {
+        font-size: 15px;
+        line-height: 20px;
+    }
+
   
+}
+
+@media (max-width: 800px) {
+    .types_box {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 50px;
+    }
+    .image {
+        position: initial;
+        width: 200%;
+    }
+    .column {
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+    }
+
+    .column:last-of-type {
+        height: 100%;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
 }
 
 @media (max-width: 550px) {
