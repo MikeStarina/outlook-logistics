@@ -24,9 +24,14 @@ const Menu: React.FC = () => {
 
             <div className={styles.links_wrapper}>
                 <Link className={styles.link} to='/about'>О КОМПАНИИ</Link>
-                <Link className={styles.link} to='/about'>УСЛУГИ</Link>
-                <Link className={styles.link} to='/about'>БЛОГ</Link>
-                <Link className={styles.link} to='/about'>КОНТАКТЫ</Link>                
+                <Link className={styles.link} to='/features'>УСЛУГИ</Link>
+                <Link className={styles.link} to='/blog'>БЛОГ</Link>
+                <Link className={styles.link} to='/contacts'>КОНТАКТЫ</Link>                
+            </div>
+
+            <div className={styles.contacts_wrapper}>
+                <p className={styles.contacts_item}>info@outlook-logistics.ru</p>
+                <p className={styles.contacts_item}>8(800)888-99-00</p>
             </div>
         </div>
     )

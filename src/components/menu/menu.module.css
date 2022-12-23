@@ -24,6 +24,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
+    gap: 100px;
     animation: opacity .3s ease-out;
 }
 
@@ -49,7 +50,7 @@
 }
 
 .links_wrapper {
-    margin: 100px 50px;
+    margin: 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -65,3 +66,39 @@
     font-weight: 500px;
 }
 
+.contacts_wrapper {
+    margin: 0 50px;
+}
+
+.contacts_item {
+    color: white;
+    text-align: right;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+
+@media (max-width: 800px) {
+    .link {
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 650px) {
+    .links_wrapper {
+        margin: 0;
+    }
+    .contacts_wrapper {
+        margin: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .menu {
+        width: 100%;
+    }
+}
