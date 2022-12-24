@@ -23,10 +23,11 @@ const Menu: React.FC = () => {
 
 
             <div className={styles.links_wrapper}>
-                <Link className={styles.link} to='/about'>О КОМПАНИИ</Link>
-                <Link className={styles.link} to='/features'>УСЛУГИ</Link>
-                <Link className={styles.link} to='/blog'>БЛОГ</Link>
-                <Link className={styles.link} to='/contacts'>КОНТАКТЫ</Link>                
+                <Link className={styles.link} to='/' onClick={closeButtonClickHandler}>ГЛАВНАЯ</Link>
+                <Link className={styles.link} to='/about' onClick={closeButtonClickHandler}>О КОМПАНИИ</Link>
+                <Link className={styles.link} to='/features' onClick={closeButtonClickHandler}>УСЛУГИ</Link>
+                <Link className={styles.link} to='/blog' onClick={closeButtonClickHandler}>БЛОГ</Link>
+                <Link className={styles.link} to='/contacts' onClick={closeButtonClickHandler}>КОНТАКТЫ</Link>                
             </div>
 
             <div className={styles.contacts_wrapper}>
