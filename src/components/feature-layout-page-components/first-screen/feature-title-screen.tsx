@@ -1,5 +1,5 @@
 import React from "react";
-import styles from './first-screen.module.css';
+import styles from './feature-title-screen.module.css';
 import full_logo440px_white from '../../../images/full_logo440px_white.svg';
 import icon_logo from '../../../images/icon_logo.svg';
 import cont from '../../../images/cont.jpg';
@@ -8,15 +8,19 @@ import cont2 from '../../../images/cont2.png';
 import cont3 from '../../../images/cont3.png';
 import cont4 from '../../../images/cont4.png';
 import { useLocation } from "react-router";
-import path from "path";
-import Calc from "../../calc/calc";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 
 
 
 
 
-const FirstScreen: React.FC = () => {
+
+const FeatureTitleScreen: React.FC = () => {
 
     const { pathname } = useLocation();
    
@@ -44,21 +48,31 @@ const FirstScreen: React.FC = () => {
                 </div>
             </div>
 
-            
-               <Calc />
-           
-
-
-
-           
-
-           
-            <div className={styles.bg_circle}>
-                <div className={styles.bg_inner_circle}></div>
+            <div className={styles.main_card}>
+                <div className={styles.card_title_column}>
+                    <h1 className={styles.page_title}>ТЕНТОВЫЕ ПЕРЕВОЗКИ 110м<sup>3</sup></h1>
+                </div>
+                <div className={styles.card_description_column}>
+                    <p className={styles.params}>ГАБАРИТЫ КУЗОВА (ДхШхВ) М. : 16,5 х 2,48 х 2,68</p>
+                    <p className={styles.params}>ГРУЗОПОДЬЕМНОСТЬ: 20 ТОНН</p>
+                    <p className={styles.params}>ОБЪЕМ: 110 м<sup>3</sup></p>
+                    <p className={styles.params}>ВМЕСТИМОСТЬ: 40 ЕВРОПАЛЛЕТ</p>
+                </div>
             </div>
-            <img src={activeBgImage} alt='container' className={styles.bg_image}></img>
+            
+            
+               
+            
+
+
+
+           
+
+           
+          
+           
         </section>
     )
 }
 
-export default FirstScreen;
+export default FeatureTitleScreen;

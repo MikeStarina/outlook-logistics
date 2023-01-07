@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from "../..";
 import { useLocation } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import MainPage from "../../pages/main-page/main-page";
-import TempPage from "../../pages/temp-page/first-screen/temp-page";
+import FeaturesPage from "../../pages/features-page/features-page";
+import FeatureLayoutPage from "../../pages/fearture-layout-page/feature-layout-page";
 import AboutPage from "../../pages/about-page/about-page";
 import MenuButton from "../menu-button/menu-button";
 import Menu from "../menu/menu";
@@ -35,6 +36,9 @@ const App: React.FC = () => {
             <Routes>
                 <Route path={"/"} element={<MainPage />} />
                 <Route path={"/about"} element={<AboutPage />} />
+                <Route path={"/features"} element={<FeaturesPage />} />
+                <Route path={"/features/:id"} element={<FeatureLayoutPage />} />
+                <Route path={"/feature-page"} element={<FeatureLayoutPage />} />
             </Routes>
            
             <Footer />
