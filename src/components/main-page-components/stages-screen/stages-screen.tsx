@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './stages-screen.module.css';
+import { Link } from 'react-router-dom';
 
 
 
@@ -82,9 +83,12 @@ const StagesScreen: React.FC = () => {
                     Выберите интересующую вас услугу или сразу передите в калькулятор для расчета стоимости.
 
                     </p>
-
-                    <button type="button" className={styles.card_button}>Наши услуги</button>
-                    <button type="button" className={styles.card_button}>Калькулятор </button>
+                    <Link to='/features'>
+                        <button type="button" className={styles.card_button}>Наши услуги</button>
+                    </Link>
+                    <a href='https://outlook-logistics.ru'>
+                        <button type="button" className={styles.card_button}>Калькулятор </button>
+                    </a>
 
                 </div>
                 

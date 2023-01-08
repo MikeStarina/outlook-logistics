@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './about-screen.module.css';
 import CEO from '../../../images/CEO.png';
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -62,8 +62,12 @@ const AboutScreen: React.FC = () => {
 </p>
                    
                     <div className={styles.buttons_wrapper}>
-                        <button type="button" className={styles.button}>О Нас</button>
-                        <button type="button" className={styles.button}>О Команде</button>
+                        <Link to='/about'>
+                            <button type="button" className={styles.button}>О Нас</button>
+                        </Link>
+                        <Link to='/about'>
+                            <button type="button" className={styles.button}>О Команде</button>
+                        </Link>
                     </div>
                 </div>
 
