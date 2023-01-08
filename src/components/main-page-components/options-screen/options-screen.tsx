@@ -50,7 +50,7 @@ const OptionsScreen: React.FC<any> = ({ features }) => {
                                 
                                     <h4 className={styles.card_title}>{item.title}</h4>
                                 
-                                <p className={styles.card_subtitle}>{`< >`}</p>
+                                <p className={styles.card_subtitle}>{`<>`}</p>
                                 
                                 <div className={styles.line}></div>
                             </div>

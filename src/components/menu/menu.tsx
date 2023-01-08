@@ -32,7 +32,7 @@ const Menu: React.FC = () => {
 
             <div className={styles.contacts_wrapper}>
                 <p className={styles.contacts_item}>info@outlook-logistics.ru</p>
-                <p className={styles.contacts_item}>8(800)888-99-00</p>
+                <a href='tel:+78002010073' className={styles.contacts_item}>8 <i>(800)</i> 201-00-73</a>
             </div>
         </div>
     )

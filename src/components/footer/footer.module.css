@@ -4,8 +4,15 @@
     padding: 100px 120px;
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+}
+
+.link {
+    text-decoration: none;
+    color: #383838;
+    
 }
 
 
