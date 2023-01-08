@@ -111,6 +111,10 @@
     bottom: 10px;
 }
 
+.link {
+    text-decoration: none;
+}
+
 .button {
     width: 150px;
     height: 40px;
@@ -124,6 +128,7 @@
     font-weight: 400;
     box-shadow: 0 0 10px rgba(0, 0, 0, .25);
     z-index: 2;
+    cursor: pointer;
 }
 
 

@@ -8,11 +8,6 @@ import cont2 from '../../../images/cont2.png';
 import cont3 from '../../../images/cont3.png';
 import cont4 from '../../../images/cont4.png';
 import { useLocation } from "react-router";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper';
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 
 
@@ -20,11 +15,12 @@ import "swiper/css/pagination";
 
 
 
-const FeatureTitleScreen: React.FC = () => {
+
+const FeatureTitleScreen: React.FC<any> = ({ item }) => {
 
     const { pathname } = useLocation();
    
-
+    
     const activeBgImage = pathname === '/' ? cont :
         pathname === '/features' ? cont4 : cont;
 
@@ -50,13 +46,13 @@ const FeatureTitleScreen: React.FC = () => {
 
             <div className={styles.main_card}>
                 <div className={styles.card_title_column}>
-                    <h1 className={styles.page_title}>ТЕНТОВЫЕ ПЕРЕВОЗКИ 110м<sup>3</sup></h1>
+                    <h1 className={styles.page_title}>{item.title}</h1>
                 </div>
                 <div className={styles.card_description_column}>
-                    <p className={styles.params}>ГАБАРИТЫ КУЗОВА (ДхШхВ) М. : 16,5 х 2,48 х 2,68</p>
-                    <p className={styles.params}>ГРУЗОПОДЬЕМНОСТЬ: 20 ТОНН</p>
-                    <p className={styles.params}>ОБЪЕМ: 110 м<sup>3</sup></p>
-                    <p className={styles.params}>ВМЕСТИМОСТЬ: 40 ЕВРОПАЛЛЕТ</p>
+                    <p className={styles.params}>{item.truck_params.size}</p>
+                    <p className={styles.params}>{item.truck_params.weight}</p>
+                    <p className={styles.params}>{item.truck_params.volume}</p>
+                    <p className={styles.params}>{item.truck_params.capacity}</p>
                 </div>
             </div>
             

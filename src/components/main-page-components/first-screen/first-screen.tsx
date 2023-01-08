@@ -30,7 +30,7 @@ const FirstScreen: React.FC = () => {
         <section className={styles.screen}>
            
            
-
+            
             <div className={styles.main_text_block}>
                 <img src={full_logo440px_white} alt='outlook_logo' className={styles.logo}></img>
                 <img src={icon_logo} alt='outlook_icon_logo' className={styles.icon_logo}></img>

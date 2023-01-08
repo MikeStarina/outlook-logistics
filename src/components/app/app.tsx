@@ -10,11 +10,12 @@ import MenuButton from "../menu-button/menu-button";
 import Menu from "../menu/menu";
 import Footer from "../footer/footer";
 import { MAIN_MENU_VISIBILITY } from "../../services/actions/utils-actions";
+import { getFeatures } from "../../services/actions/features-actions";
 
 
 const App: React.FC = () => {
-    const { isMainMenuActive } = useSelector((store) => store.utils);
     
+    const { isMainMenuActive } = useSelector((store) => store.utils);
     const { pathname } = useLocation();
     const dispatch = useDispatch();
     useEffect(() => {window.scrollTo(0, 0)}, [pathname]);
@@ -23,6 +24,12 @@ const App: React.FC = () => {
         dispatch({type: MAIN_MENU_VISIBILITY})
        
     }
+
+
+
+    
+
+
 
    
 
