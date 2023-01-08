@@ -86,9 +86,9 @@ const StagesScreen: React.FC = () => {
                     <Link to='/features'>
                         <button type="button" className={styles.card_button}>Наши услуги</button>
                     </Link>
-                    <a href='https://outlook-logistics.ru'>
+                    <Link to='/#calc'>
                         <button type="button" className={styles.card_button}>Калькулятор </button>
-                    </a>
+                    </Link>
 
                 </div>
                 

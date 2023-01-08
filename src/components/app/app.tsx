@@ -6,16 +6,19 @@ import MainPage from "../../pages/main-page/main-page";
 import FeaturesPage from "../../pages/features-page/features-page";
 import FeatureLayoutPage from "../../pages/fearture-layout-page/feature-layout-page";
 import AboutPage from "../../pages/about-page/about-page";
+import BlogFeedPage from "../../pages/blog-feed-page/blog-feed-page";
 import MenuButton from "../menu-button/menu-button";
 import Menu from "../menu/menu";
 import Footer from "../footer/footer";
+import Popup from "../popup/popup";
 import { MAIN_MENU_VISIBILITY } from "../../services/actions/utils-actions";
 import { getFeatures } from "../../services/actions/features-actions";
+import ContactsPage from "../../pages/contacs-page/contacts-page";
 
 
 const App: React.FC = () => {
     
-    const { isMainMenuActive } = useSelector((store) => store.utils);
+    const { isMainMenuActive, isPopupVisible } = useSelector((store) => store.utils);
     const { pathname } = useLocation();
     const dispatch = useDispatch();
     useEffect(() => {window.scrollTo(0, 0)}, [pathname]);
@@ -40,12 +43,16 @@ const App: React.FC = () => {
         <>
             {!isMainMenuActive && <MenuButton clickHandler={menuButtonClickHandler} />}
             {isMainMenuActive && <Menu />}
+            {isPopupVisible && <Popup />}
             <Routes>
                 <Route path={"/"} element={<MainPage />} />
                 <Route path={"/about"} element={<AboutPage />} />
                 <Route path={"/features"} element={<FeaturesPage />} />
                 <Route path={"/features/:id"} element={<FeatureLayoutPage />} />
-                <Route path={"/feature-page"} element={<FeatureLayoutPage />} />
+                <Route path={"/blog"} element={<BlogFeedPage />} />
+                <Route path={"/contacts"} element={<ContactsPage />} />
+                <Route path={"/blog/:id"} element={<BlogFeedPage />} />
+                
             </Routes>
            
             <Footer />

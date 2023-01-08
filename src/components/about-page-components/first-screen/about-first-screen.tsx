@@ -3,6 +3,7 @@ import styles from './about-first-screen.module.css';
 import full_logo440px_white from '../../../images/full_logo440px_white.svg';
 import icon_logo from '../../../images/icon_logo.svg';
 import cont3 from '../../../images/cont3.png';
+import { Link } from "react-router-dom";
 
 
 
@@ -16,12 +17,12 @@ const AboutFirstScreen: React.FC = () => {
         <section className={styles.screen}>
            
            
-
+         
             <div className={styles.main_text_block}>
-                <img src={full_logo440px_white} alt='outlook_logo' className={styles.logo}></img>
-                <img src={icon_logo} alt='outlook_icon_logo' className={styles.icon_logo}></img>
+                <Link to='/'><img src={full_logo440px_white} alt='outlook_logo' className={styles.logo}></img></Link>
+                <Link to='/'><img src={icon_logo} alt='outlook_icon_logo' className={styles.icon_logo}></img></Link>
                 <div className={styles.text_wrapper}>
-                    <p className={styles.caption}>8<i>(800)</i>888-99-00</p>
+                    <a href='tel:+78002010073' className={styles.caption}>8 <i>(800)</i> 201-00-73</a>
                    
                 </div>
                 <div className={styles.text_wrapper}>
