@@ -15,7 +15,7 @@ const ContactsScreen: React.FC = () => {
             <div className={styles.contacts_block}>
                 <h3 className={styles.contacts_title}>КОНТАКТЫ</h3>
                 <div className={styles.wrapper}>
-                    <p className={styles.contacts_text}>8 (800) 999 88 00</p>
+                    <a href='tel:+78002010073' className={styles.contacts_text}>8 (800) 201-00-73</a>
                     <p className={styles.contacts_text}>info@outlook-logistics.ru</p>
                     <p className={styles.contacts_text}>г. Санкт-Петербург, Софийская ул. 14, офис 915</p>
                     <p className={styles.contacts_text}>По будням с 10 до 18</p>
