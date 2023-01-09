@@ -23,7 +23,7 @@ const FeedBackScreen: React.FC = () => {
             </div> */}
             <div className={styles.text_wrapper}>
                 <p className={styles.text}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima ratione accusamus, libero tenetur dolor quaerat dolorem earum explicabo similique impedit reiciendis repudiandae delectus dicta saepe. Quo labore ipsa illum animi!
+                    "ДЕЛАЕМ БОЛЬШЕ ДРУГИХ, ЧТОБЫ ПЕРЕВОЗКИ БЫЛИ УДОБНЫМИ И БЕЗОПАСНЫМИ, А БИЗНЕС - ЧЕСТНЫМ И ПРЕДСКАЗУЕМЫМ!"
                 </p>
             </div>
         </section>
