@@ -1,3 +1,3 @@
 //export const apiUrl = 'http://localhost:1337';
 //export const apiUrl = 'http://95.163.236.246:1337';
-export const apiUrl = 'http://outlook-logistics.ru';
+export const apiUrl = 'https://outlook-logistics.ru';
