@@ -33,6 +33,7 @@ export const sendOrderData = (orderData: any) => {
             headers: { 
                 "Content-Type": "application/json",
                 "Content-Length": '',
+                "Access-Control-Allow-Origin": '*',
             },
             body: JSON.stringify(data),
 
