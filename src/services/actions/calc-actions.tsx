@@ -33,7 +33,6 @@ export const sendOrderData = (orderData: any) => {
             headers: { 
                 "Content-Type": "application/json",
                 "Content-Length": '',
-                "Cache-Control": 'no-cache',
             },
             body: JSON.stringify(data),
 
