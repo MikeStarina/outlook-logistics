@@ -14,13 +14,13 @@ const MainTextScreen: React.FC = () => {
                 <h2 className={styles.column_title}>О НАС:</h2>
                
                     <p className={styles.text}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore laboriosam autem ducimus aliquam? Cumque laborum modi praesentium fuga numquam, provident, exercitationem corporis delectus reprehenderit vero, dicta explicabo distinctio tenetur aperiam!
+                        Главное преимущество и ценность нашей компании – высокий уровень сервиса, опыт и профессионализм логистов и менеджеров.
                     </p>
                     <p className={styles.text}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore laboriosam autem ducimus aliquam? Cumque laborum modi praesentium fuga numquam, provident, exercitationem corporis delectus reprehenderit vero, dicta explicabo distinctio tenetur aperiam!
+                        Опыт позволяет нам учитывать все нюансы, которые клиент может не предусмотреть, и предлагать наиболее качественный сервис по приемлемым ценам.
                     </p>
                     <p className={styles.text}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore laboriosam autem ducimus aliquam? Cumque laborum modi praesentium fuga numquam, provident, exercitationem corporis delectus reprehenderit vero, dicta explicabo distinctio tenetur aperiam!
+                        Наши менеджеры подберут оптимальный транспорт под ваш груз, обеспечат своевременную и безопасную перевозку и ежедневно будут информировать Вас о местоположении груза на всем пути следования.
                     </p>
                 
             </div>

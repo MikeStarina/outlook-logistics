@@ -27,8 +27,8 @@ const TeamScreen: React.FC = () => {
                         <img src={CEO} alt='CEO photo' className={styles.avatar}></img>
                     </div>
                     <div className={styles.credits_wrapper}>
-                        <p className={styles.credits}>Самусенко А.В.</p>
-                        <p className={styles.credits}>Генеральный Директор</p>
+                        <p className={styles.credits}>Шелепенок М.В.</p>
+                        <p className={styles.credits}>Коммерческий Директор</p>
                     </div>
                     
                
@@ -38,8 +38,8 @@ const TeamScreen: React.FC = () => {
                         <img src={CEO} alt='CEO photo' className={styles.avatar}></img>
                     </div>
                     <div className={styles.credits_wrapper}>
-                        <p className={styles.credits}>Самусенко А.В.</p>
-                        <p className={styles.credits}>Генеральный Директор</p>
+                        <p className={styles.credits}>Старина М.А.</p>
+                        <p className={styles.credits}>Старший Логист</p>
                     </div>
                     
                
@@ -49,8 +49,8 @@ const TeamScreen: React.FC = () => {
                         <img src={CEO} alt='CEO photo' className={styles.avatar}></img>
                     </div>
                     <div className={styles.credits_wrapper}>
-                        <p className={styles.credits}>Самусенко А.В.</p>
-                        <p className={styles.credits}>Генеральный Директор</p>
+                        <p className={styles.credits}>Сенькин Д.В.</p>
+                        <p className={styles.credits}>Руководитель ОП</p>
                     </div>
                     
                
