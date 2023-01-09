@@ -30,10 +30,10 @@ export const sendOrderData = (orderData: any) => {
     return function (dispatch: any) {
         fetch(`${apiUrl}/api/orders`, {
             method: 'POST',
+            mode: 'no-cors',
             headers: { 
                 "Content-Type": "application/json",
                 "Content-Length": '',
-                "Access-Control-Allow-Origin": '*',
             },
             body: JSON.stringify(data),
 
