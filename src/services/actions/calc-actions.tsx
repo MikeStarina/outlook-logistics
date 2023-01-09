@@ -30,16 +30,16 @@ export const sendOrderData = (orderData: any) => {
     return function (dispatch: any) {
         fetch(`${apiUrl}/api/orders`, {
             method: 'POST',
-            mode: 'no-cors',
             headers: { 
                 "Content-Type": "application/json",
                 "Content-Length": '',
-                "origin": "https://outlook-logistics.ru",
+                "Referer": 'no-referer-when-downgrade',
             },
             body: JSON.stringify(data),
 
         })
         .then(res => res.json())
+        .then(res => console.log(res))
         
     }
 }
