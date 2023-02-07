@@ -172,7 +172,10 @@
         align-self: center;
     }
 
-
+    .card {
+        min-height: 250px;
+        height: 300px;
+    }
     
     
     .card_title {
@@ -190,12 +193,17 @@
 }
 
 @media (max-width: 500px) {
+    .screen {
+        padding: 100px 10px;
+    }
    .cards_block {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 10px;
    }
 
    .card {
-        min-height: 300px;
+        min-height: 150px;
+        height: 200px;
    }
 
    .description {

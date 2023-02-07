@@ -4,12 +4,8 @@ import { Link } from "react-router-dom";
 import full_logo440px_white from '../../../images/full_logo440px_white.svg';
 import icon_logo from '../../../images/icon_logo.svg';
 import cont from '../../../images/cont.jpg';
-import cont1 from '../../../images/cont1.png';
-import cont2 from '../../../images/cont2.png';
-import cont3 from '../../../images/cont3.png';
 import cont4 from '../../../images/cont4.png';
 import { useLocation } from "react-router";
-import path from "path";
 import Calc from "../../calc/calc";
 
 
@@ -28,7 +24,7 @@ const FirstScreen: React.FC = () => {
 
 
     return (
-        <section className={styles.screen}>
+        <section className={styles.screen} id='calc'>
            
            
             

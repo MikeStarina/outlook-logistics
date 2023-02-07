@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './stages-screen.module.css';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 
 
@@ -86,9 +87,9 @@ const StagesScreen: React.FC = () => {
                     <Link to='/features'>
                         <button type="button" className={styles.card_button}>Наши услуги</button>
                     </Link>
-                    <Link to='/#calc'>
+                    <HashLink to='/#calc'>
                         <button type="button" className={styles.card_button}>Калькулятор </button>
-                    </Link>
+                    </HashLink>
 
                 </div>
                 
