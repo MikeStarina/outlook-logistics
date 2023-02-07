@@ -1,6 +1,5 @@
 import React from "react";
 import styles from './clients-screen.module.css';
-import Microsoft from '../../../images/Microsoft.png';
 import etm from '../../../images/etm.png';
 import gazprom from '../../../images/gazprom.png';
 import kamaz from '../../../images/kamaz.png';
@@ -10,6 +9,7 @@ import rzd from '../../../images/rzd.png';
 import segezha from '../../../images/segezha.png';
 import tat from '../../../images/tat.png';
 import technonikol from '../../../images/technonikol.png';
+
 
 
 

@@ -129,6 +129,9 @@
     color: #383838;
 }
 
+.link_button_wrapper {
+    z-index: 2;
+}
 
 .buttons_wrapper {
     width: 100%;

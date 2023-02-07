@@ -62,10 +62,10 @@ const AboutScreen: React.FC = () => {
 </p>
                    
                     <div className={styles.buttons_wrapper}>
-                        <Link to='/about'>
+                        <Link to='/about' className={styles.link_button_wrapper}>
                             <button type="button" className={styles.button}>О Нас</button>
                         </Link>
-                        <Link to='/about'>
+                        <Link to='/about' className={styles.link_button_wrapper}>
                             <button type="button" className={styles.button}>О Команде</button>
                         </Link>
                     </div>
