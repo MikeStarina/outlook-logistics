@@ -162,6 +162,7 @@
 @media (max-width: 550px) {
     .input {
         height: 30px;
+        border-radius: 4px;
     }
     .screen { 
         padding: 100px 20px 150px;
@@ -208,12 +209,18 @@
 }
 
 @media (max-width: 400px) {
+
+    .screen {
+        padding: 100px 10px 150px;
+    }
     
 
     .calc_box {        
-        padding: 30px 40px;
+        padding: 60px 40px;
        
     }
+
+    
     
 
     .input_label {

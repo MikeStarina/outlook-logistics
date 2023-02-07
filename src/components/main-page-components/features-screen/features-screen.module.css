@@ -127,9 +127,14 @@
     line-height: 15px;
     font-weight: 400;
     box-shadow: 0 0 10px rgba(0, 0, 0, .25);
-    z-index: 2;
+    z-index: 1;
     cursor: pointer;
 }
+
+.link_button_wrapper {
+    z-index: 1;
+}
+
 
 
 .trapezoid {
@@ -172,9 +177,14 @@
 
 @media (max-width: 550px) {
 
+    .screen {
+        padding: 75px 10px;
+    }
+
     .card {
-        height: 200px;
+        height: 180px;
         padding: 20px;
+        border-radius: 10px;
     }
     
 
@@ -195,5 +205,9 @@
         line-height: 30px;
         text-align: center;
         align-self: center;
+    }
+
+    .cards_block {
+        gap: 20px;
     }
 }

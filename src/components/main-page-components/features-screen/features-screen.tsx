@@ -1,8 +1,8 @@
 import React from "react";
-import cont1 from '../../../images/cont1.png';
 import { useSelector } from "../../..";
 import { Link } from "react-router-dom";
 import styles from './features-screen.module.css';
+import Tilt from "react-parallax-tilt";
 
 
 
@@ -20,23 +20,24 @@ const FeaturesScreen: React.FC = () => {
         <section className={styles.screen}>
             <h2 className={styles.title}><i>OUTLOOK</i> УСЛУГИ</h2>
             <p className={styles.subtitle}></p>
+           
             <div className={styles.cards_block}>
 
                 {features && features.map((item, index) => {
 
                     return index < 4 && (
-                    <Link to={`/features/${item!.id}`} className={styles.link} key={index}>
-                     <div className={styles.card}>
-                    
-                        <div className={styles.card_title_wrapper}>
-                            <h4 className={styles.card_title}>{item!.title}</h4>
-                            {/*<p className={styles.card_subtitle}>ДО 1,5 ТОНН</p>
-                            <p className={styles.card_subtitle}>(ГАЗЕЛЬ)</p>*/}
+                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={10} gyroscope={true} key={index}>
+                        <Link to={`/features/${item!.id}`} className={styles.link} key={index}>
+                        <div className={styles.card}>
+                        
+                            <div className={styles.card_title_wrapper}>
+                                <h4 className={styles.card_title}>{item!.title}</h4>
+                            </div>
+                            <div className={styles.line}></div>
+                        
                         </div>
-                        <div className={styles.line}></div>
-                     
-                    </div>
-                    </Link>
+                        </Link>
+                    </Tilt>
                     )
                 })}
 
@@ -44,10 +45,14 @@ const FeaturesScreen: React.FC = () => {
                 
                 
             </div>
-            <Link to='/features'>
+            
+            <Link to='/features' className={styles.link_button_wrapper}>
                 <button type='button' className={styles.button}>Смотреть все</button>
             </Link>
-            <div className={styles.trapezoid}></div>
+           
+                <div className={styles.trapezoid}></div>
+         
+            
         </section>
     )
 }
