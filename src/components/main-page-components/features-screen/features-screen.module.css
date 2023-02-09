@@ -5,7 +5,7 @@
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    padding: 60px 50px;
+    padding: 150px 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -15,7 +15,7 @@
 .title {
     margin: 0;
     padding: 0;
-    font-size: 40px;
+    font-size: var(--screenTitleL);
     line-height: 40px;
     font-weight: 600;
     text-align: left;
@@ -79,26 +79,14 @@
 .card_title {
     margin: 0;
     padding: 0;
-    font-size: 30px;
+    font-size: var(--headLFont);
     line-height: 35px;
     font-weight: 400;
     color: white;
     max-width: 300px;
 }
 
-.card_subtitle {
-    margin: 0;
-    padding: 0;
-    font-size: 30px;
-    line-height: 35px;
-    font-weight: 400;
-    color: white;
-    max-width: 300px;
-}
 
-.card_subtitle:first-of-type {
-    margin-top: 30px;
-}
 
 
 .line {
@@ -123,7 +111,7 @@
     background-color: #383838;
     color: white;
     font-family: inherit;
-    font-size: 15px;
+    font-size: var(--buttonTextL);
     line-height: 15px;
     font-weight: 400;
     box-shadow: 0 0 10px rgba(0, 0, 0, .25);
@@ -154,31 +142,50 @@
 
 @media (max-width: 1200px) {
     .screen {
-        padding: 100px 50px;
+        padding: 150px 25px;
+    }
+
+    .cards_block {
+        gap: 25px;
     }
 }
 
 
-@media (max-width: 1000px) {
+
+@media (max-width: 960px) {
+
     .screen {
-        padding: 100px 30px;
+        padding: 150px 15px;
     }
+    
 
     .cards_block {
+        gap: 15px;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        gap: 30px;
     }
-
     .trapezoid {
         height: 50%;
+    }
+    .title {
+        font-size: var(--screenTitleM);
+        text-align: center;
+        align-self: center;
+    }
+
+    .card_title {
+        font-size: var(--headMFont);
+    }
+
+    .button {
+        font-size: var(--buttonTextM);
     }
 }
 
 @media (max-width: 550px) {
 
     .screen {
-        padding: 75px 10px;
+        padding: 150px 10px;
     }
 
     .card {
@@ -187,18 +194,15 @@
         border-radius: 10px;
     }
     
+    .cards_block {
+        gap: 10px;
 
-    .card_title {
-       
-        font-size: 20px;
-        line-height: 25px;
-       
     }
 
-    .card_subtitle {
-        font-size: 20px;
-        line-height: 25px;
-    }
+}
+
+
+@media (max-width: 480px) {
 
     .title {
         font-size: 30px;
@@ -206,8 +210,24 @@
         text-align: center;
         align-self: center;
     }
+    .title {
+        font-size: var(--screenTitleS);
+    }
+
+    .card_title {
+        font-size: var(--headSFont);
+    }
+
+    .line {
+        height: 50px;
+        transform: translateX(-25px) rotate(-45deg);
+    }
 
     .cards_block {
-        gap: 20px;
+        gap: 10px;
+    }
+
+    .button {
+        font-size: var(--buttonTextS);
     }
 }

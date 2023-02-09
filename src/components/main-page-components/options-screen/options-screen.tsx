@@ -28,7 +28,7 @@ const featuresInitialData = [
 
 
 const OptionsScreen: React.FC<any> = ({ features }) => {
-    console.log(features);
+    //console.log(features);
     const { pathname } = useLocation();
 
     const initialData = pathname === '/features' && features ? features : optionsInitData;
