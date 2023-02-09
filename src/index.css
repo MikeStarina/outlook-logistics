@@ -11,8 +11,12 @@
   --headSFont: 18px;
 
   --buttonTextS: 13px;
+  --buttonTextM: 14px;
+  --buttonTextL: 16px;
 
   --plainTextS: 13px;
+  --plainTextM: 14px;
+  --plainTextL: 16px;
 
   --screenTitleL: 35px;
   --screenTitleM: 30px;
@@ -25,7 +29,6 @@ body {
   padding: 0;
   width: 100%;
   min-width: 320px;
-  max-width: 1540px;
   font-family: "Inter", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

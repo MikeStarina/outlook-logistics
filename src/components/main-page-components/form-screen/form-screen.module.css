@@ -13,7 +13,7 @@
 .title {
     margin: 0;
     padding: 0;
-    font-size: 40px;
+    font-size: var(--screenTitleL);
     line-height: 40px;
     font-weight: 600;
     text-align: left;
@@ -22,7 +22,7 @@
 }
 
 .description {
-    font-size: 15px;
+    font-size: var(--plainTextL);
     line-height: 20px;
     font-weight: 400;
     padding: 0;
@@ -71,7 +71,7 @@
 
 
 .input_label {
-    font-size: 20px;
+    font-size: var(--buttonTextL);
     line-height: 25px;
     color: #383838;
     font-weight: 400;
@@ -114,7 +114,7 @@
     background-color: #383838;
     color: white;
     font-family: inherit;
-    font-size: 15px;
+    font-size: var(--buttonTextL);
     line-height: 15px;
     font-weight: 400;
     box-shadow: 0 0 10px rgba(0, 0, 0, .25);

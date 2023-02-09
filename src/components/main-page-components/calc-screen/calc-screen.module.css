@@ -13,31 +13,6 @@
 
 
 
-.types_box {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    background-color: #dbdbdb;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .25); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 50px;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-.column {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
 .swiper {
     width: 100%;
     position: relative;
@@ -51,6 +26,7 @@
 }
 
 .left_title {
+    font-size: var(--headLFont);
     position: absolute;
     top: 35px;
     left: 35px;
@@ -68,6 +44,7 @@
     padding: 0;
     z-index: 5;
     color: white;
+    font-size: var(--headLFont);
 }
 
 .slide_img {
@@ -104,11 +81,13 @@
 .desc_title {
     text-align: right;
     color: white;
+    font-size: var(--headLFont);
 }
 
 .description {
     text-align: right;
     color: white;
+    font-size: var(--plainTextL);
 }
 
 

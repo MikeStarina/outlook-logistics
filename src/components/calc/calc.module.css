@@ -17,7 +17,7 @@
 }
 
 .calc_title {
-    font-size: 30px;
+    font-size: var(--headLFont);
     line-height: 35px;
     font-weight: 600;
     color: white;
@@ -39,7 +39,7 @@
 
 
 .input_label {
-    font-size: 20px;
+    font-size: var(--buttonTextL);
     line-height: 25px;
     color: white;
     font-weight: 400;
@@ -82,7 +82,7 @@
     background-color: transparent;
     color: white;
     font-family: inherit;
-    font-size: 15px;
+    font-size: var(--buttonTextL);
     line-height: 15px;
     font-weight: 400;
     cursor: pointer;

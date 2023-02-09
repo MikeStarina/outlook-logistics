@@ -21,7 +21,7 @@ type TInitialState = Array<TItem | undefined>
 const initialState: TInitialState = [
     {
         id: 0,
-        title: 'АВТО-ПЕРЕВОЗКИ ОТ 20 ТОНН',
+        title: 'АВТОПЕРЕВОЗКИ ОТ 20 ТОНН',
         description: '',
         truck_params: {
             size: 'ГАБАРИТЫ КУЗОВА (ДхШхВ) М. : 13,62 х 2,48 х 2,73',
