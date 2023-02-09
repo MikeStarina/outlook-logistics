@@ -3,7 +3,7 @@
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    padding: 100px 50px;
+    padding: 150px 50px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -13,7 +13,7 @@
 .title {
     margin: 0;
     padding: 0;
-    font-size: 40px;
+    font-size: var(--screenTitleL);
     line-height: 40px;
     font-weight: 600;
     text-align: left;
@@ -23,12 +23,12 @@
 }
 
 .description {
-    font-size: 15px;
+    font-size: var(--plainTextL);
     line-height: 20px;
     font-weight: 400;
     padding: 0;
     margin: 30px 0 0 0;
-    max-width: 490px;
+    max-width: none;
     text-align: left;
     align-self: flex-start;
 }
@@ -87,7 +87,7 @@
 .card_number {
     margin: 0;
     padding: 0;
-    font-size: 30px;
+    font-size: var(--headLFont);
     line-height: 30px;
     font-weight: 600;
 }
@@ -95,7 +95,7 @@
 
 .card_text {
     color: white;
-    font-size: 15px;
+    font-size: var(--plainTextL);
     line-height: 20px;
     font-weight: 400;
     margin: 0;
@@ -109,7 +109,7 @@
     border-radius: 8px;
     background-color: transparent;
     color: white;
-    font-size: 15px;
+    font-size: var(--buttonTextL);
     line-height: 15px;
     font-weight: 400;
     cursor: pointer;
@@ -130,7 +130,7 @@
 
 .card_description_title {
     text-align: left;
-    font-size: 30px;
+    font-size: var(--headLFont);
     line-height: 35px;
     font-weight: 600;
     margin: 0;
@@ -141,7 +141,7 @@
 
 .card_description {
     text-align: left;
-    font-size: 15px;
+    font-size: var(--plainTextL);
     line-height: 20px;
     font-weight: 400;
     margin: 0;
@@ -171,7 +171,7 @@
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 960px) {
     .cards_block {
         flex-direction: column;
         justify-content: flex-start;
@@ -181,7 +181,7 @@
     }
 
     .title {
-        font-size: 30px;
+        font-size: var(--screenTitleM);
         line-height: 30px;
         text-align: center; 
         align-self: center;
@@ -191,6 +191,7 @@
     .description {
         align-self: center;
         text-align: center;
+        font-size: var(--plainTextM);
     }
     .card {
         width: 75%;
@@ -201,13 +202,17 @@
     }
 
     .card_description_title {
-        font-size: 20px;
+        font-size: var(--headMFont);
         line-height: 25px;
     }
 
     .card_number {
-        font-size: 20px;
+        font-size: var(--headMFont);
         line-height: 25px;
+    }
+
+    .card_button {
+        font-size: var(--buttonTextM);
     }
     
 
@@ -217,11 +222,14 @@
 }
 
 @media (max-width: 600px) {
+
     .card {
         width: 100%;
     }
 
     .card:last-of-type {
+        width: 100%;
+        border-radius: 15px;
         padding: 50px 30px;
         gap: 20px;
     }
@@ -233,13 +241,40 @@
     .card_description {
         margin-left: 0;
     }
+
 }
 
-@media (max-width: 600px) {
-    .card:last-of-type {
-        width: calc(100% + 30px);
-        padding: 50px 30px;
-        gap: 20px;
+
+@media (max-width: 480px) {
+    .screen {
+        padding: 100px 10px;
+    }
+    
+    .title {
+        font-size: var(--screenTitleS);
     }
 
+    .description {
+        font-size: var(--plainTextS);
+    }
+
+    .card_number {
+        font-size: var(--headSFont);
+    }
+
+    .card_description_title {
+        font-size: var(--headSFont);
+    }
+
+    .card_description {
+        font-size: var(--plainTextS);
+    }
+
+    .card_text {
+        font-size: var(--plainTextS);
+    }
+
+    .card_button {
+        font-size: var(--buttonTextS);
+    }
 }

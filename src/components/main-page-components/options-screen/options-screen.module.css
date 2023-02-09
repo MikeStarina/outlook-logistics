@@ -9,7 +9,7 @@
     justify-content: flex-start;
     align-items: center;
     background-color: #e5e5e5;
-    z-index: -1;
+    z-index: 0;
 }
 
 .cards_block {
@@ -51,7 +51,7 @@
 .card_title {
     margin: 0;
     padding: 0;
-    font-size: 30px;
+    font-size: var(--headLFont);
     line-height: 35px;
     font-weight: 400;
     color: white;
@@ -61,9 +61,9 @@
 .card_subtitle {
     margin: 0;
     padding: 0;
-    font-size: 15px;
+    font-size: var(--plainTextL);
     line-height: 20px;
-    font-weight: 400;
+    font-weight: 200;
     color: white;
     max-width: 70%;
 }
@@ -94,33 +94,45 @@
 }
 
 
-
-
-
-
-@media (max-width: 1000px) {
-    .screen {
-        padding: 100px 30px;
+@media (max-width: 1100px) {
+    .cards_block {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 960px) {
     .screen {
-        padding: 100px 10px;
+        padding: 100px 30px;
     }
 
     .card_title {
        
-        font-size: 20px;
+        font-size: var(--headMFont);
         line-height: 25px;
        
     }
 
-    .title {
-        font-size: 30px;
-        line-height: 30px;
+    .card_subtitle {
+        font-size: var(--plainTextM);
     }
 
+}
+
+@media (max-width: 765px) {
+    .screen {
+        padding: 100px;
+    }
+}
+
+@media (max-width: 650px) {
+    .screen {
+        padding: 100px 10px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    
     .geolabel {
         display: none;
     }
@@ -134,6 +146,21 @@
     }
 
 
+}
+
+@media (max-width: 480px) {
+    .card_title {
+        font-size: var(--headSFont);
+    }
+
+    .card_subtitle {
+        font-size: var(--plainTextS);
+    }
+
+    .line {
+        height: 50px;
+        transform: translateX(-25px) rotate(-45deg);
+    }
 }
 
 
