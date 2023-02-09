@@ -146,7 +146,7 @@
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 960spx) {
     .screen { 
         padding: 100px 50px 200px;
     }
@@ -154,6 +154,30 @@
     .calc_box {        
         padding: 50px;
         width: 100%;
+    }
+
+    .title {
+       
+        font-size: var(--screenTitleM);
+        line-height: 35px;
+        text-align: center;
+       
+    }
+
+    .description {
+        font-size: var(--plainTextM);
+        line-height: 20px;
+        max-width: 300px;
+    }
+    .submit_button {
+        border-radius: 6px;
+        font-size: var(--buttonTextM);
+        line-height: 10px;
+        margin-top: 20px;
+    }
+
+    .input_label {
+        font-size: var(--buttonTextM);
     }
 
   
@@ -183,27 +207,10 @@
         margin-bottom: 0;
     }
 
-    .title {
-       
-        font-size: 30px;
-        line-height: 35px;
-        text-align: center;
-       
-    }
+    
 
-    .description {
-        font-size: 15px;
-        line-height: 20px;
-        max-width: 300px;
-    }
-    .submit_button {
-        width: 100px;
-        height: 30px;
-        border-radius: 6px;
-        font-size: 10px;
-        line-height: 10px;
-        margin-top: 20px;
-    }
+    
+    
 
   
 }

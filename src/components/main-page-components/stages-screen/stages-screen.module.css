@@ -171,7 +171,7 @@
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 960px) {
     .cards_block {
         flex-direction: column;
         justify-content: flex-start;
@@ -181,7 +181,7 @@
     }
 
     .title {
-        font-size: 30px;
+        font-size: var(--screenTitleM);
         line-height: 30px;
         text-align: center; 
         align-self: center;
@@ -191,6 +191,7 @@
     .description {
         align-self: center;
         text-align: center;
+        font-size: var(--plainTextM);
     }
     .card {
         width: 75%;
@@ -201,13 +202,17 @@
     }
 
     .card_description_title {
-        font-size: 20px;
+        font-size: var(--headMFont);
         line-height: 25px;
     }
 
     .card_number {
-        font-size: 20px;
+        font-size: var(--headMFont);
         line-height: 25px;
+    }
+
+    .card_button {
+        font-size: var(--buttonTextM);
     }
     
 
@@ -217,11 +222,14 @@
 }
 
 @media (max-width: 600px) {
+
     .card {
         width: 100%;
     }
 
     .card:last-of-type {
+        width: 100%;
+        border-radius: 15px;
         padding: 50px 30px;
         gap: 20px;
     }
@@ -233,17 +241,9 @@
     .card_description {
         margin-left: 0;
     }
-}
-
-@media (max-width: 600px) {
-    .card:last-of-type {
-        width: 100%;
-        border-radius: 15px;
-        padding: 50px 30px;
-        gap: 20px;
-    }
 
 }
+
 
 @media (max-width: 480px) {
     .screen {

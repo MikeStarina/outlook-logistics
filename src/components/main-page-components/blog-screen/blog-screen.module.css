@@ -147,7 +147,7 @@
 
 
 
-@media (max-width: 800px) {
+@media (max-width: 960px) {
     .screen {
         padding: 100px 20px;
     }
@@ -159,18 +159,33 @@
     .post_cover {
         height: 200%;
     }
+
+    .title {
+        font-size: var(--screenTitleM);
+        line-height: 35px;
+        text-align: center; 
+        align-self: center;
+    }
+
+    .description {
+        text-align: center;
+        font-size: var(--plainTextM);
+        align-self: center;
+   }
+
+   .button {
+    font-size: var(--buttonTextM);
+   }
   
 }
 
 
 @media (max-width: 660px) {
-
-    .title {
-        font-size: 30px;
-        line-height: 35px;
-        text-align: center; 
-        align-self: center;
+    .post_cover {
+        width: 100%;
     }
+
+    
 
     .card {
         min-height: 250px;
