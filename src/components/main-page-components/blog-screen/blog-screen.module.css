@@ -210,3 +210,47 @@
     text-align: center;
    }
 }
+
+@media (max-width: 480px) {
+    .screen {
+        padding: 100px 10px;
+    }
+   .cards_block {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 10px;
+   }
+
+   .card {
+        min-height: 150px;
+        height: 200px;
+        border-radius: 10px;
+        padding: 20px;
+   }
+
+   .description {
+        text-align: center;
+        font-size: var(--plainTextS);
+   }
+
+   .title {
+        font-size: var(--screenTitleS);
+   }
+
+   .card_title {
+    font-size: var(--headSFont);
+    line-height: 20px;
+   }
+
+   .line {
+        height: 50px;
+        background-color: white;
+        transform: translateX(-25px) rotate(-45deg);
+   }
+
+   .button {
+    width: 150px;
+    height: 40px;
+    font-size: var(--buttonTextS);
+    margin-top: 100px;
+   }
+}

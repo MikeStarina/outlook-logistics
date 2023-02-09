@@ -237,9 +237,44 @@
 
 @media (max-width: 600px) {
     .card:last-of-type {
-        width: calc(100% + 30px);
+        width: 100%;
+        border-radius: 15px;
         padding: 50px 30px;
         gap: 20px;
     }
 
+}
+
+@media (max-width: 480px) {
+    .screen {
+        padding: 100px 10px;
+    }
+    
+    .title {
+        font-size: var(--screenTitleS);
+    }
+
+    .description {
+        font-size: var(--plainTextS);
+    }
+
+    .card_number {
+        font-size: var(--headSFont);
+    }
+
+    .card_description_title {
+        font-size: var(--headSFont);
+    }
+
+    .card_description {
+        font-size: var(--plainTextS);
+    }
+
+    .card_text {
+        font-size: var(--plainTextS);
+    }
+
+    .card_button {
+        font-size: var(--buttonTextS);
+    }
 }

@@ -93,6 +93,31 @@
     }
 }
 
+@media (max-width: 480px) {
+    .contacts_title {
+        font-size: var(--screenTitleS);
+    }
+
+    .contacts_text {
+        font-size: var(--plainTextS);
+        text-align: center;
+        align-self: center;
+    }
+
+    .contacts_block {
+        align-items: center;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+
+}
+
 
 
 

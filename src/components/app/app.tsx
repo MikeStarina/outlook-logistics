@@ -14,6 +14,8 @@ import Popup from "../popup/popup";
 import { MAIN_MENU_VISIBILITY } from "../../services/actions/utils-actions";
 import { getFeatures } from "../../services/actions/features-actions";
 import ContactsPage from "../../pages/contacs-page/contacts-page";
+import useWindowSize from "../../utils/useWindowSize";
+
 
 
 const App: React.FC = () => {
@@ -27,6 +29,8 @@ const App: React.FC = () => {
         dispatch({type: MAIN_MENU_VISIBILITY})
        
     }
+
+    
 
 
 

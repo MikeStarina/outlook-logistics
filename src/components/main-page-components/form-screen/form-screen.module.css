@@ -208,15 +208,23 @@
   
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
     .screen {
         padding: 100px 10px 150px;
     }
+
+    .title {
+        font-size: var(--screenTitleS);
+    }
+
+    .description {
+        font-size: var(--plainTextS);
+    }
     
 
     .calc_box {        
-        padding: 60px 40px;
+        padding: 50px 30px;
        
     }
 
@@ -224,13 +232,17 @@
     
 
     .input_label {
-        font-size: 15px;
-        line-height: 20px;
-    }
-    .input_option {
-        font-size: 10px;
+        font-size: var(--buttonTextS);
         line-height: 15px;
     }
+
+    .submit_button {
+        width: 150px;
+        height: 40px;
+        font-size: var(--buttonTextS);
+        margin-top: 30px;
+    }
+
 
   
 }

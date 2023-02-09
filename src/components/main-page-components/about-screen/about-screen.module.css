@@ -209,7 +209,7 @@
     }
     .avatar {
         width: 100px;
-        transform: translateX(-30px) rotate(-10deg);
+        transform: translateX(13px) rotate(8deg);
     }
     .button {
         width: 100px;
@@ -225,15 +225,21 @@
     
 }
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
+
+    .screen {
+        padding: 100px 10px;
+    }
+
     .digits {
         flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
+        gap: 10px;
     }
 
     .digits_wrapper {
-        align-items: flex-start;
+        align-items: center;
     }
 
     .credits {
@@ -251,5 +257,38 @@
     .credits_wrapper {
         margin-left: 20px;
         align-items: flex-end;
+    }
+
+    .counter {
+        font-weight: 700;
+    }
+
+    .description {
+        font-size: var(--plainTextS);
+    }
+
+    .left_column {
+        padding: 0px 10px;
+        justify-content: space-between;
+    }
+
+    .credits {
+        font-size: var(--plainTextS);
+        font-weight: 600;
+    }
+
+    .text {
+        font-size: var(--plainTextS);
+        line-height: 18px;
+    }
+
+    .buttons_wrapper {
+        gap: 10px;
+    }
+
+    .button {
+        width: 145px;
+        height: 40px;
+        font-size: var(--buttonTextS);
     }
 }

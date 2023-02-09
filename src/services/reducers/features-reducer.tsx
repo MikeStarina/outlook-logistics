@@ -32,7 +32,7 @@ const initialState: TInitialState = [
     },
     {
         id: 1,
-        title: 'АВТО-ПЕРЕВОЗКИ ДО 5 ТОНН',
+        title: 'АВТОПЕРЕВОЗКИ ДО 5 ТОНН',
         description: '',
         truck_params: {
             size: 'ГАБАРИТЫ КУЗОВА (ДхШхВ) М. : 13,62 х 2,48 х 2,73',
@@ -43,7 +43,7 @@ const initialState: TInitialState = [
     },
     {
         id: 2,
-        title: 'АВТО-ПЕРЕВОЗКИ ДО 1,5 ТОНН',
+        title: 'АВТОПЕРЕВОЗКИ ДО 1,5 ТОНН',
         description: '',
         truck_params: {
             size: 'ГАБАРИТЫ КУЗОВА (ДхШхВ) М. : 3 х 1,9 х 2',
