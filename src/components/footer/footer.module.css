@@ -16,7 +16,7 @@
 }
 
 .title {
-    font-size: var(--screenTitleL);
+    font-size: var(--headLFont);
 }
 
 
@@ -24,11 +24,27 @@
     .footer {
         padding: 50px 100px;
     }
+
+    .link {
+        font-size: var(--plainTextM);
+    }
+    
+    .title {
+        font-size: var(--headMFont);
+    }
 }
 
 
 @media (max-width: 500px) {
     .footer {
         padding: 30px;
+    }
+
+    .link {
+        font-size: var(--plainTextS);
+    }
+    
+    .title {
+        font-size: var(--headSFont);
     }
 }

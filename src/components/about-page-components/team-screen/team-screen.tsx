@@ -1,6 +1,9 @@
 import React from "react";
 import styles from './team-screen.module.css';
 import CEO from '../../../images/CEO.png';
+import cfo from '../../../images/cfo.png';
+import rop from '../../../images/rop.png';
+import logist from '../../../images/logist.png';
 
 
 
@@ -13,7 +16,7 @@ const TeamScreen: React.FC = () => {
         <section className={styles.screen}>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={CEO} alt='CEO photo' className={styles.avatar}></img>
+                        <img src={CEO} alt='CEO photo' className={styles.avatar_ceo}></img>
                     </div>
                     <div className={styles.credits_wrapper}>
                         <p className={styles.credits}>Самусенко А.В.</p>
@@ -24,7 +27,7 @@ const TeamScreen: React.FC = () => {
             </div>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={CEO} alt='CEO photo' className={styles.avatar}></img>
+                        <img src={cfo} alt='cfo photo' className={styles.avatar_cfo}></img>
                     </div>
                     <div className={styles.credits_wrapper}>
                         <p className={styles.credits}>Шелепенок М.В.</p>
@@ -35,7 +38,7 @@ const TeamScreen: React.FC = () => {
             </div>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={CEO} alt='CEO photo' className={styles.avatar}></img>
+                        <img src={logist} alt='Logist photo' className={styles.avatar_logist}></img>
                     </div>
                     <div className={styles.credits_wrapper}>
                         <p className={styles.credits}>Старина М.А.</p>
@@ -46,7 +49,7 @@ const TeamScreen: React.FC = () => {
             </div>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={CEO} alt='CEO photo' className={styles.avatar}></img>
+                        <img src={rop} alt='Rop photo' className={styles.avatar_rop}></img>
                     </div>
                     <div className={styles.credits_wrapper}>
                         <p className={styles.credits}>Сенькин Д.В.</p>

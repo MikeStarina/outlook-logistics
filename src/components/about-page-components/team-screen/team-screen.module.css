@@ -29,9 +29,21 @@
     background: linear-gradient(190deg, #21CEB6 3.79%, #0B58CE 140.92%);
 }
 
-.avatar {
+.avatar_ceo {
+    width: 220px;
+    transform: translateX(31px) rotate(-10deg) translateY(-18px);
+}
+.avatar_logist {
     width: 200px;
-    transform: translateX(-40px) rotate(-10deg);
+    transform: translateX(-17px) rotate(5deg);
+}
+.avatar_cfo {
+    width: 200px;
+    transform: translateX(-3px) rotate(353deg);
+}
+.avatar_rop {
+    width: 200px;
+    transform: translateX(-40px) rotate(8deg);
 }
 
 .credits_wrapper {

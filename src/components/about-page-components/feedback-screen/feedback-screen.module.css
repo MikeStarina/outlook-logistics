@@ -20,6 +20,9 @@
 
 .text_wrapper {
     width: 50%;
+    font-size: var(--screenTitleL);
+    font-weight: 600;
+    text-align: center;
 }
 
 .feedback_image {
