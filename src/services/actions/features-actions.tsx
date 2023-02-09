@@ -22,8 +22,6 @@ export function getFeatures(dispatch: AppDispatch) {
         })
         .then(res => res.json())
         .then((res) => {
-            console.log('test2')
-            console.log(res);
         })
     }
 } 
