@@ -32,11 +32,9 @@ const AboutFirstScreen: React.FC = () => {
             </div>
 
             
-                <div className={styles.calc_box}>
-                    <h1 className={styles.calc_title}><i>OUTLOOK</i></h1>
+                <div className={styles.box}>
                     <p className={styles.box_description}>ОТЛИЧНАЯ&nbsp;<i>ЛОГИСТИКА</i></p>
-                    <p className={styles.box_description}>—</p>
-                    <p className={styles.box_description}>ЭТО&nbsp;ВСЕГДА</p>
+                    <p className={styles.box_description}>— ЭТО&nbsp;ВСЕГДА</p>
                     <p className={styles.box_description}>ОТЛИЧНАЯ&nbsp;<i>КОМАНДА!</i></p>
                 </div>
            
