@@ -1,6 +1,6 @@
 .screen {
     width: 100%;
-    height: calc(100vh + 200px);
+    height: calc(100vh + 100px);
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
@@ -14,7 +14,7 @@
 
 .column_one {
     box-sizing: border-box;
-    width: 50%;
+    width: 40%;
     display: flex;
     margin: 0;
     flex-direction: column;
@@ -27,7 +27,7 @@
 
 
 .swiper {
-    width: 50%;
+    width: 60%;
     height: 100%;
     border-radius: 20px;
 }
@@ -114,35 +114,90 @@
 }
 
 
-
-
-@media (max-width: 700px) {
+@media (max-width: 1200px) {
     .screen {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        padding: 200px 20px 100px;
     }
+}
 
+@media (max-width: 960px) {
+    .screen {
+        padding: 150px 10px 100px;
+        flex-direction: column;
+        align-items: center;
+        gap: 75px;
+    }
     .column_one {
         width: 100%;
-    }
-
-    .column_two {
-        width: 100%;
-        gap: 50px;
-        align-items: flex-start;
-    }
-
-    .digits_wrapper {
-        flex-direction: column;
+        padding: 0 100px;
+        gap: 25px;
         justify-content: flex-start;
-        align-items: flex-end;
+        height: auto;
+    }
+    .slide_img {
+        width: auto;
+        height: 100%;
+    }
+    .swiper {
+        width: 90%;
+        height: auto;
+        align-self: center;
+    }
+    
+    .text {
+        font-size: var(--plainTextM);
+    }
+    .index {
+        font-size: calc(var(--headMFont) * 5);
+    }
+
+    .slide_title {
+        font-size: var(--headMFont);
     }
 }
 
 
-@media (max-width: 450px) {
+
+
+@media (max-width: 700px) {
+    .column_one {
+        padding: 0px 50px;
+    }
+    .swiper {
+        height: 60%;
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 480px) {
     .screen {
-        padding: 100px 20px;
+        gap: 30px;
+        height: calc(100vh + 150px);
+        padding: 150px 10px 50px;
+        justify-content: flex-start;
+    }
+    .swiper {
+        width: 100%;
+        height: auto;
+    }
+    .index {
+        font-size: calc(var(--headSFont) * 4);
+        left: 20px;
+        bottom: 10px;
+    }
+    .slide_title {
+        font-size: var(--headSFont);
+        left: 20px;
+        top: 20px;
+    }
+    .column_one {
+        padding: 0;
+        height: 50%;
+    }
+
+    .swiper {
+        height: 40%;
+        width: 100%;
     }
 }
