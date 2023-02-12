@@ -20,7 +20,7 @@ const FeaturesScreen: React.FC = () => {
 
     useScrollData((scrollData) => {
         const node: HTMLDivElement | null = ref?.current;
-        node!.style.transform = `translateY(${scrollData.difference * -1 / 25}px) skewY(-11deg)`;
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px) skewY(-11deg)`;
     })
 
     
