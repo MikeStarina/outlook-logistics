@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useSelector } from "../../..";
 import { Link } from "react-router-dom";
 import styles from './features-screen.module.css';
 import Tilt from "react-parallax-tilt";
+import useScrollData from "../../../utils/useScrollData";
 import Trapezoid from "./trapezoid";
 import { ScrollContainer, ScrollPage, Animator, Move } from "react-scroll-motion";
+import test from '../../../images/test.png';
 
 
 
@@ -13,7 +15,13 @@ const FeaturesScreen: React.FC = () => {
 
     
     const features = useSelector(store => store.features);
-    
+    const ref = useRef(null);
+
+
+    useScrollData((scrollData) => {
+        const node: HTMLDivElement | null = ref?.current;
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 25}px) skewY(-11deg)`;
+    })
 
     
 
@@ -29,7 +37,7 @@ const FeaturesScreen: React.FC = () => {
                                 {features && features.map((item, index) => {
 
                                     return index < 4 && (
-                                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={10} gyroscope={true} key={index} tiltReverse={true}>
+                                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={10} gyroscope={true} key={index} tiltReverse={true} className={styles.tilt} perspective={500}>
                                         <Link to={`/features/${item!.id}`} className={styles.link} key={index}>
                                         <div className={styles.card}>
                                         
@@ -56,7 +64,7 @@ const FeaturesScreen: React.FC = () => {
                             </Link>
                                 
                                                        
-                                <div className={styles.trapezoid}></div>
+                                <div className={styles.trapezoid} ref={ref}></div>
                             
             
         </section>

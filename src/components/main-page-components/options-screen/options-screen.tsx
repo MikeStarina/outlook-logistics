@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import useScrollData from "../../../utils/useScrollData";
 import styles from './options-screen.module.css';
 
 
@@ -30,6 +31,15 @@ const featuresInitialData = [
 const OptionsScreen: React.FC<any> = ({ features }) => {
     //console.log(features);
     const { pathname } = useLocation();
+
+    const ref = useRef(null);
+
+
+    useScrollData((scrollData) => {
+        const node: HTMLDivElement | null = ref?.current;
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px) skewY(-11deg)`;
+    })
+
 
     const initialData = pathname === '/features' && features ? features : optionsInitData;
  
@@ -62,7 +72,7 @@ const OptionsScreen: React.FC<any> = ({ features }) => {
             </div>
 
 
-            {pathname != '/features' && <div className={styles.geolabel}>
+            {pathname != '/features' && <div className={styles.geolabel} ref={ref}>
                 
             </div>}
         </section>

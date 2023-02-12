@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    transform-style: preserve-3d;
 }
 
 .title {
@@ -63,18 +64,10 @@
     border-radius: 20px;
     background-color: rgba(56,56,56,.8);
     backdrop-filter: blur(4px);
+    z-index: 3;
 }
 
-.feature_card_cover {
-    width: 100%;
-    background-color: rgba(56,56,56,.6);
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    filter: grayscale(100%)
-}
+
 
 .card_title {
     margin: 0;
@@ -84,7 +77,11 @@
     font-weight: 400;
     color: white;
     max-width: 300px;
+    z-index: 4;
+   
 }
+
+
 
 
 
@@ -97,10 +94,12 @@
     position: absolute;
     right: 10px;
     bottom: 10px;
+    
 }
 
 .link {
     text-decoration: none;
+    transform: translateZ(200px);
 }
 
 .button {
@@ -133,8 +132,12 @@
     right: -100px;
     top: 50%;
     background: linear-gradient(180deg, #21CEB6 23.22%, rgba(11, 88, 206, 0.74) 63.14%);
-    transform: skewY(-11deg);
+    
     box-shadow: 0 0 30px rgba(0, 0, 0, .35);
+}
+
+.trapezoid::before {
+    transform: skewY(-11deg);
 }
 
 

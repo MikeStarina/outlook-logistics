@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useRef } from "react";
 //import bgvideo from '../../../images/bgvideo.mp4';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import slideOne from '../../../images/slideOne.jpg';
 import slideTwo from '../../../images/slideTwo.jpg';
 import slideFour from '../../../images/slideFour.jpg';
 import slideThree from '../../../images/slideThree.jpg';
+import useScrollData from "../../../utils/useScrollData";
 import styles from './calc-screen.module.css';
 import { Autoplay, Pagination } from "swiper";
 import 'swiper/css';
@@ -15,6 +16,13 @@ import "swiper/css/pagination";
 
 
 const CalcScreen: React.FC = () => {
+    const ref = useRef(null);
+
+
+    useScrollData((scrollData) => {
+        const node: HTMLDivElement | null = ref?.current;
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 30}px)`;
+    })
 
     return (
         <section className={styles.screen}>
@@ -60,7 +68,7 @@ const CalcScreen: React.FC = () => {
              
             </Swiper>
 
-            <div className={styles.circle}>
+            <div className={styles.circle} ref={ref}>
                 <div className={styles.inner_circle}></div>
             </div>
         </section>

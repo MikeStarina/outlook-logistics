@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from './clients-screen.module.css';
 import etm from '../../../images/etm.png';
 import gazprom from '../../../images/gazprom.png';
@@ -9,6 +9,7 @@ import rzd from '../../../images/rzd.png';
 import segezha from '../../../images/segezha.png';
 import tat from '../../../images/tat.png';
 import technonikol from '../../../images/technonikol.png';
+import useScrollData from "../../../utils/useScrollData";
 
 
 
@@ -17,6 +18,14 @@ import technonikol from '../../../images/technonikol.png';
 
 
 const ClientsScreen: React.FC = () => {
+
+    const ref = useRef(null);
+
+
+    useScrollData((scrollData) => {
+        const node: HTMLDivElement | null = ref?.current;
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px) skewY(-11deg)`;
+    })
 
     return (
         <section className={styles.screen}>
@@ -30,7 +39,7 @@ const ClientsScreen: React.FC = () => {
             <img src={tat} alt='татнефть логотип' className={styles.client_logo}></img>
             <img src={technonikol} alt='технониколь логотип' className={styles.client_logo}></img>
 
-            <div className={styles.trapezoid}></div>
+            <div className={styles.trapezoid} ref={ref}></div>
         </section>
     )
 }
