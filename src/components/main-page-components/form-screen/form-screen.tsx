@@ -13,6 +13,8 @@ const FormScreen: React.FC = () => {
     const dispatch = useDispatch();
     const data = useSelector(store => store.calc);
 
+    
+
 
     const onChangeHandler = (e: React.SyntheticEvent<HTMLInputElement>) => {
         dispatch({
@@ -26,6 +28,8 @@ const FormScreen: React.FC = () => {
         e.preventDefault();
         dispatch({type: CLEAR_FORM_DATA});
         dispatch(sendOrderData(data));
+
+        
     }
 
     return (

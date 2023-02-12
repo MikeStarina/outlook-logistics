@@ -9,7 +9,10 @@ import { HashLink } from 'react-router-hash-link';
 
 
 
+
 const StagesScreen: React.FC = () => {
+
+   
 
     return (
         <section className={styles.screen}>

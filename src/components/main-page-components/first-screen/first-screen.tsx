@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import styles from './first-screen.module.css';
 import { Link } from "react-router-dom";
 import full_logo440px_white from '../../../images/full_logo440px_white.svg';
@@ -7,6 +7,7 @@ import cont from '../../../images/cont.jpg';
 import cont4 from '../../../images/cont4.png';
 import { useLocation } from "react-router";
 import Calc from "../../calc/calc";
+import useScrollData from "../../../utils/useScrollData";
 
 
 
@@ -16,6 +17,14 @@ import Calc from "../../calc/calc";
 const FirstScreen: React.FC = () => {
 
     const { pathname } = useLocation();
+    const ref = useRef(null);
+
+
+
+    useScrollData((scrollData) => {
+        const node: HTMLDivElement | null = ref?.current;
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 5}px)`;
+    })
    
 
     const activeBgImage = pathname === '/' ? cont :
@@ -54,7 +63,7 @@ const FirstScreen: React.FC = () => {
            
 
            
-            <div className={styles.bg_circle}>
+            <div className={styles.bg_circle} ref={ref}>
                 <div className={styles.bg_inner_circle}></div>
             </div>
             <img src={activeBgImage} alt='container' className={styles.bg_image}></img>

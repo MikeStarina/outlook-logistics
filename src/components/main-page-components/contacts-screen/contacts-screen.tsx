@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import useScrollData from "../../../utils/useScrollData";
 import styles from './contacts-screen.module.css';
 import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
 
@@ -9,6 +10,13 @@ import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
 
 
 const ContactsScreen: React.FC = () => {
+    const ref = useRef(null);
+
+
+    useScrollData((scrollData) => {
+        const node: HTMLDivElement | null = ref?.current;
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px))`;
+    })
 
     return (
         <section className={styles.screen}>
@@ -30,7 +38,7 @@ const ContactsScreen: React.FC = () => {
                 </YMaps>
             </div>
 
-            <div className={styles.circle}>
+            <div className={styles.circle} ref={ref}>
                 <div className={styles.inner_circle}></div>
             </div>
         </section>

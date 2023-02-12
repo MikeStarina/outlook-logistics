@@ -30,6 +30,8 @@ const useScrollData = (callBack: (scrollData: IScrollConfig) => void) => {
     } as IScrollConfig
 
 
+
+
     const scroll = () => {
         scrollData.current = window.scrollY;
         scrollData.previous += (scrollData.current - scrollData.previous) * scrollData.ease;
@@ -38,6 +40,7 @@ const useScrollData = (callBack: (scrollData: IScrollConfig) => void) => {
         scrollData.acceleration = scrollData.difference / height;
         scrollData.velocity += scrollData.acceleration;
         scrollData.skew = scrollData.velocity * 7.5;
+
 
         callBack(scrollData);
 

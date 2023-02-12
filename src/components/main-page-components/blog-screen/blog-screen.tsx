@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from './blog-screen.module.css';
 import { Link } from "react-router-dom";
+import useScrollData from "../../../utils/useScrollData";
 import post1 from '../../../images/post1.jpg';
 import post2 from '../../../images/post2.jpg';
 import post3 from '../../../images/post3.jpg';
@@ -11,7 +12,16 @@ import post4 from '../../../images/post4.jpg';
 
 
 
+
 const BlogScreen: React.FC = () => {
+    const ref = useRef(null);
+
+
+    useScrollData((scrollData) => {
+        const node: HTMLDivElement | null = ref?.current;
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 10}px) translateX(-500px) rotate(30deg)`;
+    })
+
 
     return (
         <section className={styles.screen}>
@@ -57,7 +67,7 @@ const BlogScreen: React.FC = () => {
                 <button type='button' className={styles.button}>Смотреть все</button>
             </Link>
 
-            <div className={styles.geolabel}>
+            <div className={styles.geolabel} ref={ref}>
                 <div className={styles.inner}></div>
             </div>
         </section>
