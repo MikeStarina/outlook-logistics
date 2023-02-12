@@ -10,12 +10,13 @@ import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
 
 
 const ContactsScreen: React.FC = () => {
-    const ref = useRef(null);
+    const circleRef = useRef(null);
 
 
     useScrollData((scrollData) => {
-        const node: HTMLDivElement | null = ref?.current;
-        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px))`;
+        const node: HTMLDivElement | null = circleRef?.current;
+        //console.log(node);
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px)`;
     })
 
     return (
@@ -38,7 +39,7 @@ const ContactsScreen: React.FC = () => {
                 </YMaps>
             </div>
 
-            <div className={styles.circle} ref={ref}>
+            <div className={styles.circle} ref={circleRef}>
                 <div className={styles.inner_circle}></div>
             </div>
         </section>
