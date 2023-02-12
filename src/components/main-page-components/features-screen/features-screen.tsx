@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import styles from './features-screen.module.css';
 import Tilt from "react-parallax-tilt";
 import useScrollData from "../../../utils/useScrollData";
-import Trapezoid from "./trapezoid";
-import { ScrollContainer, ScrollPage, Animator, Move } from "react-scroll-motion";
-import test from '../../../images/test.png';
+
 
 
 
@@ -37,9 +35,9 @@ const FeaturesScreen: React.FC = () => {
                                 {features && features.map((item, index) => {
 
                                     return index < 4 && (
-                                    <Tilt tiltMaxAngleX={5} tiltMaxAngleY={10} gyroscope={true} key={index} tiltReverse={true} className={styles.tilt} perspective={500}>
+                                   
                                         <Link to={`/features/${item!.id}`} className={styles.link} key={index}>
-                                        <div className={styles.card}>
+                                        <Tilt className={styles.card} tiltEnable={false} glareEnable={true} glareMaxOpacity={.25} glareColor="black" glarePosition="bottom" gyroscope={false}>
                                         
                                             <div className={styles.card_title_wrapper}>
                                             
@@ -48,9 +46,9 @@ const FeaturesScreen: React.FC = () => {
                                             </div>
                                             <div className={styles.line}></div>
                                         
-                                        </div>
+                                        </Tilt>
                                         </Link>
-                                    </Tilt>
+                                    
                                     )
                                 })}
 

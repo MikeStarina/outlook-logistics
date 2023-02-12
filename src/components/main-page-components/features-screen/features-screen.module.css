@@ -169,6 +169,7 @@
     }
     .trapezoid {
         height: 50%;
+        width: 90%;
     }
     .title {
         font-size: var(--screenTitleM);
@@ -232,5 +233,8 @@
 
     .button {
         font-size: var(--buttonTextS);
+    }
+    .trapezoid {
+        width: 100%;
     }
 }
