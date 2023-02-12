@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import useScrollData from "../../../utils/useScrollData";
 import styles from './about-first-screen.module.css';
 import full_logo440px_white from '../../../images/full_logo440px_white.svg';
 import icon_logo from '../../../images/icon_logo.svg';
@@ -11,6 +12,15 @@ import { Link } from "react-router-dom";
 
 
 const AboutFirstScreen: React.FC = () => {
+
+    const ref = useRef(null);
+
+
+
+    useScrollData((scrollData) => {
+        const node: HTMLDivElement | null = ref?.current;
+        node!.style.transform = `translateY(${scrollData.difference * -1 / 5}px)`;
+    })
 
 
     return (
@@ -44,7 +54,7 @@ const AboutFirstScreen: React.FC = () => {
            
 
            
-            <div className={styles.bg_circle}>
+            <div className={styles.bg_circle} ref={ref}>
                 <div className={styles.bg_inner_circle}></div>
             </div>
             <img src={cont3} alt='container' className={styles.bg_image}></img>
