@@ -2,10 +2,10 @@ import React, { useRef } from "react";
 import styles from './blog-screen.module.css';
 import { Link } from "react-router-dom";
 import useScrollData from "../../../utils/useScrollData";
-import post1 from '../../../images/post1.jpg';
-import post2 from '../../../images/post2.jpg';
-import post3 from '../../../images/post3.jpg';
-import post4 from '../../../images/post4.jpg';
+import post1 from '../../../images/post1.webp';
+import post2 from '../../../images/post2.webp';
+import post3 from '../../../images/post3.webp';
+import post4 from '../../../images/post4.webp';
 
 
 
@@ -35,28 +35,28 @@ const BlogScreen: React.FC = () => {
                
                 <Link to='/blog' className={styles.link}>
                     <div className={styles.card}>
-                        <img src={post1} alt='post cover' className={styles.post_cover}></img>
+                        <img src={post1} alt='post cover' className={styles.post_cover} loading='lazy' decoding="async"></img>
                         <p className={styles.card_title}>С ЧЕГО НАЧИНАЛАСЬ <i>ЛОГИСТИКА</i></p>
                         <div className={styles.line}></div>
                     </div>
                 </Link>
                 <Link to='/blog' className={styles.link}>
                 <div className={styles.card}>
-                    <img src={post2} alt='post cover' className={styles.post_cover}></img>
+                    <img src={post2} alt='post cover' className={styles.post_cover} loading='lazy' decoding="async"></img>
                     <p className={styles.card_title}>ОТ САНЕЙ ДО ПОЕЗДОВ — ИСТОРИЯ РУССКОЙ <i>ЛОГИСТИКИ</i></p>
                     <div className={styles.line}></div>
                 </div>
                 </Link>
                 <Link to='/blog' className={styles.link}>
                 <div className={styles.card}>
-                    <img src={post3} alt='post cover' className={styles.post_cover}></img>
+                    <img src={post3} alt='post cover' className={styles.post_cover} loading='lazy' decoding="async"></img>
                     <p className={styles.card_title}>СКОРОСТЬ И МЕТАЛЛ. КТО И КАК ИЗОБРЕЛ <i>КОНТЕЙНЕР</i></p>
                     <div className={styles.line}></div>
                 </div>
                 </Link>
                 <Link to='/blog' className={styles.link}>
                 <div className={styles.card}>
-                    <img src={post4} alt='post cover' className={styles.post_cover}></img>
+                    <img src={post4} alt='post cover' className={styles.post_cover} loading='lazy' decoding="async"></img>
                     <p className={styles.card_title}>БАМ, ТРАНССИБ, <i>ВОЛГОБАЛТ</i></p>
                     <div className={styles.line}></div>
                 </div>

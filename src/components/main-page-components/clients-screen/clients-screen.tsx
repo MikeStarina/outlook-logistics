@@ -29,15 +29,15 @@ const ClientsScreen: React.FC = () => {
 
     return (
         <section className={styles.screen}>
-            <img src={etm} alt='ЭТМ ЛОГОТИП' className={styles.client_logo}></img>
-            <img src={gazprom} alt='газпром логотип' className={styles.client_logo}></img>
-            <img src={kamaz} alt='камаз логотип' className={styles.client_logo}></img>
-            <img src={knauf} alt='кнауф логотип' className={styles.client_logo}></img>
-            <img src={magnit} alt='магнит логотип' className={styles.client_logo}></img>
-            <img src={rzd} alt='ржд логотип' className={styles.client_logo}></img>
-            <img src={segezha} alt='сегежа логотип' className={styles.client_logo}></img>
-            <img src={tat} alt='татнефть логотип' className={styles.client_logo}></img>
-            <img src={technonikol} alt='технониколь логотип' className={styles.client_logo}></img>
+            <img src={etm} alt='ЭТМ ЛОГОТИП' className={styles.client_logo} loading='lazy' decoding="async"></img>
+            <img src={gazprom} alt='газпром логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
+            <img src={kamaz} alt='камаз логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
+            <img src={knauf} alt='кнауф логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
+            <img src={magnit} alt='магнит логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
+            <img src={rzd} alt='ржд логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
+            <img src={segezha} alt='сегежа логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
+            <img src={tat} alt='татнефть логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
+            <img src={technonikol} alt='технониколь логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
 
             <div className={styles.trapezoid} ref={ref}></div>
         </section>

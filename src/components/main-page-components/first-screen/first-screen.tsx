@@ -66,7 +66,7 @@ const FirstScreen: React.FC = () => {
             <div className={styles.bg_circle} ref={ref}>
                 <div className={styles.bg_inner_circle}></div>
             </div>
-            <img src={activeBgImage} alt='container' className={styles.bg_image}></img>
+            <img src={activeBgImage} alt='container' className={styles.bg_image} loading='lazy' decoding="async"></img>
         </section>
     )
 }

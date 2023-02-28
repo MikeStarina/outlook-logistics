@@ -16,6 +16,7 @@ import { getFeatures } from "../../services/actions/features-actions";
 import ContactsPage from "../../pages/contacs-page/contacts-page";
 import useWindowSize from "../../utils/useWindowSize";
 import useScrollData from "../../utils/useScrollData";
+import Page404 from "../../pages/404-page/404-page";
 
 
 
@@ -61,7 +62,7 @@ const App: React.FC = () => {
                 <Route path={"/blog"} element={<BlogFeedPage />} />
                 <Route path={"/contacts"} element={<ContactsPage />} />
                 <Route path={"/blog/:id"} element={<BlogFeedPage />} />
-                
+                <Route path={"*"} element={<Page404 />} />
             </Routes>
            
             <Footer />
