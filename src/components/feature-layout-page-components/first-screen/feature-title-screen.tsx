@@ -2,10 +2,7 @@ import React from "react";
 import styles from './feature-title-screen.module.css';
 import full_logo440px_white from '../../../images/full_logo440px_white.svg';
 import icon_logo from '../../../images/icon_logo.svg';
-import cont from '../../../images/cont.jpg';
-import cont1 from '../../../images/cont1.png';
-import cont2 from '../../../images/cont2.png';
-import cont3 from '../../../images/cont3.png';
+import cont from '../../../images/cont.webp';
 import cont4 from '../../../images/cont4.png';
 import { useLocation } from "react-router";
 
@@ -20,9 +17,6 @@ const FeatureTitleScreen: React.FC<any> = ({ item }) => {
 
     const { pathname } = useLocation();
    
-    
-    const activeBgImage = pathname === '/' ? cont :
-        pathname === '/features' ? cont4 : cont;
 
 
 
