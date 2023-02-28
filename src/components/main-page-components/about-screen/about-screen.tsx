@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './about-screen.module.css';
-import CEO from '../../../images/CEO.png';
+import CEO from '../../../images/CEO.webp';
 import { Link } from 'react-router-dom';
 
 

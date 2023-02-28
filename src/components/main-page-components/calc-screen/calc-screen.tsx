@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 //import bgvideo from '../../../images/bgvideo.mp4';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import slideOne from '../../../images/slideOne.jpg';
-import slideTwo from '../../../images/slideTwo.jpg';
-import slideFour from '../../../images/slideFour.jpg';
-import slideThree from '../../../images/slideThree.jpg';
+import slideOne from '../../../images/slideOne.webp';
+import slideTwo from '../../../images/slideTwo.webp';
+import slideFour from '../../../images/slideFour.webp';
+import slideThree from '../../../images/slideThree.webp';
 import useScrollData from "../../../utils/useScrollData";
 import styles from './calc-screen.module.css';
 import { Autoplay, Pagination } from "swiper";
@@ -38,7 +38,7 @@ const CalcScreen: React.FC = () => {
                             <h2 className={styles.desc_title}>АВТОМОБИЛЬНЫЕ FTL/LTL</h2>
                             <p className={styles.description}>Перевозим сборные и генеральные грузы с различными опциями: температурный режим, вооруженная охрана, различные обьемы кузова и т.д. Федеральное покрытие, а также СНГ и Европа.</p>
                         </div>
-                        <img src={slideTwo} alt='slide two' className={styles.slide_img}></img>   
+                        <img src={slideTwo} alt='slide two' className={styles.slide_img} loading='lazy' decoding="async"></img>   
                                      
                 </SwiperSlide>
                 <SwiperSlide className={styles.slide}>  
@@ -47,7 +47,7 @@ const CalcScreen: React.FC = () => {
                             <h2 className={styles.desc_title}>МОРСКИЕ</h2>
                             <p className={styles.description}>Все основные направления морских in/out перевозок. Быстрое оформление и отправка груза, индивидуальный расчет, таможенное оформление</p>
                         </div>
-                        <img src={slideOne} alt='slide one' className={styles.slide_img}></img>                  
+                        <img src={slideOne} alt='slide one' className={styles.slide_img} loading='lazy' decoding="async"></img>                  
                 </SwiperSlide>
                 <SwiperSlide className={styles.slide}>  
                         <h2 className={styles.index}>03</h2>  
@@ -55,7 +55,7 @@ const CalcScreen: React.FC = () => {
                             <h2 className={styles.desc_title}>АВИА</h2>
                             <p className={styles.description}>Для срочных перевозок или труднодоступных регионов. Индивидуальный расчет, возможность отправки груза в день обращения</p>
                         </div>
-                        <img src={slideFour} alt='slide four' className={styles.slide_img}></img>                  
+                        <img src={slideFour} alt='slide four' className={styles.slide_img} loading='lazy' decoding="async"></img>                  
                 </SwiperSlide>
                 <SwiperSlide className={styles.slide}>  
                         <h2 className={styles.index}>04</h2>  
@@ -63,7 +63,7 @@ const CalcScreen: React.FC = () => {
                             <h2 className={styles.desc_title}>МУЛЬТМОДАЛЬНЫЕ</h2>
                             <p className={styles.description}>Более 5 лет проектируем сложные логистические цепочки или оптимизируем имеющиеся. Научный подход, анализ big data, собственная it-based архитектура</p>
                         </div>
-                        <img src={slideThree} alt='slide Three' className={styles.slide_img}></img>                  
+                        <img src={slideThree} alt='slide Three' className={styles.slide_img} loading='lazy' decoding="async"></img>                  
                 </SwiperSlide>
              
             </Swiper>
