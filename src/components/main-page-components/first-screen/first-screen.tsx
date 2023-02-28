@@ -1,9 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import styles from './first-screen.module.css';
 import { Link } from "react-router-dom";
 import full_logo440px_white from '../../../images/full_logo440px_white.svg';
 import icon_logo from '../../../images/icon_logo.svg';
-import cont from '../../../images/cont.jpg';
+import cont from '../../../images/cont.webp';
 import cont4 from '../../../images/cont4.png';
 import { useLocation } from "react-router";
 import Calc from "../../calc/calc";

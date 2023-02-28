@@ -3,7 +3,7 @@ import useScrollData from "../../../utils/useScrollData";
 import styles from './about-first-screen.module.css';
 import full_logo440px_white from '../../../images/full_logo440px_white.svg';
 import icon_logo from '../../../images/icon_logo.svg';
-import cont3 from '../../../images/cont3.png';
+import cont3 from '../../../images/cont3.webp';
 import { Link } from "react-router-dom";
 
 
