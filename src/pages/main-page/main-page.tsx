@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styles from './main-page.module.css';
+import Helmet from 'react-helmet';
 
 
 import FirstScreen from '../../components/main-page-components/first-screen/first-screen';
@@ -17,8 +18,44 @@ import ContactsScreen from '../../components/main-page-components/contacts-scree
 const MainPage: React.FC = () => {
 
 
+
+
     return (
         <main className={styles.page}>
+            <Helmet
+                script = {[
+                    { 
+                    type: "application/ld+json",
+                    innerHTML:
+                        `{
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "url": "https://outlook-logistics.ru",
+                        "logo": "/icon_logo.svg",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "ул. Софийская 14, офис 915",
+                            "addressLocality": "Санкт-Петербург",
+                            "addressRegion": "RU",
+                            "postalCode": "192236",
+                            "addressCountry": "RU"
+                        },
+                        "contactPoint" : [
+                        {
+                        "@type" : "ContactPoint",
+                        "telephone" : "88002010073",
+                        "contactType" : "customer service"
+                        }
+                        ],
+                    }`
+                    }
+                    
+                ]}
+
+
+            />
+
+
             <FirstScreen />
             <FeaturesScreen />
             <CalcScreen />
