@@ -42,7 +42,11 @@
     transform: translateX(-3px) rotate(353deg);
 }
 .avatar_rop {
-    width: 200px;
+    width: 250px;
+    transform: translateX(-40px) rotate(8deg);
+}
+.avatar_cdo {
+    width: 250px;
     transform: translateX(-40px) rotate(8deg);
 }
 

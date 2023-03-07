@@ -1,8 +1,10 @@
 import React from "react";
 import styles from './team-screen.module.css';
 import CEO from '../../../images/CEO.png';
+import CDO from '../../../images/CDO.png';
 import cfo from '../../../images/cfo.png';
 import rop from '../../../images/rop.png';
+import ropp from '../../../images/ropp.png';
 import logist from '../../../images/logist.png';
 
 
@@ -49,15 +51,27 @@ const TeamScreen: React.FC = () => {
             </div>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={rop} alt='Rop photo' className={styles.avatar_rop}></img>
+                        <img src={ropp} alt='Rop photo' className={styles.avatar_rop}></img>
                     </div>
                     <div className={styles.credits_wrapper}>
-                        <p className={styles.credits}>Сенькин Д.В.</p>
+                        <p className={styles.credits}>Петухов Н.А.</p>
                         <p className={styles.credits}>Руководитель ОП</p>
                     </div>
                     
                
             </div>
+            <div className={styles.profile_wrapper}>
+                    <div className={styles.avatar_wrapper}>
+                        <img src={CDO} alt='CDO photo' className={styles.avatar_cdo}></img>
+                    </div>
+                    <div className={styles.credits_wrapper}>
+                        <p className={styles.credits}>Гапанёнок Д.В.</p>
+                        <p className={styles.credits}>Директор по развитию</p>
+                    </div>
+                    
+               
+            </div>
+          
 
         </section>
     )
