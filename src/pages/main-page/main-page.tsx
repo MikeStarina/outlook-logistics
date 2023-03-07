@@ -28,26 +28,29 @@ const MainPage: React.FC = () => {
                     type: "application/ld+json",
                     innerHTML:
                         `{
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "url": "https://outlook-logistics.ru",
-                        "logo": "/icon_logo.svg",
-                        "address": {
-                            "@type": "PostalAddress",
-                            "streetAddress": "ул. Софийская 14, офис 915",
-                            "addressLocality": "Санкт-Петербург",
-                            "addressRegion": "RU",
-                            "postalCode": "192236",
-                            "addressCountry": "RU"
-                        },
-                        "contactPoint" : [
-                        {
-                        "@type" : "ContactPoint",
-                        "telephone" : "88002010073",
-                        "contactType" : "customer service"
+                            "@context": "https://schema.org",
+                            "@type": "Organization",
+                            "url": "https://outlook-logistics.ru",
+                            "logo": "/icon_logo.svg",
+                            "address": {
+                                "@type": "PostalAddress",
+                                "streetAddress": "ул. Софийская 14, офис 915",
+                                "addressLocality": "Санкт-Петербург",
+                                "addressRegion": "RU",
+                                "postalCode": "192236",
+                                "addressCountry": "RU"
+                            },
+                            "contactPoint" : [
+                            {
+                            "@type" : "ContactPoint",
+                            "telephone" : "88002010073",
+                            "contactType" : "customer service"
+                            }
+                            ],
+                            "sameAs": []
                         }
-                        ],
-                    }`
+                        }
+                        }`
                     }
                     
                 ]}
