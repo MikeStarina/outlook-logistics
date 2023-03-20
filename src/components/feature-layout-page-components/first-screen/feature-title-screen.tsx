@@ -29,7 +29,7 @@ const FeatureTitleScreen: React.FC<any> = ({ item }) => {
                 <img src={full_logo440px_white} alt='outlook_logo' className={styles.logo}></img>
                 <img src={icon_logo} alt='outlook_icon_logo' className={styles.icon_logo}></img>
                 <div className={styles.text_wrapper}>
-                    <p className={styles.caption}>8<i>(800)</i>888-99-00</p>
+                    <a href="tel:+78002010073" className={styles.caption}>8<i>(800)</i>201-00-73</a>
                    
                 </div>
                 <div className={styles.text_wrapper}>
