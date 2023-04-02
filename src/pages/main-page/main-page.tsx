@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React from 'react';
 import styles from './main-page.module.css';
 import Helmet from 'react-helmet';
 

@@ -7,6 +7,7 @@ import OptionsScreen from "../../components/main-page-components/options-screen/
 import ContactsScreen from "../../components/main-page-components/contacts-screen/contacts-screen";
 import FormScreen from "../../components/main-page-components/form-screen/form-screen";
 import ClientsScreen from "../../components/main-page-components/clients-screen/clients-screen";
+import { Helmet } from "react-helmet";
 
 
 
@@ -25,8 +26,20 @@ const FeatureLayoutPage: React.FC = () => {
 
     return (
         <main className={styles.page}>
+            <Helmet
+                title={item?.htmlTitle}
+                meta={[
+                    {"name": "description", "content": `${item?.htmlDescription}`},
+                ]}
+            />
             {item && <FeatureTitleScreen item={item} />}
             <OptionsScreen />
+            {item?.description && item?.textTitle && <section className={styles.screen}>
+
+                <h1 className={styles.screen_title}>{item?.textTitle}</h1>
+                <p className={styles.paragraph}>{item?.description}</p>
+
+            </section>}
             <FormScreen />
             <ClientsScreen />
             <ContactsScreen />
