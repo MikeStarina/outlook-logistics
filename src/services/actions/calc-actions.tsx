@@ -25,8 +25,11 @@ export type TCalcActions = IGetFormData | IClearFormData;
 
 
 export const sendOrderData = (orderData: any) => {
+    //console.log(orderData);
 
     const data = {data: orderData};
+
+    console.log(data);
     return function (dispatch: any) {
         fetch(`${apiUrl}/api/orders`, {
             method: 'POST',
