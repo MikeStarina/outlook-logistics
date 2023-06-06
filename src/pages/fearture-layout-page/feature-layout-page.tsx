@@ -22,16 +22,23 @@ const FeatureLayoutPage: React.FC = () => {
 
     const item = features.filter(elem => String(elem?.id) === id)[0];
 
-    
+    console.log(item);
+    console.log(item?.htmlDescription);
 
     return (
         <main className={styles.page}>
+            
             <Helmet
                 title={item?.htmlTitle}
                 meta={[
-                    {"name": "description", "content": `${item?.htmlDescription}`},
+                    {"name": "description", "content": item?.htmlDescription},
                 ]}
-            />
+            /> 
+            {/*
+            <Helmet>
+                <title>{item?.htmlTitle}</title>
+                <meta name="description" content="test" />
+        </Helmet> */}
             {item && <FeatureTitleScreen item={item} />}
             <OptionsScreen />
             {item?.description && item?.textTitle && <section className={styles.screen}>
