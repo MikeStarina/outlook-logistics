@@ -23,6 +23,10 @@ const MainPage: React.FC = () => {
     return (
         <main className={styles.page}>
             <Helmet
+                title="OUTLOOK LOGISTICS"
+                meta={[
+                    {"name": "description", "content": "Логистика сборных и генеральных грузов для бизнеса. Низкие цены, любые направления и страны. Онлайн контроль перевозок, страхование грузов"},
+                ]}
                 script = {[
                     { 
                     type: "application/ld+json",
