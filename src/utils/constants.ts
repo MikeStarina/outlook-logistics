@@ -6,9 +6,9 @@ import truckTrall from '../images/truckTrall.svg';
 
 
 
-export const apiUrl = 'http://localhost:9000';
+//export const apiUrl = 'http://localhost:9000';
 //export const apiUrl = 'http://95.163.236.246:9000';
-//export const apiUrl = 'https://outlook-logistics.ru';
+export const apiUrl = 'https://outlook-logistics.ru';
 
 export const INSURANCE_PRICE=1000 //ПОКРЫВАЕТ 1 000 000 Р.
 export const PRICE_RATIO=0.8
