@@ -2,6 +2,7 @@ import React from "react";
 import styles from './form-screen.module.css';
 import { useSelector, useDispatch } from "../../..";
 import { CLEAR_FORM_DATA, GET_FORM_DATA, sendOrderData } from "../../../services/actions/calc-actions";
+import { TCalcState } from "../../../services/reducers/calcReducer";
 
 
 
@@ -11,7 +12,7 @@ import { CLEAR_FORM_DATA, GET_FORM_DATA, sendOrderData } from "../../../services
 const FormScreen: React.FC = () => {
 
     const dispatch = useDispatch();
-    const data = useSelector(store => store.calc);
+    const data = useSelector<TCalcState>(store => store.calc);
 
     
 

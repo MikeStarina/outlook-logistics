@@ -36,15 +36,8 @@ const App: React.FC = () => {
         //console.log(scrollData);
     })
 
-    
 
-
-
-    
-
-
-
-   
+     
 
     
 

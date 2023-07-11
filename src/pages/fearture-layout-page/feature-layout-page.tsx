@@ -22,8 +22,8 @@ const FeatureLayoutPage: React.FC = () => {
 
     const item = features.filter(elem => String(elem?.id) === id)[0];
 
-    console.log(item);
-    console.log(item?.htmlDescription);
+    //console.log(item);
+    //console.log(item?.htmlDescription);
 
     return (
         <main className={styles.page}>
