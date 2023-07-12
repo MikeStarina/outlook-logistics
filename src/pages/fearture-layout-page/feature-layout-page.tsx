@@ -18,35 +18,33 @@ import { Helmet } from "react-helmet";
 const FeatureLayoutPage: React.FC = () => {
 
     const features = useSelector(store => store.features);
-    const { id } = useParams();
+    const { slug } = useParams();
 
-    const item = features.filter(elem => String(elem?.id) === id)[0];
 
-    //console.log(item);
-    //console.log(item?.htmlDescription);
+    const item = features.filter(elem => elem!.slug === slug)[0];
+
+
+
 
     return (
         <main className={styles.page}>
             
-            <Helmet
-                title={item?.htmlTitle}
-                meta={[
-                    {"name": "description", "content": item?.htmlDescription},
-                ]}
-            /> 
-            {/*
+           
+            
             <Helmet>
-                <title>{item?.htmlTitle}</title>
-                <meta name="description" content="test" />
-        </Helmet> */}
+                <title>{item?.metaTitle}</title>
+                <meta name="description" content={item?.metaDescription} />
+                <meta name="keywords" content={item?.metaKeywords} />
+            </Helmet> 
             {item && <FeatureTitleScreen item={item} />}
             <OptionsScreen />
-            {item?.description && item?.textTitle && <section className={styles.screen}>
+            {item?.description && item?.title && <section className={styles.screen}>
 
-                <h1 className={styles.screen_title}>{item?.textTitle}</h1>
+                <h1 className={styles.screen_title}>{item?.title}</h1>
                 <p className={styles.paragraph}>{item?.description}</p>
 
             </section>}
+            
             <FormScreen />
             <ClientsScreen />
             <ContactsScreen />

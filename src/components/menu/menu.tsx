@@ -25,7 +25,7 @@ const Menu: React.FC = () => {
             <div className={styles.links_wrapper}>
                 <Link className={styles.link} to='/' onClick={closeButtonClickHandler}>ГЛАВНАЯ</Link>
                 <Link className={styles.link} to='/about' onClick={closeButtonClickHandler}>О КОМПАНИИ</Link>
-                <Link className={styles.link} to='/features' onClick={closeButtonClickHandler}>УСЛУГИ</Link>
+                <Link className={styles.link} to='/uslugi' onClick={closeButtonClickHandler}>УСЛУГИ</Link>
                 <Link className={styles.link} to='/blog' onClick={closeButtonClickHandler}>БЛОГ</Link>
                 <Link className={styles.link} to='/contacts' onClick={closeButtonClickHandler}>КОНТАКТЫ</Link>                
             </div>

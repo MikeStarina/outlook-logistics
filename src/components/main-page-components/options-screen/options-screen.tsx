@@ -41,7 +41,7 @@ const OptionsScreen: React.FC<any> = ({ features }) => {
     })
 
 
-    const initialData = pathname === '/features' && features ? features : optionsInitData;
+    const initialData = pathname === '/uslugi' && features ? features : optionsInitData;
  
 
     return (
@@ -55,10 +55,10 @@ const OptionsScreen: React.FC<any> = ({ features }) => {
               
                         <div className={styles.line}></div>
                     </div>) : (
-                        <Link to={`/features/${item.id}`} className={styles.link}>
+                        <Link to={`/uslugi/${item.url}`} className={styles.link}>
                             <div className={styles.card} key={index}>
                                 
-                                    <h4 className={styles.card_title}>{item.title}</h4>
+                                    <h4 className={styles.card_title}>{item.name}</h4>
                                 
                                 <p className={styles.card_subtitle}>{`<>`}</p>
                                 
@@ -72,9 +72,9 @@ const OptionsScreen: React.FC<any> = ({ features }) => {
             </div>
 
 
-            {pathname != '/features' && <div className={styles.geolabel} ref={ref}>
+            {pathname != '/features' && pathname != '/uslugi' ? (<div className={styles.geolabel} ref={ref}>
                 
-            </div>}
+            </div>) : (<></>)}
         </section>
 
     )

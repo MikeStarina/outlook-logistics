@@ -22,45 +22,11 @@ const MainPage: React.FC = () => {
 
     return (
         <main className={styles.page}>
-            <Helmet
-                title="OUTLOOK LOGISTICS"
-                meta={[
-                    {"name": "description", "content": "Логистика сборных и генеральных грузов для бизнеса. Низкие цены, любые направления и страны. Онлайн контроль перевозок, страхование грузов"},
-                ]}
-                script = {[
-                    { 
-                    type: "application/ld+json",
-                    innerHTML:
-                        `{
-                            "@context": "https://schema.org",
-                            "@type": "Organization",
-                            "url": "https://outlook-logistics.ru",
-                            "logo": "/icon_logo.svg",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "streetAddress": "ул. Софийская 14, офис 915",
-                                "addressLocality": "Санкт-Петербург",
-                                "addressRegion": "RU",
-                                "postalCode": "192236",
-                                "addressCountry": "RU"
-                            },
-                            "contactPoint" : [
-                            {
-                            "@type" : "ContactPoint",
-                            "telephone" : "88002010073",
-                            "contactType" : "customer service"
-                            }
-                            ],
-                            "sameAs": []
-                        }
-                        }
-                        }`
-                    }
-                    
-                ]}
-
-
-            />
+            <Helmet>
+                <title>Перевозка грузов от логистической компании в Санкт-Петербурге цены в outlook-logistics</title>
+                <meta name='description' content='Перевозка грузов цена услуг в транспортной компании в Санкт-Петербурге Outlook. Оформить заявку на перевозку груза и рассчитать стоимость вы можете на сайте частной логистической компании.' />
+                <meta name='keywords' content='Логистическая компания, перевозка грузов, санкт-петербург, оформить заявку, заказать, цены, стоимость, рассчитать, частная, сайт, услуга' />
+            </Helmet>
 
 
             <FirstScreen />

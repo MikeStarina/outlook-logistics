@@ -1,9 +1,8 @@
 import React from 'react';
-import styles from './features-page.module.css';
-import { useParams } from 'react-router';
+import styles from './services-page.module.css';
 import { useSelector } from '../..';
 import FirstScreen from '../../components/main-page-components/first-screen/first-screen';
-import FeaturesList from '../../components/feature-page-components/options-screen/features-list';
+import OptionsScreen from '../../components/main-page-components/options-screen/options-screen';
 import ContactsScreen from '../../components/main-page-components/contacts-screen/contacts-screen';
 import FormScreen from '../../components/main-page-components/form-screen/form-screen';
 import ClientsScreen from '../../components/main-page-components/clients-screen/clients-screen';
@@ -13,26 +12,17 @@ import { Helmet } from 'react-helmet';
 
 
 
-const FeaturesPage: React.FC = () => {
+const ServicesPage: React.FC = () => {
 
-
-    const data = useSelector(store => store.services);
-    const { id } = useParams();
-
-    const filteredData = data.filter(item => item.url === id)[0];
-
+    const services = useSelector(store => store.services);
 
     return (
         <main className={styles.page}>
-            <Helmet>
-                <title>{filteredData.metadata?.title}</title>
-                <meta name="description" content={filteredData.metadata?.description} />
-                <meta name="keywords" content={filteredData.metadata?.keywords} />
-            </Helmet> 
+            <Helmet />
             <FirstScreen />
-            <FeaturesList />
+            <OptionsScreen features={services} />
             <section className={styles.screen}>
-
+                {/*}
                 <h1 className={styles.screen_title}>Автоперевозки — рассчитать стоимость</h1>
                 <p className={styles.paragraph}>
                     Компания Outlook Logistics ежедневно организовывает автоперевозки 20 тонн грузовым транспортом,  перевозки фурой по области, России и ближайшему зарубежью - одно из ключевых направлений нашей компании, благодаря чему мы рады можем стать универсальным подрядчиком под ваши объемы.
@@ -49,7 +39,7 @@ const FeaturesPage: React.FC = () => {
 
                     Остались вопросы — свяжитесь с нами по почте info@outlook-logistics.ru и мы проконсультируем вас.
 
-                </p>
+                </p>*/}
 
             </section>
             <ClientsScreen />
@@ -60,4 +50,4 @@ const FeaturesPage: React.FC = () => {
     )
 }
 
-export default FeaturesPage;
+export default ServicesPage;
