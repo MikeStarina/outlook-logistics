@@ -87,7 +87,7 @@ const StagesScreen: React.FC = () => {
                     Выберите интересующую вас услугу или сразу передите в калькулятор для расчета стоимости.
 
                     </p>
-                    <Link to='/features'>
+                    <Link to='/uslugi'>
                         <button type="button" className={styles.card_button}>Наши услуги</button>
                     </Link>
                     <HashLink to='/#calc'>

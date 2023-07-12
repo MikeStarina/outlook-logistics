@@ -36,7 +36,7 @@ const FeaturesScreen: React.FC = () => {
 
                                     return index < 4 && (
                                    
-                                        <Link to={`/features/${item!.id}`} className={styles.link} key={index}>
+                                        <Link to={`/features/${item!.slug}`} className={styles.link} key={index}>
                                         <Tilt className={styles.card} tiltEnable={false} glareEnable={true} glareMaxOpacity={.25} glareColor="black" glarePosition="bottom" gyroscope={false}>
                                         
                                             <div className={styles.card_title_wrapper}>
@@ -57,7 +57,7 @@ const FeaturesScreen: React.FC = () => {
                                 
                             </div>
                             
-                            <Link to='/features' className={styles.link_button_wrapper}>
+                            <Link to='/uslugi' className={styles.link_button_wrapper}>
                                 <button type='button' className={styles.button}>Смотреть все</button>
                             </Link>
                                 

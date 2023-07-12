@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import MainPage from "../../pages/main-page/main-page";
 import FeaturesPage from "../../pages/features-page/features-page";
+import ServicesPage from "../../pages/services-page/services-page";
 import FeatureLayoutPage from "../../pages/fearture-layout-page/feature-layout-page";
 import AboutPage from "../../pages/about-page/about-page";
 import BlogFeedPage from "../../pages/blog-feed-page/blog-feed-page";
@@ -51,7 +52,10 @@ const App: React.FC = () => {
                 <Route path={"/"} element={<MainPage />} />
                 <Route path={"/about"} element={<AboutPage />} />
                 <Route path={"/features"} element={<FeaturesPage />} />
-                <Route path={"/features/:id"} element={<FeatureLayoutPage />} />
+                <Route path={"/uslugi"} element={<ServicesPage />} />
+                {/*<Route path={"/features/:id"} element={<FeatureLayoutPage />} />*/}
+                <Route path={"/uslugi/:id"} element={<FeaturesPage />} />
+                <Route path={"/uslugi/:id/:slug"} element={<FeatureLayoutPage />} />
                 <Route path={"/blog"} element={<BlogFeedPage />} />
                 <Route path={"/contacts"} element={<ContactsPage />} />
                 <Route path={"/blog/:id"} element={<BlogFeedPage />} />
