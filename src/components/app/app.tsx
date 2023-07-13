@@ -21,6 +21,7 @@ import Page404 from "../../pages/404-page/404-page";
 
 
 
+
 const App: React.FC = () => {
     
     const { isMainMenuActive, isPopupVisible } = useSelector((store) => store.utils);

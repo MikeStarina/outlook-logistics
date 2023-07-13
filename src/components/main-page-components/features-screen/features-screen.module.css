@@ -81,6 +81,15 @@
    
 }
 
+.card_number {
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    max-width: 300px;
+}
+
 
 
 
@@ -122,6 +131,15 @@
     z-index: 1;
 }
 
+
+.bgimage {
+    width: 75%;    
+    z-index: 0;
+    position: absolute;
+    right: -500px;
+    top: 50%;
+    opacity: .7;
+}
 
 
 .trapezoid {
@@ -184,6 +202,15 @@
     .button {
         font-size: var(--buttonTextM);
     }
+    .bgimage {
+        width: 100%;    
+        z-index: 0;
+        position: absolute;
+        right: -250px;
+        top: 50%;
+        opacity: .7;
+    }
+    
 }
 
 @media (max-width: 550px) {
@@ -202,6 +229,15 @@
         gap: 10px;
 
     }
+    .bgimage {
+        width: 100%;    
+        z-index: 0;
+        position: absolute;
+        right: -100px;
+        top: 65%;
+        opacity: .7;
+    }
+    
 
 }
 

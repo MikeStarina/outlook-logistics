@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import useScrollData from "../../../utils/useScrollData";
+import cont3 from '../../../images/cont3.webp';
 import styles from './options-screen.module.css';
 
 
@@ -72,9 +73,10 @@ const OptionsScreen: React.FC<any> = ({ features }) => {
             </div>
 
 
-            {pathname != '/features' && pathname != '/uslugi' ? (<div className={styles.geolabel} ref={ref}>
+            {/*pathname != '/features' && pathname != '/uslugi' ? (<div className={styles.geolabel} ref={ref}>
                 
-            </div>) : (<></>)}
+            </div>) : (<></>)*/}
+            <img className={styles.options_bg} src={cont3} alt='container'></img>
         </section>
 
     )

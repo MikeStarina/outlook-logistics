@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import styles from './features-screen.module.css';
 import Tilt from "react-parallax-tilt";
 import useScrollData from "../../../utils/useScrollData";
+import cont2 from '../../../images/cont2.webp';
 
 
 
@@ -36,14 +37,15 @@ const FeaturesScreen: React.FC = () => {
 
                                     return index < 4 && (
                                    
-                                        <Link to={`/features/${item!.slug}`} className={styles.link} key={index}>
-                                        <Tilt className={styles.card} tiltEnable={false} glareEnable={true} glareMaxOpacity={.25} glareColor="black" glarePosition="bottom" gyroscope={false}>
-                                        
+                                        <Link to={`/uslugi/${item?.serviceType}/${item!.slug}`} className={styles.link} key={index}>
+                                        <Tilt className={styles.card} tiltEnable={false} glareEnable={true} glareMaxOpacity={.4} glareColor="black" glarePosition="bottom" gyroscope={false}>
+                                            <p className={styles.card_number}>0{index + 1}</p>
                                             <div className={styles.card_title_wrapper}>
                                             
                                                     <h4 className={styles.card_title}>{item!.title}</h4>
                                             
                                             </div>
+                                            
                                             <div className={styles.line}></div>
                                         
                                         </Tilt>
@@ -62,7 +64,8 @@ const FeaturesScreen: React.FC = () => {
                             </Link>
                                 
                                                        
-                                <div className={styles.trapezoid} ref={ref}></div>
+                                {/*<div className={styles.trapezoid} ref={ref}></div>*/}
+                                <img src={cont2} alt='container' className={styles.bgimage}></img>
                             
             
         </section>

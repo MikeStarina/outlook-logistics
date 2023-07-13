@@ -61,7 +61,7 @@
     align-items: flex-start;
     padding: 30px;
     box-sizing: border-box;
-    
+    z-index: 1;
 }
 
 .post_cover {
@@ -108,7 +108,7 @@
     line-height: 15px;
     font-weight: 400;
     box-shadow: 0 0 10px rgba(0, 0, 0, .25);
-    z-index: 2;
+    z-index: 3;
     margin-top: 100px;
     cursor: pointer;
 }
@@ -116,6 +116,17 @@
 .link {
     cursor: pointer;
     text-decoration: none;
+    z-index: 1;
+}
+
+.blog_bg {
+    position: absolute;
+    top: 90%;
+    left: -500px;
+    width: 90%;
+    transform: rotate(-70deg);
+    z-index: 0;
+    opacity: .7;
 }
 
 
@@ -148,6 +159,9 @@
 
 
 @media (max-width: 960px) {
+    .blog_bg {
+        display: none
+    }
     .screen {
         padding: 100px 20px;
     }
@@ -181,6 +195,7 @@
 
 
 @media (max-width: 660px) {
+   
     .post_cover {
         width: 100%;
     }
@@ -227,6 +242,7 @@
 }
 
 @media (max-width: 480px) {
+    
     .screen {
         padding: 100px 10px;
     }
