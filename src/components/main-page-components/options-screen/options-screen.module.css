@@ -93,10 +93,22 @@
     transform: skewY(-11deg);
 }
 
+.options_bg {
+    width: 90%;
+    position: absolute;
+    right: -700px;
+    top: 10%;
+    opacity: .7;
+}
+
 
 @media (max-width: 1100px) {
     .cards_block {
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+    .options_bg {
+        width: 120%;
+        top: 20%;
     }
 }
 
@@ -122,11 +134,20 @@
     .screen {
         padding: 100px;
     }
+    .options_bg {
+        width: 150%;
+        top: 20%;
+    }
 }
 
 @media (max-width: 650px) {
     .screen {
         padding: 100px 10px;
+    }
+    .options_bg {
+        width: 150%;
+        top: 20%;
+        right: -500px;
     }
 }
 
@@ -144,6 +165,11 @@
     .card {
         gap: 50px;
     }
+    .options_bg {
+        width: 200%;
+        top: 20%;
+        right: -500px;
+    }
 
 
 }
@@ -160,6 +186,14 @@
     .line {
         height: 50px;
         transform: translateX(-25px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 400px) {
+    .options_bg {
+        width: 200%;
+        top: 20%;
+        right: -350px;
     }
 }
 

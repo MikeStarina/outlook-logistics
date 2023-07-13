@@ -31,10 +31,12 @@ const AboutScreen: React.FC = () => {
                     <p className={styles.counter}>1300+</p>
                     <p className={styles.description}>ГОРОДОВ</p>
                 </div>
+
+                <div className={styles.digits_bg}></div>
             </div>
 
 
-            <div className={styles.line}></div>
+
 
 
             <div className={styles.about_block}>

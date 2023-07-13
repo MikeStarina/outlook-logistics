@@ -6,6 +6,7 @@ import post1 from '../../../images/post1.webp';
 import post2 from '../../../images/post2.webp';
 import post3 from '../../../images/post3.webp';
 import post4 from '../../../images/post4.webp';
+import cont1 from '../../../images/cont1.webp';
 
 
 
@@ -67,9 +68,12 @@ const BlogScreen: React.FC = () => {
                 <button type='button' className={styles.button}>Смотреть все</button>
             </Link>
 
-            <div className={styles.geolabel} ref={ref}>
+
+            <img src={cont1} alt='container' className={styles.blog_bg}></img>
+
+            {/*<div className={styles.geolabel} ref={ref}>
                 <div className={styles.inner}></div>
-            </div>
+            </div>*/}
         </section>
     )
 }
