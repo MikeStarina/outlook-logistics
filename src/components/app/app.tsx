@@ -18,6 +18,7 @@ import ContactsPage from "../../pages/contacs-page/contacts-page";
 import useWindowSize from "../../utils/useWindowSize";
 import useScrollData from "../../utils/useScrollData";
 import Page404 from "../../pages/404-page/404-page";
+import { Navigate } from "react-router-dom";
 
 
 
@@ -58,6 +59,14 @@ const App: React.FC = () => {
                 <Route path={"/blog"} element={<BlogFeedPage />} />
                 <Route path={"/contacts"} element={<ContactsPage />} />
                 <Route path={"/blog/:id"} element={<BlogFeedPage />} />
+
+                <Route path={"/features/0"} element={<Navigate to='/uslugi/avtomobilnye-perevozki/20-tonn' replace />} />
+                <Route path={"/features/1"} element={<Navigate to='/uslugi/avtomobilnye-perevozki/5-tonn' replace />} />
+                <Route path={"/features/2"} element={<Navigate to='/uslugi/avtomobilnye-perevozki/1-5-tonn' replace />} />
+                <Route path={"/features/3"} element={<Navigate to='/uslugi/avtomobilnye-perevozki/refrizheratornye' replace />} />
+                <Route path={"/features/4"} element={<Navigate to='/uslugi/avtomobilnye-perevozki/negabaritnye' replace />} />
+                <Route path={"/features/5"} element={<Navigate to='/uslugi/avtomobilnye-perevozki/perevozki-s-okhranoj' replace />} />
+                
                 <Route path={"*"} element={<Page404 />} />
             </Routes>
            
