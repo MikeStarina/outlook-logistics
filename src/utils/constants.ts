@@ -86,8 +86,8 @@ export const carTypes: Array<TCarType> = [
             bidRef: 108,
         },
         intraregionBids: {
-            bid: 158,
-            bidRef: 176,
+            bid: 91, 
+            bidRef: 108, 
         },
         intraCityBids: {
             price: 17000,
@@ -104,7 +104,7 @@ export const carTypes: Array<TCarType> = [
             bid: 160,
         },
         intraregionBids: {
-            bid: 220,
+            bid: 160,
         },
         intraCityBids: {
             price: 24000,
@@ -131,11 +131,18 @@ export const priceCalculatorFunc = (orderData: TCalcState, PRICE_RATIO: number, 
     }
 
     if (orderData.distanceType === 'intraregion') {
+        
+       
+        
+        price =  selectedCarType!.intraCityBids.price + (selectedCarType!.intraregionBids.bid * orderData.orderDistance!);
+        price = isRef ? selectedCarType!.intraCityBids.priceRef! + (selectedCarType!.intraregionBids.bidRef! * orderData.orderDistance!) : price;
+        
 
-        price = selectedCarType!.intraregionBids.bid * orderData.orderDistance!;
-        price = isRef ? selectedCarType!.intraregionBids.bidRef! * orderData.orderDistance! : price;
+
+        //console.log(`Цена фикс+км ${price_two}`)
+        
      
-
+        
     }
 
 
