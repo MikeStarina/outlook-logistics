@@ -32,9 +32,8 @@
     padding: 100px 100px 250px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     background-color: #e5e5e5;
 }
 
@@ -49,6 +48,9 @@
     line-height: 20px;
     font-family: inherit;
     z-index: 5;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
 }
 
 
