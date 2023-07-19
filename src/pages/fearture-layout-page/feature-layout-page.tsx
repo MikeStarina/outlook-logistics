@@ -41,7 +41,7 @@ const FeatureLayoutPage: React.FC = () => {
             <OptionsScreen />
             {item?.description && item?.title && <section className={styles.screen}>
 
-                <h1 className={styles.screen_title}>{item?.title}</h1>
+                <h2 className={styles.screen_title}>{item?.title}</h2>
                 {item?.description && item.description.map((elem, index) => (
                     <p className={styles.paragraph} key={index}>{elem}</p>
                 ))}
@@ -52,7 +52,7 @@ const FeatureLayoutPage: React.FC = () => {
             <ClientsScreen />
             <ContactsScreen />
 
-        </main>): (<Navigate to='/404' />)}
+        </main>): (<Navigate to='/404' replace/>)}
         </>
     )
 }
