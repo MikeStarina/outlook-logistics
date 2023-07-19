@@ -46,7 +46,7 @@ const FeaturesPage: React.FC = () => {
             <FormScreen />
             <ContactsScreen />
 
-        </main>) : (<Navigate to='/404'/>)}
+        </main>) : (<Navigate to='/404' replace/>)}
         </>
     )
 }
