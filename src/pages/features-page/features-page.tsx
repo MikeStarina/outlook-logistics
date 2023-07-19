@@ -35,7 +35,7 @@ const FeaturesPage: React.FC = () => {
             <FeaturesList />
             <section className={styles.screen}>
 
-                <h1 className={styles.screen_title}>{filteredData.name}</h1>
+                <h2 className={styles.screen_title}>{filteredData.name}</h2>
                 {filteredData?.description && filteredData.description.map((item, index) => (
                 <p className={styles.paragraph} key={index}>
                     {item}
