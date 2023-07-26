@@ -9,6 +9,7 @@ import { GET_ATI_CITYSEARCH_DATA, getAtiCitySearchDataFunc } from '../../service
 import { DROPDOWN_VISIBILITY } from '../../services/actions/utils-actions';
 import { getDistance } from '../../services/actions/ati-actions';
 import { TCalcState } from '../../services/reducers/calcReducer';
+import { useParams } from 'react-router';
 
 
 
@@ -19,6 +20,28 @@ const Calc: React.FC = () => {
     const { from, to, validatedCityTo, validatedCityFrom } = useSelector<TCalcState>(store => store.calc);
     const { isCalcDropdownToVisible, isCalcDropdownFromVisible } = useSelector(store => store.utils);
     const dispatch = useDispatch();
+    const { id } = useParams();
+
+    
+
+    const titleSwitcher = ( id: string | undefined) => {
+
+        let title = 'РАССЧИТАТЬ ПЕРЕВОЗКУ';
+
+        if (id && id === 'avtomobilnye-perevozki') {
+            title = 'АВТОПЕРЕВОЗКИ';
+        }
+        if (id && id === 'zheleznodorozhnye-perevozki') {
+            title = 'ЖЕЛЕЗНОДОРОЖНЫЕ ПЕРЕВОЗКИ';
+        }
+        if (id && id === 'perevozki-s-okhranoj') {
+            title = 'ПЕРЕВОЗКА С ОХРАНОЙ';
+        }
+
+        return title;
+    }
+
+    const title = titleSwitcher(id);
 
 
 
@@ -78,7 +101,7 @@ const Calc: React.FC = () => {
 
     return(
         <form className={styles.calc_box} onSubmit={formSubmitHandler}>
-            <h1 className={styles.calc_title}> РАССЧИТАТЬ <i>ПЕРЕВОЗКУ</i></h1>
+            <h1 className={styles.calc_title}>{title}</h1>
             <div className={styles.input_wrapper}>
                 <label htmlFor='from' className={styles.input_label}>Откуда:</label>
                 <input type='text' className={styles.input} name='from' id='from' onChange={onChangeHandler} value={from} autoComplete='off'></input>
