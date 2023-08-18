@@ -7,6 +7,7 @@ type TItem =
       serviceType: string;
       name: string;
       title: string;
+      image: string;
       description?: string[];
       truck_params?: {
         size?: string;
@@ -28,6 +29,7 @@ const initialState: TInitialState = [
     serviceType: "avtomobilnye-perevozki",
     name: "АВТОПЕРЕВОЗКИ 20 ТОНН",
     title: "Автоперевозки 20 тонн",
+    image: 'https://downloader.disk.yandex.ru/preview/e8b2c24b917127b17748a0fddca061443de920ebcaa44a6753ff56e80fa47d97/64dfa17d/4dpgRfq-_rLayTiU6Up263nmNYoQ8v6cSlx0WZOjKVpkHYQXA19q8BgAjVVjK89pedajdA7HuB1rvlSqaUJNwg%3D%3D?uid=0&filename=8.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=1920x883',
     description: [
       "Компания Outlook Logistics предлагает профессиональные автоперевозки грузов весом 20 тонн. Мы специализируемся на организации грузоперевозок с использованием современных фур, обеспечивая надежную и эффективную доставку по всей территории Санкт-Петербурга и за его пределами.",
       "Наша логистическая компания предлагает широкий спектр услуг, связанных с автоперевозками 20 тонн. Мы понимаем, что каждый клиент имеет уникальные потребности, поэтому мы готовы предложить индивидуальный подход к каждому заказу. Независимо от того, требуется ли вам одноразовая перевозка или регулярные доставки, мы готовы взять на себя ответственность за ваш груз и обеспечить его безопасность и своевременную доставку.",
@@ -54,6 +56,7 @@ const initialState: TInitialState = [
     serviceType: "avtomobilnye-perevozki",
     name: "АВТОПЕРЕВОЗКИ 5 ТОНН",
     title: "Автоперевозки 5 тонн",
+    image: 'https://downloader.disk.yandex.ru/preview/ad0c990c9f528618743973ef2cafe25bd37504f99c3b9d71e432904a421df461/64dfa17d/FMvXQ44Gvjh7DBOZdcoN2aVswVzpY9vQadBMdQmFQyMe55OyK_1L2-xJ-mIwY7jDiMnrj64igRiVVIc1OclPoA%3D%3D?uid=0&filename=6.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=1920x883',
     description: [
         "Компания Outlook Logistics предлагает надежные и эффективные автоперевозки грузов весом до 5 тонн в Санкт-Петербурге и других регионах. Мы являемся логистической компанией с богатым опытом в организации перевозок различных грузов, и наша команда готова предложить вам высококачественные услуги по доставке вашего груза.",
         "Преимущества автоперевозок весом 5 тонн с компанией Outlook Logistics:",
@@ -81,6 +84,7 @@ const initialState: TInitialState = [
     serviceType: "avtomobilnye-perevozki",
     name: "АВТОПЕРЕВОЗКИ 1,5 ТОНН",
     title: "Автоперевозки 1.5 тонны",
+    image: 'https://downloader.disk.yandex.ru/preview/a4e335eb5b9c386a6b0d2d06971342956f0871dd2ad8fa5bb47bc06e8678f3ed/64dfa17d/mGx5SkEdZq_FbKYTA87ztaVswVzpY9vQadBMdQmFQyOGtLG7tY4Iipa86EUsxYIuVXTyMVzmERhQViMkJKu81Q%3D%3D?uid=0&filename=5.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=1920x883',
     description: [
         "Компания Outlook Logistics предлагает надежные и эффективные автоперевозки грузов весом до 1.5 тонн в Санкт-Петербурге и близлежащих регионах. Мы являемся логистической компанией с многолетним опытом работы в сфере грузоперевозок, и наша цель - обеспечить клиентам качественное и своевременное выполнение перевозок.",
         "Одной из наших основных специализаций являются грузоперевозки весом до 1.5 тонн. Мы понимаем, что каждый груз имеет свои уникальные требования и особенности, поэтому мы предлагаем индивидуальный подход к каждому заказу. Наша команда профессионалов заботится о том, чтобы ваш груз был доставлен в целости и сохранности.",
@@ -108,6 +112,7 @@ const initialState: TInitialState = [
     serviceType: "avtomobilnye-perevozki",
     name: "НЕГАБАРИТНЫЕ ПЕРЕВОЗКИ",
     title: "Негабаритные перевозки",
+    image: 'https://downloader.disk.yandex.ru/preview/87a2d7f5b1ad6d178ed9b53703d2559368f6c48abce454b59c5fd5ec38cf1ab2/64dfa17d/6UoXg93QnGiBQBT0O1VIWKQabmw-tK43Aut6YiztI2Kd4DNBB67p0PHQ_s6U4kBHkYZzpJKt8HW4TBcsjr_X1g%3D%3D?uid=0&filename=7.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=1920x883',
     description: [
         "Ищете надежную логистическую компанию для автомобильных негабаритных перевозок в Санкт-Петербурге и по всей России? Outlook Logistics - ваш надежный партнер, готовый предложить вам высококачественные услуги по конкурентоспособной цене.",
         "Мы специализируемся на организации и выполнении негабаритных автомобильных перевозок, обеспечивая безопасную и эффективную доставку грузов любого размера и веса. Наша команда профессионалов в области логистики имеет богатый опыт и экспертизу, чтобы гарантировать успешное выполнение каждого заказа.",
@@ -133,6 +138,7 @@ const initialState: TInitialState = [
     serviceType: "avtomobilnye-perevozki",
     name: "РЕФРИЖЕРАТОРНЫЕ ПЕРЕВОЗКИ",
     title: "Рефрижераторные перевозки",
+    image: 'https://downloader.disk.yandex.ru/preview/fb21b37f19339dfed5c53ccd0582f35c244c3ad76f5036f141a90d1eac584ace/64dfa17d/1UOo5JuEMjwFZjplYJBEUi4h33HNnhJhea5zeSnHs1wJZTMOhz2Sl9J5Z387vT0wqEcWAO9UuZXYU97HHs-i7g%3D%3D?uid=0&filename=1.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=1920x883',
     description: [
         "Рефрижераторные перевозки являются важной услугой для многих компаний, особенно тех, которые занимаются продуктами питания или другими товарными группами, требующими специальных условий хранения и транспортировки. Если вы ищете надежную логистическую компанию, предоставляющую рефрижераторные перевозки в Санкт-Петербурге, то Outlook Logistics - ваш идеальный партнер.",
         "Outlook Logistics - это профессиональная логистическая компания, специализирующаяся на грузоперевозках и предоставлении широкого спектра услуг, включая рефрижераторные перевозки. Мы понимаем важность сохранности и качества ваших товаров во время транспортировки, поэтому мы обеспечиваем надежное и безопасное хранение и доставку.",
@@ -160,6 +166,7 @@ const initialState: TInitialState = [
     serviceType: "zheleznodorozhnye-perevozki",
     name: "КОНТЕЙНЕРНЫЕ ПЕРЕВОЗКИ",
     title: "Контейнерные перевозки (железнодорожные)",
+    image: '',
     description: [
         "Контейнерные железнодорожные перевозки от логистической компании Outlook Logistics - надежное и эффективное решение для вашего бизнеса! Мы предлагаем широкий спектр услуг по организации контейнерных жд перевозок, обеспечивая быструю и безопасную доставку грузов по всей России, включая Санкт-Петербург.",
         "Особенности контейнерных железнодорожных перевозок:",
@@ -188,6 +195,7 @@ const initialState: TInitialState = [
     serviceType: "zheleznodorozhnye-perevozki",
     name: "ПЕРЕВОЗКА АВТОМОБИЛЕЙ",
     title: "Перевозка автомобилей",
+    image: '',
     description: [
         'Транспортная компания "Outlook Logistics" – ваш надежный партнер в сфере перевозки автомобилей. Мы специализируемся на организации безопасной и эффективной перевозки автомобилей различных типов, как внутри страны, так и за ее пределами. Наш опыт и профессионализм позволяют нам предложить вам высококачественные услуги по железнодорожной перевозке автомобилей.',
         'Преимущества перевозки автомобилей с компанией Outlook Logistics:',
@@ -216,6 +224,7 @@ const initialState: TInitialState = [
     serviceType: "zheleznodorozhnye-perevozki",
     name: "ПЕРЕВОЗКА СПЕЦТЕХНИКИ",
     title: "Перевозка спецтехники",
+    image: '',
     description: [
         'Перевозка спецтехники – это сложный и ответственный процесс, требующий специализированного оборудования и опытных профессионалов. Компания Outlook Logistics обладает всем необходимым для безопасной и эффективной транспортировки самой разнообразной спецтехники: от строительных машин до сельскохозяйственных агрегатов.',
         'Особенности перевозки спецтехники:',
@@ -243,6 +252,7 @@ const initialState: TInitialState = [
     serviceType: "avtomobilnye-perevozki",
     name: "ПЕРЕВОЗКА ОПАСНЫХ ГРУЗОВ",
     title: "Опасные грузы",
+    image: 'https://downloader.disk.yandex.ru/preview/87a2d7f5b1ad6d178ed9b53703d2559368f6c48abce454b59c5fd5ec38cf1ab2/64dfa17d/6UoXg93QnGiBQBT0O1VIWKQabmw-tK43Aut6YiztI2Kd4DNBB67p0PHQ_s6U4kBHkYZzpJKt8HW4TBcsjr_X1g%3D%3D?uid=0&filename=7.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=1920x883',
     description: [
         'Перевозка опасных грузов – это сложный и ответственный процесс, требующий высочайшей осторожности и соблюдения строгих стандартов безопасности. Outlook Logistics полностью осознает важность этой задачи и вкладывает в нее максимум ресурсов, опыта и знаний.',
         'Преимущества автоперевозок опасных грузов с компанией Outlook Logistics:',

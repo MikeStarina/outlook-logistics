@@ -37,6 +37,27 @@ const Calc: React.FC = () => {
         if (id && id === 'perevozki-s-okhranoj') {
             title = 'ПЕРЕВОЗКА С ОХРАНОЙ';
         }
+        if (id && id === 'perevozka-sbornih-gruzov') {
+            title = 'ПЕРЕВОЗКА СБОРНЫХ ГРУЗОВ';
+        }
+        if (id && id === 'morskie-perevozki') {
+            title = 'МОРСКИЕ ПЕРЕВОЗКИ';
+        }
+        if (id && id === 'multimodalnie-perevozki') {
+            title = 'МУЛЬТИМОДАЛЬНЫЕ ПЕРЕВОЗКИ';
+        }
+        if (id && id === 'opasnie-gruzi') {
+            title = 'ОПАСНЫЕ ГРУЗЫ';
+        }
+        if (id && id === 'perevozki-s-temperaturnim-rezhimom') {
+            title = 'ПЕРЕВОЗКИ С ТЕМПЕРАТУРНЫМ РЕЖИМОМ';
+        }
+        if (id && id === 'konteinernie-perevozki') {
+            title = 'КОНТЕЙНЕРНЫЕ ПЕРЕВОЗКИ';
+        }
+        if (id && id === 'perevozka-stroimaterialov') {
+            title = 'ПЕРЕВОЗКА СТРОЙМАТЕРИАЛОВ';
+        }
 
         return title;
     }
