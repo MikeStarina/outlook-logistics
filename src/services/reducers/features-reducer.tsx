@@ -251,7 +251,7 @@ const initialState: TInitialState = [
     slug: "perevozka-opasnih-gruzov",
     serviceType: "avtomobilnye-perevozki",
     name: "ПЕРЕВОЗКА ОПАСНЫХ ГРУЗОВ",
-    title: "Опасные грузы",
+    title: " Автомобильные перевозки опасных грузов",
     image: 'https://downloader.disk.yandex.ru/preview/87a2d7f5b1ad6d178ed9b53703d2559368f6c48abce454b59c5fd5ec38cf1ab2/64dfa17d/6UoXg93QnGiBQBT0O1VIWKQabmw-tK43Aut6YiztI2Kd4DNBB67p0PHQ_s6U4kBHkYZzpJKt8HW4TBcsjr_X1g%3D%3D?uid=0&filename=7.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=1920x883',
     description: [
         'Перевозка опасных грузов – это сложный и ответственный процесс, требующий высочайшей осторожности и соблюдения строгих стандартов безопасности. Outlook Logistics полностью осознает важность этой задачи и вкладывает в нее максимум ресурсов, опыта и знаний.',
@@ -269,9 +269,9 @@ const initialState: TInitialState = [
       capacity: "ГАРАНТИЯ СОХРАННОСТИ ГРУЗА",
     },
     metaTitle:
-      "Перевозка опасных грузов в Санкт-Петербурге цена в транспортной компании outlook-logistics",
+      "Перевозка опасных грузов автомобильным транспортом цена в Санкт-Петербурге в outlook-logistics",
     metaDescription:
-      "Перевозка опасных грузов в Санкт-Петербурге цена доставки в транспортной компании Outlook Logistics. Рассчитать услугу перевозки опасных грузов вы можете на сайте компании.",
+      "Автомобильные перевозки опасных грузов в Санкт-Петербурге цена услуги в транспортной компании Outlook Logistics. Автоперевозки опасного груза рассчитать доставку вы можете на сайте.",
     metaKeywords:
       "опасные грузы, перевозка опасных грузов, санкт-петербург, цена, услуга, рассчитать, доставка, транспортная компания",
   },
