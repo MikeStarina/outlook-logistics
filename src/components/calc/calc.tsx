@@ -58,6 +58,21 @@ const Calc: React.FC = () => {
         if (id && id === 'perevozka-stroimaterialov') {
             title = 'ПЕРЕВОЗКА СТРОЙМАТЕРИАЛОВ';
         }
+        if (id && id === 'negabaritnie-perevozki') {
+            title = 'НЕГАБАРИТНЫЕ ПЕРЕВОЗКИ';
+        }
+        if (id && id === 'perevozka-tnp') {
+            title = 'ГРУЗОПЕРЕВОЗКИ ТНП';
+        }
+        if (id && id === 'perevozka-tehniki') {
+            title = 'ПЕРЕВОЗКА ТЕХНИКИ';
+        }
+        if (id && id === 'perevozka-transporta') {
+            title = 'ПЕРЕВОЗКА ТРАНСПОРТА';
+        }
+        if (id && id === 'perevozka-metalla') {
+            title = 'ПЕРЕВОЗКА МЕТАЛЛА';
+        }
 
         return title;
     }
