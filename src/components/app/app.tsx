@@ -51,6 +51,7 @@ const App: React.FC = () => {
             {isMainMenuActive && <Menu />}
             {isPopupVisible && <Popup />}
             <Routes>
+                <Route path={"*"} element={<Page404 />} />
                 <Route path={"/"} element={<MainPage />} />
                 <Route path={"/about"} element={<AboutPage />} />
                 <Route path={"/uslugi"} element={<ServicesPage />} />
@@ -69,7 +70,7 @@ const App: React.FC = () => {
                 <Route path={"/features/5"} element={<Navigate to='/uslugi/perevozki-s-okhranoj' replace />} />
                 
                 <Route path={"/404"} element={<Page404 />} />
-                <Route path={"*"} element={<Navigate to='/404' />} />
+                
             </Routes>
            
             <Footer />
