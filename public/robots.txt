@@ -1,4 +1,11 @@
-User-agent: *
-Disallow: /
-Clean-param: utm_candidate&utm_referer&utm_ya_campaign&utm_referrer&etext
+User-agent: Yandex
+Clean-param:utm_candidate&utm_referer&utm_ya_campaign&utm_referrer&etext&from&to
+User-agent: Googlebot
+Disallow: /?utm_candidate=*
+Disallow: /?utm_referer=*
+Disallow: /?utm_ya_campaign=*
+Disallow: /?utm_referrer=*
+Disallow: *etext*
+Disallow: *from=
+Disallow: *to=
 Sitemap: https://outlook-logistics.ru/sitemap.xml
