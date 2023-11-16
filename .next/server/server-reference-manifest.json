@@ -1,0 +1,14 @@
+{
+  "node": {
+    "3a27472461e9c4cf60ee2da1e62e42f40472917b": {
+      "workers": {
+        "app/uslugi/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cx%5C%5CDesktop%5C%5C%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D1%83%D0%BC%5C%5C%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%821%5C%5Coutlook-logistics%5C%5Csrc%5C%5Capp%5C%5Cuslugi%5C%5Cpage.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=!"
+      },
+      "layer": {
+        "app/uslugi/page": "rsc"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "e6NrDUhl0Wmz9nyJcMPIkXX0uMJ8TGgstjsXHG6ikY0="
+}
