@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./about-screen.module.css";
-import CEO from "../../../images/CEO.webp";
-import { Link } from "react-router-dom";
+import CEO from "../../../../public/CEO.webp";
+import Link from "next/link";
+import Image from "next/image";
 
 const AboutScreen: React.FC = () => {
   return (
@@ -34,7 +35,7 @@ const AboutScreen: React.FC = () => {
       <div className={styles.about_block}>
         <div className={styles.left_column}>
           <div className={styles.avatar_wrapper}>
-            <img src={CEO} alt="CEO photo" className={styles.avatar}></img>
+            <Image src={CEO} alt="CEO photo" className={styles.avatar} />
           </div>
           <div className={styles.credits_wrapper}>
             <p className={styles.credits}>Самусенко А.В.</p>
@@ -74,12 +75,12 @@ const AboutScreen: React.FC = () => {
           </p>
 
           <div className={styles.buttons_wrapper}>
-            <Link to="/about" className={styles.link_button_wrapper}>
+            <Link href="/about" className={styles.link_button_wrapper}>
               <button type="button" className={styles.button}>
                 О Нас
               </button>
             </Link>
-            <Link to="/about" className={styles.link_button_wrapper}>
+            <Link href="/about" className={styles.link_button_wrapper}>
               <button type="button" className={styles.button}>
                 О Команде
               </button>

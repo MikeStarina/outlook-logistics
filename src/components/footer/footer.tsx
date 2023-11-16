@@ -1,6 +1,9 @@
 import React from "react";
 import styles from './footer.module.css';
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from 'next/image';
+import full_logo440px_whiteW from '../../../public/full_logo440px_whiteW.svg'
+//import { Link } from "react-router-dom";
 
 
 
@@ -15,12 +18,21 @@ const Footer: React.FC = () => {
     return (
         <footer className={styles.footer}>
 
-            <h3 className={styles.title}>(c) 2022 OUTLOOK <i>LOGISTICS</i></h3>
-            <Link to='/about' className={styles.link}>О КОМПАНИИ</Link>
-            <Link to='/features' className={styles.link}>УСЛУГИ</Link>
-            <Link to='/blog' className={styles.link}>БЛОГ</Link>
-            <Link to='/contacts' className={styles.link}>КОНТАКТЫ</Link>
-            <Link to='/' className={styles.link}>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</Link>
+            <div className={styles.left_column}>
+                <Link href='/about' className={styles.link}>О КОМПАНИИ</Link>
+                <Link href='/features' className={styles.link}>УСЛУГИ</Link>
+                <Link href='/blog' className={styles.link}>БЛОГ</Link>
+                <Link href='/contacts' className={styles.link}>КОНТАКТЫ</Link>
+                <Link href='/' className={styles.link}>ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</Link>
+            </div>
+            <div className={styles.right_column}>
+                <Image src={full_logo440px_whiteW} alt='логотип' className={styles.logo} />
+                <p className={styles.link}>ООО "ПЕРСПЕКТИВА"</p>
+                <p className={styles.link}>ИНН: 4706053435</p>
+                <p className={styles.link}>КПП: 781601001</p>
+                <p className={styles.link}>ОГРН: 1224700019114</p>
+                <p className={styles.link}>(c) 2023</p>
+            </div>
 
             
         </footer>

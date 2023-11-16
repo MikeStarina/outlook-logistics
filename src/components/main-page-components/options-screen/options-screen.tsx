@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
-import { useLocation } from "react-router";
-import { Link } from "react-router-dom";
-import useScrollData from "../../../utils/useScrollData";
-import cont3 from '../../../images/cont3.webp';
+import React from "react";
+import Link from "next/link";
+import cont3 from '../../../../public/cont3.webp';
+import Image from "next/image";
 import styles from './options-screen.module.css';
 
 
@@ -29,44 +28,23 @@ const featuresInitialData = [
 ]
 
 
-const OptionsScreen: React.FC<any> = ({ features }) => {
-    //console.log(features);
-    const { pathname } = useLocation();
-
-    const ref = useRef(null);
+const OptionsScreen: React.FC = () => {
 
 
-    useScrollData((scrollData) => {
-        const node: HTMLDivElement | null = ref?.current;
-        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px) skewY(-11deg)`;
-    })
-
-
-    const initialData = pathname === '/uslugi' && features ? features : optionsInitData;
+    //const initialData = pathname === '/uslugi' && features ? features : optionsInitData;
  
 
     return (
         <section className={styles.screen}>
              <div className={styles.cards_block}>
-                {initialData.map((item: any, index: number) => {
-                    return !features ? (<div className={styles.card} key={index}>
+                {optionsInitData.map((item: any, index: number) => {
+                    return (<div className={styles.card} key={index}>
                    
                         <h4 className={styles.card_title}>{item.title}</h4>
                         <p className={styles.card_subtitle}>{item?.caption}</p>
               
                         <div className={styles.line}></div>
-                    </div>) : (
-                        <Link to={`/uslugi/${item.url}`} className={styles.link}>
-                            <div className={styles.card} key={index}>
-                                
-                                    <h4 className={styles.card_title}>{item.name}</h4>
-                                
-                                <p className={styles.card_subtitle}>{`<>`}</p>
-                                
-                                <div className={styles.line}></div>
-                            </div>
-                        </Link>
-                    )
+                    </div>) 
                 })}
                 
                 
@@ -76,7 +54,7 @@ const OptionsScreen: React.FC<any> = ({ features }) => {
             {/*pathname != '/features' && pathname != '/uslugi' ? (<div className={styles.geolabel} ref={ref}>
                 
             </div>) : (<></>)*/}
-            <img className={styles.options_bg} src={cont3} alt='container'></img>
+            <Image className={styles.options_bg} src={cont3} alt='container' />
         </section>
 
     )

@@ -1,10 +1,16 @@
-import React, { useRef } from "react";
-import { useSelector } from "../../..";
-import { Link } from "react-router-dom";
+import React from "react";
+import Link from "next/link";
 import styles from './features-screen.module.css';
-import Tilt from "react-parallax-tilt";
-import useScrollData from "../../../utils/useScrollData";
-import cont2 from '../../../images/cont2.webp';
+import cont2 from '../../../../public/cont2.webp';
+import { features } from '@/service/features';
+import { services } from '@/service/services';
+import cargo_cover from '../../../../public/cargo_cover.webp';
+import sea_cover from '../../../../public/sea_cover.jpg';
+import auto_cover from '../../../../public/auto_cover.jpg';
+import zd_cover from '../../../../public/zd_cover.jpg';
+import ng_cover from '../../../../public/ng_cover.jpg';
+import icon_logo_white from '../../../../public/icon_logo_white.svg';
+import Image from "next/image";
 
 
 
@@ -12,17 +18,7 @@ import cont2 from '../../../images/cont2.webp';
 
 const FeaturesScreen: React.FC = () => {
 
-    
-    const features = useSelector(store => store.features);
-    const ref = useRef(null);
 
-
-    useScrollData((scrollData) => {
-        const node: HTMLDivElement | null = ref?.current;
-        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px) skewY(-11deg)`;
-    })
-
-    
 
     return (
         <section className={styles.screen}>
@@ -33,22 +29,32 @@ const FeaturesScreen: React.FC = () => {
                         
                             <div className={styles.cards_block}>
 
-                                {features && features.map((item, index) => {
+                                {services && services.map((item, index) => {
+                                    
+                                    let cover = cargo_cover;
+                                    if (item!.name === 'Автомобильные перевозки') cover = auto_cover;
+                                    if (item!.name === 'Морские перевозки') cover = sea_cover;
+                                    if (item!.name === 'Железнодорожные перевозки') cover = zd_cover;
+                                    if (item!.name === 'Негабаритные перевозки') cover = ng_cover;
+                                    
 
                                     return index < 4 && (
                                    
-                                        <Link to={`/uslugi/${item?.serviceType}/${item!.slug}`} className={styles.link} key={index}>
-                                        <Tilt className={styles.card} tiltEnable={false} glareEnable={true} glareMaxOpacity={.4} glareColor="black" glarePosition="bottom" gyroscope={false}>
-                                            <p className={styles.card_number}>0{index + 1}</p>
-                                            <div className={styles.card_title_wrapper}>
-                                            
-                                                    <h4 className={styles.card_title}>{item!.title}</h4>
+                                        <Link href={`/uslugi/${item.url}`} className={styles.link} key={index}>
+                                            <div className={styles.card}>
+                                                <Image className={styles.cover} src={cover} alt='обложка карточки' />
+                                                <p className={styles.card_number}>0{index + 1}</p>
+                                                <Image className={styles.logo} alt='логотип' src={icon_logo_white} />
+                                                <div className={styles.card_title_wrapper}>
+                                                
+                                                        <h4 className={styles.card_title}>{item.cardTtitle}</h4>
+                                                        <h4 className={styles.card_title}><i>ПЕРЕВОЗКИ</i></h4>
+                                                
+                                                </div>
+                                                
+                                               
                                             
                                             </div>
-                                            
-                                            <div className={styles.line}></div>
-                                        
-                                        </Tilt>
                                         </Link>
                                     
                                     )
@@ -59,13 +65,13 @@ const FeaturesScreen: React.FC = () => {
                                 
                             </div>
                             
-                            <Link to='/uslugi' className={styles.link_button_wrapper}>
+                            <Link href='/uslugi' className={styles.link_button_wrapper}>
                                 <button type='button' className={styles.button}>Смотреть все</button>
                             </Link>
                                 
                                                        
-                                {/*<div className={styles.trapezoid} ref={ref}></div>*/}
-                                <img src={cont2} alt='container' className={styles.bgimage}></img>
+                               
+                                <Image src={cont2} alt='container' className={styles.bgimage} />
                             
             
         </section>

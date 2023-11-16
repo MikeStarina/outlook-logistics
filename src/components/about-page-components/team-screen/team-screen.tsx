@@ -1,11 +1,11 @@
 import React from "react";
 import styles from './team-screen.module.css';
-import CEO from '../../../images/CEO.png';
-import CDO from '../../../images/CDO.png';
-import cfo from '../../../images/cfo.png';
-import rop from '../../../images/rop.png';
-import ropp from '../../../images/ropp.png';
-import logist from '../../../images/logist.png';
+import CEO from '../../../../public/CEO.webp';
+import CDO from '../../../../public/CDO.webp';
+import cfo from '../../../../public/cfo.png';
+import ropp from '../../../../public/ropp.webp';
+import logist from '../../../../public/logist.png';
+import Image from "next/image";
 
 
 
@@ -18,7 +18,7 @@ const TeamScreen: React.FC = () => {
         <section className={styles.screen}>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={CEO} alt='CEO photo' className={styles.avatar_ceo}></img>
+                        <Image src={CEO} alt='CEO photo' className={styles.avatar_ceo} />
                     </div>
                     <div className={styles.credits_wrapper}>
                         <p className={styles.credits}>Самусенко А.В.</p>
@@ -29,7 +29,7 @@ const TeamScreen: React.FC = () => {
             </div>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={cfo} alt='cfo photo' className={styles.avatar_cfo}></img>
+                        <Image src={cfo} alt='cfo photo' className={styles.avatar_cfo} />
                     </div>
                     <div className={styles.credits_wrapper}>
                         <p className={styles.credits}>Шелепенок М.В.</p>
@@ -40,7 +40,7 @@ const TeamScreen: React.FC = () => {
             </div>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={logist} alt='Logist photo' className={styles.avatar_logist}></img>
+                        <Image src={logist} alt='Logist photo' className={styles.avatar_logist} />
                     </div>
                     <div className={styles.credits_wrapper}>
                         <p className={styles.credits}>Старина М.А.</p>
@@ -51,7 +51,7 @@ const TeamScreen: React.FC = () => {
             </div>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={ropp} alt='Rop photo' className={styles.avatar_rop}></img>
+                        <Image src={ropp} alt='Rop photo' className={styles.avatar_rop} />
                     </div>
                     <div className={styles.credits_wrapper}>
                         <p className={styles.credits}>Петухов Н.А.</p>
@@ -62,7 +62,7 @@ const TeamScreen: React.FC = () => {
             </div>
             <div className={styles.profile_wrapper}>
                     <div className={styles.avatar_wrapper}>
-                        <img src={CDO} alt='CDO photo' className={styles.avatar_cdo}></img>
+                        <Image src={CDO} alt='CDO photo' className={styles.avatar_cdo} />
                     </div>
                     <div className={styles.credits_wrapper}>
                         <p className={styles.credits}>Гапанёнок Д.В.</p>

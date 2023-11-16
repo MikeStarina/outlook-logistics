@@ -37,14 +37,16 @@
     height: 500px;
     border: none;
     border-radius: 20px;
-    background-color: #e5e5e5;
+    background-color: rgba(56, 56, 56, .8);
     box-shadow: 0 0 20px rgba(0, 0, 0, .25); 
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     padding: 70px 140px;
+    backdrop-filter: blur(5px);
 }
+
 
 
 .calc_form {
@@ -73,7 +75,7 @@
 .input_label {
     font-size: var(--buttonTextL);
     line-height: 25px;
-    color: #383838;
+    color: white;
     font-weight: 400;
 }
 
@@ -81,25 +83,25 @@
 .input {
     width: 100%;
     height: 46px;
-    border: 1px solid #383838;
+    border: 1px solid white;
     border-radius: 8px;
     padding: 0 15px;
-    background-color: #f3f3f3;
+    background-color: transparent;
     font-family: inherit;
     font-size: 20px;
-    color: #383838;
+    color: white;
     box-sizing: border-box;
 }
 
 
 .input:focus {
-    outline: 1px solid #383838;    
+    outline: 1px solid white;    
 }
 
 .input_option {
     font-size: 15px;
     line-height: 20px;
-    color: #383838;
+    color: white;
     font-weight: 200;
 }
 
@@ -109,9 +111,9 @@
 .submit_button {
     width: 150px;
     height: 40px;
-    border: none;
+    border: 1px solid white;
     border-radius: 8px;
-    background-color: #383838;
+    background-color: transparent;
     color: white;
     font-family: inherit;
     font-size: var(--buttonTextL);

@@ -1,4 +1,4 @@
-import { TCalcState } from "../services/reducers/calcReducer";
+import { TOrderState } from "./states";
 import truck1500 from '../images/truck1500.svg';
 import truck5000 from '../images/truck5000.svg';
 import truck20000 from '../images/truck20000.svg';
@@ -19,6 +19,8 @@ export const PRICE_RATIO=0.8
 export type TCarType = {
     name: string,
     placeholder: string,
+    capacity?: string,
+    volume?: string,
     options: {
         ref: boolean,
     },
@@ -39,7 +41,9 @@ export type TCarType = {
 export const carTypes: Array<TCarType> = [
     {
         name: '1500',   // - Это тип кузова
-        placeholder: '1,5 Т',
+        placeholder: '1,5 Тонны',
+        capacity: '3 х 1,9 х 2 м.',
+        volume: '9 куб. м.',
         options: {
             ref: true,
         },
@@ -58,7 +62,9 @@ export const carTypes: Array<TCarType> = [
     },
     {
         name: '5000',
-        placeholder: '5 Т',
+        placeholder: '5 Тонн',
+        capacity: '6,2 х 2,48 х 2,73 м.',
+        volume: '30 куб. м.',
         options: {
             ref: true,
         },
@@ -77,7 +83,9 @@ export const carTypes: Array<TCarType> = [
     },
     {
         name: '20000',
-        placeholder: '20 Т',
+        placeholder: '20 Тонн',
+        capacity: '13,62 х 2,48 х 2,73 м.',
+        volume: '90 куб. м.',
         options: {
             ref: true,
         },
@@ -96,7 +104,7 @@ export const carTypes: Array<TCarType> = [
     },
     {
         name: 'trall',
-        placeholder: 'ТРАЛЛ',
+        placeholder: 'Тралл',
         options: {
             ref: false,
         },
@@ -113,7 +121,7 @@ export const carTypes: Array<TCarType> = [
 ]
 
 
-export const priceCalculatorFunc = (orderData: TCalcState, PRICE_RATIO: number, INSURANCE_PRICE: number, selectedCarType: TCarType | undefined, isRef: boolean): number => {
+export const priceCalculatorFunc = (orderData: TOrderState, PRICE_RATIO: number, INSURANCE_PRICE: number, selectedCarType: TCarType | undefined, isRef: boolean): number => {
 
     
     let price = 0;

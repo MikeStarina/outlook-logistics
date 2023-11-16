@@ -66,6 +66,7 @@
 
 .post_cover {
     height: 100%;
+    width: auto;
     position: absolute;
     top: 0;
     left: 0;
@@ -124,6 +125,7 @@
     top: 90%;
     left: -500px;
     width: 90%;
+    height: auto;
     transform: rotate(-70deg);
     z-index: 0;
     opacity: .7;

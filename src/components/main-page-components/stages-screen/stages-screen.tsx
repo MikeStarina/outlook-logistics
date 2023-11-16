@@ -1,12 +1,6 @@
 import React from "react";
 import styles from './stages-screen.module.css';
-import { Link } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
-
-
-
-
-
+import Link from "next/link";
 
 
 
@@ -90,12 +84,12 @@ const StagesScreen: React.FC = () => {
                         Цены на наши услуги формируются исходя из различных факторов, таких как тип груза, расстояние перевозки, срочность доставки и другие особенности.
                         Чтобы рассчитать стоимость перевозки вашего груза, вы можете обратиться к нам для получения бесплатной консультации и предварительного расчета.
                     </p>
-                    <Link to='/uslugi'>
+                    <Link href='/uslugi'>
                         <button type="button" className={styles.card_button}>Наши услуги</button>
                     </Link>
-                    <HashLink to='/#calc'>
+                    <Link href='/'>
                         <button type="button" className={styles.card_button}>Калькулятор </button>
-                    </HashLink>
+                    </Link>
 
                 </div>
                 

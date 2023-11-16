@@ -1,157 +1,229 @@
+'use client'
 import React, { useState } from 'react';
-import styles from './calc.module.css';
-import { useSelector, useDispatch } from '../..';
-import { GET_FORM_DATA } from '../../services/actions/calc-actions';
-import { POPUP_VISIBILITY } from '../../services/actions/utils-actions';
 import CalcDropdown from '../calc_dropdown/calcDropdown';
-import useDebouncedFunction from '../../utils/useDebounce';
-import { GET_ATI_CITYSEARCH_DATA, getAtiCitySearchDataFunc } from '../../services/actions/ati-actions';
-import { DROPDOWN_VISIBILITY } from '../../services/actions/utils-actions';
-import { getDistance } from '../../services/actions/ati-actions';
-import { TCalcState } from '../../services/reducers/calcReducer';
-import { useParams } from 'react-router';
+import Popup from '../popup/popup';
+import useDebouncedFunction from '@/utils/useDebounce';
+import { getAtiCitySearchDataFunc, getDistance } from '@/actions/actions';
+import { TCitiesArray } from '@/utils/types';
+import { TOrderState, initialOrderState, TCity } from '@/utils/states';
+import styles from './calc.module.css';
+import icon_logo_white from '../../../public/full_logo440px_whiteW.svg';
+import Image from 'next/image';
+
 
 
 
 
 
 const Calc: React.FC = () => {
-    const { atiCitySearchDataTo, atiCitySearchDataFrom } = useSelector(store => store.ati);
-    const { from, to, validatedCityTo, validatedCityFrom } = useSelector<TCalcState>(store => store.calc);
-    const { isCalcDropdownToVisible, isCalcDropdownFromVisible } = useSelector(store => store.utils);
-    const dispatch = useDispatch();
-    const { id } = useParams();
 
-    
 
-    const titleSwitcher = ( id: string | undefined) => {
-
-        let title = 'РАССЧИТАТЬ ПЕРЕВОЗКУ';
-
-        if (id && id === 'avtomobilnye-perevozki') {
-            title = 'АВТОПЕРЕВОЗКИ';
-        }
-        if (id && id === 'zheleznodorozhnye-perevozki') {
-            title = 'ЖЕЛЕЗНОДОРОЖНЫЕ ПЕРЕВОЗКИ';
-        }
-        if (id && id === 'perevozki-s-okhranoj') {
-            title = 'ПЕРЕВОЗКА С ОХРАНОЙ';
-        }
-        if (id && id === 'perevozka-sbornih-gruzov') {
-            title = 'ПЕРЕВОЗКА СБОРНЫХ ГРУЗОВ';
-        }
-        if (id && id === 'morskie-perevozki') {
-            title = 'МОРСКИЕ ПЕРЕВОЗКИ';
-        }
-        if (id && id === 'multimodalnie-perevozki') {
-            title = 'МУЛЬТИМОДАЛЬНЫЕ ПЕРЕВОЗКИ';
-        }
-        if (id && id === 'opasnie-gruzi') {
-            title = 'ОПАСНЫЕ ГРУЗЫ';
-        }
-        if (id && id === 'perevozki-s-temperaturnim-rezhimom') {
-            title = 'ПЕРЕВОЗКИ С ТЕМПЕРАТУРНЫМ РЕЖИМОМ';
-        }
-        if (id && id === 'konteinernie-perevozki') {
-            title = 'КОНТЕЙНЕРНЫЕ ПЕРЕВОЗКИ';
-        }
-        if (id && id === 'perevozka-stroimaterialov') {
-            title = 'ПЕРЕВОЗКА СТРОЙМАТЕРИАЛОВ';
-        }
-        if (id && id === 'negabaritnie-perevozki') {
-            title = 'НЕГАБАРИТНЫЕ ПЕРЕВОЗКИ';
-        }
-        if (id && id === 'perevozka-tnp') {
-            title = 'ГРУЗОПЕРЕВОЗКИ ТНП';
-        }
-        if (id && id === 'perevozka-tehniki') {
-            title = 'ПЕРЕВОЗКА ТЕХНИКИ';
-        }
-        if (id && id === 'perevozka-transporta') {
-            title = 'ПЕРЕВОЗКА ТРАНСПОРТА';
-        }
-        if (id && id === 'perevozka-metalla') {
-            title = 'ПЕРЕВОЗКА МЕТАЛЛА';
-        }
-
-        return title;
-    }
-
-    const title = titleSwitcher(id);
+    // Стейты
 
 
 
-  
 
-    const setOpacity = (data: any) => {
-        data.id === 'from' && data.value !== '' ? dispatch({type: DROPDOWN_VISIBILITY, payload: true, direction: 'from'}) : dispatch({type: DROPDOWN_VISIBILITY, payload: false, direction: 'from'});
-        data.id === 'to' && data.value !== '' ? dispatch({type: DROPDOWN_VISIBILITY, payload: true, direction: 'to'}) : dispatch({type: DROPDOWN_VISIBILITY, payload: false, direction: 'to'});
-        
+    const [ formData, setFormData ] = useState<{ from: string, to: string }>({ from: '', to: '' })
+    const [ calcDropdownVisibility, setCalcDropdownVisibility ] = useState<{ to: boolean, from: boolean}>({
+        to: false,
+        from: false
+    });
+    const [ atiCitiesData, setAtiCitiesData ] = useState<{ from: Array<TCitiesArray>, to: Array<TCitiesArray> }>({ from: [], to: [] });
+    const [ validatedCity, setValidatedCity ] = useState<{ validatedCityTo: TCity | undefined, validatedCityFrom: TCity | undefined, to: string, from: string }>({
+        validatedCityTo: undefined,
+        validatedCityFrom: undefined,
+        to: '',
+        from: '',
+    })
+    const [ orderData, setOrderData] = useState<TOrderState>(initialOrderState);
+    const [ popupVisibility, setPopupVisibility ] = useState<boolean>(false);
 
-        
+
+
+
+    // Эта штука устанавливает видимость дропдаунов и запрашивает поиск по введенному городу
+
+
+
+
+    const setOpacity = async (data: { id: string, value: string }) => {
+        setCalcDropdownVisibility(
+            {
+                from: data.id === 'from' && data.value !== '' ? true : false,
+                to:  data.id === 'to' && data.value !== ''? true : false
+            }
+        )
+            
         const userCityData = {
             userCity: data.value,
             direction: data.id
         }
 
-        userCityData.userCity && dispatch(getAtiCitySearchDataFunc(userCityData))
+        userCityData.userCity && getAtiCitySearchDataFunc(userCityData, setAtiCitiesData, atiCitiesData);
     }
-    const debouncedDropdown = useDebouncedFunction((data: any) => setOpacity(data), 500)
 
-    const onChangeHandler = async (e: React.SyntheticEvent<HTMLInputElement>) => {
 
-        const data: any ={
+    // дебаунс
+
+
+
+    const debouncedDropdown = useDebouncedFunction((data: { id: string, value: string }) => setOpacity(data), 500)
+
+
+
+
+
+    // Хэндлер инпутов
+
+
+
+
+    const onChangeHandler = (e: React.SyntheticEvent<HTMLInputElement>) => {
+
+        const data: { id: string, value: string } = {
             id: e.currentTarget.id,
             value: e.currentTarget.value
         }
         
         debouncedDropdown(data);
-        
-       
-        dispatch({
-            type: GET_FORM_DATA,
-            payload: e.currentTarget.value,
-            id: e.currentTarget.id,
-        })
 
-        
+        setFormData(
+            {
+                from: e.currentTarget.id === 'from' ? e.currentTarget.value : formData.from,
+                to: e.currentTarget.id === 'to' ? e.currentTarget.value : formData.to
+            }
+        )
     }
 
 
-    const formSubmitHandler = (e: React.SyntheticEvent<HTMLFormElement>) => {
+    // Кликхэндлер для дропдауна
+
+
+    const onClickHandler = (e: React.SyntheticEvent<HTMLDivElement>, data: any) => {
+
+        const index = parseInt(e.currentTarget.id);
+        const city = data[index];
+
+        let newFormData = {
+            to: city.direction === 'to' ? city.CityName : formData.to,
+            from: city.direction === 'from' ? city.CityName : formData.from
+        }        
+
+
+        setFormData({...newFormData})
+
+        setValidatedCity(
+            {
+                validatedCityFrom: city.direction === 'from' ? city : validatedCity.validatedCityFrom,
+                validatedCityTo: city.direction === 'to' ? city : validatedCity.validatedCityTo,
+                from: city.direction === 'from' ? city.cityName : validatedCity.from,
+                to: city.direction === 'to' ? city.cityName : validatedCity.to
+            }
+        )
+
+        setCalcDropdownVisibility({
+                from: false,
+                to:  false
+        })
+       
+    }
+
+
+    
+
+    // Сабмит формы с городами
+
+
+
+    const formSubmitHandler = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if(validatedCityFrom && validatedCityTo) {
-            //console.log(validatedCityFrom)
-            const distanceData = {
-                from: validatedCityFrom,
-                to: validatedCityTo
-            }
+        let data = orderData;
+        /*
+        setOrderData({
+            validatedCityFrom: validatedCity.validatedCityFrom,
+            validatedCityTo: validatedCity.validatedCityTo,
+            ...orderData
+        }) */
 
-            dispatch(getDistance(distanceData));
+        const distanceData = {
+            from: validatedCity.validatedCityFrom,
+            to: validatedCity.validatedCityTo
         }
-    }
+
+        const response = await getDistance(distanceData, orderData, setOrderData);
+
+        let type;
+        type = distanceData.from?.CityName === distanceData.to?.CityName ? 'intracity' :
+        response.distance <= 300 ? 'intraregion' : 'regular';
+
+
+        data.validatedCityFrom = validatedCity.validatedCityFrom,
+        data.validatedCityTo = validatedCity.validatedCityTo,
+        data.to = validatedCity.validatedCityTo?.CityName,
+        data.from = validatedCity.validatedCityFrom?.CityName,
+        data.orderDistance = await response.distance,
+        data.distanceType = type,
+            
+    
+        
+        setOrderData({...data})
+
+        setFormData({
+            from: '',
+            to: ''
+        })
+        //e.currentTarget.reset();
+        setPopupVisibility(true);
+    } 
 
 
 
 
-    return(
-        <form className={styles.calc_box} onSubmit={formSubmitHandler}>
-            <h1 className={styles.calc_title}>{title}</h1>
-            <div className={styles.input_wrapper}>
-                <label htmlFor='from' className={styles.input_label}>Откуда:</label>
-                <input type='text' className={styles.input} name='from' id='from' onChange={onChangeHandler} value={from} autoComplete='off'></input>
-                {isCalcDropdownFromVisible && <CalcDropdown data={atiCitySearchDataFrom} />}
-            </div>
-            <div className={styles.input_wrapper}>
-                <label htmlFor='to' className={styles.input_label}>Куда:</label>
-                <input type='text' className={styles.input} name='to' id='to' onChange={onChangeHandler} value={to} autoComplete='off'></input>
-                {isCalcDropdownToVisible && <CalcDropdown data={atiCitySearchDataTo} />}
-            </div>
+   
+    return (
+        
 
-            <button type='submit' className={styles.submit_button}>Рассчитать</button>
-        </form>
-    )
-}
+            <>
+            {!popupVisibility ? (<><form className={styles.calc_box} onSubmit={formSubmitHandler}>
+                <div className={styles.title_wrapper}>
+                    <Image src={icon_logo_white} alt='логотип' className={styles.title_logo} />  
+                    <div className={styles.line}></div>                  
+                    <h1 className={styles.calc_title}>РАССЧИТАТЬ&nbsp;FTL&nbsp;АВТОПЕРЕВОЗКУ</h1>
+                </div>
+                
+                <div className={styles.wrapper}>
+                    <div className={styles.input_wrapper}>
+                        {/*<label htmlFor='from' className={styles.input_label}>Откуда:</label>*/}
+                        <input type='text' className={styles.input} name='from' id='from' onChange={onChangeHandler} value={formData.from} autoComplete='off' placeholder='Откуда'></input>
+                        {calcDropdownVisibility.from && <CalcDropdown onClickHandler={onClickHandler} data={atiCitiesData.from} />}
+                    </div>
+                    <div className={styles.input_wrapper}>
+                        {/*<label htmlFor='to' className={styles.input_label}>Куда:</label>*/}
+                        <input type='text' className={styles.input} name='to' id='to' onChange={onChangeHandler} value={formData.to} autoComplete='off' placeholder='Куда'></input>
+                        {calcDropdownVisibility.to && <CalcDropdown onClickHandler={onClickHandler} data={atiCitiesData.to} />}
+                    </div>
+
+                    <button type='submit' className={styles.submit_button}>Рассчитать</button>
+                </div>
+                <div className={styles.title_wrapper}>                
+                    <p className={styles.text}>{`Моментальный расчет перевозки в два клика прямо на сайте! Отправьте заявку после расчета, чтобы зфиксировать персональную скидку или другие специальные условия перевозки. Страховое покрытие на 1 миллион рублей уже включено в стоимость!`}</p>
+                </div>
+            </form>
+            
+            </>
+            ) : (
+                <div className={styles.calc_box}>
+                    <Popup 
+                        setPopupVisibility={setPopupVisibility}
+                        orderData={orderData}
+                        popupVisibility={popupVisibility}
+                    />
+                </div>
+            )}
+            </>
+        
+    );
+};
 
 export default Calc;

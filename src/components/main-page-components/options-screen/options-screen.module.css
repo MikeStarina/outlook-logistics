@@ -95,10 +95,11 @@
 
 .options_bg {
     width: 90%;
+    height: auto;
     position: absolute;
     right: -700px;
     top: 10%;
-    opacity: .7;
+    opacity: 1;
 }
 
 

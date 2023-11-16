@@ -1,36 +1,31 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
+import { sendFormData } from "@/actions/actions";
 import styles from './form-screen.module.css';
-import { useSelector, useDispatch } from "../../..";
-import { CLEAR_FORM_DATA, GET_FORM_DATA, sendOrderData } from "../../../services/actions/calc-actions";
-import { TCalcState } from "../../../services/reducers/calcReducer";
-
-
-
-
 
 
 const FormScreen: React.FC = () => {
 
-    const dispatch = useDispatch();
-    const data = useSelector<TCalcState>(store => store.calc);
+   
+    const [ callBackData, setCallBackData ] = useState<{ name: string, phone: string }>({
+        name: '',
+        phone: ''
+    });
 
-    
 
 
     const onChangeHandler = (e: React.SyntheticEvent<HTMLInputElement>) => {
-        dispatch({
-            type: GET_FORM_DATA,
-            payload: e.currentTarget.value,
-            id: e.currentTarget.id,
+
+        setCallBackData({
+            name: e.currentTarget.id === 'name' ? e.currentTarget.value : callBackData.name,
+            phone: e.currentTarget.id === 'phone' ? e.currentTarget.value : callBackData.phone,
         })
     }
 
-    const submitHandler = (e: React.SyntheticEvent<HTMLFormElement>) => {
+    const submitHandler = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
-        dispatch({type: CLEAR_FORM_DATA});
-        dispatch(sendOrderData(data));
-
-        
+        const response = sendFormData(callBackData);
+        e.currentTarget.reset();
     }
 
     return (
@@ -43,12 +38,12 @@ const FormScreen: React.FC = () => {
                 <form className={styles.calc_form} onSubmit={submitHandler}>
                     <div className={styles.input_wrapper}>
                         <label htmlFor='from' className={styles.input_label}>Ваше имя:</label>
-                        <input type='text' className={styles.input} name='name' id='name' value={data.name} onChange={onChangeHandler}></input>
+                        <input type='text' className={styles.input} name='name' id='name' value={callBackData.name} onChange={onChangeHandler}></input>
                        
                     </div>
                     <div className={styles.input_wrapper}>
                         <label htmlFor='to' className={styles.input_label}>Номер телефона:</label>
-                        <input type='text' className={styles.input} name='phone' id='phone' value={data.phone} onChange={onChangeHandler}></input>
+                        <input type='text' className={styles.input} name='phone' id='phone' value={callBackData.phone} onChange={onChangeHandler}></input>
                        
                     </div>
 
