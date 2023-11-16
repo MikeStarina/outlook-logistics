@@ -1,11 +1,12 @@
-import React, { useRef, lazy, Suspense } from "react";
-import useScrollData from "../../../utils/useScrollData";
+'use client'
+import React, { Suspense } from "react";
 import styles from './contacts-screen.module.css';
-const YMaps = lazy(() => import('@pbe/react-yandex-maps').then(({ YMaps }) => ({ default: YMaps })));
-const Map = lazy(() => import('@pbe/react-yandex-maps').then(({ Map }) => ({ default: Map })));
-const Placemark = lazy(() => import('@pbe/react-yandex-maps').then(({ Placemark }) => ({ default: Placemark })));
-const ZoomControl = lazy(() => import('@pbe/react-yandex-maps').then(({ ZoomControl }) => ({ default: ZoomControl })));
-//import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
+
+//const YMaps = lazy(() => import('@pbe/react-yandex-maps').then(({ YMaps }) => ({ default: YMaps })));
+//const Map = lazy(() => import('@pbe/react-yandex-maps').then(({ Map }) => ({ default: Map })));
+//const Placemark = lazy(() => import('@pbe/react-yandex-maps').then(({ Placemark }) => ({ default: Placemark })));
+//const ZoomControl = lazy(() => import('@pbe/react-yandex-maps').then(({ ZoomControl }) => ({ default: ZoomControl })));
+import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
 
 
 
@@ -14,14 +15,7 @@ const ZoomControl = lazy(() => import('@pbe/react-yandex-maps').then(({ ZoomCont
 
 
 const ContactsScreen: React.FC = () => {
-    const circleRef = useRef(null);
-
-
-    useScrollData((scrollData) => {
-        const node: HTMLDivElement | null = circleRef?.current;
-        //console.log(node);
-        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px)`;
-    })
+   
 
     return (
         <section className={styles.screen}>
@@ -35,17 +29,19 @@ const ContactsScreen: React.FC = () => {
                 </div>
             </div>
             <div className={styles.map_block}>
-                <Suspense fallback={<div>Loading...</div>}>
-                <YMaps>
-                    <Map defaultState={{ center: [ 59.879510, 30.397140 ], zoom: 15 }} instanceRef={ref => { ref && ref.behaviors.disable('scrollZoom'); }} width={'100%'} height={'100%'} className={styles.map}>
-                        <Placemark defaultGeometry={[ 59.879510, 30.397140 ]} />
-                        <ZoomControl />
-                    </Map>
-                </YMaps>
+                <Suspense fallback={null}>
+                    
+                    <YMaps>
+                        <Map defaultState={{ center: [ 59.879510, 30.397140 ], zoom: 15 }} instanceRef={ref => { ref && ref.behaviors.disable('scrollZoom'); }} width={'100%'} height={'100%'} className={styles.map}>
+                            <Placemark defaultGeometry={[ 59.879510, 30.397140 ]} />
+                            <ZoomControl />
+                        </Map>
+                    </YMaps>
+                    
                 </Suspense>
             </div>
 
-            <div className={styles.circle} ref={circleRef}>
+            <div className={styles.circle}>
                 <div className={styles.inner_circle}></div>
             </div>
         </section>

@@ -2,28 +2,58 @@
     background-color: rgba(56, 56, 56, .8);
     border: none;
     border-radius: 20px;
-    width: 100%;
-    max-width: 600px;
+    width: 90%;
     z-index: 5;
-    margin: 50px 0 0 25px;
+    margin: 0;
     padding: 50px 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     backdrop-filter: blur(5px);
     box-shadow: 0 0 20px rgba(0, 0, 0, .25); 
     box-sizing: border-box;
 }
 
+.title_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.title_logo {
+    width: auto;
+    height: 30px;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
 .calc_title {
-    font-size: var(--headLFont);
+    font-size: var(--headSFont);
+    width: auto;
+    letter-spacing: 2px;
     line-height: 35px;
     font-weight: 600;
     color: white;
     margin: 0;
-    margin-bottom: 50px;
     padding: 0;
+}
+.text {
+    color: white;
+    font-size: var(--plainTextS)
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0;
 }
 
 .input_wrapper {
@@ -33,7 +63,6 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 5px;
-    margin-bottom: 20px;
     position: relative;
     
 }
@@ -60,6 +89,13 @@
     box-sizing: border-box;
 }
 
+.input::placeholder {
+    font-size: var(--buttonTextL);
+    line-height: 25px;
+    color: white;
+    font-weight: 400;
+}
+
 
 .input:focus {
     outline: 1px solid white;    
@@ -76,7 +112,7 @@
 
 
 .submit_button {
-    width: 150px;
+    width: 300px;
     height: 40px;
     border: 1px solid white;
     border-radius: 8px;
@@ -88,7 +124,24 @@
     font-weight: 400;
     cursor: pointer;
     z-index: 2;
-    margin-top: 30px;
+}
+
+@media (max-width: 1000px) {
+    .calc_box {
+        padding: 25px 50px;
+    }
+
+    .title_wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .line {
+        display: none;
+    }
+    
 }
 
 
@@ -129,7 +182,11 @@
    .icon_logo {
     display: block;
    }
-    
+   .wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+   }    
 }
 
 
@@ -146,34 +203,58 @@
     }
 
     .calc_title {
-        font-size: 20px;
-        line-height: 25px;
+        font-size: var(--plainTextM);
+        line-height: var(--plainTextM);
         text-align: left;
     }
 }
 
 @media (max-width: 450px) {
+    .calc_title {
+        font-size: var(--plainTextS);
+        line-height: var(--plainTextS);
+        text-align: left;
+    }
     .calc_box {
-        padding: 50px 30px;
+        padding: 25px 30px;
         width: calc(100% + 40px);
     }
-
+    .input {
+        height: 30px;
+        border-radius: 5px;
+        font-size: var(--plainTextS);
+    }
+    .submit_button {
+        height: 30px;
+        border-radius: 5px;
+    }
+    .input::placeholder {
+        font-size: 10px;
+    }
 
     .input_option {
         font-size: 10px;
         line-height: 15px;
     }
+
+    .text {
+        font-size: var(--plainTextS);
+    }
 }
 
 @media (max-width: 380px) {
     .calc_box {
-        padding: 50px 30px;
+        padding: 20px 25px;
         width: calc(100% + 25px);
         border-radius: 15px;
     }
 
+    .text {
+        font-size: 10px;
+    }
+
     .calc_title {
-        font-size: var(--headSFont);
+        font-size: 10px;
     }
 
     .input_label {
@@ -182,6 +263,8 @@
 
     .submit_button {
         font-size: 13px;
+        align-self: center;
+        width: 100%;
     }
 }
 

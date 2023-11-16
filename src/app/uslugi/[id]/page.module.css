@@ -1,0 +1,226 @@
+.main_screen {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-attachment: fixed;
+    position: relative;
+    margin: 0 auto;
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.bg_image {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    filter: grayscale(100%) contrast(50%) blur(3px);
+}
+
+.title_wrapper {
+    width: 80%;
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: transparent;
+    z-index: 2;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.title_logo {
+    width: auto;
+    height: 50px;
+}
+
+.line {
+    width: 2px;
+    height: 50px;
+    background-color: white;
+}
+
+.title {
+    color: white;
+    text-transform: uppercase;
+    font-size: var(--headLFont);
+    line-height: var(--headLFont);
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+
+.features_screen {
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    gap: 2px;
+    padding: 2px 0;
+}
+.features_screen_disabled {
+    display: none;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+}
+.feature_card {
+    width: 100%;
+    height: 100%;
+    max-height: 378px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.feature_link {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden; 
+    height: 380px;
+    max-height: 380px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.card_cover {
+    position: absolute;
+    top: 0;
+    width: auto;
+    height: 380px;
+    max-height: 380px;
+    object-fit: cover;
+    filter: grayscale(100%) blur(3px);
+    z-index: 1;
+}
+
+.card_cover:hover {
+    filter: grayscale(0) blur(0);;
+    transform: scale(105%);
+    transition: transform .3s ease-out;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: auto;    
+    z-index: 2;
+}
+
+.card_title_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+.card_title {    
+    margin: 0;
+    padding: 0;
+    /*font-size: var(--PlainTextL);*/
+    font-size: 25px;
+    line-height: 28px;
+    font-weight: 500;
+    color: white;
+    width: 330px;
+    z-index: 4;  
+    text-transform: uppercase;
+    white-space: normal;
+}
+.card_number {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: 600;
+    color: white;
+    max-width: 300px;
+    z-index: 2;
+}
+
+.secondary_services {
+    padding: 50px 150px 150px 150px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.secondary {
+    height: 40px;
+    width: auto;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 0;
+    padding: 0 20px;
+    color: black;
+    font-size: var(--plainTextS);
+    line-height: var(--plainTextS);
+    background: transparent;
+}
+.secondary:hover {
+    background: linear-gradient(190deg, #21CEB6 3.79%, #0B58CE 140.92%);
+    border: 1px solid transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.secondary_link {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.text_screen {
+    padding: 50px 100px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #e5e5e5;
+}
+
+.text_screen_title {
+    font-size: var(--screenTitleL);
+    font-family: inherit;
+}
+
+.paragraph {
+    font-size: var(--plainTextL);
+    line-height: 20px;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+}

@@ -1,15 +1,15 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from './clients-screen.module.css';
-import etm from '../../../images/etm.png';
-import gazprom from '../../../images/gazprom.png';
-import kamaz from '../../../images/kamaz.png';
-import knauf from '../../../images/knauf.png';
-import magnit from '../../../images/magnit.png';
-import rzd from '../../../images/rzd.png';
-import segezha from '../../../images/segezha.png';
-import tat from '../../../images/tat.png';
-import technonikol from '../../../images/technonikol.png';
-import useScrollData from "../../../utils/useScrollData";
+import etm from '../../../../public/clients/etm.png';
+import gazprom from '../../../../public/clients/gazprom.png';
+import kamaz from '../../../../public/clients/kamaz.png';
+import knauf from '../../../../public/clients/knauf.png';
+import magnit from '../../../../public/clients/magnit.png';
+import rzd from '../../../../public/clients/rzd.png';
+import segezha from '../../../../public/clients/segezha.png';
+import tat from '../../../../public/clients/tat.png';
+import technonikol from '../../../../public/clients/technonikol.png';
+import Image from "next/image";
 
 
 
@@ -19,27 +19,19 @@ import useScrollData from "../../../utils/useScrollData";
 
 const ClientsScreen: React.FC = () => {
 
-    const ref = useRef(null);
-
-
-    useScrollData((scrollData) => {
-        const node: HTMLDivElement | null = ref?.current;
-        node!.style.transform = `translateY(${scrollData.difference * -1 / 20}px) skewY(-11deg)`;
-    })
-
     return (
         <section className={styles.screen}>
-            <img src={etm} alt='ЭТМ ЛОГОТИП' className={styles.client_logo} loading='lazy' decoding="async"></img>
-            <img src={gazprom} alt='газпром логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
-            <img src={kamaz} alt='камаз логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
-            <img src={knauf} alt='кнауф логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
-            <img src={magnit} alt='магнит логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
-            <img src={rzd} alt='ржд логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
-            <img src={segezha} alt='сегежа логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
-            <img src={tat} alt='татнефть логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
-            <img src={technonikol} alt='технониколь логотип' className={styles.client_logo} loading='lazy' decoding="async"></img>
+            <Image src={etm} alt='ЭТМ ЛОГОТИП' className={styles.client_logo} loading='lazy' decoding="async" />
+            <Image src={gazprom} alt='газпром логотип' className={styles.client_logo} loading='lazy' decoding="async" />
+            <Image src={kamaz} alt='камаз логотип' className={styles.client_logo} loading='lazy' decoding="async" />
+            <Image src={knauf} alt='кнауф логотип' className={styles.client_logo} loading='lazy' decoding="async" />
+            <Image src={magnit} alt='магнит логотип' className={styles.client_logo} loading='lazy' decoding="async" />
+            <Image src={rzd} alt='ржд логотип' className={styles.client_logo} loading='lazy' decoding="async" />
+            <Image src={segezha} alt='сегежа логотип' className={styles.client_logo} loading='lazy' decoding="async" />
+            <Image src={tat} alt='татнефть логотип' className={styles.client_logo} loading='lazy' decoding="async" />
+            <Image src={technonikol} alt='технониколь логотип' className={styles.client_logo} loading='lazy' decoding="async" />
 
-            <div className={styles.trapezoid} ref={ref}></div>
+            <div className={styles.trapezoid}></div>
         </section>
     )
 }

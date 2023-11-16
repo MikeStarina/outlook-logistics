@@ -1,13 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
 import styles from './first-screen.module.css';
-import { Link } from "react-router-dom";
-import full_logo440px_white from '../../../images/full_logo440px_white.svg';
-import icon_logo from '../../../images/icon_logo.svg';
-import cont from '../../../images/cont.webp';
-import cont4 from '../../../images/cont4.png';
-import { useLocation } from "react-router";
+import firstScreenBg from '../../../../public/firstScreenBg.jpg';
+import Image from "next/image";
 import Calc from "../../calc/calc";
-import useScrollData from "../../../utils/useScrollData";
 
 
 
@@ -16,58 +11,19 @@ import useScrollData from "../../../utils/useScrollData";
 
 const FirstScreen: React.FC = () => {
 
-    const { pathname } = useLocation();
-    const ref = useRef(null);
-
-
-
-    useScrollData((scrollData) => {
-        const node: HTMLDivElement | null = ref?.current;
-        node!.style.transform = `translateY(${scrollData.difference * -1 / 5}px)`;
-    })
-   
-
-    const activeBgImage = pathname === '/' ? cont :
-        pathname === '/features' ? cont4 : cont;
-
-
-
     return (
+
+       
         <section className={styles.screen} id='calc'>
-           
-           
-            
-            <div className={styles.main_text_block}>
-                <Link to='/' className={styles.logo_link}>
-                    <img src={full_logo440px_white} alt='outlook_logo' className={styles.logo}></img>
-                </Link>
-                <Link to='/' className={styles.logo_link}>
-                    <img src={icon_logo} alt='outlook_icon_logo' className={styles.icon_logo}></img>
-                </Link>
-                <div className={styles.text_wrapper}>
-                    <a href='tel:+78002010073' className={styles.caption}>8 <i>(800)</i> 201-00-73</a>
-                   
-                </div>
-                <div className={styles.text_wrapper} id='calc'>
-                    
-                    <p className={styles.caption}>info@<i>outlook</i>-logistics.ru</p>
-                </div>
-            </div>
 
             
-               <Calc />
-           
+            <Calc />
 
-
-
-           
-
-           
-            <div className={styles.bg_circle} ref={ref}>
-                <div className={styles.bg_inner_circle}></div>
-            </div>
-            <img src={activeBgImage} alt='container' className={styles.bg_image} loading='lazy' decoding="async"></img>
+            <div className={styles.trapezoid_left}></div>
+            <div className={styles.trapezoid_right}></div>
+            <Image src={firstScreenBg} alt='фоновое изображение' className={styles.bg_image} loading='lazy' decoding="async" />
         </section>
+       
     )
 }
 

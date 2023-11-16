@@ -1,129 +1,150 @@
-import React, { useEffect } from 'react';
+'use client'
+import React, { useState } from 'react';
 import styles from './popup.module.css';
-import { useSelector, useDispatch } from '../..';
-import { POPUP_VISIBILITY } from '../../services/actions/utils-actions';
-import { CLEAR_FORM_DATA, GET_FORM_DATA, sendOrderData, SET_CAR_TYPE, SET_ORDER_PRICE, SET_REF_OPTION, UPDATE_PRICE, RESET_ORDER} from '../../services/actions/calc-actions';
 import { INSURANCE_PRICE, PRICE_RATIO, carTypes, priceCalculatorFunc } from '../../utils/constants';
-import { TCalcState } from '../../services/reducers/calcReducer';
+import { sendOrderData } from '@/actions/actions';
 import { TCarType } from '../../utils/constants';
-import truck1500 from '../../images/truck1500.svg';
-import truck5000 from '../../images/truck5000.svg';
-import truck20000 from '../../images/truck20000.svg';
-import truckTrall from '../../images/truckTrall.svg';
+import { TOrderState } from '@/utils/states';
+import Image from 'next/image';
+import truck1500 from '../../../public/truck1500.svg';
+import truck5000 from '../../../public/truck5000.svg';
+import truck20000 from '../../../public/truck20000.svg';
+import truckTrall from '../../../public/truckTrall.svg';
+
 
 
 
 const carIcons = [truck1500, truck5000, truck20000, truckTrall]
 
 
-const Popup: React.FC = () => {
+const Popup: React.FC<any> = ({ setPopupVisibility, orderData }) => {
 
-    const dispatch = useDispatch();
-    const orderData = useSelector<TCalcState>(store => store.calc);
+    const [ stepTwoData, setStepTwoData ] = useState<TOrderState>(orderData)
 
-   
-   
+
+
 
     const closeButtonHandler = () => {
-        dispatch({ type: RESET_ORDER });
-        dispatch({ type: POPUP_VISIBILITY });
+       setPopupVisibility(false);
     }
 
 
 
 
     const onClickHandler = (e: React.SyntheticEvent<HTMLDivElement>) => {
+
+
         const { id } = e.currentTarget;
-        const selectedCarType = carTypes.find(item => item.name === id);
-        dispatch({
-            type: SET_CAR_TYPE,
-            payload: selectedCarType
-        })
+        const selectedCarType: TCarType | undefined = carTypes.find(item => item.name === id);
+        
+
+        
         const price = priceCalculatorFunc(orderData, PRICE_RATIO, INSURANCE_PRICE, selectedCarType, false);
 
-        dispatch({
-            type: SET_ORDER_PRICE,
-            payload: price
-        })
-
-      
+        let updatedData = stepTwoData;
+        updatedData.carType = selectedCarType;
+        updatedData.price = price
+        updatedData.isRef = false
+   
+        setStepTwoData({...updatedData});      
     }
 
 
     const onChangeRefHandler = (e: React.SyntheticEvent<HTMLInputElement>) => {
         
-
-        dispatch({
-            type: SET_REF_OPTION,
-            payload: e.currentTarget.checked
-        })
-        dispatch({
-            type: UPDATE_PRICE,
-            payload: e.currentTarget.checked
-        })
       
+
+        const price = priceCalculatorFunc(orderData, PRICE_RATIO, INSURANCE_PRICE, stepTwoData.carType, e.currentTarget.checked)
+        let updatedData = stepTwoData;
+        updatedData.isRef = e.currentTarget.checked;
+        updatedData.price = price;
+        setStepTwoData({...updatedData})
+
+
     }
-
-
     const onChangeHandler = (e: React.SyntheticEvent<HTMLInputElement>) => {
-        dispatch({
-            type: GET_FORM_DATA,
-            payload: e.currentTarget.value,
-            id: e.currentTarget.id,
-        })
+
+        let updatedData = stepTwoData;
+        updatedData.name = e.currentTarget.id === 'name' ? e.currentTarget.value : updatedData.name;
+        updatedData.phone = e.currentTarget.id === 'phone' ? e.currentTarget.value : updatedData.phone;
+        setStepTwoData({...updatedData})
     }
 
 
     const onSubmitHandler = (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
-        dispatch({ type: POPUP_VISIBILITY });
-        dispatch({ type: CLEAR_FORM_DATA });
-        dispatch(sendOrderData(orderData));
-        dispatch({type: RESET_ORDER});
+        setPopupVisibility(false);
+
+
+ 
+        sendOrderData(stepTwoData);
+
     }
 
     const distance = orderData!.orderDistance! > 0 ? `${orderData.orderDistance} км.` : 'Внутригородская';
-
+    console.log(stepTwoData)
     return (
-        <section className={styles.popup_container}>
+
             
             <div className={styles.popup} >
+                <div className={styles.wrapper}>
 
-                <button type='button' className={styles.close_button} onClick={closeButtonHandler}>X</button>
+                    <button type='button' className={styles.close_button} onClick={closeButtonHandler}>X</button>
 
 
-                <p className={styles.form_caption}>{`Расстояние перевозки: ${distance}`}</p>
-                <p className={styles.form_caption}>Выберите тип кузова:</p>
+                    {/*<p className={styles.form_caption}>{`Расстояние перевозки: ${distance}`}</p>*/}
+                    <p className={styles.form_caption}>Выберите тип кузова:</p>
 
-                <div className={styles.car_type_wrapper}>
-                    {carTypes.map((item, index) => (
-                      <div className={orderData.carType && orderData.carType!.name === item.name ? styles.car_icon_selected : styles.car_icon} key={index} id={item.name} onClick={onClickHandler}>
-                        <img src={carIcons[index]} className={styles.car_image}></img>
-                        <p className={styles.icon_caption}>{item.placeholder}</p>
-                      </div>
-                    ))}
+                    <div className={styles.car_type_wrapper}>
+                        {carTypes.map((item, index) => {
+                            //console.log(item);
+                            return (
+                        <div className={stepTwoData && stepTwoData.carType && stepTwoData.carType!.name === item.name ? styles.car_icon_selected : styles.car_icon} key={index} id={item.name} onClick={onClickHandler}>
+                            {/*<Image src={carIcons[index]} alt='Иконка типа автомобиля' className={styles.car_image} />*/}
+                            <p className={styles.icon_caption}>{item.placeholder}</p>
+                        </div>
+                        )})}
+                        
+
+                        
+                    </div>
                     
-
+                    <form className={styles.ref_checkbox_wrapper}>
+                        <input  className={styles.ref_checkbox} type='checkbox' id='refCheckbox' name='refCheckbox' onChange={onChangeRefHandler} disabled={!stepTwoData?.carType?.options.ref} checked={stepTwoData?.isRef || false}></input>
+                        <label htmlFor='refCheckbox' className={stepTwoData?.carType?.options.ref ? styles.input_ref_label : styles.input_ref_label_disabled}>Рефрижератор</label>
+                    </form>
                     
+                   
+
+                    <form className={styles.order_form} onSubmit={onSubmitHandler}>
+                        <label htmlFor='phone' className={styles.input_userdata_label}>Ваш телефон:</label>
+                        <input type='text' className={styles.input} id='phone' onChange={onChangeHandler} value={stepTwoData.phone} autoComplete='off'></input>
+                        <label htmlFor='name' className={styles.input_userdata_label}>Ваше имя:</label>
+                        <input type='text' className={styles.input} id='name' onChange={onChangeHandler} value={stepTwoData.name} autoComplete='off'></input>
+                        <button type='submit' className={styles.submit_button}>Отправить</button>
+                    </form>
                 </div>
-                
-                <form className={styles.ref_checkbox_wrapper}>
-                    <input  className={styles.ref_checkbox} type='checkbox' id='refCheckbox' name='refCheckbox' onChange={onChangeRefHandler} disabled={!orderData.carType?.options.ref} checked={orderData.isRef}></input>
-                    <label htmlFor='refCheckbox' className={orderData.carType?.options.ref ? styles.input_ref_label : styles.input_ref_label_disabled}>Рефрижератор</label>
-                </form>
-                  
-                {orderData!.price! > 0 && <p className={styles.form_caption}>Стоимость заказа: {orderData.price}Р.</p>}
-
-                <form className={styles.order_form} onSubmit={onSubmitHandler}>
-                    <label htmlFor='phone' className={styles.input_userdata_label}>Ваш телефон:</label>
-                    <input type='text' className={styles.input} id='phone' onChange={onChangeHandler} value={orderData.phone}></input>
-                    <label htmlFor='name' className={styles.input_userdata_label}>Ваше имя:</label>
-                    <input type='text' className={styles.input} id='name' onChange={onChangeHandler} value={orderData.name}></input>
-                    <button type='submit' className={styles.submit_button}>Отправить</button>
-                </form>
+                <div className={styles.price_box}>
+                    <div className={styles.info_wrapper}>
+                            <p className={styles.info}>Кузов — {stepTwoData?.carType?.placeholder} {stepTwoData?.isRef && 'Реф'}</p>
+                            {stepTwoData?.carType?.capacity && <p className={styles.info}>Габариты — {stepTwoData?.carType?.capacity}</p>}
+                            {stepTwoData?.carType?.volume && <p className={styles.info}>Габариты — {stepTwoData?.carType?.volume}</p>}
+                            <p className={styles.info}>Расстояние перевозки — {distance}</p>
+                            <p className={styles.info}>Город отправления — {stepTwoData?.from}</p>
+                            <p className={styles.info}>Город назначения — {stepTwoData?.to}</p>
+                            <p className={styles.info}>Страховое покрытие — 1 000 000 Р.</p>
+                            <p className={styles.info}>Даты — по согласованию</p>
+                            <p className={styles.info}>Онлайн скидка — 5000 Р.</p>
+                    </div>
+                    <div className={styles.price_wrapper}>
+                        <p className={styles.summary}>Итого:</p>
+                        {orderData!.price! > 0 && <p className={styles.old_price}>{stepTwoData!.price! + 5000} <i>Р.</i></p>}
+                        {orderData!.price! > 0 && <p className={styles.final_price}>{stepTwoData.price} <i>Р.</i></p>}
+                    </div>                    
+                </div>
             </div>
 
-        </section>
+
     )
 }
 
