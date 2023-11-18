@@ -37,12 +37,12 @@ const FormScreen: React.FC = () => {
             <div className={styles.calc_box}>
                 <form className={styles.calc_form} onSubmit={submitHandler}>
                     <div className={styles.input_wrapper}>
-                        <label htmlFor='from' className={styles.input_label}>Ваше имя:</label>
+                        <label htmlFor='name' className={styles.input_label}>Ваше имя:</label>
                         <input type='text' className={styles.input} name='name' id='name' value={callBackData.name} onChange={onChangeHandler}></input>
                        
                     </div>
                     <div className={styles.input_wrapper}>
-                        <label htmlFor='to' className={styles.input_label}>Номер телефона:</label>
+                        <label htmlFor='phone' className={styles.input_label}>Номер телефона:</label>
                         <input type='text' className={styles.input} name='phone' id='phone' value={callBackData.phone} onChange={onChangeHandler}></input>
                        
                     </div>

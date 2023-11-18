@@ -268,14 +268,18 @@
     }
 
     .card_description {
-        font-size: var(--plainTextS);
+        font-size: 10px;
+        line-height: 14px;
     }
 
     .card_text {
-        font-size: var(--plainTextS);
+        font-size: 10px;
+        line-height: 14px;
     }
 
     .card_button {
-        font-size: var(--buttonTextS);
+        font-size: 10px;
+        height: 30px;
+        border-radius: 7px;
     }
 }

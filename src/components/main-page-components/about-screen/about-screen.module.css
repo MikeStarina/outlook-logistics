@@ -264,7 +264,7 @@
 @media (max-width: 480px) {
 
     .screen {
-        padding: 100px 10px;
+        padding: 0 10px 100px 10px;
     }
 
     .digits {
@@ -286,7 +286,7 @@
 
     .text {
         font-size: 10px;
-        line-height: 15px;
+        line-height: 14px;
         
     }
 
@@ -309,13 +309,14 @@
     }
 
     .credits {
-        font-size: var(--plainTextS);
+        font-size: 10px;
+        line-height: 14px;
         font-weight: 600;
     }
 
     .text {
-        font-size: var(--plainTextS);
-        line-height: 18px;
+        font-size: 10px;
+        line-height: 14px;
     }
 
     .buttons_wrapper {
@@ -324,7 +325,8 @@
 
     .button {
         width: 145px;
-        height: 40px;
-        font-size: var(--buttonTextS);
+        height: 30px;
+        border-radius: 7px;
+        font-size: 10px;
     }
 }
