@@ -1,17 +1,17 @@
 'use client'
 import React from 'react';
 import styles from './main-text-screen.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Autoplay from "swiper";
-import Pagination from "swiper";
+//import { Swiper, SwiperSlide } from 'swiper/react';
+//import Autoplay from "swiper";
+//import Pagination from "swiper";
 import aboutSlideOne from '../../../../public/aboutSlideOne.jpg';
 import aboutSlideSix from '../../../../public/aboutSlideSix.jpg';
 import aboutSlideFour from '../../../../public/aboutSlideFour.jpg';
 import aboutSlideThree from '../../../../public/aboutSlideThree.jpg';
 import aboutSlideFive from '../../../../public/aboutSlideFive.jpg';
 import Image from 'next/image';
-import 'swiper/css';
-import "swiper/css/pagination";
+//import 'swiper/css';
+//import "swiper/css/pagination";
 
 
 
@@ -35,7 +35,7 @@ const MainTextScreen: React.FC = () => {
                     </p>
                 
             </div>
-            
+            {/*
             <Swiper className={styles.swiper}  autoplay={{ delay: 1, disableOnInteraction: true  }} pagination={{ clickable: true }} loop={true}>
                     <SwiperSlide className={styles.slide}>
                         <h2 className={styles.slide_title}>100+ МАШИН</h2>
@@ -64,6 +64,7 @@ const MainTextScreen: React.FC = () => {
                         <Image src={aboutSlideOne} alt='slide 5' className={styles.slide_img} />
                     </SwiperSlide>
             </Swiper>
+    */}
            
         </section>
     )
