@@ -12,7 +12,7 @@ import OptionsScreen from '@/components/main-page-components/options-screen/opti
 import BlogScreen from '@/components/main-page-components/blog-screen/blog-screen';
 import FormScreen from '@/components/main-page-components/form-screen/form-screen';
 import ContactsScreen from '@/components/main-page-components/contacts-screen/contacts-screen';
-import main from '../../public/og/main.jpg';
+
 
 
 export const metadata: Metadata = {
@@ -20,8 +20,12 @@ export const metadata: Metadata = {
     description: 'Перевозка грузов цена услуг в транспортной компании в Санкт-Петербурге Outlook. Оформить заявку на перевозку груза и рассчитать стоимость вы можете на сайте частной логистической компании.',
     keywords: 'Логистическая компания, перевозка грузов, санкт-петербург, оформить заявку, заказать, цены, стоимость, рассчитать, частная, сайт, услуга',
     openGraph: {
-        images: [ 'https://i.ytimg.com/vi/maExxof-fYY/maxresdefault.jpg' ],
-        title: 'OUTLOOK LOGISTICS | Главная'
+        type: 'website',
+        url: 'https://outlook-logistics.ru',
+        description: 'Ваш надежный логистический партнер',
+        siteName: 'OUTLOOK',
+        images: [{ url: 'https://i.ytimg.com/vi/maExxof-fYY/maxresdefault.jpg'}],
+        title: 'OUTLOOK LOGISTICS | Главная',
         
     }
 }

@@ -28,7 +28,7 @@
     width: auto;
     min-height: 100vh;
     z-index: 0;
-    filter: contrast(50%)
+    filter: contrast(50%);
 }
 .trapezoid_left {
     width: 600px;

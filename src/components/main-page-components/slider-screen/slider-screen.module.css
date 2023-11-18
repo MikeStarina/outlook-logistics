@@ -14,13 +14,26 @@
 
 
 
-.swiper {
-    width: 100%;
+.slider {
+    width: 100vw;
     position: relative;
     box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
+    overflow: hidden;
+    height: 100vh;
+}
+
+.slide_container {
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+    margin-left: calc(var(--slide-spacing) * -1);
+    height: 100%;
+    width: 100%;
 }
 
 .slide {
+    flex: 0 0 100%;
+    min-width: 0;
     position: relative;
 }
 
@@ -51,6 +64,7 @@
    object-fit: cover;
    height: auto;
    filter: grayscale(100%) contrast(50%);
+   display: block;
 }
 
 .index {
