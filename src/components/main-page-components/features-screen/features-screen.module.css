@@ -314,3 +314,39 @@
         height: auto;
     }
 }
+
+@media (max-width: 450px) {
+    .title { 
+        align-self: center;
+    }
+
+    .screen {
+        padding: 50px;
+    }
+
+    .cards_block {
+        margin-top: 25px;
+    }
+
+    .card {
+        height: 75vh;
+    }
+    .cover {
+        height: 75%;
+        filter: none;
+    }
+    .bgimage {
+        display: none;
+    }
+
+    .card_title {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .button {
+        height: 30px;
+        border-radius: 7px;
+        font-size: 10px;
+    }
+}

@@ -34,7 +34,7 @@ const StagesScreen: React.FC = () => {
                         <h5 className={styles.card_number}>02</h5>        
 
                         <div className={styles.card_description_box}>
-                            <p className={styles.card_description_title}>ДОКУМЕНТЫ</p>
+                            <p className={styles.card_description_title}>ДЕТАЛИ</p>
                             <p className={styles.card_description}>Уже через пять минут наш менеджер свяжется с вами для уточнения деталей перевозки и забронирует для вас необходимый транспорт</p>
                           
                         </div>

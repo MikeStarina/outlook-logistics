@@ -210,23 +210,33 @@
 }
 
 @media (max-width: 450px) {
+    .calc_box {
+        border-radius: 10px;
+    }
     .calc_title {
-        font-size: var(--plainTextS);
+        font-size: 10px;
         line-height: var(--plainTextS);
+        letter-spacing: normal;
         text-align: left;
     }
     .calc_box {
         padding: 25px 30px;
         width: calc(100% + 40px);
+        margin: 0;
     }
     .input {
         height: 30px;
-        border-radius: 5px;
+        border-radius: 7px;
         font-size: var(--plainTextS);
     }
     .submit_button {
         height: 30px;
-        border-radius: 5px;
+        border-radius: 7px;
+        font-size: 10px;
+        width: 100%;
+    }
+    .text {
+        font-size: 9px;
     }
     .input::placeholder {
         font-size: 10px;
@@ -237,9 +247,6 @@
         line-height: 15px;
     }
 
-    .text {
-        font-size: var(--plainTextS);
-    }
 }
 
 @media (max-width: 380px) {

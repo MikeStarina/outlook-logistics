@@ -21,7 +21,6 @@
 }
 
 .slide {
-    border-radius: 20px;
     position: relative;
 }
 
@@ -191,7 +190,7 @@
 
 @media (max-width: 550px) {
     .swiper {
-        border-radius: 10px;
+        border-radius: none;
     }
     .screen { 
         padding: 20px 10px;
@@ -246,6 +245,26 @@
         font-weight: var(--lightFont);
     }
 
+   
   
+}
+
+@media (max-width: 450px) {
+    .screen {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        border-radius: none;
+    }
+    .slider {
+        height: 100%;
+        border-radius: none;
+    }
+    .swiper {
+        height: 100%;
+    }
+    .slide {
+        border-radius: none;
+    }
 }
 

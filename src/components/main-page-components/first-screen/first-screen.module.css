@@ -144,6 +144,26 @@
     }
 }
 
+@media (max-width: 450px) {
+    .trapezoid_left {
+        display: none;
+    }
+    .calc_box {
+        padding: 50px 30px;
+        width: calc(100% + 40px);
+    }
+
+    .screen {
+        height: calc(100vh - 70px);
+    }
+
+
+    .input_option {
+        font-size: 10px;
+        line-height: 15px;
+    }
+}
+
 @media (max-width: 380px) {
     .calc_box {
         padding: 50px 20px;
