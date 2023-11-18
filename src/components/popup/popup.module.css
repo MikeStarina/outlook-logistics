@@ -296,14 +296,28 @@
 }
 
 @media (max-width: 450px) {
+    .input_ref_label {
+        font-size: 10px;
+    }
+    .input_ref_label_disabled {
+        font-size: 10px;
+    }
+    .form_caption {
+        font-size: 10px;
+    }
+    .input_userdata_label {
+        font-size: 10px;
+    }
     .input {
         height: 30px;
-        border-radius: 5px;
+        border-radius: 7px;
         font: 10px;
+        font-size: 10px;
     }
     .submit_button {
         height: 30px;
-        border-radius: 5px;
+        border-radius: 7px;
+        font-size: 10px;
     }
     .icon_caption {
         font-size: 8px;
