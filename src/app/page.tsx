@@ -24,7 +24,6 @@ export const metadata: Metadata = {
         url: 'https://outlook-logistics.ru',
         description: 'Ваш надежный логистический партнер',
         siteName: 'OUTLOOK',
-        images: [{ url: 'https://i.ytimg.com/vi/maExxof-fYY/maxresdefault.jpg'}],
         title: 'OUTLOOK LOGISTICS | Главная',
         
     }
