@@ -28,10 +28,10 @@ const Header: React.FC = () => {
                     <a href='tel:+78002010073' className={styles.caption}>8 <i>(800)</i> 201-00-73</a>                   
                 </div>
                 <div className={styles.text_wrapper}>
-                    <a href='https://t.me/artemka_t' target='blank' className={styles.caption}>TG</a>                   
+                    <a href='https://t.me/OUTLOOK_LOGISTICS' target='blank' className={styles.caption}>TG</a>                   
                 </div>
                 <div className={styles.text_wrapper}>
-                    <a href='https://api.whatsapp.com/send?phone=79523629222' target='blank' className={styles.caption}>WA</a>                   
+                    <a href='https://api.whatsapp.com/send?phone=79223671541' target='blank' className={styles.caption}>WA</a>                   
                 </div>
                 <div className={styles.text_wrapper} id='calc'>                    
                     <a href='mailto:info@outlook-logistics.ru' target='blank' className={styles.caption}>info@<i>outlook</i>-logistics.ru</a>

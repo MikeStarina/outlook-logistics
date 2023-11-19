@@ -35,6 +35,7 @@ const AboutScreen: React.FC = () => {
       <div className={styles.about_block}>
         <div className={styles.left_column}>
           <div className={styles.avatar_wrapper}>
+            
             <Image src={CEO} alt="CEO photo" className={styles.avatar} />
           </div>
           <div className={styles.credits_wrapper}>
