@@ -9,6 +9,8 @@
     align-items: flex-start;
     gap: 50px;
     flex-wrap: wrap;
+    background-color: rgba(56,56,56, .8);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .8);
 }
 
 .profile_wrapper {
@@ -27,6 +29,8 @@
     border-radius: 50%;
     overflow: hidden;
     background: linear-gradient(190deg, #21CEB6 3.79%, #0B58CE 140.92%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+    border: 1px solid rgba(56,56,56,);
 }
 
 .avatar_ceo {
@@ -69,5 +73,5 @@
     line-height: 20px;
     font-weight: 400;
     text-align: center;
-    color: #383838;
+    color: white;
 }

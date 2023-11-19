@@ -14,6 +14,10 @@ export const contentType = 'image/png'
  
 // Image generation
 export default async function Image() {
+  // Font
+  //const font = fetch(
+  //  new URL('', import.meta.url)
+  //).then((res) => res.arrayBuffer())
  
   return new ImageResponse(
     (

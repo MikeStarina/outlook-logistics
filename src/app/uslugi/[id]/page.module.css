@@ -21,8 +21,8 @@
     position: absolute;
     top: 0;
     left: 0px;
-    width: 100%;
-    height: auto;
+    width: auto;
+    min-height: 100vh;
     z-index: 0;
     filter: grayscale(100%) contrast(50%) blur(3px);
 }
@@ -223,4 +223,119 @@
     margin: 0;
     padding: 0;
     margin-bottom: 15px;
+}
+
+
+@media (max-width: 480px) {
+    .title_wrapper {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .features_screen {
+        width: 100%;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: row;
+        gap: 2px;
+    }
+
+    .feature_card {
+        width: 100%;
+        height: 100%;
+        max-height: 220px;
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .feature_link {
+        position: relative;
+        box-sizing: border-box;
+        overflow: hidden;
+        max-height: 220px;
+    }
+
+    .card_number {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+
+    .card_cover {
+        object-fit: cover;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        filter: none;
+        width: auto;
+        height: 100%;
+        filter: brightness(75%);
+    }
+
+    .logo {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .card_title_wrapper {
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+    }
+
+    .card_title {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .secondary_services {
+        padding: 50px 10px 150px 10px;
+    }
+
+    .secondary {
+        height: 30px;
+        width: auto;
+        border: 1px solid black;
+        border-radius: 25px;
+        margin: 0;
+        padding: 0 20px;
+        color: black;
+        font-size: 10px;
+        line-height: 10px;
+        background: transparent;
+    }
+
+    .text_screen {
+        padding: 50px 15px 150px 15px;
+    }
+
+    .text_screen_title {
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 50px;
+    }
+
+    .paragraph {
+        font-size: 10px;
+        line-height: 14px;
+    }
 }

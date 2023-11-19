@@ -23,9 +23,8 @@ export const metadata: Metadata = {
         type: 'website',
         url: 'https://outlook-logistics.ru',
         description: 'Ваш надежный логистический партнер',
-        siteName: 'OUTLOOK',
+        siteName: 'OUTLOOK LOGISTICS',
         title: 'OUTLOOK LOGISTICS | Главная',
-        
     }
 }
 

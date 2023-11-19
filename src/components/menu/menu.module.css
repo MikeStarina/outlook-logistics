@@ -34,6 +34,7 @@
     width: 40px;
     height: 30px;
     cursor: pointer;
+    z-index: 25;
 }
 
 .line {
@@ -65,6 +66,7 @@
     font-size: 30px;
     line-height: 35px;
     font-weight: 500px;
+    z-index: 25;
 }
 
 .contacts_wrapper {
@@ -73,6 +75,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
+    z-index: 25;
 }
 
 .contacts_item {
@@ -84,6 +87,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    z-index: 25;
 }
 
 
@@ -106,5 +110,6 @@
 @media (max-width: 500px) {
     .menu {
         width: 100%;
+        z-index: 25;
     }
 }
