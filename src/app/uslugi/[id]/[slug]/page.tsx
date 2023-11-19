@@ -65,7 +65,9 @@ const Page: React.FC<any> = ({ params }: { params: { slug: string } }) => {
   if (feature!.name === "ЖД перевозки по России") cardCover = zd_rf;
 
     return (
+     
         <MainContainer>
+           <main className={styles.page}>
             <section className={styles.main_screen}>
               <Image
                 src={cardCover}
@@ -94,6 +96,7 @@ const Page: React.FC<any> = ({ params }: { params: { slug: string } }) => {
             <ClientsScreen />
             <FormScreen />            
             <ContactsScreen />
+            </main>
         </MainContainer>
         
     );

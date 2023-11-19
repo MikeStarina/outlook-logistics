@@ -19,12 +19,14 @@ const AboutPage = () => {
 
     return (
         <MainContainer>
-            <AboutFirstScreen />
-            <FeedBackScreen />            
-            <TeamScreen />
-            <SliderScreen />
-            <ClientsScreen />
-            <ContactsScreen />
+            <main className={styles.page}>
+                <AboutFirstScreen />
+                <FeedBackScreen />            
+                <TeamScreen />
+                <SliderScreen />
+                <ClientsScreen />
+                <ContactsScreen />
+            </main>
         </MainContainer>
     );
 }

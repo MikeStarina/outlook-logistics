@@ -16,12 +16,15 @@ const Page: React.FC = () => {
 
     return (
         
-        <MainContainer>
-            <UslugiScreen />
-            <ClientsScreen />
-            <FormScreen />
-            <ContactsScreen />
-        </MainContainer>
+            <MainContainer>
+                <main className={styles.page}>
+                    <UslugiScreen />
+                    <ClientsScreen />
+                    <FormScreen />
+                    <ContactsScreen />
+                </main>
+            </MainContainer>
+        
        
     );
 }

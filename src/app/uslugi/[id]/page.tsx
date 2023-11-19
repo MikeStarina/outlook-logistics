@@ -64,6 +64,7 @@ const Page: React.FC<any> = ({ params }: { params: { id: string } }) => {
   return (
     
     <MainContainer>
+      <main className={styles.page}>
       <section className={styles.main_screen}>
         <Image
           src={cover}
@@ -160,6 +161,7 @@ const Page: React.FC<any> = ({ params }: { params: { id: string } }) => {
       <ClientsScreen />
       <FormScreen />
       <ContactsScreen />
+      </main>
     </MainContainer>
     
   );
