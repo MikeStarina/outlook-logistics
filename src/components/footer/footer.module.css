@@ -38,6 +38,13 @@
     margin: 0;
     padding: 0;
 }
+.paragraph {
+    text-decoration: none;
+    color: white;
+    font-size: var(--plainTextL);
+    margin: 0;
+    padding: 0;
+}
 
 .title {
     font-size: var(--headLFont);
