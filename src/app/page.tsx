@@ -42,7 +42,7 @@ const MainPage: React.FC = () => {
                 <AboutScreen />
                 <ClientsScreen />
                 <OptionsScreen />
-                <BlogScreen />
+                {/*<BlogScreen />*/}
                 <FormScreen />
                 <ContactsScreen />
             </MainContainer>

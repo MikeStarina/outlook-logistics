@@ -43,7 +43,7 @@ const SliderScreen: React.FC = () => {
                             <h2 className={styles.index}>02</h2>  
                             <div className={styles.text_box}>
                                 <h2 className={styles.desc_title}>ЦЕННОСТИ: ДЕТАЛИ</h2>
-                                <p className={styles.description}>Даже простые логистические задачи могу стать невыполнимыми без внимания к деталям перевозки. Выяснения задач и потребностей одна из наших лучших компетенций</p>
+                                <p className={styles.description}>Даже простые логистические задачи могу стать невыполнимыми без внимания к деталям перевозки. Выяснение задач и потребностей одна из наших лучших компетенций</p>
                             </div>
                             <Image src={slideOne} alt='slide one' className={styles.slide_img} loading='lazy' decoding="async" />                 
                     </div>

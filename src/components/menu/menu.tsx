@@ -29,7 +29,7 @@ const Menu: React.FC<TMenuProps> = ({menuVisibility, clickHandler}) => {
                 <Link className={styles.link} href='/' onClick={closeClickHandler}>ГЛАВНАЯ</Link>
                 <Link className={styles.link} href='/about' onClick={closeClickHandler}>О КОМПАНИИ</Link>
                 <Link className={styles.link} href='/uslugi' onClick={closeClickHandler}>УСЛУГИ</Link>
-                <Link className={styles.link} href='/blog' onClick={closeClickHandler}>БЛОГ</Link>
+                {/*<Link className={styles.link} href='/blog' onClick={closeClickHandler}>БЛОГ</Link>*/}
                 <Link className={styles.link} href='/contacts' onClick={closeClickHandler}>КОНТАКТЫ</Link>                
             </div>
 

@@ -128,7 +128,7 @@ const Popup: React.FC<any> = ({ setPopupVisibility, orderData }) => {
                     <div className={styles.info_wrapper}>
                             <p className={styles.info}>Кузов — {stepTwoData?.carType?.placeholder} {stepTwoData?.isRef && 'Реф'}</p>
                             {stepTwoData?.carType?.capacity && <p className={styles.info}>Габариты — {stepTwoData?.carType?.capacity}</p>}
-                            {stepTwoData?.carType?.volume && <p className={styles.info}>Габариты — {stepTwoData?.carType?.volume}</p>}
+                            {stepTwoData?.carType?.volume && <p className={styles.info}>Объем — {stepTwoData?.carType?.volume}</p>}
                             <p className={styles.info}>Расстояние перевозки — {distance}</p>
                             <p className={styles.info}>Город отправления — {stepTwoData?.from}</p>
                             <p className={styles.info}>Город назначения — {stepTwoData?.to}</p>
