@@ -12,6 +12,7 @@ import OptionsScreen from '@/components/main-page-components/options-screen/opti
 import BlogScreen from '@/components/main-page-components/blog-screen/blog-screen';
 import FormScreen from '@/components/main-page-components/form-screen/form-screen';
 import ContactsScreen from '@/components/main-page-components/contacts-screen/contacts-screen';
+import SocialsScreen from '@/components/main-page-components/socials-screen/socials-screen';
 
 
 
@@ -43,6 +44,7 @@ const MainPage: React.FC = () => {
                 <ClientsScreen />
                 <OptionsScreen />
                 {/*<BlogScreen />*/}
+                <SocialsScreen />
                 <FormScreen />
                 <ContactsScreen />
             </MainContainer>

@@ -1,0 +1,146 @@
+.screen {
+    background-color: rgba(56,56,56, .8);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 100px 100px 200px;
+    box-sizing: border-box;
+}
+
+
+.title {
+    margin: 0;
+    padding: 0;
+    font-size: var(--screenTitleL);
+    line-height: 40px;
+    font-weight: 600;
+    text-align: left;
+    color: white;
+    z-index: 2;
+}
+
+
+.main_column {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    box-sizing: border-box;
+}
+
+.strela_logo {
+    width: 400px;
+    height: auto;
+}
+
+.description_column {
+    width: 70%;
+    padding: 100px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.description {
+    color: white;
+    font-size: var(--plainTextL);
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+}
+
+.subscride_button {
+    width: 150px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: var(--buttonTextL);
+    line-height: 15px;
+    font-weight: 400;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .25);
+    z-index: 2;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.socials_column {
+    width: 70%;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.socials_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.social_logo {
+    height: 25px;
+    width: auto;
+}
+
+
+@media (max-width: 480px) {
+    .screen{
+        padding: 100px 20px 0 20px;
+    }
+    .description_column {
+        width: 100%;
+        padding: 100px 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .description {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    .subscride_button {
+        height: 30px;
+        border-radius: 7px;
+        font-size: 10px;
+    }
+    .socials_column {
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+    }
+    .main_column {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .strela_logo {
+        width: 280px;
+        height: auto;
+    }
+
+    .title {
+        display: none;
+    }
+}
