@@ -426,4 +426,19 @@ export const services: Array<TServicesStateObj> = [
         keywords: 'страхование грузов, страховка груза, санкт-петербург, транспортная компания, рассчитать, цена, услуга, недорого, расчет, тарифы'
     }
 },
+{
+    name: 'Перевозка продуктов питания',
+    cardTtitle: 'ПЕРЕВОЗКА',
+    cardSubtitle: 'ПРОДУКТОВ',
+    url: 'perevozka-produktov-pitaniya',
+    description: [
+         
+        ],
+    pagePosition: 'secondary',
+    metadata: {
+        title: '',
+        description: '',
+        keywords: ''
+    }
+},
 ]
