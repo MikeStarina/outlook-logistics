@@ -38,7 +38,7 @@ const Calc: React.FC = () => {
     const [ orderData, setOrderData] = useState<TOrderState>(initialOrderState);
     const [ popupVisibility, setPopupVisibility ] = useState<boolean>(false);
 
-
+  
 
 
     // Эта штука устанавливает видимость дропдаунов и запрашивает поиск по введенному городу
@@ -180,6 +180,7 @@ const Calc: React.FC = () => {
 
 
 
+
    
     return (
         
@@ -217,6 +218,7 @@ const Calc: React.FC = () => {
                     <Popup 
                         setPopupVisibility={setPopupVisibility}
                         orderData={orderData}
+                        setOrderData={setOrderData}
                         popupVisibility={popupVisibility}
                     />
                 </div>

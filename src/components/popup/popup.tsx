@@ -4,8 +4,8 @@ import styles from './popup.module.css';
 import { INSURANCE_PRICE, PRICE_RATIO, carTypes, priceCalculatorFunc } from '../../utils/constants';
 import { sendOrderData } from '@/actions/actions';
 import { TCarType } from '../../utils/constants';
-import { TOrderState } from '@/utils/states';
-import Image from 'next/image';
+import { TOrderState, initialOrderState } from '@/utils/states';
+//import Image from 'next/image';
 import truck1500 from '../../../public/truck1500.svg';
 import truck5000 from '../../../public/truck5000.svg';
 import truck20000 from '../../../public/truck20000.svg';
@@ -14,18 +14,23 @@ import truckTrall from '../../../public/truckTrall.svg';
 
 
 
+
 const carIcons = [truck1500, truck5000, truck20000, truckTrall]
 
 
-const Popup: React.FC<any> = ({ setPopupVisibility, orderData }) => {
+
+const Popup: React.FC<any> = ({ setPopupVisibility, orderData, setOrderData }) => {
 
     const [ stepTwoData, setStepTwoData ] = useState<TOrderState>(orderData)
-
+    
 
 
 
     const closeButtonHandler = () => {
-       setPopupVisibility(false);
+        setStepTwoData({...initialOrderState});
+        setOrderData({...initialOrderState});
+        setPopupVisibility(false);
+       
     }
 
 
@@ -73,16 +78,13 @@ const Popup: React.FC<any> = ({ setPopupVisibility, orderData }) => {
 
     const onSubmitHandler = (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setPopupVisibility(false);
-
-
- 
+        setPopupVisibility(false); 
         sendOrderData(stepTwoData);
-
+        window.location.href = 'https://outlook-logistics.ru/thanks';
     }
 
     const distance = orderData!.orderDistance! > 0 ? `${orderData.orderDistance} км.` : 'Внутригородская';
-    console.log(stepTwoData)
+    //console.log(stepTwoData)
     return (
 
             
