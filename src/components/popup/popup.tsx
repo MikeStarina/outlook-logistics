@@ -19,7 +19,7 @@ const carIcons = [truck1500, truck5000, truck20000, truckTrall]
 
 
 
-const Popup: React.FC<any> = ({ setPopupVisibility, orderData, setOrderData }) => {
+const Popup: React.FC<any> = ({ setPopupVisibility, orderData, setOrderData, setValidatedCity }) => {
 
     const [ stepTwoData, setStepTwoData ] = useState<TOrderState>(orderData)
     
@@ -30,7 +30,12 @@ const Popup: React.FC<any> = ({ setPopupVisibility, orderData, setOrderData }) =
         setStepTwoData({...initialOrderState});
         setOrderData({...initialOrderState});
         setPopupVisibility(false);
-       
+        setValidatedCity({
+            validatedCityTo: undefined,
+            validatedCityFrom: undefined,
+            to: '',
+            from: '',
+        })
     }
 
 

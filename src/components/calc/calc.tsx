@@ -39,7 +39,7 @@ const Calc: React.FC = () => {
     const [ popupVisibility, setPopupVisibility ] = useState<boolean>(false);
 
 
-
+    console.log(orderData);
     // Эта штука устанавливает видимость дропдаунов и запрашивает поиск по введенному городу
 
 
@@ -136,6 +136,7 @@ const Calc: React.FC = () => {
 
     const formSubmitHandler = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!validatedCity.validatedCityFrom || !validatedCity.validatedCityTo) return;
 
         let data = orderData;
         /*
@@ -204,7 +205,7 @@ const Calc: React.FC = () => {
                         {calcDropdownVisibility.to && <CalcDropdown onClickHandler={onClickHandler} data={atiCitiesData.to} />}
                     </div>
 
-                    <button type='submit' className={styles.submit_button}>Рассчитать</button>
+                    <button type='submit' className={styles.submit_button} disabled={!validatedCity.validatedCityFrom || !validatedCity.validatedCityTo}>Рассчитать</button>
                 </div>
                 <div className={styles.title_wrapper}>                
                     <p className={styles.text}>{`Моментальный расчет перевозки в два клика прямо на сайте! Отправьте заявку после расчета, чтобы зфиксировать персональную скидку или другие специальные условия перевозки. Страховое покрытие на 1 миллион рублей уже включено в стоимость!`}</p>
@@ -219,6 +220,7 @@ const Calc: React.FC = () => {
                         orderData={orderData}
                         setOrderData={setOrderData}
                         popupVisibility={popupVisibility}
+                        setValidatedCity={setValidatedCity}
                     />
                 </div>
             )}

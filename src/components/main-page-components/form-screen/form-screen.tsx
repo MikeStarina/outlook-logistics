@@ -29,7 +29,7 @@ const FormScreen: React.FC = () => {
             name: '',
             phone: '',
         })
-        //window.location.href = 'https://outlook-logistics.ru/thanks';
+        window.location.href = 'https://outlook-logistics.ru/thanks';
     }
 
     return (
