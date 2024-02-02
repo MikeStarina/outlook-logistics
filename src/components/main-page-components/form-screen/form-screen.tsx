@@ -1,12 +1,12 @@
 'use client'
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { sendFormData } from "@/actions/actions";
 import styles from './form-screen.module.css';
 
 
 const FormScreen: React.FC = () => {
 
-   
+    const ref = useRef(null);
     const [ callBackData, setCallBackData ] = useState<{ name: string, phone: string }>({
         name: '',
         phone: ''
@@ -24,8 +24,12 @@ const FormScreen: React.FC = () => {
 
     const submitHandler = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const response = sendFormData(callBackData);
-        e.currentTarget.reset();
+        const response = await sendFormData(callBackData);
+        setCallBackData({
+            name: '',
+            phone: '',
+        })
+        //window.location.href = 'https://outlook-logistics.ru/thanks';
     }
 
     return (
@@ -35,7 +39,7 @@ const FormScreen: React.FC = () => {
             </p>
 
             <div className={styles.calc_box}>
-                <form className={styles.calc_form} onSubmit={submitHandler}>
+                <form className={styles.calc_form} onSubmit={submitHandler} ref={ref}>
                     <div className={styles.input_wrapper}>
                         <label htmlFor='name' className={styles.input_label}>Ваше имя:</label>
                         <input type='text' className={styles.input} name='name' id='name' value={callBackData.name} onChange={onChangeHandler}></input>

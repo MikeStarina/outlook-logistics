@@ -1,6 +1,8 @@
 User-agent: Yandex
+Disallow /thanks
 Clean-param: utm_candidate&utm_referer&utm_ya_campaign&utm_referrer&etext&from&to
 User-agent: Googlebot
+Disallow /thanks
 Disallow: /?utm_candidate=*
 Disallow: /?utm_referer=*
 Disallow: /?utm_ya_campaign=*

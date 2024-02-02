@@ -19,8 +19,8 @@ type TFormData = {
 export const sendFormData = async (orderData: TFormData) => {
     //console.log(orderData);
     
-    const data = {data: orderData};
-    let response = await fetch(`${apiUrl}/api/orders`, {
+    const data = orderData;
+    let response = await fetch(`${apiUrl}/api/leads`, {
         method: 'POST',
         headers: { 
             "Content-Type": "application/json",

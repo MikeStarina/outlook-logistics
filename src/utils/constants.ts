@@ -164,6 +164,8 @@ export const priceCalculatorFunc = (orderData: TOrderState, PRICE_RATIO: number,
 
     price = price / PRICE_RATIO;
     price = price + INSURANCE_PRICE;
+    const vat = ( price * 20 ) / ( 20 + 100 );
+    price = price - vat;
     price = Math.round(price);
     
 

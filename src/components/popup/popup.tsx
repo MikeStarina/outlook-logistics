@@ -136,12 +136,12 @@ const Popup: React.FC<any> = ({ setPopupVisibility, orderData, setOrderData }) =
                             <p className={styles.info}>Город назначения — {stepTwoData?.to}</p>
                             <p className={styles.info}>Страховое покрытие — 1 000 000 Р.</p>
                             <p className={styles.info}>Даты — по согласованию</p>
-                            <p className={styles.info}>Онлайн скидка — 5000 Р.</p>
+                            <p className={styles.info}>Онлайн скидка — 5%</p>
                     </div>
                     <div className={styles.price_wrapper}>
                         <p className={styles.summary}>Итого:</p>
-                        {orderData!.price! > 0 && <p className={styles.old_price}>{stepTwoData!.price! + 5000} <i>Р.</i></p>}
-                        {orderData!.price! > 0 && <p className={styles.final_price}>{stepTwoData.price} <i>Р.</i></p>}
+                        {orderData!.price! > 0 && <p className={styles.old_price}>{stepTwoData!.price!} <i>Р.</i></p>}
+                        {orderData!.price! > 0 && <p className={styles.final_price}>{Math.round(stepTwoData!.price! * 0.95)} <i>Р.</i></p>}
                     </div>                    
                 </div>
             </div>
