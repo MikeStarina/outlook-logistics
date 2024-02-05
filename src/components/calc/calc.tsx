@@ -39,7 +39,7 @@ const Calc: React.FC = () => {
     const [ popupVisibility, setPopupVisibility ] = useState<boolean>(false);
 
 
-    console.log(orderData);
+
     // Эта штука устанавливает видимость дропдаунов и запрашивает поиск по введенному городу
 
 

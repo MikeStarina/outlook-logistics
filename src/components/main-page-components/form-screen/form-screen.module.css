@@ -124,6 +124,11 @@
     cursor: pointer;
 }
 
+.submit_button:disabled {
+    opacity: .5;
+    cursor: default;
+}
+
 .circle {
     width: 1260px;
     height: 1260px;
@@ -238,6 +243,8 @@
         height: 30px;
         border-radius: 7px;
     };
+
+    
 
     
 

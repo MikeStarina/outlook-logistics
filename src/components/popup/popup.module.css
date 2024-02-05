@@ -226,6 +226,11 @@
     margin-top: 30px;
 }
 
+.submit_button:disabled {
+    opacity: .5;
+    cursor: default;
+}
+
 @media (max-width: 1300px) {
     .wrapper {
         width: auto;

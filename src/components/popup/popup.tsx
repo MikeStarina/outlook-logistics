@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './popup.module.css';
 import { INSURANCE_PRICE, PRICE_RATIO, carTypes, priceCalculatorFunc } from '../../utils/constants';
 import { sendOrderData } from '@/actions/actions';
@@ -10,7 +10,7 @@ import truck1500 from '../../../public/truck1500.svg';
 import truck5000 from '../../../public/truck5000.svg';
 import truck20000 from '../../../public/truck20000.svg';
 import truckTrall from '../../../public/truckTrall.svg';
-
+import InputMask from 'react-input-mask';
 
 
 
@@ -22,7 +22,15 @@ const carIcons = [truck1500, truck5000, truck20000, truckTrall]
 const Popup: React.FC<any> = ({ setPopupVisibility, orderData, setOrderData, setValidatedCity }) => {
 
     const [ stepTwoData, setStepTwoData ] = useState<TOrderState>(orderData)
-    
+    const [ formValidity, setFormValidity ] = useState<boolean>(false)
+
+    useEffect(() => {
+        let validity = formValidity;
+        const { name, phone } = stepTwoData;
+        if (name!.length >= 2 && phone!.length === 17) validity = true
+        else validity = false;
+        setFormValidity(validity);
+    }, [stepTwoData.phone, stepTwoData.name])
 
 
 
@@ -125,10 +133,22 @@ const Popup: React.FC<any> = ({ setPopupVisibility, orderData, setOrderData, set
 
                     <form className={styles.order_form} onSubmit={onSubmitHandler}>
                         <label htmlFor='phone' className={styles.input_userdata_label}>Ваш телефон:</label>
-                        <input type='text' className={styles.input} id='phone' onChange={onChangeHandler} value={stepTwoData.phone} autoComplete='off'></input>
+                        <InputMask
+                            mask="+7 (999) 999-9999"
+                            maskChar={null}
+                            type="tel"
+                            minLength={17}
+                            id="phone"
+                            name="phone"
+                            className={styles.input}
+                            required
+                            onChange={onChangeHandler}
+                            value={stepTwoData.phone}
+                        />
+                        {/*<input type='text' className={styles.input} id='phone' onChange={onChangeHandler} value={stepTwoData.phone} autoComplete='off'></input>*/}
                         <label htmlFor='name' className={styles.input_userdata_label}>Ваше имя:</label>
                         <input type='text' className={styles.input} id='name' onChange={onChangeHandler} value={stepTwoData.name} autoComplete='off'></input>
-                        <button type='submit' className={styles.submit_button}>Отправить</button>
+                        <button type='submit' className={styles.submit_button} disabled={!formValidity}>Отправить</button>
                     </form>
                 </div>
                 <div className={styles.price_box}>

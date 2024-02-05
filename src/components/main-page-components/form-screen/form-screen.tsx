@@ -1,7 +1,8 @@
 'use client'
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { sendFormData } from "@/actions/actions";
 import styles from './form-screen.module.css';
+import InputMask from 'react-input-mask';
 
 
 const FormScreen: React.FC = () => {
@@ -11,10 +12,20 @@ const FormScreen: React.FC = () => {
         name: '',
         phone: ''
     });
+    const [ formValidity, setFormValidity ] = useState<boolean>(false)
+
+    useEffect(() => {
+        let validity = formValidity;
+        const { name, phone } = callBackData;
+        if (name.length > 3 && phone.length === 17) validity = true
+        else validity = false;
+        setFormValidity(validity);
+    }, [callBackData])
 
 
 
     const onChangeHandler = (e: React.SyntheticEvent<HTMLInputElement>) => {
+        
 
         setCallBackData({
             name: e.currentTarget.id === 'name' ? e.currentTarget.value : callBackData.name,
@@ -24,6 +35,7 @@ const FormScreen: React.FC = () => {
 
     const submitHandler = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
+        
         const response = await sendFormData(callBackData);
         setCallBackData({
             name: '',
@@ -42,16 +54,28 @@ const FormScreen: React.FC = () => {
                 <form className={styles.calc_form} onSubmit={submitHandler} ref={ref}>
                     <div className={styles.input_wrapper}>
                         <label htmlFor='name' className={styles.input_label}>Ваше имя:</label>
-                        <input type='text' className={styles.input} name='name' id='name' value={callBackData.name} onChange={onChangeHandler}></input>
+                        <input type='text' className={styles.input} name='name' id='name' value={callBackData.name} onChange={onChangeHandler} required autoComplete="off"></input>
                        
                     </div>
                     <div className={styles.input_wrapper}>
                         <label htmlFor='phone' className={styles.input_label}>Номер телефона:</label>
-                        <input type='text' className={styles.input} name='phone' id='phone' value={callBackData.phone} onChange={onChangeHandler}></input>
+                        <InputMask
+                            mask="+7 (999) 999-9999"
+                            maskChar={null}
+                            type="tel"
+                            minLength={17}
+                            id="phone"
+                            name="phone"
+                            className={styles.input}
+                            required
+                            onChange={onChangeHandler}
+                            value={callBackData.phone}
+                        />
+                        
                        
                     </div>
 
-                    <button type='submit' className={styles.submit_button}>Отправить</button>
+                    <button type='submit' className={styles.submit_button} disabled={!formValidity}>Отправить</button>
                 </form>
             </div>
 
