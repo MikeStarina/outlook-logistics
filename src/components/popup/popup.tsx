@@ -23,6 +23,11 @@ const Popup: React.FC<any> = ({ setPopupVisibility, orderData, setOrderData, set
 
     const [ stepTwoData, setStepTwoData ] = useState<TOrderState>(orderData)
     const [ formValidity, setFormValidity ] = useState<boolean>(false)
+    const [ timer, setTimer ] = useState<number>(30)
+
+    const timerFunc = () => {
+        setTimer(timer - 1);
+    }
 
     useEffect(() => {
         let validity = formValidity;
@@ -31,6 +36,12 @@ const Popup: React.FC<any> = ({ setPopupVisibility, orderData, setOrderData, set
         else validity = false;
         setFormValidity(validity);
     }, [stepTwoData.phone, stepTwoData.name])
+
+    useEffect(() => {
+        //const interval = setInterval(timerFunc, 1000);
+
+        //return () => {clearInterval(interval)}
+    }, [timer])
 
 
 

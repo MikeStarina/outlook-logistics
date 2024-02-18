@@ -9,6 +9,7 @@ import { TOrderState, initialOrderState, TCity } from '@/utils/states';
 import styles from './calc.module.css';
 import icon_logo_white from '../../../public/full_logo440px_whiteW.svg';
 import Image from 'next/image';
+import { INSURANCE_PRICE, PRICE_RATIO, carTypes, priceCalculatorFunc } from '../../utils/constants';
 
 
 
@@ -164,6 +165,7 @@ const Calc: React.FC = () => {
         data.from = validatedCity.validatedCityFrom?.CityName,
         data.orderDistance = await response.distance,
         data.distanceType = type,
+        data.price = priceCalculatorFunc(data, PRICE_RATIO, INSURANCE_PRICE, data.carType, false)
             
     
         
@@ -208,7 +210,7 @@ const Calc: React.FC = () => {
                     <button type='submit' className={styles.submit_button} disabled={!validatedCity.validatedCityFrom || !validatedCity.validatedCityTo}>Рассчитать</button>
                 </div>
                 <div className={styles.title_wrapper}>                
-                    <p className={styles.text}>{`Моментальный расчет перевозки в два клика прямо на сайте! Отправьте заявку после расчета, чтобы зфиксировать персональную скидку или другие специальные условия перевозки. Страховое покрытие на 1 миллион рублей уже включено в стоимость!`}</p>
+                    <p className={styles.text}>{`Моментальный расчет перевозки в два клика прямо на сайте! Страховое покрытие на 1 миллион рублей уже включено в стоимость!`}</p>
                 </div>
             </form>
             
