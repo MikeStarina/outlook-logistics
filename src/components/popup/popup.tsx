@@ -30,7 +30,7 @@ const Popup: React.FC<any> = ({
     const [timer, setTimer] = useState<number>(60);
     const [isDiscount, setDiscount] = useState<string | null>(() => {
         const discount = localStorage.getItem('discount')
-        if (discount === 'false') return null
+        if (discount === 'false') return discount
         return null
     });
 
