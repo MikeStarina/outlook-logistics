@@ -22,8 +22,7 @@ const Calc: React.FC = () => {
     // Стейты
 
 
-
-
+    
     const [ formData, setFormData ] = useState<{ from: string, to: string }>({ from: '', to: '' })
     const [ calcDropdownVisibility, setCalcDropdownVisibility ] = useState<{ to: boolean, from: boolean}>({
         to: false,

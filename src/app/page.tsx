@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 const MainPage: React.FC = () => {
     
-
+    
     return (
         <main className={styles.page}>
       
