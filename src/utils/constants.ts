@@ -1,42 +1,47 @@
-import { TOrderState } from "./states";
-import truck1500 from '../images/truck1500.svg';
-import truck5000 from '../images/truck5000.svg';
-import truck20000 from '../images/truck20000.svg';
-import truckTrall from '../images/truckTrall.svg';
+import { TFescoCarTypes, TOrderState, TCarType } from "./types";
 
 
 
-//export const apiUrl = 'http://localhost:9000';
+export const apiUrl = 'http://localhost:9000';
 //export const apiUrl = 'http://95.163.236.246:9000';
-export const apiUrl = 'https://outlook-logistics.ru';
+//export const apiUrl = 'https://outlook-logistics.ru';
 
-export const INSURANCE_PRICE=1000 //ПОКРЫВАЕТ 1 000 000 Р.
-export const PRICE_RATIO=0.8
-
-
+export const INSURANCE_PRICE = 1000 //ПОКРЫВАЕТ 1 000 000 Р.
+export const PRICE_RATIO = 0.8
 
 
-export type TCarType = {
-    name: string,
-    placeholder: string,
-    capacity?: string,
-    volume?: string,
-    options: {
-        ref: boolean,
+export const fescoCarTypes: Array<TFescoCarTypes> = [
+    {
+      wte_uid: 29,
+      ct_code: "20DC",
+      wte_description: "(&le;24t)",
+      ct_comment: "20' dry cargo",
+      text: "20' dry cargo (≤24t) (20DC)",
+      custom_text: "20 фут, универс. (20’ DС) до 24 т",
+      custom_text_latin: "20 ft, dry container ≤24t (20’ DС)"
     },
-    regularBids: {
-        bid: number,
-        bidRef?: number,
+    {
+      wte_uid: 30,
+      ct_code: "20DC-1",
+      wte_description: "(>24t, &le;28t)",
+      ct_comment: "20' dry cargo",
+      text: "20' dry cargo (>24t, ≤28t) (20DC)",
+      custom_text: "20 фут, универс. (20’ DС) 24-28 т",
+      custom_text_latin: "20 ft, dry container 24-28t (20’ DС)"
     },
-    intraregionBids: {
-        bid: number,
-        bidRef?: number,
-    },
-    intraCityBids: {
-        price: number,
-        priceRef?: number,
+    {
+      wte_uid: 42,
+      ct_code: "40HC",
+      wte_description: " ",
+      ct_comment: "40' high cube",
+      text: "40' high cube   (40HC)",
+      custom_text: "40 фут, высокий (40’ HC) ≤ 28т",
+      custom_text_latin: "40 ft, high cube (40’ HC) ≤ 28т"
     }
-}
+  ]
+
+
+
 
 export const carTypes: Array<TCarType> = [
     {
@@ -94,8 +99,8 @@ export const carTypes: Array<TCarType> = [
             bidRef: 108,
         },
         intraregionBids: {
-            bid: 91, 
-            bidRef: 108, 
+            bid: 91,
+            bidRef: 108,
         },
         intraCityBids: {
             price: 17000,
@@ -121,54 +126,52 @@ export const carTypes: Array<TCarType> = [
 ]
 
 
-export const priceCalculatorFunc = (orderData: TOrderState, PRICE_RATIO: number, INSURANCE_PRICE: number, selectedCarType: TCarType | undefined, isRef: boolean): number => {
+export const priceCalculatorFunc = (distance: number | undefined , PRICE_RATIO: number, INSURANCE_PRICE: number, selectedCarType: TCarType | undefined, isRef: boolean): {price: number, distanceType: string} => {
 
-    
+
     let price = 0;
-    
-    if (orderData.distanceType === 'regular') {
+    const distanceType = distance && distance === 0 ? 'intracity' : distance && distance <= 300 ? 'intraregion' : 'regular'
 
-        
-        price = selectedCarType!.regularBids.bid * orderData.orderDistance!;
-        price = isRef ? selectedCarType!.regularBids.bidRef! * orderData.orderDistance! : price;
-      
+    if (distanceType === 'regular') {
 
 
-      
+        price = selectedCarType!.regularBids.bid * distance!;
+        price = isRef ? selectedCarType!.regularBids.bidRef! * distance! : price;
+
+
+
+
 
     }
 
-    if (orderData.distanceType === 'intraregion') {
-        
-       
-        
-        price =  selectedCarType!.intraCityBids.price + (selectedCarType!.intraregionBids.bid * orderData.orderDistance!);
-        price = isRef ? selectedCarType!.intraCityBids.priceRef! + (selectedCarType!.intraregionBids.bidRef! * orderData.orderDistance!) : price;
-        
+    if (distanceType === 'intraregion') {
 
 
-        //console.log(`Цена фикс+км ${price_two}`)
-        
-     
-        
+
+        price = selectedCarType!.intraCityBids.price + (selectedCarType!.intraregionBids.bid * distance!);
+        price = isRef ? selectedCarType!.intraCityBids.priceRef! + (selectedCarType!.intraregionBids.bidRef! * distance!) : price;
+
+
+
+
     }
 
 
-    if (orderData.distanceType === 'intracity') {
+    if (distanceType === 'intracity') {
 
         price = selectedCarType!.intraCityBids.price;
         price = isRef ? selectedCarType!.intraCityBids.priceRef! : price;
-     
+
 
     }
 
     price = price / PRICE_RATIO;
     price = price + INSURANCE_PRICE;
-    const vat = ( price * 20 ) / ( 20 + 100 );
+    const vat = (price * 20) / (20 + 100);
     price = price - vat;
     price = Math.round(price);
-    
 
 
-    return price;
+
+    return {price, distanceType};
 }

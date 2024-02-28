@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Head from 'next/head';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
+import ReduxProvider from '../redux/redux-provider';
 import './globals.css';
 
 
@@ -34,7 +35,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={inter.className}>{children}</body>    
+      <ReduxProvider>
+        <body className={inter.className}>{children}</body>    
+      </ReduxProvider>
       <Script
         async
         id='metrika-counter'

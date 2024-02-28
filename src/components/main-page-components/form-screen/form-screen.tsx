@@ -6,8 +6,8 @@ import InputMask from 'react-input-mask';
 
 
 const FormScreen: React.FC = () => {
-
-    const ref = useRef(null);
+    
+    const ref = useRef(null);   
     const [ callBackData, setCallBackData ] = useState<{ name: string, phone: string }>({
         name: '',
         phone: ''
@@ -21,6 +21,8 @@ const FormScreen: React.FC = () => {
         else validity = false;
         setFormValidity(validity);
     }, [callBackData])
+
+    
 
 
 

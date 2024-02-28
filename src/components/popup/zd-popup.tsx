@@ -1,24 +1,17 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import styles from "./popup.module.css";
-import {
-    INSURANCE_PRICE,
-    PRICE_RATIO,
-    carTypes,
-    priceCalculatorFunc,
-} from "../../utils/constants";
-//import Image from 'next/image';
+import styles from "./zd-popup.module.css";
+import { fescoCarTypes } from "../../utils/constants";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
-import { actions as ftlCalcActions } from "@/redux/ftl-calc-slice/ftl-calc.slice";
+import { useCreateOrderMutation, useGetFescoBidsDataQuery } from "@/api/api";
+import { actions as zdCalcActions } from "@/redux/zd-calc-slice/zd-calc.slice";
+import { TFescoBidsDataObject } from "@/utils/types";
 import { actions as basicCalcActions } from "@/redux/basic-calc-slice/basic-calc.slice";
-import { useCreateOrderMutation, useGetAtiDistanceDataQuery } from "@/api/api";
 import Button from "@mui/material/Button";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
 
 const darkTheme = createTheme({
     palette: {
@@ -32,19 +25,20 @@ const darkTheme = createTheme({
     },
 });
 
-const Popup: React.FC<any> = () => {
+const ZdPopup: React.FC = () => {
     const dispatch = useAppDispatch();
     const { calcMode } = useAppSelector(store => store.basicCalc);
-    const { carType, isRef, validCity, name, phone, price, distanceType, orderDistance } = useAppSelector(
-        (store) => store.ftlCalc
+    const { validLocFrom, validLocTo, carType, name, phone, locFrom, locTo } = useAppSelector(
+        (store) => store.zdCalc
     );
+    const queryData = {
+        from: validLocFrom!.loc_uid,
+        to: validLocTo!.loc_uid,
+        wte: carType.wte_uid,
+    };
+    const { data } = useGetFescoBidsDataQuery(queryData, {refetchOnMountOrArgChange: true});
     const [ createOrder ] = useCreateOrderMutation();
-    const { data: distance } = useGetAtiDistanceDataQuery({
-        from: validCity!.from!.CityId!,
-        to: validCity!.to!.CityId!,
-    });
 
-   
     const [formValidity, setFormValidity] = useState<boolean>(false);
     const [timer, setTimer] = useState<number>(60);
     const [isDiscount, setDiscount] = useState<string | null>(() => {
@@ -61,12 +55,21 @@ const Popup: React.FC<any> = () => {
         }
     };
 
-    useEffect(() => {
-        let validity = formValidity;
-        if (name!.length >= 2 && phone!.length >= 11) validity = true;
-        else validity = false;
-        setFormValidity(validity);
-    }, [phone, name]);
+    const noVatPrice = (data?: TFescoBidsDataObject) => {
+        const vat = (data?.sum_segment1!*20)/120;
+        const price = data?.sum_segment1! - vat;
+        
+        return Math.round(price / 0.6);
+    }
+
+    const price = noVatPrice(data);
+    
+      useEffect(() => {
+          let validity = formValidity;
+          if (name!.length >= 2 && phone!.length >= 11) validity = true;
+          else validity = false;
+          setFormValidity(validity);
+      }, [phone, name]);
 
     useEffect(() => {
         const interval = setInterval(timerFunc, 1000);
@@ -75,64 +78,51 @@ const Popup: React.FC<any> = () => {
         };
     }, [timer]);
 
-    useEffect(() => {
-        const priceParams = priceCalculatorFunc(
-            distance,
-            PRICE_RATIO,
-            INSURANCE_PRICE,
-            carType,
-            isRef
-        );
-        dispatch(ftlCalcActions.setPrice(priceParams.price));
-        dispatch(ftlCalcActions.setDistanceType(priceParams.distanceType));
-        distance && dispatch(ftlCalcActions.setOrderDistance(distance));
-    }, [distance, isRef, carType]);
-
     const closeButtonHandler = () => {
+
         localStorage.setItem("discount", "false");
-        dispatch(ftlCalcActions.clearState());
+        dispatch(zdCalcActions.clearState());
         dispatch(basicCalcActions.clearState());
     };
 
-    const onChangeRefHandler = (e: any) => {
-        dispatch(ftlCalcActions.setIsRef(e.target.checked));
-    };
+    
+
     const onChangeUserDataHandler = (e: any) => {
-        dispatch(ftlCalcActions.setUserData({ id: e.target.id, value: e.target.value}));
+        dispatch(zdCalcActions.setUserData({id: e.currentTarget.name, data: e.currentTarget.value}))       
+    };
+
+    
+
+
+    const carTypeChangeHandler = (e: any) => {
+        const validCarType = fescoCarTypes.filter(item => item.custom_text === e.target.value)[0];
+        dispatch(zdCalcActions.setCarTypeData(validCarType));
     };
 
     const onSubmitHandler = (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+
         const order = {
             orderType: calcMode,
-            from: validCity?.from.CityName,
-            to: validCity?.to.CityName,
+            from: locFrom,
+            to: locTo,
             phone,
             name,
-            validatedCityTo: validCity?.to,
-            validatedCityFrom: validCity?.from,
-            orderDistance,
-            distanceType, 
-            carType,
-            isRef,
+            validatedCityTo: validLocTo,
+            validatedCityFrom: validLocFrom,
+            zdCarType: carType,
             price,
         }
 
         createOrder(order);
-        
-        
-        dispatch(ftlCalcActions.clearState());
-        dispatch(basicCalcActions.clearState());
-        localStorage.setItem("discount", "false");
-        window.location.href = "https://outlook-logistics.ru/thanks";
-    };
 
-    const carTypeChangeHandler = (e: any) => {
-        const validCarType = carTypes.filter(
-            (item) => item.placeholder === e.target.value
-        )[0];
-        dispatch(ftlCalcActions.setCarType(validCarType));
+        
+        localStorage.setItem("discount", "false");
+        dispatch(zdCalcActions.clearState());
+        dispatch(basicCalcActions.clearState());
+        window.location.href = "https://outlook-logistics.ru/thanks";
+
     };
 
     return (
@@ -153,28 +143,16 @@ const Popup: React.FC<any> = () => {
                                 select
                                 id="carTypesSelect"
                                 label="Тип кузова"
-                                value={carType.placeholder}
+                                value={carType.custom_text}
                                 onChange={carTypeChangeHandler}
                             >
-                                {carTypes.map((item, index) => (
-                                    <MenuItem key={index} id={item.name} value={item.placeholder}>
-                                        {item.placeholder}
+                                {fescoCarTypes.map((item, index) => (
+                                    <MenuItem key={index} id={item.ct_code} value={item.custom_text}>
+                                        {item.custom_text}
                                     </MenuItem>
                                 ))}
                             </TextField>
                         </FormControl>
-
-                        <FormControlLabel
-                            sx={{ color: "rgba(255,255,255,.75)" }}
-                            control={
-                                <Switch
-                                    checked={isRef}
-                                    onChange={onChangeRefHandler}
-                                    disabled={!carType?.options?.ref}
-                                />
-                            }
-                            label="Рефрижератор"
-                        ></FormControlLabel>
                     </ThemeProvider>
                 </div>
 
@@ -187,7 +165,7 @@ const Popup: React.FC<any> = () => {
                             onChange={onChangeUserDataHandler}
                             value={phone}
                             autoComplete="off"
-                            label="Ваш телефон"
+                            label='Ваш телефон'
                             margin="dense"
                         ></TextField>
                     </ThemeProvider>
@@ -199,7 +177,7 @@ const Popup: React.FC<any> = () => {
                             onChange={onChangeUserDataHandler}
                             value={name}
                             autoComplete="off"
-                            label="Ваше имя"
+                            label='Ваше имя'
                             margin="dense"
                         ></TextField>
                     </ThemeProvider>
@@ -207,8 +185,8 @@ const Popup: React.FC<any> = () => {
                         <Button
                             variant="outlined"
                             type="submit"
-                            sx={{ minWidth: "150px", height: "56px", marginTop: "50px" }}
-                            disabled={!formValidity}
+                            sx={{ minWidth: "150px", height: '56px', marginTop: '50px'}}     
+                            disabled={!formValidity}                       
                         >
                             Отправить
                         </Button>
@@ -218,48 +196,36 @@ const Popup: React.FC<any> = () => {
             <div className={styles.price_box}>
                 <div className={styles.info_wrapper}>
                     <p className={styles.info}>
-                        Кузов — {carType.placeholder}
-                        {isRef && " Реф"}
+                        Контейнер — {carType.custom_text}
                     </p>
-
-                    <p className={styles.info}>Габариты — {carType.capacity}</p>
-
-                    <p className={styles.info}>Объем — {carType.volume}</p>
-
-                    <p className={styles.info}>
-                        Расстояние перевозки — {distance && distance}
-                    </p>
-                    <p className={styles.info}>
-                        Город отправления — {validCity?.from.CityName}
-                    </p>
-                    <p className={styles.info}>
-                        Город назначения — {validCity?.to.CityName}
-                    </p>
+                    <p className={styles.info}>Город отправления — {validLocFrom?.loc_name}</p>
+                    <p className={styles.info}>Город назначения — {validLocTo?.loc_name}</p>
                     <p className={styles.info}>Страховое покрытие — 1 000 000 Р.</p>
                     <p className={styles.info}>Даты — по согласованию</p>
                     {!isDiscount && timer > 0 && (
                         <>
-                            <p className={styles.info_discount} id="discount">
-                                Онлайн скидка — 5%
-                            </p>
-                            <p className={styles.info}>Исчезнет через {timer} сек.</p>
-                            <p className={styles.info}>
-                                Отправьте заявку, чтобы зафиксировать скидку
-                            </p>
+                        <p className={styles.info_discount} id='discount'>Онлайн скидка — 5%</p>
+                        <p className={styles.info}>Исчезнет через {timer} сек.</p>
+                        <p className={styles.info}>
+                            Отправьте заявку, чтобы зафиксировать
+                                скидку
+                        </p>
                         </>
                     )}
                 </div>
 
                 <div className={styles.price_wrapper}>
                     <p className={styles.summary}>Итого:</p>
-                    {price! > 0 && !isDiscount && timer > 0 && (
+                    {typeof price === 'number' && price && !isDiscount && timer > 0 && (
                         <p className={styles.old_price}>
-                            {price!} <i>Р.</i>
+                            {price} <i>Р.</i>
                         </p>
                     )}
-                    {price! > 0 && (
+                    {typeof price === 'number' && price && (
                         <p className={styles.final_price}>
-                            {!isDiscount && timer > 0 ? Math.round(price! * 0.95) : price}{" "}
+                            {!isDiscount && timer > 0
+                                ? Math.round(price * 0.95)
+                                : price}{" "}
                             <i>Р.</i>
                         </p>
                     )}
@@ -269,4 +235,4 @@ const Popup: React.FC<any> = () => {
     );
 };
 
-export default Popup;
+export default ZdPopup;
