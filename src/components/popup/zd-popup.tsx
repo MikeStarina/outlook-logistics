@@ -221,13 +221,15 @@ const ZdPopup: React.FC = () => {
                             {price} <i>Р.</i>
                         </p>
                     )}
-                    {typeof price === 'number' && price && (
+                    {!isNaN(price) && price ? (
                         <p className={styles.final_price}>
                             {!isDiscount && timer > 0
                                 ? Math.round(price * 0.95)
                                 : price}{" "}
                             <i>Р.</i>
                         </p>
+                    ) : (
+                        <p>Цена на это направление временно недоступна</p>
                     )}
                 </div>
             </div>

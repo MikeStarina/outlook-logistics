@@ -35,6 +35,7 @@ const darkTheme = createTheme({
 const Popup: React.FC<any> = () => {
     const dispatch = useAppDispatch();
     const { calcMode } = useAppSelector(store => store.basicCalc);
+
     const { carType, isRef, validCity, name, phone, price, distanceType, orderDistance } = useAppSelector(
         (store) => store.ftlCalc
     );
