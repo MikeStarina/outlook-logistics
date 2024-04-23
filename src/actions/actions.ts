@@ -1,7 +1,9 @@
 import { apiUrl } from "@/utils/constants";
 
 type TFormData = {
-    name: string,
+    from?: string,
+    to?: string,
+    name?: string,
     phone: string
 }
 

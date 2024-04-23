@@ -6,7 +6,6 @@ import ReduxProvider from '../redux/redux-provider';
 import './globals.css';
 
 
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const viewport = {
@@ -36,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <ReduxProvider>
-        <body className={inter.className}>{children}</body>    
+          <body className={inter.className}>{children}</body>    
       </ReduxProvider>
       <Script
         async

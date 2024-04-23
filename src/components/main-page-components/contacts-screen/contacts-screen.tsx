@@ -31,20 +31,20 @@ const ContactsScreen: React.FC = () => {
                     <a href='https://api.whatsapp.com/send?phone=79223671541' className={styles.contacts_text} target="blank">Whatsapp</a>
                     <p className={styles.contacts_text}>info@outlook-logistics.ru</p>
                     <p className={styles.contacts_text}>—</p>
-                    <p className={styles.contacts_text}>г. Санкт-Петербург, Софийская ул. 14, офис 903</p>
+                    <p className={styles.contacts_text}>г. Санкт-Петербург, Софийская ул. 14, офис 309</p>
                     <p className={styles.contacts_text}>По будням с 9 до 18</p>
                     <div className={styles.socials_wrapper}>
-                        <Link href='https://vk.com/outlook_logistics'>
+                        {/* <Link href='https://vk.com/outlook_logistics'>
                             <Image src={vk_logo_black} alt='Логотип вконтакте' className={styles.social_logo} />
-                        </Link>
+                        </Link> */}
                         {/*
                         <Link href='/'>
                             <Image src={instagram_logo_black} alt='Логотип инстаграм' className={styles.social_logo} />
                         </Link>
                         */}
-                        <Link href='https://t.me/+4AjbWvlSJJcwOTMy'>
+                        {/* <Link href='https://t.me/+4AjbWvlSJJcwOTMy'>
                             <Image src={strela_small_logo_black} alt='Логотип стрела' className={styles.social_logo} />
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </div>

@@ -6,10 +6,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 30px rgba(0, 0, 0, .9); 
+    /* box-shadow: 0 0 30px rgba(0, 0, 0, .9);  */
 }
 .main_text_block {
-    width: 100%;
+    width: auto;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -36,9 +36,8 @@
     justify-content: flex-start;
     align-items: flex-start;
     z-index: 5;
-    margin-left: 25px;
-    border-left: 2px solid #383838;
-    padding-left: 25px;
+    margin-left: 10px;
+    padding-left: 10px;
 }
 .caption {
     color: #383838;

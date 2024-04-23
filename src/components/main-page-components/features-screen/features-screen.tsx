@@ -71,7 +71,7 @@ const FeaturesScreen: React.FC = () => {
                                 
                                                        
                                
-                                <Image src={cont2} alt='container' className={styles.bgimage} />
+                                {/* <Image src={cont2} alt='container' className={styles.bgimage} /> */}
                             
             
         </section>
