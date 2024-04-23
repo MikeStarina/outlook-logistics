@@ -1,5 +1,6 @@
 User-agent: Yandex
 Disallow /thanks
+Disallow /calculator
 Disallow: *?*=
 User-agent: Googlebot
 Disallow /thanks
