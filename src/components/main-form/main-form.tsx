@@ -28,6 +28,7 @@ const initialState = {
 const MainForm: React.FC = () => {
 
         const [ state, setState ] = useState<{from:string,to:string,phone:string}>(initialState);
+        const [ disabled, setDisabled ] = useState<{text: string, isDisabled: boolean}>({text: 'РАССЧИТАТЬ', isDisabled: false});
 
         const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
             setState({
@@ -38,9 +39,11 @@ const MainForm: React.FC = () => {
 
         const formSubmitHandler = async (e: any) => {
             e.preventDefault();
+            setDisabled({text: 'ОТПРАВКА...', isDisabled: true})
             const response = await sendFormData(state);
             setState(initialState);
             window.location.href = 'https://outlook-logistics.ru/thanks';
+            setDisabled({text: 'РАССЧИТАТЬ', isDisabled: false})
         }
 
         return (
@@ -86,8 +89,9 @@ const MainForm: React.FC = () => {
                             type='submit'
                             variant="outlined"
                             className={styles.button}
+                            disabled={disabled.isDisabled}
                         >
-                            Рассчитать
+                            {disabled.text}
                         </Button>
                     </div>
                     <div className={styles.wrapper}>

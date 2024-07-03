@@ -61,6 +61,7 @@ const Page: React.FC<any> = ({ params }: { params: { id: string } }) => {
   if (params.id === "avtomobilnye-perevozki") cover = auto_cover;
   if (params.id === "zheleznodorozhnye-perevozki") cover = zd_cover;
 
+
   return (
     
     <MainContainer>
@@ -151,12 +152,15 @@ const Page: React.FC<any> = ({ params }: { params: { id: string } }) => {
       </section>
       <section className={styles.text_screen}>
         <h2 className={styles.text_screen_title}>{filteredService.name}</h2>
-        {filteredService?.description &&
-          filteredService.description.map((item, index) => (
+        {filteredService?.description && Array.isArray(filteredService?.description) ?
+          (filteredService.description.map((item, index) => (
             <p className={styles.paragraph} key={index}>
               {item}
             </p>
-          ))}
+          ))) : (
+            //@ts-ignore
+            <div className="" dangerouslySetInnerHTML={filteredService.description}></div>
+          )}
       </section>
       <ClientsScreen />
       <FormScreen />

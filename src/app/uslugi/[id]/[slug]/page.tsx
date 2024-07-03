@@ -86,12 +86,15 @@ const Page: React.FC<any> = ({ params }: { params: { slug: string } }) => {
             </section>
             <section className={styles.text_screen}>
               <h2 className={styles.text_screen_title}>{feature?.name}</h2>
-              {feature?.description &&
-                feature.description.map((item, index) => (
+              {feature?.description && Array.isArray(feature.description) ?
+                (feature.description.map((item, index) => (
                   <p className={styles.paragraph} key={index}>
                     {item}
                   </p>
-              ))}
+              ))) : (
+                //@ts-ignore
+                <div className="" dangerouslySetInnerHTML={feature?.description}></div>
+              )}
             </section>
             <ClientsScreen />
             <FormScreen />            
