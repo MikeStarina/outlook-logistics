@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styles from './uslugiScreen.module.css';
 import icon_logo_white from '../../../public/icon_logo_white.svg'
 import { services } from "@/service/services";
+import { getServices } from "@/utils/constants";
 import cargo_cover from '../../../public/cargo_cover.webp';
 import sea_cover from '../../../public/sea_cover.jpg';
 import auto_cover from '../../../public/auto_cover.jpg';
@@ -16,7 +17,9 @@ import mixed_cover from '../../../public/mixed_cover.jpg';
 import ref_cover from '../../../public/ref_cover.jpg';
 
 
-const UslugiScreen: React.FC = () => {
+const UslugiScreen: React.FC = async () => {
+
+    const services = await getServices();
 
     return (
         <>

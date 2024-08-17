@@ -14,14 +14,12 @@ const Page: React.FC = () => {
 
     return (
         <main className={styles.calcPage}>
-            <Header />
             <section className={styles.calcScreen}>
                 <Calc />
             </section>            
             <FeaturesScreen />
             <FormScreen />
             <ContactsScreen />
-            <Footer />
         </main>
     )
 }

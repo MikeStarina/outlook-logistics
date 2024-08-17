@@ -25,7 +25,7 @@ const MenuButton: React.FC = () => {
 
     return (
         <>
-            {!menuVisibility && <Burger menuVisibility={menuVisibility} clickHandler={setMenuVisibility} />}
+            <Burger menuVisibility={menuVisibility} clickHandler={setMenuVisibility} />
             {menuVisibility && <Menu menuVisibility={menuVisibility} clickHandler={setMenuVisibility} />}
         </>
         

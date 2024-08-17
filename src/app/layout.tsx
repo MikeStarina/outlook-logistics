@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import Head from 'next/head';
+import Header from '@/components/header/header';
+import Footer from '@/components/footer/footer';
+import TopButton from '@/components/topButton/top-button';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import ReduxProvider from '../redux/redux-provider';
@@ -35,7 +38,12 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <ReduxProvider>
-          <body className={inter.className}>{children}</body>    
+          <body className={inter.className}>
+            <Header />
+              {children}
+            <TopButton />
+            <Footer />
+          </body>    
       </ReduxProvider>
       <Script
         async

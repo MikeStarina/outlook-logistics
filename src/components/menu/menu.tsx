@@ -38,6 +38,7 @@ const Menu: React.FC<TMenuProps> = ({menuVisibility, clickHandler}) => {
                 <a href='tel:+78002010073' className={styles.contacts_item}>8 <i>(800)</i> 201-00-73</a>
                 <a href='https://t.me/OUTLOOK_LOGISTICS' className={styles.contacts_item} target="blank">Telegram</a>
                 <a href='https://api.whatsapp.com/send?phone=79223671541' className={styles.contacts_item} target="blank">Whatsapp</a>
+                <Link className={styles.contacts_item} href={{pathname: '/', hash: 'callback'}}>Перезвонить?</Link>
                 {/* <p className={styles.contacts_item}>—</p> */}
                 {/* <a href='https://vk.com/outlook_logistics' className={styles.contacts_item} target="blank">VK</a>
                 <a href='https://t.me/+4AjbWvlSJJcwOTMy' className={styles.contacts_item} target="blank">СТРЕЛА</a> */}

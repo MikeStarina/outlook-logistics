@@ -61,9 +61,7 @@ const ContactsScreen: React.FC = () => {
                 </Suspense>
             </div>
 
-            <div className={styles.circle}>
-                <div className={styles.inner_circle}></div>
-            </div>
+            
         </section>
     )
 }

@@ -17,13 +17,7 @@ const FirstScreen: React.FC = () => {
 
        
         <section className={styles.screen} id='calc'>
-
-            
-            {/* <Calc /> */}
             <MainForm />
-            {/* <div className={styles.trapezoid_left}></div>
-            <div className={styles.trapezoid_right}></div> */}
-            {/* <Image src={newbg} alt='фоновое изображение' className={styles.bg_image} loading='lazy' decoding="async" /> */}
         </section>
        
     )

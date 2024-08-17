@@ -11,11 +11,9 @@ const MainContainer: React.FC<any> = ({ children, meta }) => {
 
     return (
         <>
-            <Header />
                 <div className={styles.content}>
                     {children}
                 </div>
-            <Footer />
         </>
     );
 }

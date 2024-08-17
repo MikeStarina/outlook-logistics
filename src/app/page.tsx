@@ -16,6 +16,7 @@ import SocialsScreen from '@/components/main-page-components/socials-screen/soci
 
 
 
+
 export const metadata: Metadata = {
     title: 'Перевозка грузов от логистической компании в Санкт-Петербурге цены в outlook-logistics',
     description: 'Перевозка грузов цена услуг в транспортной компании в Санкт-Петербурге Outlook. Оформить заявку на перевозку груза и рассчитать стоимость вы можете на сайте частной логистической компании.',
@@ -30,8 +31,7 @@ export const metadata: Metadata = {
 }
 
 const MainPage: React.FC = () => {
-    
-    
+
     return (
         <main className={styles.page}>
       
@@ -43,8 +43,6 @@ const MainPage: React.FC = () => {
                 <AboutScreen />
                 <ClientsScreen />
                 <OptionsScreen />
-                {/*<BlogScreen />*/}
-                {/* <SocialsScreen /> */}
                 <FormScreen />
                 <ContactsScreen />
             </MainContainer>

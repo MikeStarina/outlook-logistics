@@ -1,5 +1,6 @@
 import { TFescoCarTypes, TOrderState, TCarType } from "./types";
-
+import { TServicesStateObj } from "@/service/services";
+import { TItem } from "@/service/features";
 
 
 //export const apiUrl = 'http://localhost:9000';
@@ -40,7 +41,22 @@ export const fescoCarTypes: Array<TFescoCarTypes> = [
     }
   ]
 
+export const getServices = async (): Promise<Array<TServicesStateObj>> => {
+    const data: Array<TServicesStateObj> = await fetch(`${apiUrl}/api/services/`, {
+        next: { revalidate: 3600 },
+        method: 'GET'
+    }).then(res => res.json());
 
+    return data;
+}
+export const getFeatures = async (): Promise<Array<TItem>> => {
+    const data: Array<TItem> = await fetch(`${apiUrl}/api/features/`, {
+        next: { revalidate: 3600 },
+        method: 'GET'
+    }).then(res => res.json());
+
+    return data;
+}
 
 
 export const carTypes: Array<TCarType> = [

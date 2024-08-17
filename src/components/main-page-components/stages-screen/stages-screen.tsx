@@ -98,6 +98,10 @@ const StagesScreen: React.FC = () => {
                 
               
             </div>
+
+            <div className={styles.background}>
+
+            </div>
         </section>
     )
 }

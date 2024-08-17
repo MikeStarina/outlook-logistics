@@ -129,27 +129,16 @@
     cursor: default;
 }
 
-.circle {
-    width: 1260px;
-    height: 1260px;
+.background {
+    width: 30%;
+    height: 50%;
     position: absolute;
-    left: -750px;
-    top: 35%;
-    background: linear-gradient(180deg, #21CEB6 23.22%, rgba(11, 88, 206, 0.74) 63.14%);
-    border-radius: 50%;
+    left: 0px;
+    bottom: -50px;
+    background: linear-gradient(190deg, #21CEB6 3.79%, #0B58CE 140.92%);
     z-index: -1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transform: translateY(0px) skewY(11deg);
     box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
-}
-
-.inner_circle {
-    width: 1000px;
-    height: 1000px;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, .35); 
 }
 
 
@@ -213,6 +202,10 @@
     .input_wrapper {
         margin-bottom: 0;
     }  
+
+    .background {
+        width: 50%;
+    }
     
 
   

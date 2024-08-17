@@ -150,6 +150,18 @@
     padding: 0;
 }
 
+.background {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 30%;
+    height: 50%;
+    background: linear-gradient(190deg, #21CEB6 3.79%, #0B58CE 140.92%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .35); 
+    transform: translateY(0px) skewY(-11deg);   
+    z-index: -1;
+}
+
 
 
 @media (max-width: 1200px) {
@@ -243,6 +255,10 @@
         margin-left: 0;
     }
 
+    .background {
+        width: 50%;
+    }
+
 }
 
 
@@ -282,4 +298,6 @@
         height: 30px;
         border-radius: 7px;
     }
+
+    
 }

@@ -31,7 +31,7 @@ const ClientsScreen: React.FC = () => {
             <Image src={tat} alt='татнефть логотип' className={styles.client_logo} loading='lazy' decoding="async" />
             <Image src={technonikol} alt='технониколь логотип' className={styles.client_logo} loading='lazy' decoding="async" />
 
-            <div className={styles.trapezoid}></div>
+            {/* <div className={styles.trapezoid}></div> */}
         </section>
     )
 }

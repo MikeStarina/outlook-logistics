@@ -75,9 +75,9 @@ const SliderScreen: React.FC = () => {
              
             </div>
              
-            <div className={styles.circle}>
+            {/* <div className={styles.circle}>
                 <div className={styles.inner_circle}></div>
-            </div>
+            </div> */}
             
         </section>
    

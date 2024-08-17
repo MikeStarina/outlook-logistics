@@ -1,11 +1,11 @@
-'use server'
 import React from "react";
 import MainContainer from "@/components/container/main-container";
 import ClientsScreen from "@/components/main-page-components/clients-screen/clients-screen";
 import FormScreen from "@/components/main-page-components/form-screen/form-screen";
 import ContactsScreen from "@/components/main-page-components/contacts-screen/contacts-screen";
-import { features } from "@/service/features";
-import { services } from "@/service/services";
+//import { features } from "@/service/features";
+//import { services } from "@/service/services";
+import { getServices, getFeatures } from "@/utils/constants";
 import Link from "next/link";
 import auto_cover from "../../../../public/auto_cover.jpg";
 import zd_cover from "../../../../public/zd_cover.jpg";
@@ -38,7 +38,7 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-
+  const services = await getServices();
   const id = params.id;
   const filteredService = services.filter((item) => item.url === id)[0];
   const { metadata } = filteredService;
@@ -51,7 +51,9 @@ export async function generateMetadata(
 }
 
 
-const Page: React.FC<any> = ({ params }: { params: { id: string } }) => {
+const Page: React.FC<any> = async ({ params }: { params: { id: string } }) => {
+  const services = await getServices()
+  const features = await getFeatures();
   const filteredFeatures = features.filter(
     (item) => item!.serviceType === params.id
   );

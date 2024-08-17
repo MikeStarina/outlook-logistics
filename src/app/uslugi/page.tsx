@@ -1,4 +1,3 @@
-'use server'
 import React from "react";
 import MainContainer from "@/components/container/main-container";
 import UslugiScreen from "@/components/uslugi-page-components/uslugiScreen";

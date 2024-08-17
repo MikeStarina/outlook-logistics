@@ -1,8 +1,8 @@
-'use server'
 import React from 'react';
 import styles from './page.module.css';
 import MainContainer from '@/components/container/main-container';
-import { features } from '@/service/features';
+//import { features } from '@/service/features';
+import { getFeatures } from '@/utils/constants';
 import { Metadata, ResolvingMetadata } from 'next'
 import gazelle from "../../../../../public/features_covers/gazelle.jpg";
 import fivetonn from "../../../../../public/features_covers/fivetonn.jpg";
@@ -29,12 +29,20 @@ import FormScreen from '@/components/main-page-components/form-screen/form-scree
 type Props = {
     params: { slug: string }
   }
+
+  export const dynamicParams = false;
+  export const generateStaticParams = async ({ params }: { params: { id: string }}) => {
+    const features = await getFeatures();
+    const data = features.filter((item) => item?.serviceType === params.id);
+    //const data = await getCategoryData();
+    return data.map((item) => ({slug: item?.slug}))
+}
    
   export async function generateMetadata(    
     { params }: Props,
     parent: ResolvingMetadata
   ): Promise<Metadata> {
-  
+    const features = await getFeatures();
     const slug = params.slug;
     const feature = features.filter((item) => item?.slug === slug)[0];
 
@@ -46,8 +54,8 @@ type Props = {
     }
   }
 
-const Page: React.FC<any> = ({ params }: { params: { slug: string } }) => {
-
+const Page: React.FC<any> = async ({ params }: { params: { slug: string, id: string } }) => {
+  const features = await getFeatures();
   const feature = features.filter((item) => item?.slug === params.slug)[0];
   let cardCover = mixed_cover;
   if (feature!.name === "АВТОПЕРЕВОЗКИ 1,5 ТОНН") cardCover = gazelle;

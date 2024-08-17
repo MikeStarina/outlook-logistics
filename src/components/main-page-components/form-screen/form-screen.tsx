@@ -47,13 +47,13 @@ const FormScreen: React.FC = () => {
     }
 
     return (
-        <section className={styles.screen}>
+        <section className={styles.screen} id='callback'>
             <h2 className={styles.title}><i>ОСТАЛИСЬ</i> ВОПРОСЫ?</h2>
             <p className={styles.description}>Заполните форму ниже и мы вам перезвоним
             </p>
 
             <div className={styles.calc_box}>
-                <form className={styles.calc_form} onSubmit={submitHandler} ref={ref}>
+                <form className={styles.calc_form} onSubmit={submitHandler} ref={ref} >
                     <div className={styles.input_wrapper}>
                         <label htmlFor='name' className={styles.input_label}>Ваше имя:</label>
                         <input type='text' className={styles.input} name='name' id='name' value={callBackData.name} onChange={onChangeHandler} required autoComplete="off"></input>
@@ -81,7 +81,7 @@ const FormScreen: React.FC = () => {
                 </form>
             </div>
 
-           
+        <div className={styles.background}></div>
         </section>
     )
 }
