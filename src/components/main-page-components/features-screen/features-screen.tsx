@@ -39,7 +39,7 @@ const FeaturesScreen: React.FC = async () => {
                                     if (item!.name === 'Негабаритные перевозки') cover = ng_cover;
                                     
 
-                                    return index < 5 && (
+                                    return index < 4 && (
                                    
                                         <Link href={`/uslugi/${item.url}`} className={styles.link} key={index}>
                                             <div className={styles.card}>
