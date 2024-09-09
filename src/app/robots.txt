@@ -1,10 +1,13 @@
-User-agent: Yandex
-Disallow /thanks
-Disallow /calculator
-Disallow: *?*=
 User-agent: Googlebot
-Disallow /thanks
+Disallow: /thanks
 Disallow: *?*=
+Disallow: *pereezd*
+
+User-agent: Yandex
+Disallow: /thanks
+Disallow: /calculator
+Disallow: *?*=
+Disallow: *pereezd*
 Clean-param: etext
 Clean-param: type
 Clean-param: category&type
