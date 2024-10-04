@@ -25,7 +25,7 @@ const FeaturesScreen: React.FC = async () => {
         <section className={styles.screen}>
            
                 
-                            <h2 className={styles.title}><i>ЛОГИСТИЧЕСИЕ</i> УСЛУГИ</h2>
+                            <h2 className={styles.title}><i>ЛОГИСТИЧЕСКИЕ</i> УСЛУГИ</h2>
                             <p className={styles.subtitle}></p>
                         
                             <div className={styles.cards_block}>
