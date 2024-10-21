@@ -1,0 +1,70 @@
+@import '../../../app/css-constants';
+
+.screen {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    border-radius: 6px;
+    background: $main-gray;
+
+    &__title {
+        @include main-title;
+        color: $main-black;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        @include subtext;
+        color: $main-black;
+        margin-top: 25px;
+    }
+
+    &__title-wrapper {
+        width: 50%;
+        height: 330px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 25px;
+        //border: 1px solid red;
+        //background: $main-black;
+        border-radius: 6px;
+        //border: 1px solid $main-black;
+    }
+
+    &__carousel {
+        width: 100%;
+        //border: 1px solid red;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    &__carousel-wrapper {
+        overflow-x: scroll;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+
+    &__card {
+        width: 150px;
+        min-width: 20%;
+        min-height: 400px;
+        border-radius: 6px;
+        background-color: $main-black;
+    }
+}

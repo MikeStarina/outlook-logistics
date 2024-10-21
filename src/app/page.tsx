@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './page.module.css';
+import styles from './page.module.scss';
 import { Metadata } from 'next';
 import MainContainer from '@/components/container/main-container';
 import FirstScreen from '@/components/main-page-components/first-screen/first-screen';
@@ -13,7 +13,9 @@ import BlogScreen from '@/components/main-page-components/blog-screen/blog-scree
 import FormScreen from '@/components/main-page-components/form-screen/form-screen';
 import ContactsScreen from '@/components/main-page-components/contacts-screen/contacts-screen';
 import SocialsScreen from '@/components/main-page-components/socials-screen/socials-screen';
-
+import Uslugi from '@/components/main-page-components/uslugi-screen/uslugi'
+import classNames from 'classnames/bind';
+const cx = classNames.bind(styles)
 
 
 
@@ -33,20 +35,17 @@ export const metadata: Metadata = {
 const MainPage: React.FC = () => {
 
     return (
-        <main className={styles.page}>
-      
-            <MainContainer>
+        <main className={cx('page')}>
                 <FirstScreen />
                 <FeaturesScreen />  
                 <SliderScreen />
+                <Uslugi />
                 <StagesScreen />
                 <AboutScreen />
                 <ClientsScreen />
                 <OptionsScreen />
                 <FormScreen />
-                <ContactsScreen />
-            </MainContainer>
-  
+                <ContactsScreen />  
         </main>
     )
 }

@@ -1,83 +1,83 @@
-'use client'
-import React, { useEffect } from "react";
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import ReactDOM from 'react-dom/client'
-import { EmblaOptionsType } from 'embla-carousel-react'
-//import { Swiper } from 'swiper/react';
-//import { SwiperSlide } from 'swiper/react';
-import slideOne from '../../../../public/slideOne.webp';
-import slideTwo from '../../../../public/slideTwo.webp';
-import slideFour from '../../../../public/slideFour.webp';
-import slideThree from '../../../../public/slideThree.webp';
-import styles from './slider-screen.module.css';
-//import 'swiper/css';
-//import "swiper/css/pagination";
+import React from "react";
+import styles from './slider-screen.module.scss';
 import Image from 'next/image';
+import classNames from "classnames/bind";
+import slideOne from '../../../../public/slideTwo.webp';
+import slideTwo from '../../../../public/slideOne.webp';
+import slideThree from '../../../../public/slideFour.webp';
+import slideFour from '../../../../public/slideThree.webp';
+const cx = classNames.bind(styles);
+
+
+
+const arr = [
+    {
+        title: 'АВТОМОБИЛЬНЫЕ FTL/LTL',
+        description: 'Перевозим сборные и генеральные грузы с различными опциями: температурный режим, вооруженная охрана, различные обьемы кузова и т.д. Федеральное покрытие, а также СНГ и Европа.',
+        image: slideOne
+    },
+    {
+        title: 'МОРСКИЕ',
+        description: 'Все основные направления морских in/out перевозок. Быстрое оформление и отправка груза, индивидуальный расчет, таможенное оформление',
+        image: slideTwo
+    },
+    {
+        title: 'АВИА',
+        description: 'Для срочных перевозок или труднодоступных регионов. Индивидуальный расчет, возможность отправки груза в день обращения',
+        image: slideThree
+    },
+    {
+        title: 'МУЛЬТМОДАЛЬНЫЕ',
+        description: 'Более 5 лет проектируем сложные логистические цепочки или оптимизируем имеющиеся. Научный подход, анализ big data, собственная it-based архитектура',
+        image: slideFour
+    },
+]
+
+
+
 
 const SliderScreen: React.FC = () => {
-
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 2000})]);
-    
-    useEffect(() => {
-      }, [emblaApi])
     
     
     return (
-        <section className={styles.screen}>
-            
-            
-            <div className={styles.slider} ref={emblaRef}>
-                
-                <div className={styles.slide_container}>
-                    <div className={styles.slide}>                    
-                            <h2 className={styles.left_title}>ВИДЫ <i>ПЕРЕВОЗОК</i></h2>
-                            <h2 className={styles.right_title}>OUTLOOK</h2>
-                            <h2 className={styles.index}>01</h2>  
-                            <div className={styles.text_box}>
-                                <h2 className={styles.desc_title}>АВТОМОБИЛЬНЫЕ FTL/LTL</h2>
-                                <p className={styles.description}>Перевозим сборные и генеральные грузы с различными опциями: температурный режим, вооруженная охрана, различные обьемы кузова и т.д. Федеральное покрытие, а также СНГ и Европа.</p>
-                            </div>
-                            <Image src={slideTwo} alt='slide two' className={styles.slide_img} loading='lazy' decoding="async" />  
-                                        
-                    </div>
-                    <div className={styles.slide}>  
-                            <h2 className={styles.left_title}>ВИДЫ <i>ПЕРЕВОЗОК</i></h2>
-                            <h2 className={styles.right_title}>OUTLOOK</h2>
-                            <h2 className={styles.index}>02</h2>  
-                            <div className={styles.text_box}>
-                                <h2 className={styles.desc_title}>МОРСКИЕ</h2>
-                                <p className={styles.description}>Все основные направления морских in/out перевозок. Быстрое оформление и отправка груза, индивидуальный расчет, таможенное оформление</p>
-                            </div>
-                            <Image src={slideOne} alt='slide one' className={styles.slide_img} loading='lazy' decoding="async" />                 
-                    </div>
-                    <div className={styles.slide}>  
-                            <h2 className={styles.left_title}>ВИДЫ <i>ПЕРЕВОЗОК</i></h2>
-                            <h2 className={styles.right_title}>OUTLOOK</h2>
-                            <h2 className={styles.index}>03</h2>  
-                            <div className={styles.text_box}>
-                                <h2 className={styles.desc_title}>АВИА</h2>
-                                <p className={styles.description}>Для срочных перевозок или труднодоступных регионов. Индивидуальный расчет, возможность отправки груза в день обращения</p>
-                            </div>
-                            <Image src={slideFour} alt='slide four' className={styles.slide_img} loading='lazy' decoding="async" />                  
-                    </div>
-                    <div className={styles.slide}>  
-                            <h2 className={styles.left_title}>ВИДЫ <i>ПЕРЕВОЗОК</i></h2>
-                            <h2 className={styles.right_title}>OUTLOOK</h2>
-                            <h2 className={styles.index}>04</h2>  
-                            <div className={styles.text_box}>
-                                <h2 className={styles.desc_title}>МУЛЬТМОДАЛЬНЫЕ</h2>
-                                <p className={styles.description}>Более 5 лет проектируем сложные логистические цепочки или оптимизируем имеющиеся. Научный подход, анализ big data, собственная it-based архитектура</p>
-                            </div>
-                            <Image src={slideThree} alt='slide Three' className={styles.slide_img} loading='lazy' decoding="async" />                  
-                    </div>
+        <section className={cx('screen')}>
+            <div className={cx('screen__wrapper')}>
+                <div className={cx('screen__title-wrapper')}>
+                    <h2 className={cx('screen__title')}>OUTLOOK — топ-<i>компетенции</i></h2>
+                    <p className={cx('screen__subtitle')}>
+                        Трудно охватить весь спектр услуг в логистике. Вот список наших топ-компетенций - то, что у нас получается лучше всего.
+                        По этим услугам мы накопили огромную экспертизу и можем предложить лучший сервис и условия, но мы открыты для нового и готовы сделать предложение на любой запрос!
+                    </p>
                 </div>
-             
+                <div className={cx('screen__title-block')}>
+                    {/* <p className={cx('screen__index')}>
+                       &rarr;
+                    </p> */}
+                </div>
             </div>
-             
-            {/* <div className={styles.circle}>
-                <div className={styles.inner_circle}></div>
-            </div> */}
+           
+
+            <div className={cx('screen__cards-block')}>
+                
+                {arr.map((a, i) =>
+                    <div className={cx('screen__card')} key={i}>
+                        <div className={cx('screen__column', 'screen__column--text')}>
+                            <p className={cx('screen__card-title')}>{a.title}</p>
+                            <p className={cx('screen__card-text')}>{a.description}</p>
+                        </div>
+                        <div className={cx('screen__column', 'screen__column--image')}>
+                            <div className={cx('screen__card-img-wrapper')}>
+                                <Image src={a.image} alt='slide two' loading='lazy' decoding="async" />                            
+                            </div>
+                            <p className={cx('screen__index')}>0{i + 1}</p>
+                        </div>
+                    </div>
+                )}
+
+
+            </div>
+            
+          
             
         </section>
    

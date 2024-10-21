@@ -1,0 +1,80 @@
+@import '../../../app/css-constants';
+
+.screen {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 25px;
+
+    &__button {
+        @include subtext;
+        @include button-outlined-white;
+    }
+
+    &__title-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    &__column {
+        border-radius: 6px;
+        position: relative;
+
+        &--wide {
+            width: 70%;
+            background: $main-black;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            overflow: hidden;
+            padding: 50px 100px;
+
+            & > img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 30%;
+                height: auto
+            }
+
+            &:hover > img {
+                transform: scale(110%);
+                transition: all 10s ease-out;
+            }
+
+            &:hover {
+                background-color: $main-blue;
+                transition: all .3s ease-out;
+            }
+        }
+        &--thin {
+            padding: 50px 25px;
+            width: 30%;
+            background: $main-gray;
+        }
+    }
+
+    &__main-title {
+        @include secondary-title;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        @include subtext;
+        color: white;
+    }
+
+    &__buttons-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        margin-top: 25px;
+    }
+}
