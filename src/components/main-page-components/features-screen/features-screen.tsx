@@ -8,8 +8,6 @@ import auto_cover from '../../../../public/auto_cover.jpg';
 import zd_cover from '../../../../public/zd_cover.jpg';
 import ng_cover from '../../../../public/ng_cover.jpg';
 import icon_logo_white from '../../../../public/icon_logo_white.svg';
-//import { services } from "@/service/services";
-import { getServices } from "@/utils/constants";
 import Statistics from "@/components/statistics/statistics";
 import Image from "next/image";
 import carImage from '../../../../public/car-main.png'
@@ -23,8 +21,6 @@ const cx = classNames.bind(styles);
 
 
 const FeaturesScreen: React.FC = async () => {
-
-    const services = await getServices();
 
 
     return (

@@ -1,17 +1,21 @@
+@import '../../app/css-constants';
+
+
 .button {
     display: none;
     visibility: hidden;
 }
 .button_active {
+    @include secondary-title;
     border: none;
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 35px;
+    right: 35px;
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    background-color: #383838;
-    color: white;
+    background-color: $main-blue;
+    color: $main-gray;
     cursor: pointer;
     display: flex;
     justify-content: center;

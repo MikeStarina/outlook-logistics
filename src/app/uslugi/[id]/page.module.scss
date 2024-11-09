@@ -1,9 +1,12 @@
+@import '../../../app/css-constants';
+
 .page {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: hidden;
+    padding: 0 25px;
   }
   
   .page::-webkit-scrollbar {
@@ -13,7 +16,6 @@
 
 .main_screen {
     width: 100%;
-    height: 100vh;
     box-sizing: border-box;
     background-color: white;
     background-position: center center;
@@ -23,12 +25,16 @@
     background-attachment: fixed;
     position: relative;
     margin: 0 auto;
-    padding: 25px 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+.breadcrumbs_wrapper {
+    width: 100%;
+    margin-bottom: 25px;
 }
 .bg_image {
     position: absolute;
@@ -79,10 +85,10 @@
     width: 100%;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
     grid-auto-flow: row;
-    gap: 2px;
-    padding: 2px 0;
+    margin-top: 25px;
 }
 .features_screen_disabled {
     display: none;
@@ -92,11 +98,16 @@
 }
 .feature_card {
     width: 100%;
-    height: 100%;
-    max-height: 378px;
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
 }
 
 .feature_link {
@@ -144,68 +155,55 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-end;
     padding: 0;
     box-sizing: border-box;
-    position: absolute;
-    left: 30px;
-    bottom: 30px;
 }
 .card_title {    
-    margin: 0;
-    padding: 0;
-    /*font-size: var(--PlainTextL);*/
-    font-size: 25px;
-    line-height: 28px;
-    font-weight: 500;
-    color: white;
-    width: 330px;
-    z-index: 4;  
-    text-transform: uppercase;
-    white-space: normal;
+    @include secondary-title;
+    color: $main-gray;
+    z-index: 2;
 }
 .card_number {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    margin: 0;
-    padding: 0;
-    font-size: 50px;
-    line-height: 50px;
-    font-weight: 600;
-    color: white;
-    max-width: 300px;
+    @include main-title;
+    color: $main-gray;
     z-index: 2;
+    align-self: flex-start;
 }
 
 .secondary_services {
-    padding: 50px 150px 150px 150px;
-    margin: 0;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 12px;
     box-sizing: border-box;
     flex-wrap: wrap;
 }
 
 .secondary {
-    height: 40px;
+    @include minitext;
+    text-transform: lowercase;
+    height: 34px;
     width: auto;
-    border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 6px;
+    background: $main-black;
     margin: 0;
-    padding: 0 20px;
-    color: black;
-    font-size: var(--plainTextS);
-    line-height: var(--plainTextS);
-    background: transparent;
-}
-.secondary:hover {
-    background: linear-gradient(190deg, #21CEB6 3.79%, #0B58CE 140.92%);
-    border: 1px solid transparent;
-    color: white;
+    padding: 0 15px;   
+    color: $main-gray;
     cursor: pointer;
+
+    &:hover {
+        background: $main-blue;
+        transition: background .3s ease-out;
+    }
+}
+
+
+.calc_wrapper {
+    width: 100%;
+    margin-top: 100px;
 }
 
 .secondary_link {
@@ -216,25 +214,56 @@
 }
 
 .text_screen {
-    padding: 50px 100px 150px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: #e5e5e5;
+}
+
+.html_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 15px;
+
+    & > p {
+        @include minitext;
+        color: $main-black;
+    }
+
+    & > h2 {
+        @include secondary-title;
+        color: $main-black;
+    }
+    & > h3 {
+        @include secondary-title;
+        color: $main-black;
+    }
+
+    & > ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    & > ul > li {
+        @include minitext;
+        color: $main-black;
+    }
 }
 
 .text_screen_title {
-    font-size: var(--screenTitleL);
+    @include secondary-title;
+    color: $main-black;
     font-family: inherit;
+    margin-bottom: 15px;
 }
 
 .paragraph {
-    font-size: var(--plainTextL);
-    line-height: 20px;
-    font-family: inherit;
-    margin: 0;
-    padding: 0;
+    @include minitext;
+    color: $main-black;
     margin-bottom: 15px;
 }
 

@@ -35,6 +35,10 @@ const Header: React.FC = () => {
 
               
                 <Link href={{pathname: '/', hash: '#callback'}} className={cx('header__button')}>Перезвонить?</Link>
+                <div className={cx('header__menu-button-wrapper')}>
+                    <MenuButton />
+                </div>
+                
         </header>
     );
 }

@@ -13,7 +13,7 @@ import mixed_cover from "../../../../public/mixed_cover.jpg";
 import icon_logo_white from "../../../../public/icon_logo_white.svg";
 import full_logo440px_whiteW from "../../../../public/full_logo440px_whiteW.svg";
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 import gazelle from "../../../../public/features_covers/gazelle.jpg";
 import fivetonn from "../../../../public/features_covers/fivetonn.jpg";
 import fura from "../../../../public/features_covers/fura.jpg";
@@ -26,6 +26,11 @@ import zd_cont from "../../../../public/features_covers/zd_cont.jpg";
 import zd_ww from "../../../../public/features_covers/zd_ww.jpg";
 import zd_sng from "../../../../public/features_covers/zd_sng.jpg";
 import zd_rf from "../../../../public/features_covers/zd_rf.jpg";
+import FirstScreen from "@/components/main-page-components/first-screen/first-screen";
+import BreadcrumbsComponent from "@/components/breadcrumbs/breadcrumbs";
+import Calc from "@/components/calc/calc";
+import StagesScreen from "@/components/main-page-components/stages-screen/stages-screen";
+import SliderScreen from "@/components/main-page-components/slider-screen/slider-screen";
 import { Metadata, ResolvingMetadata } from 'next'
 
 type Props = {
@@ -68,24 +73,20 @@ const Page: React.FC<any> = async ({ params }: { params: { id: string } }) => {
     
     <MainContainer>
       <main className={styles.page}>
-      <section className={styles.main_screen}>
-        <Image
-          src={cover}
-          alt="фоновое изображение"
-          className={styles.bg_image}
-        />
-        <div className={styles.title_wrapper}>
-          <Image
-            src={full_logo440px_whiteW}
-            alt="логотип"
-            className={styles.title_logo}
-          />
-          <div className={styles.line}></div>
-          <h1 className={styles.title}>{filteredService?.name}</h1>
+        <div className={styles.breadcrumbs_wrapper}>
+            <BreadcrumbsComponent
+              params={[{title: 'Главная', href: '/'}, {title: 'Услуги', href: '/uslugi'}, {title: filteredService?.name}]}
+            />
         </div>
+      <section className={styles.main_screen}>
+        <FirstScreen
+          mainText={`OUTLOOK — ${filteredService?.name}`}
+          links={[{text: 'Услуги', href: '/uslugi'}, {text: 'О нас', href: '/about'}]}
+          cover={false}
+        />
       </section>
       <section className={filteredFeatures.length !== 0 ? styles.features_screen : styles.features_screen_disabled}>
-        {filteredFeatures &&
+        {filteredFeatures && filteredFeatures.length > 0 &&
           filteredFeatures.map((item, index) => {
             let cardCover = auto_cover;
             if (item!.name === "АВТОПЕРЕВОЗКИ 1,5 ТОНН") cardCover = gazelle;
@@ -104,32 +105,14 @@ const Page: React.FC<any> = async ({ params }: { params: { id: string } }) => {
 
             return (
               item!.pagePosition === "primary" && (
-                <div className={styles.services_block}>
-                  <div className={styles.feature_card} key={index}>
-                    <Link
-                      href={`/uslugi/${params.id}/${item!.slug}`}
-                      className={styles.feature_link}
-                    >
-                      <Image
-                        src={icon_logo_white}
-                        alt="логотип"
-                        className={styles.logo}
-                      />
-                      <p className={styles.card_number}>0{index + 1}</p>
-                      <Image
-                        src={cardCover}
-                        alt="обложка услуги"
-                        className={styles.card_cover}
-                      ></Image>
-                      <div className={styles.card_title_wrapper}>
-                        <p className={styles.card_title}>{item!.cardTitle}</p>
-                        <p className={styles.card_title}>
-                          <i>{item!.cardSubtitle}</i>
-                        </p>
-                      </div>
-                    </Link>
+                <Link href={`/uslugi/${params.id}/${item!.slug}`} className={styles.feature_card}>
+                  <p className={styles.card_number}>0{index + 1}</p>
+                  <Image src={cover} alt='обложка услуги' className={styles.card_cover}></Image>                       
+                  <div className={styles.card_title_wrapper}>
+                      <p className={styles.card_title}>{item.cardTitle}</p>
+                      <p className={styles.card_title}><i>{item.cardSubtitle}</i></p>
                   </div>
-                </div>
+                </Link>
               )
             );
           })}
@@ -152,18 +135,24 @@ const Page: React.FC<any> = async ({ params }: { params: { id: string } }) => {
             );
           })}
       </section>
+      <div className={styles.calc_wrapper}>
+        <Calc />
+      </div>
+      <StagesScreen />
+      <SliderScreen />
       <section className={styles.text_screen}>
         <h2 className={styles.text_screen_title}>{filteredService.name}</h2>
-        {filteredService?.description && Array.isArray(filteredService?.description) ?
+        {filteredService.description && '__html' in filteredService.description ?
+          (<div className={styles.html_text} dangerouslySetInnerHTML={filteredService.description}></div>) : 
+          filteredService?.description && Array.isArray(filteredService?.description) &&
           (filteredService.description.map((item, index) => (
             <p className={styles.paragraph} key={index}>
               {item}
             </p>
-          ))) : (
-            //@ts-ignore
-            <div className="" dangerouslySetInnerHTML={filteredService.description}></div>
-          )}
+          )))
+        }
       </section>
+      
       <ClientsScreen />
       <FormScreen />
       <ContactsScreen />

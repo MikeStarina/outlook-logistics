@@ -4,9 +4,22 @@
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: hidden;
+    padding: 0 25px;
+
+    @media screen and (max-width: 600px) {
+        padding: 0 15px;
+    }
   }
   
   .page::-webkit-scrollbar {
     width: 0px; /* ширина для вертикального скролла */
     background-color: transparent;
+  }
+
+  .wrapper {
+    margin-bottom: 25px;
+  }
+
+  .calc_wrapper {
+    margin-top: 100px;
   }

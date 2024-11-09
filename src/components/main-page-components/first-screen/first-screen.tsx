@@ -8,10 +8,18 @@ import Link from "next/link";
 const cx = classNames.bind(styles);
 
 
+type TProps = {
+    mainText: string;
+    links: {
+        text: string;
+        href: string;
+    }[];
+    subtitle?: string;
+    cover: boolean;
+}
 
 
-
-const FirstScreen: React.FC = () => {
+const FirstScreen: React.FC<TProps> = ({mainText, links, cover, subtitle}) => {
 
     return (
 
@@ -19,15 +27,15 @@ const FirstScreen: React.FC = () => {
         <section className={cx('screen')}>
             <div className={cx('screen__column', 'screen__column--wide')}>
                 <div className={cx('screen__title-wrapper')}>
-                    <h1 className={cx('screen__main-title')}>OUTLOOK — надёжная <i>логистика</i> для бизнеса</h1>
-                    <p className={cx('screen__subtitle')}>Cпециализируемся на авто и жд перевозках по России и СНГ</p>
+                    <h1 className={cx('screen__main-title')}>{mainText}</h1>
+                    {subtitle && <p className={cx('screen__subtitle')}>{subtitle}</p>}
                     <div className={cx('screen__buttons-wrapper')}>
-                        <Link href='/uslugi' className={cx('screen__button')}>Услуги</Link>
-                        <Link href='/' className={cx('screen__button')}>Транспортный парк</Link>
-                        <Link href='/about' className={cx('screen__button')}>О нас</Link>
+                        {links && links.map((i, id) => 
+                            <Link href={i.href} className={cx('screen__button')} key={id}>{i.text}</Link>
+                        )}
                     </div>
                 </div>
-                <Image src={img} alt='' />
+                {cover && <Image src={img} alt='' />}
             </div>
             <div className={cx('screen__column', 'screen__column--thin')}>
                 <MainForm />

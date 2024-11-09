@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from "react"
-import styles from './top-button.module.css'
+import styles from './top-button.module.scss'
 
 
 
@@ -35,7 +35,7 @@ const TopButton: React.FC = () => {
             className={visibility ? styles.button_active : styles.button}
             onClick={handler}
         >
-            	&and;
+            	&uarr;
         </button>
     )
 }

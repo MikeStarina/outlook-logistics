@@ -27,7 +27,6 @@ const FeedBackScreen: React.FC = () => {
                 <p className={styles.text}>
                     "ДЕЛАЕМ БОЛЬШЕ ДРУГИХ, ЧТОБЫ <i>ПЕРЕВОЗКИ</i> БЫЛИ УДОБНЫМИ И БЕЗОПАСНЫМИ, А БИЗНЕС - <i>ЧЕСТНЫМ</i> И ПРЕДСКАЗУЕМЫМ!"
                 </p>
-                <Image src={icon_logo} alt='логотип' className={styles.logo} />
             </div>
         </section>
     )

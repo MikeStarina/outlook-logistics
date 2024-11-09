@@ -8,9 +8,19 @@
     align-items: stretch;
     gap: 25px;
 
+    @media (max-width: 750px) {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+
     &__button {
         @include subtext;
         @include button-outlined-white;
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+            padding: 8px 16px;
+        }
     }
 
     &__title-wrapper {
@@ -19,6 +29,11 @@
         justify-content: center;
         align-items: flex-start;
         gap: 2px;
+        z-index: 1;
+
+        @media (max-width: 768px) {
+            gap: 10px;
+        }
     }
 
     &__column {
@@ -27,19 +42,40 @@
 
         &--wide {
             width: 70%;
-            background: $main-black;
+            background: $main-blue;
             display: flex;
             justify-content: flex-start;
             align-items: center;
             overflow: hidden;
             padding: 50px 100px;
 
+            @media (max-width: 1024px) {
+                padding: 30px 50px;
+            }
+            @media (max-width: 1000px) {
+                width: 50%;
+                background: $main-blue;
+            }
+
+            @media (max-width: 768px) {
+                width: 100%;
+                padding: 25px;
+            }
+
             & > img {
                 position: absolute;
-                top: 0;
+                bottom: 0;
                 right: 0;
-                width: 30%;
-                height: auto
+                height: 100%;
+                width: auto;
+                z-index: 0;
+
+                @media (max-width: 1350px) {
+                    right: -100px;
+                }
+                @media (max-width: 1000px) {
+                    display: none;
+                }
             }
 
             &:hover > img {
@@ -52,10 +88,19 @@
                 transition: all .3s ease-out;
             }
         }
+
         &--thin {
             padding: 50px 25px;
             width: 30%;
             background: $main-gray;
+
+            @media (max-width: 1000px) {
+                width: 50%;
+            }
+            @media (max-width: 768px) {
+                width: 100%;
+                padding: 25px;
+            }
         }
     }
 
@@ -63,11 +108,20 @@
         @include secondary-title;
         color: white;
         text-transform: uppercase;
+
+        @media (max-width: 768px) {
+            font-size: 24px;
+            line-height: 1.3;
+        }
     }
 
     &__subtitle {
         @include subtext;
         color: white;
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
     }
 
     &__buttons-wrapper {
@@ -76,5 +130,18 @@
         align-items: center;
         gap: 20px;
         margin-top: 25px;
+
+        @media (max-width: 1000px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
     }
 }

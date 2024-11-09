@@ -6,6 +6,7 @@ import TopButton from '@/components/topButton/top-button';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import ReduxProvider from '../redux/redux-provider';
+import Menu from '@/components/menu/menu';
 import './globals.css';
 
 
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="ru">
       <ReduxProvider>
           <body className={inter.className}>
+            <Menu />
             <Header />
               {children}
             <TopButton />

@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { reducer as ftlCalcReducer } from './ftl-calc-slice/ftl-calc.slice' 
 import { reducer as basicCalcReducer } from './basic-calc-slice/basic-calc.slice';
 import { reducer as zdCalcReducer} from './zd-calc-slice/zd-calc.slice'
+import { reducer as utilsReducer } from './utils-slice/utils'
 import { api } from '@/api/api';
 import { setupListeners } from '@reduxjs/toolkit/query'
 
@@ -14,6 +15,7 @@ export const store = configureStore({
         basicCalc: basicCalcReducer,
         ftlCalc: ftlCalcReducer,
         zdCalc: zdCalcReducer,
+        utils: utilsReducer,
         [ api.reducerPath ]: api.reducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(api.middleware),

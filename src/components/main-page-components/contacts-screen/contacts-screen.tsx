@@ -1,55 +1,41 @@
 'use client'
 import React, { Suspense } from "react";
-import styles from './contacts-screen.module.css';
+import styles from './contacts-screen.module.scss';
+import classNames from 'classnames/bind';
 import Image from "next/image";
 import Link from "next/link";
 import vk_logo_black from '../../../../public/vk_logo_black.png';
 import instagram_logo_black from '../../../../public/instagram_logo_black.png';
 import strela_small_logo_black from '../../../../public/strela_small_logo_black.png';
-//const YMaps = lazy(() => import('@pbe/react-yandex-maps').then(({ YMaps }) => ({ default: YMaps })));
-//const Map = lazy(() => import('@pbe/react-yandex-maps').then(({ Map }) => ({ default: Map })));
-//const Placemark = lazy(() => import('@pbe/react-yandex-maps').then(({ Placemark }) => ({ default: Placemark })));
-//const ZoomControl = lazy(() => import('@pbe/react-yandex-maps').then(({ ZoomControl }) => ({ default: ZoomControl })));
 import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
 
+const cx = classNames.bind(styles);
 
-
-
-
-
+// Suggestions for improvement:
+// 1. The classNames import is not being used - either remove it or use cx() instead of styles.
+// 2. Consider extracting contact information into a separate config file for easier maintenance
+// 3. The social media links are commented out - either remove them completely or implement properly
+// 4. Consider adding error boundaries around the map component
+// Example implementation:
+// import { ErrorBoundary } from 'react-error-boundary';
+//
+// Then wrap map component like:
+// <ErrorBoundary fallback={<div>Error loading map. Please try again later.</div>}>
+//   <YMaps>...</YMaps>
+// </ErrorBoundary>
+// 5. Add loading state/spinner for the map while it loads
+// 6. Add alt text translations for accessibility
+// 7. Consider making the phone number and email clickable with proper mailto: and tel: links
+// 8. Add proper TypeScript types for the map ref
+// 9. Consider extracting map configuration into constants
+// 10. Add proper aria-labels for accessibility
 
 const ContactsScreen: React.FC = () => {
    
-
     return (
-        <section className={styles.screen}>
-            <div className={styles.contacts_block}>
-                <h3 className={styles.contacts_title}>КОНТАКТЫ</h3>
-                <div className={styles.wrapper}>
-                    <a href='tel:+78002010073' className={styles.contacts_text}>8 (800) 201-00-73</a>
-                    <a href='https://t.me/OUTLOOK_LOGISTICS' className={styles.contacts_text} target="blank">Telegram</a>
-                    <a href='https://api.whatsapp.com/send?phone=79223671541' className={styles.contacts_text} target="blank">Whatsapp</a>
-                    <p className={styles.contacts_text}>info@outlook-logistics.ru</p>
-                    <p className={styles.contacts_text}>—</p>
-                    <p className={styles.contacts_text}>г. Санкт-Петербург, Софийская ул. 14, офис 309</p>
-                    <p className={styles.contacts_text}>По будням с 9 до 18</p>
-                    <div className={styles.socials_wrapper}>
-                        {/* <Link href='https://vk.com/outlook_logistics'>
-                            <Image src={vk_logo_black} alt='Логотип вконтакте' className={styles.social_logo} />
-                        </Link> */}
-                        {/*
-                        <Link href='/'>
-                            <Image src={instagram_logo_black} alt='Логотип инстаграм' className={styles.social_logo} />
-                        </Link>
-                        */}
-                        {/* <Link href='https://t.me/+4AjbWvlSJJcwOTMy'>
-                            <Image src={strela_small_logo_black} alt='Логотип стрела' className={styles.social_logo} />
-                        </Link> */}
-                    </div>
-                </div>
-            </div>
-            <div className={styles.map_block}>
-                <Suspense fallback={null}>
+        <section className={cx('screen')}>
+            
+            {/* <Suspense fallback={null}>
                     
                     <YMaps>
                         <Map defaultState={{ center: [ 59.879510, 30.397140 ], zoom: 15 }} instanceRef={ref => { ref && ref.behaviors.disable('scrollZoom'); }} width={'100%'} height={'100%'} className={styles.map}>
@@ -58,9 +44,7 @@ const ContactsScreen: React.FC = () => {
                         </Map>
                     </YMaps>
                     
-                </Suspense>
-            </div>
-
+                </Suspense> */}
             
         </section>
     )

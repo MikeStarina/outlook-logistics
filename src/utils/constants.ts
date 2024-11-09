@@ -47,6 +47,11 @@ export const getServices = async (): Promise<Array<TServicesStateObj>> => {
         method: 'GET'
     }).then(res => res.json());
 
+    //const data: Array<TServicesStateObj> = [];
+
+    if (!data) {
+        return [];
+    }
     return data;
 }
 export const getFeatures = async (): Promise<Array<TItem>> => {
@@ -54,6 +59,12 @@ export const getFeatures = async (): Promise<Array<TItem>> => {
         next: { revalidate: 3600 },
         method: 'GET'
     }).then(res => res.json());
+
+    //const data: Array<TItem> = [];
+
+    if (!data) {
+        return [];
+    }
 
     return data;
 }

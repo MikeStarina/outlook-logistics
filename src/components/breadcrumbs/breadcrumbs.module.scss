@@ -1,0 +1,17 @@
+@import '../../app/css-constants';
+
+.breadcrumbs {
+    
+    &__item {
+        @include minitext;
+        color: $main-black;
+        text-transform: lowercase;
+
+        &--link {
+            &:hover {
+                color: $main-blue;
+                transition: color .3s ease-out;
+            }
+        }
+    }
+}
