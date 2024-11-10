@@ -37,10 +37,10 @@ const MainPage: React.FC = () => {
     return (
         <main className={cx('page')}>
                 <FirstScreen
-                mainText='OUTLOOK — надёжная логистика для бизнеса'
-                links={[{text: 'Услуги', href: '/uslugi'}, {text: 'Транспортный парк', href: '/transport'}, {text: 'О нас', href: '/about'}]}
-                cover={true}
-                subtitle='Cпециализируемся на авто и жд перевозках по России и СНГ'
+                    mainText='OUTLOOK — надёжная логистика для бизнеса'
+                    links={[{text: 'Услуги', href: '/uslugi'}, {text: 'Транспортный парк', href: '/transport'}, {text: 'О нас', href: '/about'}]}
+                    cover={true}
+                    subtitle='Cпециализируемся на авто и жд перевозках по России и СНГ'
                 />
                 <FeaturesScreen />  
                 <SliderScreen />

@@ -21,8 +21,8 @@
     }
 
     @media (max-width: 500px) {
-        margin-top: 30px;
-        padding: 10px;
+        margin-top: 100px;
+        padding: 50px 10px 10px;
     }
     
     &__title {
@@ -118,6 +118,10 @@
             gap: 15px;
             margin-top: 15px;
         }
+        @media (max-width: 500px) {
+            gap: 100px;
+            margin-top: 15px;
+        }
     }
 
     &__card {
@@ -131,6 +135,8 @@
             flex-direction: column !important;
             gap: 15px;
         }
+
+     
 
         &:nth-child(odd) {
             flex-direction: row-reverse;
@@ -194,6 +200,10 @@
 
             @media (max-width: 768px) {
                 padding: 25px;
+                gap: 15px;
+            }
+            @media (max-width: 500px) {
+                padding: 15px;
                 gap: 15px;
             }
 

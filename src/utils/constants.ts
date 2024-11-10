@@ -1,6 +1,10 @@
 import { TFescoCarTypes, TOrderState, TCarType } from "./types";
 import { TServicesStateObj } from "@/service/services";
 import { TItem } from "@/service/features";
+import carImage from '../../public/car-main.png';
+import trallImage from '../../public/car-main-trall.png';
+import trainImage from '../../public/car-main-train.png';
+import gazImage from '../../public/car-main-gazelle.png';
 
 
 //export const apiUrl = 'http://localhost:9000';
@@ -202,3 +206,86 @@ export const priceCalculatorFunc = (distance: number | undefined , PRICE_RATIO: 
 
     return {price, distanceType};
 }
+
+
+
+export const transportCards = [
+    {
+        name: 'ДО 1,5 ТОНН',
+        description: 'рефрижератор / изотерм / тент',
+        cover: gazImage,
+        quantity: 20,
+        features: [
+            'Температурный режим +12/-20 градусов',
+            'Контроль соблюдения температурного режима',
+            'Мониторинг GPS/ГЛОНАСС',
+            '5 европаллет / 12 кубических метров'
+        ]
+    },
+    {
+        name: 'ДО 5 ТОНН',
+        description: 'рефрижератор / изотерм',
+        cover: carImage,
+        quantity: 9,
+        features: [
+            'Температурный режим +12/-20 градусов',
+            'Контроль соблюдения температурного режима',
+            'Мониторинг GPS/ГЛОНАСС',
+            '15 европаллет / 32 кубических метра'
+        ]
+    },
+    {
+        name: 'ДО 9 ТОНН',
+        description: 'рефрижератор / изотерм',
+        cover: carImage,
+        quantity: 4,
+        features: [
+            'Температурный режим +12/-20 градусов',
+            'Контроль соблюдения температурного режима',
+            'Мониторинг GPS/ГЛОНАСС',
+            '18 европаллет / 40 кубических метров'
+        ]
+    },
+    {
+        name: 'ДО 20 ТОНН',
+        description: 'тент',
+        cover: carImage,
+        quantity: 3,
+        features: [
+            'Мониторинг GPS/ГЛОНАСС',
+            '32 европаллет / 92 кубических метра'
+        ]
+    },
+    {
+        name: 'ДО 65 ТОНН',
+        description: 'трал',
+        cover: trallImage,
+        quantity: 7,
+        features: [
+            'Длинна 10+3 метра',
+            'Ширинна до 3 метров',
+            'Мониторинг GPS/ГЛОНАСС'
+        ]
+    },
+    {
+        name: 'RC 20 DC',
+        description: 'ж/д контейнер 20 футов',
+        cover: trainImage,
+        quantity: null,
+        features: [
+            'Различные варианты загрузки',
+            'Реф/Изотерм',
+            '11 европаллет / 38 кубических метров'
+        ]
+    },
+    {
+        name: 'RC 40 HC',
+        description: 'ж/д контейнер 40 футов',
+        cover: trainImage,
+        quantity: null,
+        features: [
+            'Различные варианты загрузки',
+            '25 европаллет / 75 кубических метров'
+        ]
+    }
+];

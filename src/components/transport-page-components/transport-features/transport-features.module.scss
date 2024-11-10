@@ -1,0 +1,193 @@
+@import '../../../app/css-constants';
+
+
+.screen {
+    width: 100%;
+    border-radius: 6px;
+    background: $main-gray;
+    margin-top: 25px;
+    padding: 0 0 25px;
+
+
+    &__head {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 50px;
+    }
+
+    &__title {
+        @include main-title;
+        color: $main-black;
+        text-transform: uppercase;
+
+        &--white {
+            color: $main-gray;
+        }
+    }
+
+    &__subtitle {
+        @include subtext;
+        color: $main-black;
+        max-width: 50%;
+
+        &--white {
+            color: $main-gray;
+            margin-top: 25px;
+        }
+    }
+
+    &__content {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 0 25px;
+    }
+
+    &__feature-card {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    &__feature-card:nth-child(2n) {
+        flex-direction: row-reverse;
+    }
+
+    &__info-block {
+        width: 40%;
+        border-radius: 6px;
+        background: $main-black;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        &:hover {
+            background: $main-blue;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    &__info-title {
+        @include main-title;
+        color: $main-gray;
+       
+    }
+
+    &__info-description {
+        @include subtext;
+        color: $main-gray;
+        margin-top: 25px;
+    }
+
+    &__features-list {
+        list-style: none;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        //gap: 10px;
+    }
+
+    &__feature-item {
+        @include subtext;
+        color: $main-gray;
+    }
+
+    &__quantity {
+        @include main-title;
+        font-size: 44px;
+        color: $main-gray;
+        margin-top: 25px;
+    }
+
+    &__img-block {
+        width: 60%;
+        border-radius: 6px;
+        background: $main-blue;
+        position: relative;
+        overflow: hidden;
+        min-height: 300px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        //padding: 25px;
+
+        & > img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            left: -50%;
+            bottom: -50px;
+            z-index: 2;
+        }
+
+        &:hover > div {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    &__img-bg {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 60%;
+        border-top-right-radius: 150px;
+        border-bottom-right-radius: 150px;
+        background: $main-black;
+        z-index: 1;
+    }
+
+    &__index {
+        @include main-title;
+        font-size: 64px;
+        z-index: 3;
+        color: $main-gray;
+        margin: 50px 50px 0 0;
+    }
+
+    &__lead-block {
+        width: 100%;
+        margin-top: 50px;
+        padding: 25px;
+    }
+
+    &__lead-block-wrapper {
+        width: 100%;
+        background: $main-black;
+        border-radius: 6px;
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    &__link {
+        @include subtext;
+        color: $main-gray;
+        margin: 50px 0 0 0;
+
+        &:hover {
+            color: $main-blue;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
