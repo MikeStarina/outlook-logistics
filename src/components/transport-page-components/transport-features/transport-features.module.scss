@@ -8,6 +8,10 @@
     margin-top: 25px;
     padding: 0 0 25px;
 
+    @media screen and (max-width: 768px) {
+        margin-top: 15px;
+        padding: 0 0 15px;
+    }
 
     &__head {
         width: 100%;
@@ -17,6 +21,10 @@
         align-items: flex-start;
         gap: 10px;
         padding: 50px;
+
+        @media screen and (max-width: 768px) {
+            padding: 25px;
+        }
     }
 
     &__title {
@@ -26,6 +34,11 @@
 
         &--white {
             color: $main-gray;
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 24px;
+            line-height: 28px;
         }
     }
 
@@ -38,6 +51,10 @@
             color: $main-gray;
             margin-top: 25px;
         }
+
+        @media screen and (max-width: 1024px) {
+            max-width: 100%;
+        }
     }
 
     &__content {
@@ -49,6 +66,12 @@
         align-items: flex-start;
         gap: 25px;
         padding: 0 25px;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 25px;
+            padding: 0 15px;
+            gap: 15px;
+        }
     }
 
     &__feature-card {
@@ -57,6 +80,11 @@
         justify-content: flex-start;
         align-items: stretch;
         gap: 25px;
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column !important;
+            gap: 15px;
+        }
     }
 
     &__feature-card:nth-child(2n) {
@@ -77,18 +105,30 @@
             background: $main-blue;
             transition: all 0.5s ease-in-out;
         }
+
+        @media screen and (max-width: 1024px) {
+            width: 100%;
+        }
     }
 
     &__info-title {
         @include main-title;
         color: $main-gray;
-       
+
+        @media screen and (max-width: 768px) {
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 
     &__info-description {
         @include subtext;
         color: $main-gray;
         margin-top: 25px;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 15px;
+        }
     }
 
     &__features-list {
@@ -98,7 +138,10 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        //gap: 10px;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 15px;
+        }
     }
 
     &__feature-item {
@@ -111,6 +154,11 @@
         font-size: 44px;
         color: $main-gray;
         margin-top: 25px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 32px;
+            margin-top: 15px;
+        }
     }
 
     &__img-block {
@@ -123,7 +171,6 @@
         display: flex;
         justify-content: flex-end;
         align-items: flex-start;
-        //padding: 25px;
 
         & > img {
             width: 100%;
@@ -141,6 +188,11 @@
             border-radius: 0;
             transition: all 0.5s ease-in-out;
         }
+
+        @media screen and (max-width: 1024px) {
+            width: 100%;
+            min-height: 200px;
+        }
     }
 
     &__img-bg {
@@ -152,6 +204,11 @@
         border-bottom-right-radius: 150px;
         background: $main-black;
         z-index: 1;
+
+        @media screen and (max-width: 768px) {
+            border-top-right-radius: 75px;
+            border-bottom-right-radius: 75px;
+        }
     }
 
     &__index {
@@ -160,12 +217,22 @@
         z-index: 3;
         color: $main-gray;
         margin: 50px 50px 0 0;
+
+        @media screen and (max-width: 768px) {
+            font-size: 32px;
+            margin: 25px 25px 0 0;
+        }
     }
 
     &__lead-block {
         width: 100%;
         margin-top: 50px;
         padding: 25px;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 25px;
+            padding: 15px;
+        }
     }
 
     &__lead-block-wrapper {
@@ -178,6 +245,11 @@
         justify-content: flex-start;
         align-items: flex-start;
         gap: 25px;
+
+        @media screen and (max-width: 768px) {
+            padding: 15px;
+            gap: 15px;
+        }
     }
 
     &__link {
@@ -188,6 +260,10 @@
         &:hover {
             color: $main-blue;
             transition: all 0.5s ease-in-out;
+        }
+
+        @media screen and (max-width: 768px) {
+            margin: 25px 0 0 0;
         }
     }
 }

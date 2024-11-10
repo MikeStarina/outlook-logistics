@@ -1,19 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import styles from './features-screen.module.scss';
-import cont2 from '../../../../public/cont2.webp';
-import cargo_cover from '../../../../public/cargo_cover.webp';
-import sea_cover from '../../../../public/sea_cover.jpg';
-import auto_cover from '../../../../public/auto_cover.jpg';
-import zd_cover from '../../../../public/zd_cover.jpg';
-import ng_cover from '../../../../public/ng_cover.jpg';
-import icon_logo_white from '../../../../public/icon_logo_white.svg';
 import Statistics from "@/components/statistics/statistics";
 import Image from "next/image";
-import carImage from '../../../../public/car-main.png'
-import trallImage from '../../../../public/car-main-trall.png'
-import trainImage from '../../../../public/car-main-train.png'
-import gazImage from '../../../../public/car-main-gazelle.png'
 import classNames from "classnames/bind";
 import { transportCards } from "@/utils/constants";
 const cx = classNames.bind(styles);
@@ -42,10 +31,10 @@ const FeaturesScreen: React.FC = async () => {
                         </div>
                     ))}
 
-                    <div className={cx('screen__last-card')}>
+                    <Link href='/transport' className={cx('screen__last-card')}>
                             <p className={cx('screen__card-title')}>НЕТ <i>НУЖНОГО?</i></p>
                             <p className={cx('screen__card-subtitle')}>посмотрите что мы можем предложить &rarr;</p>
-                    </div>
+                    </Link>
                     
                 </div>
 
