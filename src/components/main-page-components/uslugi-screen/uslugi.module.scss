@@ -21,8 +21,9 @@
     }
 
     @media (max-width: 500px) {
-        margin-top: 30px;
-        padding: 10px;
+        margin-top: 100px;
+        padding: 0;
+        background: transparent;
     }
 
     &__title {
@@ -69,6 +70,11 @@
             height: auto;
             padding: 15px;
         }
+        @media (max-width: 500px) {
+            padding: 20px;
+        }
+
+        
     }
 
     &__carousel {
@@ -91,6 +97,7 @@
         @media (max-width: 500px) {
             grid-template-columns: 1fr;
             gap: 10px;
+            margin-top: 50px;
         }
 
         &--next {
@@ -101,7 +108,7 @@
             }
 
             @media (max-width: 500px) {
-                margin-top: 20px;
+                margin-top: 100px;
             }
         }
     }
@@ -125,8 +132,9 @@
         }
 
         @media (max-width: 500px) {
-            min-height: 250px;
+            min-height: auto;
             padding: 10px;
+            aspect-ratio: 2 / 1;
         }
     }
 
@@ -149,8 +157,10 @@
         }
 
         @media (max-width: 500px) {
-            min-height: 250px;
+            //min-height: 250px;
+            min-height: auto;
             padding: 10px;
+            aspect-ratio: 2 / 1;
         }
 
         &:hover > div {
@@ -167,7 +177,7 @@
         left: 0;
         bottom: 0;
         background-color: $main-blue;
-        border-radius: 6px;
+        //border-radius: 6px;
         transform: translatex(-100%);
         border-radius: 50%;
         overflow: hidden;
@@ -183,6 +193,18 @@
             @media (max-width: 768px) {
                 height: 65%;
             }
+
+            @media (max-width: 500px) {
+                transform: translatex(0);
+                border-radius: 0;
+                width: 120%;
+                height: auto;
+            }
+        }
+
+        @media (max-width: 500px) {
+            transform: translatex(0);
+            border-radius: 0;
         }
     }
 

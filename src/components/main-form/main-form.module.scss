@@ -11,6 +11,10 @@
         @include secondary-title;
         color: $main-black;
         text-transform: uppercase;
+
+        @media (max-width: 500px) {
+            @include main-title;
+        }
     }
 
     &__wrapper {

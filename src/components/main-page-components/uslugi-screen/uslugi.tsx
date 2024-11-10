@@ -80,6 +80,15 @@ const Uslusgi: React.FC = async () => {
 
 
                 <div className={cx('screen__carousel', 'screen__carousel--next')}>
+
+
+                <Link href='/uslugi/avtomobilnye-perevozki' className={cx('screen__card-link')}>
+                                <p className={cx('screen__index')}>&rarr;</p>
+                                <div className={cx('screen__card-link-wrapper')}>
+                                    <p className={cx('screen__card-title')}>Популярные <i>перевозки</i></p>
+                                    <p className={cx('screen__card-subtitle')}>/ смотреть все /</p>
+                                </div>
+                            </Link>
                             
                             <Link href='/uslugi/avtomobilnye-perevozki/5-tonn' className={cx('screen__card')} >
                                 <div className={cx('screen__card-bg')}>
@@ -110,13 +119,7 @@ const Uslusgi: React.FC = async () => {
                                 <p className={cx('screen__card-title')}>рефрижераторные <i>перевозки</i></p>
                             </Link>
 
-                            <Link href='/uslugi/avtomobilnye-perevozki' className={cx('screen__card-link')}>
-                                <p className={cx('screen__index')}>&rarr;</p>
-                                <div className={cx('screen__card-link-wrapper')}>
-                                    <p className={cx('screen__card-title')}>Популярные <i>перевозки</i></p>
-                                    <p className={cx('screen__card-subtitle')}>/ смотреть все /</p>
-                                </div>
-                            </Link>
+                            
                            
                 </div>
             
