@@ -1,5 +1,7 @@
 import React from "react";
-import styles from './clients-screen.module.css';
+import styles from './clients-screen.module.scss';
+import classNames from 'classnames/bind';
+const cx = classNames.bind(styles);
 import etm from '../../../../public/clients/etm.png';
 import gazprom from '../../../../public/clients/gazprom.png';
 import kamaz from '../../../../public/clients/kamaz.png';
@@ -20,18 +22,16 @@ import Image from "next/image";
 const ClientsScreen: React.FC = () => {
 
     return (
-        <section className={styles.screen}>
-            <Image src={etm} alt='ЭТМ ЛОГОТИП' className={styles.client_logo} loading='lazy' decoding="async" />
-            <Image src={gazprom} alt='газпром логотип' className={styles.client_logo} loading='lazy' decoding="async" />
-            <Image src={kamaz} alt='камаз логотип' className={styles.client_logo} loading='lazy' decoding="async" />
-            <Image src={knauf} alt='кнауф логотип' className={styles.client_logo} loading='lazy' decoding="async" />
-            <Image src={magnit} alt='магнит логотип' className={styles.client_logo} loading='lazy' decoding="async" />
-            <Image src={rzd} alt='ржд логотип' className={styles.client_logo} loading='lazy' decoding="async" />
-            <Image src={segezha} alt='сегежа логотип' className={styles.client_logo} loading='lazy' decoding="async" />
-            <Image src={tat} alt='татнефть логотип' className={styles.client_logo} loading='lazy' decoding="async" />
-            <Image src={technonikol} alt='технониколь логотип' className={styles.client_logo} loading='lazy' decoding="async" />
-
-            {/* <div className={styles.trapezoid}></div> */}
+        <section className={cx('screen')}>
+            <Image src={etm} alt='ЭТМ ЛОГОТИП' className={cx('screen__client-logo')} loading='lazy' decoding="async" />
+            <Image src={gazprom} alt='газпром логотип' className={cx('screen__client-logo')} loading='lazy' decoding="async" />
+            <Image src={kamaz} alt='камаз логотип' className={cx('screen__client-logo')} loading='lazy' decoding="async" />
+            <Image src={knauf} alt='кнауф логотип' className={cx('screen__client-logo')} loading='lazy' decoding="async" />
+            <Image src={magnit} alt='магнит логотип' className={cx('screen__client-logo')} loading='lazy' decoding="async" />
+            <Image src={rzd} alt='ржд логотип' className={cx('screen__client-logo')} loading='lazy' decoding="async" />
+            <Image src={segezha} alt='сегежа логотип' className={cx('screen__client-logo')} loading='lazy' decoding="async" />
+            <Image src={tat} alt='татнефть логотип' className={cx('screen__client-logo')} loading='lazy' decoding="async" />
+            <Image src={technonikol} alt='технониколь логотип' className={cx('screen__client-logo')} loading='lazy' decoding="async" />
         </section>
     )
 }

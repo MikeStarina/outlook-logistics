@@ -1,0 +1,338 @@
+@import '../../../app/css-constants';
+
+.screen {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    border-radius: 6px;
+
+    @media (max-width: 768px) {
+        margin-top: 50px;
+        padding: 15px;
+    }
+
+    @media (max-width: 500px) {
+        margin-top: 30px;
+        padding: 10px;
+    }
+
+    &__title {
+        @include main-title;
+        text-transform: uppercase;
+        color: $main-black;
+        margin-left: 25px;
+
+        @media (max-width: 768px) {
+            font-size: 24px;
+            margin-left: 15px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 20px;
+            margin-left: 10px;
+        }
+    }
+
+    &__subtitle {
+        @include subtext;
+        color: $main-black;
+        margin-top: 25px;
+        margin-left: 25px;
+
+        @media (max-width: 768px) {
+            margin-top: 15px;
+            margin-left: 15px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    }
+
+    &__card-subtitle {
+        @include subtext;
+        color: $main-gray;
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+        }
+    }
+
+    &__cards-block {
+        margin: 50px 0 0 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        box-sizing: border-box;
+        gap: 25px;
+
+        @media (max-width: 768px) {
+            margin-top: 30px;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        @media (max-width: 500px) {
+            margin-top: 20px;
+            gap: 10px;
+        }
+    }
+
+    &__card {
+        width: 50%;    
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 25px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            gap: 15px;
+        }
+    }
+
+    &__card:last-of-type {
+        border: none;
+        padding: 50px;
+        background: $main-black;
+        border-radius: 6px;
+        gap: 25px;
+        justify-content: space-between;
+
+        @media (max-width: 768px) {
+            padding: 25px;
+            gap: 15px;
+        }
+
+        @media (max-width: 500px) {
+            padding: 15px;
+        }
+    }
+
+    &__stage-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        background: $main-blue;
+        height: 25%;
+        border-radius: 6px;
+        padding: 25px;
+
+        @media (max-width: 768px) {
+            padding: 15px;
+            height: auto;
+        }
+
+        @media (max-width: 500px) {
+            padding: 10px;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    &__card-title {
+        @include secondary-title;
+        color: $main-gray;
+        text-transform: uppercase;
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 18px;
+        }
+    }
+
+    &__card-description-box {
+        width: 100%;
+        margin: 0;
+        margin-left: 50px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: flex-start;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            margin-left: 25px;
+            gap: 15px;
+        }
+
+        @media (max-width: 500px) {
+            margin-left: 0;
+            gap: 10px;
+        }
+    }
+
+    &__card-text {
+        @include minitext;
+        color: $main-gray;
+
+        @media (max-width: 500px) {
+            font-size: 12px;
+        }
+    }
+
+    &__card-buttons-box {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        @media (max-width: 500px) {
+            margin-top: 20px;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    &__card-button-link {
+        @include subtext;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 25%;
+        color: $main-gray;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 500px) {
+            width: 100%;
+            font-size: 14px;
+        }
+
+        &:hover {
+            background: $main-blue;
+            color: $main-gray;
+            border-radius: 6px;
+            transition: all .4s ease-out;
+        }
+    }
+
+    &__card-text-box {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-self: flex-end;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        @media (max-width: 500px) {
+            margin-top: 20px;
+            gap: 10px;
+        }
+    }
+
+    &__features-box {
+        margin-top: 25px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 25px;
+
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    &__feature {
+        width: 25%;
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        text-decoration: none;
+        background: $main-black;
+        border-radius: 6px;
+        color: $main-gray;
+        padding: 25px;
+
+        &:hover {
+            background: $main-blue;
+            transition: all .4s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            width: 45%;
+            padding: 15px;
+            gap: 15px;
+        }
+
+        @media (max-width: 500px) {
+            width: 100%;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        &:hover {
+            color: $main-gray;
+            transition: all .4s ease-out;
+        }
+    }
+
+    &__feature-title {
+        @include secondary-title;
+        color: $main-gray;
+        text-transform: uppercase;
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 18px;
+        }
+    }
+
+    &__feature-header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

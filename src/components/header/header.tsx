@@ -1,12 +1,14 @@
 import React from "react";
-import styles from './header.module.css';
+//import styles from './header.module.css';
+import styles from './header.module.scss'
 import Link from "next/link";
 import Image from "next/image";
 import MenuButton from "../menu-button/menu-button";
 import Menu from "../menu/menu";
 import full_logo440px_white from '../../../public/full_logo440px_white.svg';
 import icon_logo from '../../../public/icon_logo.svg';
-
+import classnames from 'classnames/bind';
+const cx = classnames.bind(styles)
 
 
 
@@ -15,33 +17,28 @@ const Header: React.FC = () => {
     
 
     return (
-        <header className={styles.header}>
+        <header className={cx('header')}>
 
-                <Link href='/' className={styles.logo_link}>
-                    <Image src={full_logo440px_white} alt='<Большой логотип' className={styles.logo} />
+                <Link href='/' className={cx('header__logo-link')}>
+                    <Image src={full_logo440px_white} alt='<Большой логотип' className={cx('header__logo')} />
+                    <Image src={icon_logo} alt='Маленький логотип' className={cx('header__logo', 'header__logo--small')} />
                 </Link>
-                <Link href='/' className={styles.logo_link}>
-                    <Image src={icon_logo} alt='Маленький логотип' className={styles.icon_logo} />
-                </Link>
-            <div className={styles.wrapper}>
-                <div className={styles.main_text_block}>                
-                    <div className={styles.text_wrapper}>
-                        <a href='tel:+78002010073' className={styles.caption}>8 <i>(800)</i> 201-00-73</a>                   
-                    </div>
-                    <div className={styles.text_wrapper} id='calc'>                    
-                        <a href='mailto:info@outlook-logistics.ru' target='blank' className={styles.caption}>info@<i>outlook</i>-logistics.ru</a>
-                    </div>
-                    <div className={styles.text_wrapper}>
-                        <a href='https://t.me/OUTLOOK_LOGISTICS' target='blank' className={styles.caption}>Telegram</a>                   
-                    </div>
-                    <div className={styles.text_wrapper}>
-                        <a href='https://api.whatsapp.com/send?phone=79223671541' target='blank' className={styles.caption}>Whatsapp</a>                   
-                    </div>
-                    <Link href={{pathname: '/', hash: 'callback'}} className={styles.callback_link}>Перезвонить?</Link>
+
+                <nav>
+                    <ul className={cx('header__menu-list')}>
+                        <li><Link href='/about' className={cx('header__menu-link')}>О нас</Link></li>
+                        <li><Link href='/uslugi' className={cx('header__menu-link')}>Услуги</Link></li>
+                        <li><Link href='/calculator' className={cx('header__menu-link')}>Калькулятор</Link></li>
+                        <li><Link href='/contacts' className={cx('header__menu-link')}>Контакты</Link></li>
+                    </ul>
+                </nav>
+
+              
+                <Link href={{pathname: '/', hash: '#callback'}} className={cx('header__button')}>Перезвонить?</Link>
+                <div className={cx('header__menu-button-wrapper')}>
+                    <MenuButton />
                 </div>
-            
-                <MenuButton />
-            </div>
+                
         </header>
     );
 }

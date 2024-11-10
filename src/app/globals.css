@@ -1,6 +1,30 @@
 @import url(../vendors/normalize.css);
 @import url(../vendors/fonts.css);
 
+* {
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  font-family: "Inter", "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #383838;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #383838;
+}
+
 :root {
   --lightFont: 200;
   --boldFont: 600;

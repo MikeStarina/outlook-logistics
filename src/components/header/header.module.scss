@@ -1,0 +1,106 @@
+@import '../../app/css-constants';
+
+.header {
+    width: 100%;
+    background-color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    &__logo-link {
+        width: 150px;
+
+        @media (max-width: 768px) {
+            width: 120px;
+        }
+    }
+
+    &__logo {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+
+        &--small {
+            height: 33px;
+            width: auto;
+            display: none;
+            visibility: collapse;
+        }
+
+        @media (max-width: 500px) {
+            display: none;
+
+            &--small {
+                display: block;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__menu-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        list-style-type: none;
+
+        @media (max-width: 768px) {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &__menu-link {
+        @include plain-text;
+        @include plain-link;
+    }
+
+    &__button {
+        @include button-blue;
+
+        @media (max-width: 768px) {
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    &__contacts-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            align-items: center;
+        }
+    }
+
+    &__menu-button-wrapper {
+        display: none;
+        visibility: hidden;
+
+        @media (max-width: 768px) {
+            display: block;
+            visibility: visible;
+        }
+    }
+}

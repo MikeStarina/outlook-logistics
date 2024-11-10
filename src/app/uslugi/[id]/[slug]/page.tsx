@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './page.module.css';
+import styles from './page.module.scss';
 import MainContainer from '@/components/container/main-container';
 //import { features } from '@/service/features';
-import { getFeatures } from '@/utils/constants';
+import { getFeatures, getServices } from '@/utils/constants';
 import { Metadata, ResolvingMetadata } from 'next'
 import gazelle from "../../../../../public/features_covers/gazelle.jpg";
 import fivetonn from "../../../../../public/features_covers/fivetonn.jpg";
@@ -25,6 +25,12 @@ import Image from 'next/image';
 import ClientsScreen from '@/components/main-page-components/clients-screen/clients-screen';
 import ContactsScreen from '@/components/main-page-components/contacts-screen/contacts-screen';
 import FormScreen from '@/components/main-page-components/form-screen/form-screen';
+import BreadcrumbsComponent from '@/components/breadcrumbs/breadcrumbs';
+import Calc from '@/components/calc/calc';
+import StagesScreen from '@/components/main-page-components/stages-screen/stages-screen';
+import SliderScreen from '@/components/main-page-components/slider-screen/slider-screen';
+import FirstScreen from '@/components/main-page-components/first-screen/first-screen';
+
 
 type Props = {
     params: { slug: string }
@@ -56,6 +62,8 @@ type Props = {
 
 const Page: React.FC<any> = async ({ params }: { params: { slug: string, id: string } }) => {
   const features = await getFeatures();
+  const services = await getServices();
+  const service = services.filter((item) => item?.url === params.id)[0];
   const feature = features.filter((item) => item?.slug === params.slug)[0];
   let cardCover = mixed_cover;
   if (feature!.name === "АВТОПЕРЕВОЗКИ 1,5 ТОНН") cardCover = gazelle;
@@ -76,22 +84,30 @@ const Page: React.FC<any> = async ({ params }: { params: { slug: string, id: str
      
         <MainContainer>
            <main className={styles.page}>
+            <div className={styles.breadcrumbs_wrapper}>
+            <BreadcrumbsComponent
+              params={[
+                {title: 'Главная', href: '/'},
+                {title: 'Услуги', href: '/uslugi'},
+                {title: service?.name, href: `/uslugi/${params.id}`},
+                {title: feature?.name}
+                ]}
+            />
+            </div>
             <section className={styles.main_screen}>
-              <Image
-                src={cardCover}
-                alt="фоновое изображение"
-                className={styles.bg_image}
-              />
-              <div className={styles.title_wrapper}>
-                <Image
-                  src={full_logo440px_whiteW}
-                  alt="логотип"
-                  className={styles.title_logo}
+                <FirstScreen
+                  mainText={feature?.name}
+                  links={[
+                    {text: 'Услуги', href: '/uslugi'},
+                    {text: 'О нас', href: '/about'},
+                    {text: 'Контакты', href: '/contacts'},
+                  ]}
+                  cover={false}
                 />
-                  <div className={styles.line}></div>
-                  <h1 className={styles.title}>{feature?.name}</h1>
-              </div>
             </section>
+           
+            <SliderScreen />
+            <StagesScreen />
             <section className={styles.text_screen}>
               <h2 className={styles.text_screen_title}>{feature?.name}</h2>
               {feature?.description && Array.isArray(feature.description) ?
@@ -101,12 +117,14 @@ const Page: React.FC<any> = async ({ params }: { params: { slug: string, id: str
                   </p>
               ))) : (
                 //@ts-ignore
-                <div className="" dangerouslySetInnerHTML={feature?.description}></div>
+                <div className={styles.html_text} dangerouslySetInnerHTML={feature?.description}></div>
               )}
             </section>
             <ClientsScreen />
+           
             <FormScreen />            
             <ContactsScreen />
+            
             </main>
         </MainContainer>
         

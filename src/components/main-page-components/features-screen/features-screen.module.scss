@@ -1,0 +1,276 @@
+@import '../../../app/css-constants';
+
+.screen {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: $main-gray;
+    border-radius: 6px;
+
+    &__head {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 25px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    &__main-title {
+        @include main-title;
+        color: $main-black;
+        margin: 50px 0 0 25px;
+
+        @media (max-width: 768px) {
+            margin: 30px 0 0 15px;
+            font-size: 24px;
+        }
+
+        @media (max-width: 500px) {
+            margin: 25px 0 0 10px;
+            font-size: 20px;
+        }
+    }
+
+    &__subtitle {
+        @include subtext;
+        color: $main-black;
+        margin: 25px 0 100px 25px;
+        max-width: 50%;
+
+        @media (max-width: 768px) {
+            margin: 15px 0 50px 15px;
+            max-width: 100%;
+        }
+
+        @media (max-width: 500px) {
+            margin: 10px 0 30px 10px;
+            font-size: 14px;
+        }
+    }
+
+    &__title {
+        @include main-title;
+        color: $main-gray;
+
+        @media (max-width: 768px) {
+            font-size: 24px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 20px;
+        }
+    }
+
+    &__title-wrapper {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background: $main-black;
+        border-radius: 6px;
+        padding: 25px;
+
+        &:hover {
+            background: $main-blue;
+            transition: all .3s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 20px;
+        }
+    }
+
+    &__lead-text {
+        @include subtext;
+        color: $main-gray;
+        margin-top: 25px;
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    }
+
+    &__stat-wrapper {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+
+    &__transport {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(min-content, 1fr));
+        gap: 25px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        @media (max-width: 500px) {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+    }
+
+    &__card {
+        width: 100%;
+        position: relative;
+        padding-bottom: 100%;
+        overflow: hidden;
+        border-radius: 6px;
+
+        &:hover > span {
+            border-radius: 0;
+            background: $main-blue;
+            transform: scale(150%);
+            transition: all .3s ease-out;
+        }
+    }
+
+    &__card-img-wrapper {
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        right: 0;
+
+        & > img {
+            width: 150%;
+            height: auto;
+            object-fit: cover;
+            position: relative;
+            left: -60%;
+        }
+    }
+
+    &__card-bg {
+        position: absolute;
+        top: 25%;
+        right: 0;
+        bottom: -25%;
+        left: 0;
+        background: $main-black;
+        border-radius: 50%;
+    }
+
+    &__card-text-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 15px;
+        color: $main-black;
+
+        &:hover {
+            color: $main-gray;
+        }
+
+        & > div {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 5px;
+        }
+    }
+
+    &__card-title {
+        @include main-title;
+        text-align: right;
+
+        @media (max-width: 768px) {
+            font-size: 24px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 20px;
+        }
+    }
+
+    &__card-subtitle {
+        @include subtext;
+        text-transform: uppercase;
+        margin-top: 5px;
+        text-align: right;
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+        }
+    }
+
+    &__card-text {
+        @include minitext;
+        text-align: right;
+        text-transform: uppercase;
+
+        @media (max-width: 500px) {
+            font-size: 12px;
+        }
+    }
+
+    &__last-card {
+        background: $main-blue;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        padding: 15px;
+        color: $main-gray;
+    }
+
+    &__links-wrapper {
+        margin-top: 25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 25px;
+
+        @media (max-width: 768px) {
+            gap: 15px;
+        }
+
+        @media (max-width: 500px) {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+        }
+    }
+
+    &__button {
+        @include subtext;
+        @include button-outlined-white;
+
+        @media (max-width: 500px) {
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+    }
+}

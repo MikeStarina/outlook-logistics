@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from './features-screen.module.css';
+import styles from './features-screen.module.scss';
 import cont2 from '../../../../public/cont2.webp';
 import cargo_cover from '../../../../public/cargo_cover.webp';
 import sea_cover from '../../../../public/sea_cover.jpg';
@@ -8,73 +8,183 @@ import auto_cover from '../../../../public/auto_cover.jpg';
 import zd_cover from '../../../../public/zd_cover.jpg';
 import ng_cover from '../../../../public/ng_cover.jpg';
 import icon_logo_white from '../../../../public/icon_logo_white.svg';
-//import { services } from "@/service/services";
-import { getServices } from "@/utils/constants";
+import Statistics from "@/components/statistics/statistics";
 import Image from "next/image";
-
+import carImage from '../../../../public/car-main.png'
+import trallImage from '../../../../public/car-main-trall.png'
+import trainImage from '../../../../public/car-main-train.png'
+import gazImage from '../../../../public/car-main-gazelle.png'
+import classNames from "classnames/bind";
+const cx = classNames.bind(styles);
 
 
 
 
 const FeaturesScreen: React.FC = async () => {
 
-    const services = await getServices();
-
 
     return (
-        <section className={styles.screen}>
-           
-                
-                            <h2 className={styles.title}><i>ЛОГИСТИЧЕСКИЕ</i> УСЛУГИ</h2>
-                            <p className={styles.subtitle}></p>
-                        
-                            <div className={styles.cards_block}>
+        <section className={cx('screen')}>
 
-                                {services && services.map((item, index) => {
-                                    
-                                    let cover = cargo_cover;
-                                    if (item!.name === 'Автомобильные перевозки') cover = auto_cover;
-                                    if (item!.name === 'Морские перевозки') cover = sea_cover;
-                                    if (item!.name === 'Железнодорожные перевозки') cover = zd_cover;
-                                    if (item!.name === 'Негабаритные перевозки') cover = ng_cover;
-                                    
+                <h2 className={cx('screen__main-title')}>OUTLOOK — ТРАНСПОРТНЫЙ <i>ПАРК</i></h2>
+                <p className={cx('screen__subtitle')}>
+                Наша инвестпрограмма подразумевает пополнения автопарка раз в 3 месяца и регулярно пересматривается в зависимости от текущих контрактов и динамики рынка.
+                Большинство популярных услуг мы оказываем силами собственных мощностей, но мы также гибко оперируем парком исходя из пожеланий наших клиентов.
+                </p>
+                <div className={cx('screen__transport')}>
+                    <div className={cx('screen__card')}>
+                        <span className={cx('screen__card-bg')}></span>
+                        <div className={cx('screen__card-img-wrapper')}>
+                            <Image src={gazImage} alt='' />
+                        </div>
+                        <div className={cx('screen__card-text-wrapper')}>
+                            <p className={cx('screen__card-title')}>ДО 1,5 <i>ТОНН</i></p>
+                            <p className={cx('screen__card-subtitle')}>рефрижератор / изотерм / тент</p>
 
-                                    return index < 4 && (
-                                   
-                                        <Link href={`/uslugi/${item.url}`} className={styles.link} key={index}>
-                                            <div className={styles.card}>
-                                                <Image className={styles.cover} src={cover} alt='обложка карточки' />
-                                                <p className={styles.card_number}>0{index + 1}</p>
-                                                <Image className={styles.logo} alt='логотип' src={icon_logo_white} />
-                                                <div className={styles.card_title_wrapper}>
-                                                
-                                                        <h4 className={styles.card_title}>{item.cardTtitle}</h4>
-                                                        <h4 className={styles.card_title}><i>{item.cardSubtitle}</i></h4>
-                                                
-                                                </div>
-                                                
-                                               
-                                            
-                                            </div>
-                                        </Link>
-                                    
-                                    )
-                                })}
+                            {/* <div>
+                                <p className={cx('screen__card-text')}>GPS/ГЛОНАСС</p>
+                                <p className={cx('screen__card-text')}>+12/-20 градусов</p>
+                                <p className={cx('screen__card-text')}>15 европаллет</p>
+                                <p className={cx('screen__card-text')}>32 куб. м.</p>
+                            </div> */}
+                        </div>                        
+                    </div>
+                    <div className={cx('screen__card')}>
+                        <span className={cx('screen__card-bg')}></span>
+                        <div className={cx('screen__card-img-wrapper')}>
+                            <Image src={carImage} alt='' />
+                        </div>
+                        <div className={cx('screen__card-text-wrapper')}>
+                            <p className={cx('screen__card-title')}>ДО 5 <i>ТОНН</i></p>
+                            <p className={cx('screen__card-subtitle')}>рефрижератор / изотерм</p>
 
-                                
-                                
-                                
-                            </div>
-                            
-                            <Link href='/uslugi' className={styles.link_button_wrapper}>
-                                <button type='button' className={styles.button}>Смотреть все</button>
-                            </Link>
-                                
-                                                       
-                               
-                                {/* <Image src={cont2} alt='container' className={styles.bgimage} /> */}
-                            
+                            {/* <div>
+                                <p className={cx('screen__card-text')}>GPS/ГЛОНАСС</p>
+                                <p className={cx('screen__card-text')}>+12/-20 градусов</p>
+                                <p className={cx('screen__card-text')}>15 европаллет</p>
+                                <p className={cx('screen__card-text')}>32 куб. м.</p>
+                            </div> */}
+                        </div>                        
+                    </div>
+
+                    <div className={cx('screen__card')}>
+                        <span className={cx('screen__card-bg')}></span>
+                        <div className={cx('screen__card-img-wrapper')}>
+                            <Image src={carImage} alt='' />
+                        </div>
+                        <div className={cx('screen__card-text-wrapper')}>
+                            <p className={cx('screen__card-title')}>ДО 9 <i>ТОНН</i></p>
+                            <p className={cx('screen__card-subtitle')}>рефрижератор / изотерм</p>
+
+                            {/* <div>
+                                <p className={cx('screen__card-text')}>GPS/ГЛОНАСС</p>
+                                <p className={cx('screen__card-text')}>+12/-20 градусов</p>
+                                <p className={cx('screen__card-text')}>18 европаллет</p>
+                                <p className={cx('screen__card-text')}>40 куб. м.</p>
+                            </div> */}
+                        </div>                        
+                    </div>
+
+
+                    <div className={cx('screen__card')}>
+                        <span className={cx('screen__card-bg')}></span>
+                        <div className={cx('screen__card-img-wrapper')}>
+                            <Image src={carImage} alt='' />
+                        </div>
+                        <div className={cx('screen__card-text-wrapper')}>
+                            <p className={cx('screen__card-title')}>ДО 20 <i>ТОНН</i></p>
+                            <p className={cx('screen__card-subtitle')}>тент</p>
+
+                            {/* <div>
+                                <p className={cx('screen__card-text')}>GPS/ГЛОНАСС</p>
+                                <p className={cx('screen__card-text')}>32 европаллет</p>
+                                <p className={cx('screen__card-text')}>92 куб. м.</p>
+                            </div> */}
+                        </div>                        
+                    </div>
+                    <div className={cx('screen__card')}>
+                        <span className={cx('screen__card-bg')}></span>
+                        <div className={cx('screen__card-img-wrapper')}>
+                            <Image src={trallImage} alt='' />
+                        </div>
+                        <div className={cx('screen__card-text-wrapper')}>
+                            <p className={cx('screen__card-title')}>ДО 65 <i>ТОНН</i></p>
+                            <p className={cx('screen__card-subtitle')}>трал</p>
+
+                            {/* <div>
+                                <p className={cx('screen__card-text')}>GPS/ГЛОНАСС</p>
+                                <p className={cx('screen__card-text')}>32 европаллет</p>
+                                <p className={cx('screen__card-text')}>92 куб. м.</p>
+                            </div> */}
+                        </div>                        
+                    </div>
+                    <div className={cx('screen__card')}>
+                        <span className={cx('screen__card-bg')}></span>
+                        <div className={cx('screen__card-img-wrapper')}>
+                            <Image src={trainImage} alt='' />
+                        </div>
+                        <div className={cx('screen__card-text-wrapper')}>
+                            <p className={cx('screen__card-title')}>RC 20 <i>DC</i></p>
+                            <p className={cx('screen__card-subtitle')}>ж/д контейнер 20 футов</p>
+
+                            {/* <div>
+                                <p className={cx('screen__card-text')}>GPS/ГЛОНАСС</p>
+                                <p className={cx('screen__card-text')}>32 европаллет</p>
+                                <p className={cx('screen__card-text')}>92 куб. м.</p>
+                            </div> */}
+                        </div>                        
+                    </div>
+                    <div className={cx('screen__card')}>
+                        <span className={cx('screen__card-bg')}></span>
+                        <div className={cx('screen__card-img-wrapper')}>
+                            <Image src={trainImage} alt='' />
+                        </div>
+                        <div className={cx('screen__card-text-wrapper')}>
+                            <p className={cx('screen__card-title')}>RC 40 <i>HC</i></p>
+                            <p className={cx('screen__card-subtitle')}>ж/д контейнер 40 футов</p>
+
+                            {/* <div>
+                                <p className={cx('screen__card-text')}>GPS/ГЛОНАСС</p>
+                                <p className={cx('screen__card-text')}>32 европаллет</p>
+                                <p className={cx('screen__card-text')}>92 куб. м.</p>
+                            </div> */}
+                        </div>                        
+                    </div>
+
+
+
+
+                    <div className={cx('screen__last-card')}>
+                            <p className={cx('screen__card-title')}>НЕТ <i>НУЖНОГО?</i></p>
+                            <p className={cx('screen__card-subtitle')}>посмотрите что мы можем предложить &rarr;</p>
+                    </div>
+                    
+                </div>
+
+
+
+
+
+
+
+
+                <div className={cx('screen__head')}>
+                    <div className={cx('screen__title-wrapper')}>
+                        <h3 className={cx('screen__title')}>OUTLOOK — <i>О НАС</i></h3>
+                        <p className={cx('screen__lead-text')}>Outlook - современная логистика для бизнеса. Мы нацелены на долгосрочное сотрудничество с глубоким пониманием процессов наших клиентов, надежным, понятным сервисом и работой на результат!</p>
+
+                        <div className={cx('screen__links-wrapper')}>
+                            <Link href='/uslugi' className={cx('screen__button')}>Услуги</Link>
+                            <Link href='/about' className={cx('screen__button')}>О нас</Link>
+                        </div>
+                    </div>   
+                    
+                    <div className={cx('screen__stat-wrapper')}>
+                        <Statistics />
+                    </div>
+                </div>
             
+                          
         </section>
     )
 }

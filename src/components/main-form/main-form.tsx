@@ -1,11 +1,12 @@
 'use client'
 import React, { ChangeEvent, useState } from "react";
-import styles from './main-form.module.css';
+import styles from './main-form.module.scss';
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { sendFormData } from "@/actions/actions";
-
+import classNames from "classnames/bind";
+const cx = classNames.bind(styles);
 
 const darkTheme = createTheme({
     palette: {
@@ -28,7 +29,7 @@ const initialState = {
 const MainForm: React.FC = () => {
 
         const [ state, setState ] = useState<{from:string,to:string,phone:string}>(initialState);
-        const [ disabled, setDisabled ] = useState<{text: string, isDisabled: boolean}>({text: 'РАССЧИТАТЬ', isDisabled: false});
+        const [ disabled, setDisabled ] = useState<{text: string, isDisabled: boolean}>({text: 'Рассчитать', isDisabled: false});
 
         const inputChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
             setState({
@@ -47,17 +48,13 @@ const MainForm: React.FC = () => {
         }
 
         return (
-            <ThemeProvider theme={darkTheme}>
-                <form className={styles.mainForm} onSubmit={formSubmitHandler}>
-                    <div className={styles.wrapper}>
-                        <h1 className={styles.mainForm_title}>OUTLOOK — ВАШ НАДЕЖНЫЙ ЛОГИСТИЧЕСКИЙ <i>ПАРТНЕР</i></h1>
-                        <p className={styles.mainForm_title}>РАССЧИТАТЬ <i>ПЕРЕВОЗКУ</i></p>
-                    </div>                   
 
-                    <div className={styles.wrapper}>
+                <form className={cx('mainForm')} onSubmit={formSubmitHandler}>
+                    <p className={cx('mainForm__title')}>РАССЧИТАТЬ <i>ПЕРЕВОЗКУ</i></p>  
+                    <div className={cx('mainForm__wrapper')}>
                         <TextField 
                             label='Откуда'
-                            className={styles.input}
+                            className={cx('mainForm__input')}
                             name='from'
                             id='from'
                             size='small'
@@ -67,7 +64,7 @@ const MainForm: React.FC = () => {
                         />
                         <TextField 
                             label='Куда'
-                            className={styles.input}
+                            className={cx('mainForm__input')}
                             name='to'
                             id='to'
                             size='small'
@@ -77,7 +74,7 @@ const MainForm: React.FC = () => {
                         />
                         <TextField 
                             label='Телефон'
-                            className={styles.input}
+                            className={cx('mainForm__input')}
                             name='phone'
                             id='phone'
                             size='small'
@@ -85,22 +82,20 @@ const MainForm: React.FC = () => {
                             value={state.phone}
                             onChange={inputChangeHandler}
                         />
-                        <Button 
+                        <button
                             type='submit'
-                            variant="outlined"
-                            className={styles.button}
+                            className={cx('mainForm__button')}
                             disabled={disabled.isDisabled}
                         >
                             {disabled.text}
-                        </Button>
+                        </button>
                     </div>
-                    <div className={styles.wrapper}>
-                        <p className={styles.mainForm_text}>Подготовим предварительный рассчет за 15 минут и зафиксируем цену до момента согласования!</p>
-                        <p className={styles.mainForm_text}>Скидки до 50% для новых клиентов *</p>
+                    <div className={cx('mainForm__text-wrapper')}>
+                        <p className={cx('mainForm__text')}>Подготовим предварительный рассчет за 15 минут и зафиксируем цену до момента согласования!</p>
+                        <p className={cx('mainForm__text')}>Скидки до 50% для новых клиентов *</p>
                     </div>
                     
                 </form>
-            </ThemeProvider>
         )
 }
 

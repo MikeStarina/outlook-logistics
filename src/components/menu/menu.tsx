@@ -1,36 +1,33 @@
 'use client'
 import React from "react";
-//import { useDispatch } from "../..";
-import styles from './menu.module.css';
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { actions as utilsActions } from "@/redux/utils-slice/utils";
+import styles from './menu.module.scss';
 import Link from "next/link";
 
 
-type TMenuProps = {
-    menuVisibility: boolean;
-    clickHandler: any;
-};
 
 
-const Menu: React.FC<TMenuProps> = ({menuVisibility, clickHandler}) => {
 
-    const closeClickHandler = () => {
-        clickHandler(!menuVisibility);
-    }
-
+const Menu: React.FC = () => {
+    const { menuVisibility } = useAppSelector(state => state.utils);
+    const dispatch = useAppDispatch();
     return(
-        <div className={styles.menu}>
-            <div className={styles.close_button} onClick={closeClickHandler} >
+        <>
+            {menuVisibility && 
+            <div className={styles.menu}>
+                <div className={styles.close_button} onClick={() => dispatch(utilsActions.setMenuVisibility(false))} >
                 <div className={styles.line}></div>
                 <div className={styles.line}></div>
             </div>
 
 
             <div className={styles.links_wrapper}>
-                <Link className={styles.link} href='/' onClick={closeClickHandler}>ГЛАВНАЯ</Link>
-                <Link className={styles.link} href='/about' onClick={closeClickHandler}>О КОМПАНИИ</Link>
-                <Link className={styles.link} href='/uslugi' onClick={closeClickHandler}>УСЛУГИ</Link>
-                <Link className={styles.link} href='/calculator' onClick={closeClickHandler}>КАЛЬКУЛЯТОР</Link>
-                <Link className={styles.link} href='/contacts' onClick={closeClickHandler}>КОНТАКТЫ</Link>                
+                <Link className={styles.link} href='/' onClick={() => dispatch(utilsActions.setMenuVisibility(false))}>Главная</Link>
+                <Link className={styles.link} href='/about' onClick={() => dispatch(utilsActions.setMenuVisibility(false))}>О компании</Link>
+                <Link className={styles.link} href='/uslugi' onClick={() => dispatch(utilsActions.setMenuVisibility(false))}>Услуги</Link>
+                <Link className={styles.link} href='/calculator' onClick={() => dispatch(utilsActions.setMenuVisibility(false))}>Калькулятор</Link>
+                <Link className={styles.link} href='/contacts' onClick={() => dispatch(utilsActions.setMenuVisibility(false))}>Контакты</Link>                
             </div>
 
             <div className={styles.contacts_wrapper}>
@@ -42,8 +39,9 @@ const Menu: React.FC<TMenuProps> = ({menuVisibility, clickHandler}) => {
                 {/* <p className={styles.contacts_item}>—</p> */}
                 {/* <a href='https://vk.com/outlook_logistics' className={styles.contacts_item} target="blank">VK</a>
                 <a href='https://t.me/+4AjbWvlSJJcwOTMy' className={styles.contacts_item} target="blank">СТРЕЛА</a> */}
-            </div>
-        </div>
+                </div>
+            </div>}
+        </>
     )
 }
 

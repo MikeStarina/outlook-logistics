@@ -1,0 +1,68 @@
+@import '../../app/css-constants';
+
+.statistics {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    &__counter {
+        color: $main-black;
+        margin: 0;
+        padding: 0;
+        font-size: 60px;
+        line-height: 65px;
+        font-weight: 600;
+        text-align: right;
+
+        &:hover {
+            color: $main-blue;
+            transition: all .3s ease;
+        }
+    }
+
+    &__description {
+        @include plain-text;
+        text-transform: uppercase;
+        color: $main-black;
+    }
+}
+
+
+.digits_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+
+.counter {
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    line-height: 65px;
+    font-weight: 600;
+    text-align: right;
+    color: white;
+}
+
+.description {
+    margin: 0;
+    padding: 0;
+    font-size: var(--plainTextL);
+    line-height: 20px;
+    font-weight: 600;
+    text-align: right;
+    color: white;
+}
