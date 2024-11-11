@@ -1,18 +1,12 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import styles from './page.module.scss';
 import { Metadata } from 'next';
-import MainContainer from '@/components/container/main-container';
 import FirstScreen from '@/components/main-page-components/first-screen/first-screen';
 import FeaturesScreen from '@/components/main-page-components/features-screen/features-screen';
 import SliderScreen from '@/components/main-page-components/slider-screen/slider-screen';
 import StagesScreen from '@/components/main-page-components/stages-screen/stages-screen';
-import AboutScreen from '@/components/main-page-components/about-screen/about-screen';
 import ClientsScreen from '@/components/main-page-components/clients-screen/clients-screen';
-import OptionsScreen from '@/components/main-page-components/options-screen/options-screen';
-import BlogScreen from '@/components/main-page-components/blog-screen/blog-screen';
 import FormScreen from '@/components/main-page-components/form-screen/form-screen';
-import ContactsScreen from '@/components/main-page-components/contacts-screen/contacts-screen';
-import SocialsScreen from '@/components/main-page-components/socials-screen/socials-screen';
 import Uslugi from '@/components/main-page-components/uslugi-screen/uslugi'
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles)
@@ -36,12 +30,14 @@ const MainPage: React.FC = () => {
 
     return (
         <main className={cx('page')}>
-                <FirstScreen
-                    mainText='OUTLOOK — надёжная логистика для бизнеса'
-                    links={[{text: 'Услуги', href: '/uslugi'}, {text: 'Транспортный парк', href: '/transport'}, {text: 'О нас', href: '/about'}]}
-                    cover={true}
-                    subtitle='Cпециализируемся на авто и жд перевозках по России и СНГ'
-                />
+                <Suspense fallback={null}>
+                    <FirstScreen
+                        mainText='OUTLOOK — надёжная логистика для бизнеса'
+                        links={[{text: 'Услуги', href: '/uslugi'}, {text: 'Транспортный парк', href: '/transport'}, {text: 'О нас', href: '/about'}]}
+                        cover={true}
+                        subtitle='Cпециализируемся на авто и жд перевозках по России и СНГ'
+                    />
+                </Suspense>
                 <FeaturesScreen />  
                 <SliderScreen />
                 <Uslugi />

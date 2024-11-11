@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://outlook-logistics.ru
+
+# Sitemaps
+Sitemap: https://outlook-logistics.ru/sitemap.xml
