@@ -29,22 +29,24 @@ export const metadata: Metadata = {
 const MainPage: React.FC = () => {
 
     return (
-        <main className={cx('page')}>
-                <Suspense fallback={null}>
-                    <FirstScreen
-                        mainText='OUTLOOK — надёжная логистика для бизнеса'
-                        links={[{text: 'Услуги', href: '/uslugi'}, {text: 'Транспортный парк', href: '/transport'}, {text: 'О нас', href: '/about'}]}
-                        cover={true}
-                        subtitle='Cпециализируемся на авто и жд перевозках по России и СНГ'
-                    />
-                </Suspense>
-                <FeaturesScreen />  
-                <SliderScreen />
-                <Uslugi />
-                <StagesScreen />
-                <ClientsScreen />
-                <FormScreen />
-        </main>
+        <Suspense fallback={null}>
+            <main className={cx('page')}>
+                    <Suspense fallback={null}>
+                        <FirstScreen
+                            mainText='OUTLOOK — надёжная логистика для бизнеса'
+                            links={[{text: 'Услуги', href: '/uslugi'}, {text: 'Транспортный парк', href: '/transport'}, {text: 'О нас', href: '/about'}]}
+                            cover={true}
+                            subtitle='Cпециализируемся на авто и жд перевозках по России и СНГ'
+                        />
+                    </Suspense>
+                    <FeaturesScreen />  
+                    <SliderScreen />
+                    <Uslugi />
+                    <StagesScreen />
+                    <ClientsScreen />
+                    <FormScreen />
+            </main>
+        </Suspense>
     )
 }
 
