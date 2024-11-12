@@ -29,7 +29,6 @@ export const metadata: Metadata = {
 const MainPage: React.FC = () => {
 
     return (
-        <Suspense fallback={null}>
             <main className={cx('page')}>
                     <Suspense fallback={null}>
                         <FirstScreen
@@ -44,9 +43,10 @@ const MainPage: React.FC = () => {
                     <Uslugi />
                     <StagesScreen />
                     <ClientsScreen />
-                    <FormScreen />
+                    <Suspense fallback={null}>
+                        <FormScreen />
+                    </Suspense>
             </main>
-        </Suspense>
     )
 }
 
