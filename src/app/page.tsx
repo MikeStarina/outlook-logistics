@@ -134,6 +134,7 @@ const MainPage: React.FC = () => {
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                    async
                 />
                     <Suspense fallback={null}>
                         <FirstScreen

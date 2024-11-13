@@ -3,15 +3,11 @@ import MainContainer from "@/components/container/main-container";
 import ClientsScreen from "@/components/main-page-components/clients-screen/clients-screen";
 import FormScreen from "@/components/main-page-components/form-screen/form-screen";
 import ContactsScreen from "@/components/main-page-components/contacts-screen/contacts-screen";
-//import { features } from "@/service/features";
-//import { services } from "@/service/services";
 import { getServices, getFeatures } from "@/utils/constants";
 import Link from "next/link";
 import auto_cover from "../../../../public/auto_cover.jpg";
 import zd_cover from "../../../../public/zd_cover.jpg";
 import mixed_cover from "../../../../public/mixed_cover.jpg";
-import icon_logo_white from "../../../../public/icon_logo_white.svg";
-import full_logo440px_whiteW from "../../../../public/full_logo440px_whiteW.svg";
 import Image from "next/image";
 import styles from "./page.module.scss";
 import gazelle from "../../../../public/features_covers/gazelle.jpg";
@@ -51,12 +47,20 @@ export async function generateMetadata(
   return {
     title: metadata?.title,
     description: metadata?.description,
-    keywords: metadata?.keywords
+    keywords: metadata?.keywords,
+    openGraph: {
+      title: metadata?.title,
+      description: metadata?.description,
+      siteName: 'OUTLOOK LOGISTICS'
+    }
+    
   }
 }
 
 
-const Page: React.FC<any> = async ({ params }: { params: { id: string } }) => {
+const Page: React.FC<{ params: { id: string } }> = async ({ params }) => {
+
+  
   const services = await getServices()
   const features = await getFeatures();
   const filteredFeatures = features.filter(
@@ -68,11 +72,108 @@ const Page: React.FC<any> = async ({ params }: { params: { id: string } }) => {
   if (params.id === "avtomobilnye-perevozki") cover = auto_cover;
   if (params.id === "zheleznodorozhnye-perevozki") cover = zd_cover;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        name: 'Транспортно-логистическая компания OUTLOOK LOGISTICS',
+        telephone: '8 (800) 201-00-73',
+        address: [{
+          '@type': 'PostalAddress',
+          streetAddress: 'Софийская ул., 14, офис 309',
+          addressLocality: 'Санкт-Петербург'
+        }]
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            { 
+              "@type": "ListItem",
+              position: 1,      
+              item: {
+                "@id": "https://outlook-logistics.ru",
+                "name": "Главная"
+              }
+            },
+            { 
+              "@type": "ListItem",
+              position: 2,      
+              item: {
+                "@id": "https://outlook-logistics.ru/uslugi",
+                "name": "Услуги"
+              }
+            },
+            { 
+              "@type": "ListItem",
+              position: 3,      
+              item: {
+                "@id": `https://outlook-logistics.ru/uslugi/${filteredService.url}`,
+                "name": filteredService.name
+              }
+            },
+        ]
+      },
+      {
+        '@type': 'Website',
+        url: `https://outlook-logistics.ru`,
+      },
+      {
+        '@type': 'Product',
+        description: filteredService.description,
+        name: filteredService.name,
+        offers: [
+          {
+            '@type': 'Offer',
+            url: `https://outlook-logistics.ru/uslugi/${filteredService.url}`,
+            availability: 'http://schema.org/InStock',
+            areaServed: 'Россия',
+            acceptedPaymentMethod: [
+              {
+                '@type': 'PaymentMethod',
+                url: 'http://purl.org/goodrelations/v1#VISA'
+              },
+              {
+                '@type': 'PaymentMethod',
+                url: 'http://purl.org/goodrelations/v1#MasterCard'
+              },
+              {
+                '@type': 'PaymentMethod',
+                url: 'http://purl.org/goodrelations/v1#Cash'
+              },
+            ],
+            brand: [
+              {
+                '@type': 'Brand',
+                name: 'Страна: Россия.'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        '@type': 'OfferCatalog',
+        itemListElement: [
+          filteredFeatures.map(i => ({
+            '@type': 'ListItem',
+            name: i.name,
+            description: `Услуга ${i.name} Заказать`
+          }))
+        ]
+      }
+    ]
+  }
+
 
   return (
     
     <MainContainer>
       <main className={styles.page}>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                    async
+                />
         <div className={styles.breadcrumbs_wrapper}>
             <BreadcrumbsComponent
               params={[{title: 'Главная', href: '/'}, {title: 'Услуги', href: '/uslugi'}, {title: filteredService?.name}]}
