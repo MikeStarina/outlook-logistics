@@ -47,7 +47,7 @@
             justify-content: flex-start;
             align-items: center;
             overflow: hidden;
-            padding: 50px 100px;
+            padding: 50px;
 
             @media (max-width: 1024px) {
                 padding: 30px 50px;
@@ -114,7 +114,7 @@
     }
 
     &__main-title {
-        @include secondary-title;
+        @include main-title;
         color: white;
         text-transform: uppercase;
 
