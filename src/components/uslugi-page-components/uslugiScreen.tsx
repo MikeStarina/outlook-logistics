@@ -1,9 +1,6 @@
 import React from "react";
-//import Link from "next/dist/client/link";
 import Image from 'next/image';
 import styles from './uslugiScreen.module.scss';
-import icon_logo_white from '../../../public/icon_logo_white.svg'
-import { services } from "@/service/services";
 import { getServices } from "@/utils/constants";
 import cargo_cover from '../../../public/cargo_cover.webp';
 import sea_cover from '../../../public/sea_cover.jpg';
@@ -22,9 +19,66 @@ const UslugiScreen: React.FC = async () => {
 
     const services = await getServices();
 
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            name: 'Транспортно-логистическая компания OUTLOOK LOGISTICS',
+            telephone: '8 (800) 201-00-73',
+            address: [{
+              '@type': 'PostalAddress',
+              streetAddress: 'Софийская ул., 14, офис 309',
+              addressLocality: 'Санкт-Петербург'
+            }]
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                { 
+                  "@type": "ListItem",
+                  position: 1,      
+                  item: {
+                    "@id": "https://outlook-logistics.ru",
+                    "name": "Главная"
+                  }
+                },
+                { 
+                  "@type": "ListItem",
+                  position: 2,      
+                  item: {
+                    "@id": "https://outlook-logistics.ru/uslugi",
+                    "name": "Услуги"
+                  }
+                },
+            ]
+          },
+          {
+            '@type': 'Website',
+            url: 'https://outlook-logistics.ru/uslugi',
+          },
+          {
+            '@type': 'OfferCatalog',
+            itemListElement: [
+              services.map(i => ({
+                '@type': 'ListItem',
+                name: i.name,
+                description: `Услуга ${i.name} Заказать`
+              }))
+            ]
+          }
+        ]
+    }
+
+
     return (
         <>
         <section className={styles.screen}>
+                <script
+                    type="application/ld+json"
+                    async
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
             {services && services.length > 0 && services.map((item, index) => {
                 let cover = cargo_cover;
                 if (item!.name === 'Автомобильные перевозки') cover = auto_cover;

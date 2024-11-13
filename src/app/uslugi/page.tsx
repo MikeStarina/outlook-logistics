@@ -9,9 +9,21 @@ import SliderScreen from "@/components/main-page-components/slider-screen/slider
 import StagesScreen from "@/components/main-page-components/stages-screen/stages-screen";
 import styles from './page.module.scss';
 import Calc from "@/components/calc/calc";
+import { Metadata } from "next/types";
 
 
-
+export const metadata: Metadata = {
+    title: 'Услуги логистической компании OUTLOOK LOGISTICS – доставка и перевозки по России и за рубеж',
+    description: 'OUTLOOK LOGISTICS предоставляет профессиональные логистические услуги: грузоперевозки, складское хранение, международная доставка и оптимизация цепочек поставок. Надежность, скорость и индивидуальный подход к каждому клиенту.',
+    keywords: 'логистика, грузоперевозки, складское хранение, международная доставка, доставка по России, логистическая компания, перевозки товаров, логистические услуги, оптимизация логистики, транспортировка грузов',
+    openGraph: {
+        type: 'website',
+        url: 'https://outlook-logistics.ru/uslugi',
+        description: '',
+        siteName: 'OUTLOOK LOGISTICS',
+        title: 'OUTLOOK LOGISTICS - Логистические услуги',
+    }
+}
 
 
 
