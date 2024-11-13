@@ -29,6 +29,10 @@
 
     &__input {
         width: 100%;
+        border: 1px solid $main-black;
+        border-radius: 6px;
+        height: 40px;
+        padding: 0 10px;
     }
 
     &__button {

@@ -1,11 +1,10 @@
-import React from "react";
 import styles from './stages-screen.module.scss';
 import Link from "next/link";
 import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
 
-const StagesScreen: React.FC = () => {
+const StagesScreen = () => {
 
    
 

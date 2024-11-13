@@ -1,23 +1,11 @@
 'use client'
-import React, { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styles from './main-form.module.scss';
-import { TextField } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material";
 import { sendFormData } from "@/actions/actions";
 import classNames from "classnames/bind";
 const cx = classNames.bind(styles);
 
-const darkTheme = createTheme({
-    palette: {
-        mode: "dark",
-        primary: {
-            light: "#FFF",
-            main: "#FFF",
-            dark: "#FFF",
-            contrastText: "#fff",
-        },
-    },
-});
+
 
 const initialState = {
     from: '',
@@ -25,7 +13,7 @@ const initialState = {
     phone: '',
 }
 
-const MainForm: React.FC = () => {
+const MainForm = () => {
 
         const [ state, setState ] = useState<{from:string,to:string,phone:string}>(initialState);
         const [ disabled, setDisabled ] = useState<{text: string, isDisabled: boolean}>({text: 'Рассчитать', isDisabled: false});
@@ -51,36 +39,37 @@ const MainForm: React.FC = () => {
                 <form className={cx('mainForm')} onSubmit={formSubmitHandler}>
                     <p className={cx('mainForm__title')}>РАССЧИТАТЬ <i>ПЕРЕВОЗКУ</i></p>  
                     <div className={cx('mainForm__wrapper')}>
-                        <TextField 
-                            label='Откуда'
-                            className={cx('mainForm__input')}
+                        <input
+                            type='text'
                             name='from'
                             id='from'
-                            size='small'
+                            placeholder="Откуда *"
                             required
+                            className={cx('mainForm__input')}
                             value={state.from}
                             onChange={inputChangeHandler}
-                        />
-                        <TextField 
-                            label='Куда'
+                        >
+                        </input>
+                        <input
+                            placeholder='Куда *'
                             className={cx('mainForm__input')}
                             name='to'
                             id='to'
-                            size='small'
                             required
                             value={state.to}
                             onChange={inputChangeHandler}
-                        />
-                        <TextField 
-                            label='Телефон'
+                        >
+                        </input>
+                        <input
+                            placeholder='Телефон *'
                             className={cx('mainForm__input')}
                             name='phone'
                             id='phone'
-                            size='small'
                             required
                             value={state.phone}
                             onChange={inputChangeHandler}
-                        />
+                        >
+                        </input>
                         <button
                             type='submit'
                             className={cx('mainForm__button')}

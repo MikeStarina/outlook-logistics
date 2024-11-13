@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import styles from './features-screen.module.scss';
 import Statistics from "@/components/statistics/statistics";
@@ -9,7 +8,7 @@ const cx = classNames.bind(styles);
 
 
 
-const FeaturesScreen: React.FC = async () => {
+const FeaturesScreen = async () => {
     return (
         <section className={cx('screen')}>
                 <h2 className={cx('screen__main-title')}>OUTLOOK — ТРАНСПОРТНЫЙ <i>ПАРК</i></h2>
