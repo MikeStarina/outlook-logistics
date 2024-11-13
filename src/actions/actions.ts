@@ -58,9 +58,9 @@ export const sendOrderData = async (orderData: any) => {
             body: JSON.stringify(data),
 
         })
-        
+    
     const response = await res.json();
-        
+    return response;    
 
 }
 

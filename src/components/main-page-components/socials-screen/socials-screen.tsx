@@ -3,7 +3,6 @@ import Link from 'next/link';
 import styles from './socials-screen.module.css';
 import strela_full_logo_white from '../../../../public/strela_full_logo_white.png';
 import vk_logo from '../../../../public/vk_logo.png';
-import instagram_logo from '../../../../public/instagram_logo.png';
 import Image from 'next/image';
 
 

@@ -2,10 +2,10 @@
 import React from "react";
 import Popup from "../popup/popup";
 import styles from "./calc.module.scss";
-import icon_logo_white from "../../../public/full_logo440px_whiteW.svg";
-import Image from "next/image";
-import { useAppSelector, useAppDispatch } from "@/redux/hooks";
-import { actions as basicCalcActions } from "@/redux/basic-calc-slice/basic-calc.slice";
+// import icon_logo_white from "../../../public/full_logo440px_whiteW.svg";
+// import Image from "next/image";
+import { useAppSelector } from "@/redux/hooks";
+//import { actions as basicCalcActions } from "@/redux/basic-calc-slice/basic-calc.slice";
 import FtlCalc from "./ftl-calc";
 import ZdCalc from "./zd-calc";
 import ZdPopup from "../popup/zd-popup";
@@ -17,11 +17,11 @@ const Calc: React.FC = () => {
     const { calcMode, isPopupVisible } = useAppSelector(
         (store) => store.basicCalc
     );
-    const dispatch = useAppDispatch();
+    //const dispatch = useAppDispatch();
 
-    const calcModeClickHandler = (e: any) => {
-        dispatch(basicCalcActions.setCalcMode(e.target.value));
-    };
+    // const calcModeClickHandler = (e: any) => {
+    //     dispatch(basicCalcActions.setCalcMode(e.target.value));
+    // };
 
     return (
         <>

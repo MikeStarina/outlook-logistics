@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import cont3 from '../../../../public/cont3.webp';
 import Image from "next/image";
 import styles from './options-screen.module.css';
@@ -15,17 +14,17 @@ const optionsInitData = [
 ]
 
 
-const featuresInitialData = [
-    {title: 'АВТОМОБИЛЬНЫЕ ПЕРЕВОЗКИ', caption: 'ДО 1,5 ТОНН'},
-    {title: 'АВТОМОБИЛЬНЫЕ ПЕРЕВОЗКИ', caption: 'ДО 5 ТОНН'},
-    {title: 'ТЕНТОВЫЕ ПЕРЕВОЗКИ', caption: '82 куб.м.'},
-    {title: 'ТЕНТОВЫЕ ПЕРЕВОЗКИ', caption: '82 куб.м.'},
-    {title: 'ТЕНТОВЫЕ ПЕРЕВОЗКИ', caption: '82 куб.м.'},
-    {title: 'ТЕНТОВЫЕ ПЕРЕВОЗКИ', caption: '82 куб.м.'},
-    {title: 'НЕГАБАРИТНЫЕ ГРУЗЫ', caption: '<>'},
-    {title: 'НЕГАБАРИТНЫЕ ГРУЗЫ', caption: '<>'},
-    {title: 'НЕГАБАРИТНЫЕ ГРУЗЫ', caption: '<>'},
-]
+// const featuresInitialData = [
+//     {title: 'АВТОМОБИЛЬНЫЕ ПЕРЕВОЗКИ', caption: 'ДО 1,5 ТОНН'},
+//     {title: 'АВТОМОБИЛЬНЫЕ ПЕРЕВОЗКИ', caption: 'ДО 5 ТОНН'},
+//     {title: 'ТЕНТОВЫЕ ПЕРЕВОЗКИ', caption: '82 куб.м.'},
+//     {title: 'ТЕНТОВЫЕ ПЕРЕВОЗКИ', caption: '82 куб.м.'},
+//     {title: 'ТЕНТОВЫЕ ПЕРЕВОЗКИ', caption: '82 куб.м.'},
+//     {title: 'ТЕНТОВЫЕ ПЕРЕВОЗКИ', caption: '82 куб.м.'},
+//     {title: 'НЕГАБАРИТНЫЕ ГРУЗЫ', caption: '<>'},
+//     {title: 'НЕГАБАРИТНЫЕ ГРУЗЫ', caption: '<>'},
+//     {title: 'НЕГАБАРИТНЫЕ ГРУЗЫ', caption: '<>'},
+// ]
 
 
 const OptionsScreen: React.FC = () => {

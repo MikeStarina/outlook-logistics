@@ -1,4 +1,4 @@
-import { TFescoCarTypes, TOrderState, TCarType } from "./types";
+import { TFescoCarTypes, TCarType } from "./types";
 import { TServicesStateObj } from "@/service/services";
 import { TItem } from "@/service/features";
 import carImage from '../../public/car-main.png';

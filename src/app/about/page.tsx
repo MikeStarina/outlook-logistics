@@ -13,8 +13,17 @@ import FormScreen from '@/components/main-page-components/form-screen/form-scree
 
 
 export const metadata: Metadata = {
-    title: 'OUTLOOK LOGISTICS | О НАС',
-    description: 'Ваш надежный логистический партнер',
+    title: "О компании OUTLOOK LOGISTICS | Логистические решения для вашего бизнеса",
+    description: "OUTLOOK LOGISTICS – надежный партнер в сфере логистики и грузоперевозок. Узнайте больше о нашей истории, миссии и принципах работы.",
+    keywords: "о компании OUTLOOK LOGISTICS, логистика, грузоперевозки, транспортные решения, миссия компании, история компании",
+    metadataBase: new URL('https://outlook-logistics.ru/about'),
+    openGraph: {
+        type: 'website',
+        url: 'https://outlook-logistics.ru/about',
+        description: 'Транспортно-логистическая компания OUTLOOK-LOGISTICS. Перевозки для бизнеса по России',
+        siteName: 'OUTLOOK LOGISTICS',
+        title: 'OUTLOOK LOGISTICS - Логистические услуги. Грузоперевозки для бизнеса',
+    }
 }
 
 const AboutPage = () => {

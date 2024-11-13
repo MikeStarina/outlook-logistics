@@ -19,10 +19,10 @@ const BreadcrumbsComponent: React.FC<TProps> = ({ params }) => {
             {params.map((i, id) => {
                 if (i.href) {
                     return (
-                        <Link href={i.href} className={cx('breadcrumbs__item', 'breadcrumbs__item--link')}>{i.title}</Link>
+                        <Link href={i.href} className={cx('breadcrumbs__item', 'breadcrumbs__item--link')} key={id}>{i.title}</Link>
                     )
                 } else {
-                    return (<span className={cx('breadcrumbs__item')}>{i.title}</span>)
+                    return (<span className={cx('breadcrumbs__item')} key={id}>{i.title}</span>)
                 }
 
             })}

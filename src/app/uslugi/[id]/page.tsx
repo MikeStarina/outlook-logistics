@@ -10,34 +10,32 @@ import zd_cover from "../../../../public/zd_cover.jpg";
 import mixed_cover from "../../../../public/mixed_cover.jpg";
 import Image from "next/image";
 import styles from "./page.module.scss";
-import gazelle from "../../../../public/features_covers/gazelle.jpg";
-import fivetonn from "../../../../public/features_covers/fivetonn.jpg";
-import fura from "../../../../public/features_covers/fura.jpg";
-import trall from "../../../../public/features_covers/trall.jpg";
-import ref from "../../../../public/features_covers/ref.jpg";
-import danger from "../../../../public/features_covers/danger.jpg";
-import teu from "../../../../public/features_covers/teu.webp";
-import trall2 from "../../../../public/features_covers/trall2.jpg";
-import zd_cont from "../../../../public/features_covers/zd_cont.jpg";
-import zd_ww from "../../../../public/features_covers/zd_ww.jpg";
-import zd_sng from "../../../../public/features_covers/zd_sng.jpg";
-import zd_rf from "../../../../public/features_covers/zd_rf.jpg";
+// import gazelle from "../../../../public/features_covers/gazelle.jpg";
+// import fivetonn from "../../../../public/features_covers/fivetonn.jpg";
+// import fura from "../../../../public/features_covers/fura.jpg";
+// import trall from "../../../../public/features_covers/trall.jpg";
+// import ref from "../../../../public/features_covers/ref.jpg";
+// import danger from "../../../../public/features_covers/danger.jpg";
+// import teu from "../../../../public/features_covers/teu.webp";
+// import trall2 from "../../../../public/features_covers/trall2.jpg";
+// import zd_cont from "../../../../public/features_covers/zd_cont.jpg";
+// import zd_ww from "../../../../public/features_covers/zd_ww.jpg";
+// import zd_sng from "../../../../public/features_covers/zd_sng.jpg";
+// import zd_rf from "../../../../public/features_covers/zd_rf.jpg";
 import FirstScreen from "@/components/main-page-components/first-screen/first-screen";
 import BreadcrumbsComponent from "@/components/breadcrumbs/breadcrumbs";
 import Calc from "@/components/calc/calc";
 import StagesScreen from "@/components/main-page-components/stages-screen/stages-screen";
 import SliderScreen from "@/components/main-page-components/slider-screen/slider-screen";
-import { Metadata, ResolvingMetadata } from 'next'
+import { Metadata } from 'next'
 
 type Props = {
   params: { id: string }
-  //searchParams: { [key: string]: string | string[] | undefined }
 }
  
 export async function generateMetadata(
   
   { params }: Props,
-  parent: ResolvingMetadata
 ): Promise<Metadata> {
   const services = await getServices();
   const id = params.id;
@@ -48,10 +46,12 @@ export async function generateMetadata(
     title: metadata?.title,
     description: metadata?.description,
     keywords: metadata?.keywords,
+    metadataBase: new URL('https://outlook-logistics.ru'),
     openGraph: {
       title: metadata?.title,
       description: metadata?.description,
-      siteName: 'OUTLOOK LOGISTICS'
+      siteName: 'OUTLOOK LOGISTICS',
+      url: `https://outlook-logistics.ru/uslugi/${id}`
     }
     
   }
@@ -67,7 +67,6 @@ const Page: React.FC<{ params: { id: string } }> = async ({ params }) => {
     (item) => item!.serviceType === params.id
   );
   const filteredService = services.filter((item) => item.url === params.id)[0];
-  const { metadata } = filteredService;
   let cover = mixed_cover;
   if (params.id === "avtomobilnye-perevozki") cover = auto_cover;
   if (params.id === "zheleznodorozhnye-perevozki") cover = zd_cover;
@@ -189,20 +188,20 @@ const Page: React.FC<{ params: { id: string } }> = async ({ params }) => {
       <section className={filteredFeatures.length !== 0 ? styles.features_screen : styles.features_screen_disabled}>
         {filteredFeatures && filteredFeatures.length > 0 &&
           filteredFeatures.map((item, index) => {
-            let cardCover = auto_cover;
-            if (item!.name === "АВТОПЕРЕВОЗКИ 1,5 ТОНН") cardCover = gazelle;
-            if (item!.name === "АВТОПЕРЕВОЗКИ 5 ТОНН") cardCover = fivetonn;
-            if (item!.name === "АВТОПЕРЕВОЗКИ 20 ТОНН") cardCover = fura;
-            if (item!.name === "НЕГАБАРИТНЫЕ ПЕРЕВОЗКИ") cardCover = trall;
-            if (item!.name === "РЕФРИЖЕРАТОРНЫЕ ПЕРЕВОЗКИ") cardCover = ref;
-            if (item!.name === "ПЕРЕВОЗКА ОПАСНЫХ ГРУЗОВ") cardCover = danger;
-            if (item!.name === "Автомобильные контейнерные перевозки")
-              cardCover = teu;
-            if (item!.name === "Перевозки тралом") cardCover = trall2;
-            if (item!.name === "КОНТЕЙНЕРНЫЕ ПЕРЕВОЗКИ") cardCover = zd_cont;
-            if (item!.name === "Международные ЖД перевозки") cardCover = zd_ww;
-            if (item!.name === "Международные перевозки грузов СНГ") cardCover = zd_sng;
-            if (item!.name === "ЖД перевозки по России") cardCover = zd_rf;
+            // let cardCover = auto_cover;
+            // if (item!.name === "АВТОПЕРЕВОЗКИ 1,5 ТОНН") cardCover = gazelle;
+            // if (item!.name === "АВТОПЕРЕВОЗКИ 5 ТОНН") cardCover = fivetonn;
+            // if (item!.name === "АВТОПЕРЕВОЗКИ 20 ТОНН") cardCover = fura;
+            // if (item!.name === "НЕГАБАРИТНЫЕ ПЕРЕВОЗКИ") cardCover = trall;
+            // if (item!.name === "РЕФРИЖЕРАТОРНЫЕ ПЕРЕВОЗКИ") cardCover = ref;
+            // if (item!.name === "ПЕРЕВОЗКА ОПАСНЫХ ГРУЗОВ") cardCover = danger;
+            // if (item!.name === "Автомобильные контейнерные перевозки")
+            //   cardCover = teu;
+            // if (item!.name === "Перевозки тралом") cardCover = trall2;
+            // if (item!.name === "КОНТЕЙНЕРНЫЕ ПЕРЕВОЗКИ") cardCover = zd_cont;
+            // if (item!.name === "Международные ЖД перевозки") cardCover = zd_ww;
+            // if (item!.name === "Международные перевозки грузов СНГ") cardCover = zd_sng;
+            // if (item!.name === "ЖД перевозки по России") cardCover = zd_rf;
 
             return (
               item!.pagePosition === "primary" && (

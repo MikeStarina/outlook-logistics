@@ -4,12 +4,12 @@ import styles from './main-text-screen.module.css';
 //import { Swiper, SwiperSlide } from 'swiper/react';
 //import Autoplay from "swiper";
 //import Pagination from "swiper";
-import aboutSlideOne from '../../../../public/aboutSlideOne.jpg';
-import aboutSlideSix from '../../../../public/aboutSlideSix.jpg';
-import aboutSlideFour from '../../../../public/aboutSlideFour.jpg';
-import aboutSlideThree from '../../../../public/aboutSlideThree.jpg';
-import aboutSlideFive from '../../../../public/aboutSlideFive.jpg';
-import Image from 'next/image';
+// import aboutSlideOne from '../../../../public/aboutSlideOne.jpg';
+// import aboutSlideSix from '../../../../public/aboutSlideSix.jpg';
+// import aboutSlideFour from '../../../../public/aboutSlideFour.jpg';
+// import aboutSlideThree from '../../../../public/aboutSlideThree.jpg';
+// import aboutSlideFive from '../../../../public/aboutSlideFive.jpg';
+// import Image from 'next/image';
 //import 'swiper/css';
 //import "swiper/css/pagination";
 
