@@ -2,7 +2,6 @@ import React from "react";
 import styles from './stages-screen.module.scss';
 import Link from "next/link";
 import classNames from "classnames/bind";
-import LeadForm from "../../lead-form/lead-form";
 const cx = classNames.bind(styles);
 
 
@@ -100,21 +99,7 @@ const StagesScreen: React.FC = () => {
                         </Link>
                     </div>
 
-                    {/* <div className={cx('screen__card-text-box')}>
-                        <p className={cx('screen__card-text')}>
-                            Логистическая компания Outlook Logistics предлагает надежные и эффективные услуги по перевозке грузов в Санкт-Петербурге.
-                            Если вам требуется быстрая и безопасная доставка груза, мы готовы помочь.
-                        </p>
-                        <p className={cx('screen__card-text')}>
-                            Оформить заявку на перевозку груза с нами легко и удобно. Вы можете заказать услугу через наш сайт или связаться с нашими специалистами по номеру телефона.
-                            Мы гарантируем оперативное реагирование на все запросы и индивидуальный подход к каждому клиенту.
-                        </p>
-                        <p className={cx('screen__card-text')}>
-                            Цены на наши услуги формируются исходя из различных факторов, таких как тип груза, расстояние перевозки, срочность доставки и другие особенности.
-                            Чтобы рассчитать стоимость перевозки вашего груза, вы можете обратиться к нам для получения бесплатной консультации и предварительного расчета.
-                        </p>
-                    </div> */}
-
+                   
                 </div>
               
             </div>

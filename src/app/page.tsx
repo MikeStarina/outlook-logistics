@@ -20,16 +20,121 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         url: 'https://outlook-logistics.ru',
-        description: 'Ваш надежный логистический партнер',
+        description: 'Транспортно-логистическая компания OUTLOOK-LOGISTICS. Перевозки для бизнеса по России',
         siteName: 'OUTLOOK LOGISTICS',
-        title: 'OUTLOOK LOGISTICS | Главная',
+        title: 'OUTLOOK LOGISTICS - Логистические услуги. Грузоперевозки для бизнеса',
     }
 }
 
 const MainPage: React.FC = () => {
 
+
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            name: 'Транспортно-логистическая компания OUTLOOK LOGISTICS',
+            telephone: '8 (800) 201-00-73',
+            address: [{
+              '@type': 'PostalAddress',
+              streetAddress: 'Софийская ул., 14, офис 309',
+              addressLocality: 'Санкт-Петербург'
+            }]
+          },
+        //   {
+        //     "@type": "BreadcrumbList",
+        //     itemListElement: [
+        //         { 
+        //           "@type": "ListItem",
+        //           position: 1,      
+        //           item: {
+        //             "@id": "https://www.repinskiy24.ru/",
+        //             "name": "Главная"
+        //           }
+        //         },
+        //         { 
+        //           "@type": "ListItem",
+        //           position: 2,      
+        //           item: {
+        //             "@id": "https://www.repinskiy24.ru/cookery",
+        //             "name": "Кулинария Шаляпин"
+        //           }
+        //         },
+        //         { 
+        //           "@type": "ListItem",
+        //           position: 3,      
+        //           item: {
+        //             "@id": `https://www.repinskiy24.ru/catalog/${parentCategory.slug}`,
+        //             "name": parentCategory.name
+        //           }
+        //         },
+        //     ]
+        //   },
+          {
+            '@type': 'Website',
+            url: 'https://outlook-logistics.ru',
+          },
+        //   {
+        //     '@type': 'Product',
+        //     sku: product.sku,
+        //     description: product.description,
+        //     image: `${API_URL}${product.extra_properties.photo_file_path}`,
+        //     category: parentCategory.name,
+        //     name: product.name,
+        //     priceCurrency: 'RUB',
+        //     model: `Код товара: ${product.sku}`,
+        //     offers: [
+        //       {
+        //         '@type': 'Offer',
+        //         url: `https://repinskiy24.ru/cookery/${parentCategory.slug}/${product.slug}`,
+        //         price: product.price,
+        //         priceCurrency: 'RUB',
+        //         availability: 'http://schema.org/InStock',
+        //         areaServed: 'Курортный район Санкт-Петербурга',
+        //         acceptedPaymentMethod: [
+        //           {
+        //             '@type': 'PaymentMethod',
+        //             url: 'http://purl.org/goodrelations/v1#VISA'
+        //           },
+        //           {
+        //             '@type': 'PaymentMethod',
+        //             url: 'http://purl.org/goodrelations/v1#MasterCard'
+        //           },
+        //           {
+        //             '@type': 'PaymentMethod',
+        //             url: 'http://purl.org/goodrelations/v1#Cash'
+        //           },
+        //         ],
+        //         brand: [
+        //           {
+        //             '@type': 'Brand',
+        //             name: 'Страна: Россия.'
+        //           }
+        //         ]
+        //       }
+        //     ]
+        //   },
+        //   {
+        //     '@type': 'OfferCatalog',
+        //     itemListElement: [
+        //       similarProducts.map(i => ({
+        //         '@type': 'ListItem',
+        //         name: i.name,
+        //         image: `${API_URL}${i.extra_properties.photo_file_path}`,
+        //         description: `Код товара: ${i.sku}, ${i.name} ${i.price} Заказать`
+        //       }))
+        //     ]
+        //   }
+        ]
+      }
+
     return (
             <main className={cx('page')}>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
                     <Suspense fallback={null}>
                         <FirstScreen
                             mainText='OUTLOOK — надёжная логистика для бизнеса'
@@ -38,8 +143,8 @@ const MainPage: React.FC = () => {
                             subtitle='Cпециализируемся на авто и жд перевозках по России и СНГ'
                         />
                     </Suspense>
-                    <FeaturesScreen />  
                     <SliderScreen />
+                    <FeaturesScreen />  
                     <Uslugi />
                     <StagesScreen />
                     <ClientsScreen />

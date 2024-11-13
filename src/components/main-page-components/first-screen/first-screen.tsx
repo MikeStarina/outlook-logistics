@@ -2,8 +2,8 @@ import React from "react";
 import styles from './first-screen.module.scss';
 import MainForm from "@/components/main-form/main-form";
 import classNames from "classnames/bind";
-import img from '../../../../public/container_white.png'
-import Image from "next/image";
+//import img from '../../../../public/container_white.png'
+//import Image from "next/image";
 import Link from "next/link";
 const cx = classNames.bind(styles);
 
@@ -35,7 +35,7 @@ const FirstScreen: React.FC<TProps> = ({mainText, links, cover, subtitle}) => {
                         )}
                     </div>
                 </div>
-                {cover && <Image src={img} alt='' />}
+                {/* {cover && <Image src={img} alt='' />} */}
             </div>
             <div className={cx('screen__column', 'screen__column--thin')}>
                 <MainForm />

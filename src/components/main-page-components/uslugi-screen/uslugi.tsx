@@ -20,8 +20,6 @@ const cx = classNames.bind(styles);
 
 const Uslusgi: React.FC = async () => {
 
-    const services = await getServices();
-    //console.log(services[0]);
 
     return (
         <section className={cx('screen')}>

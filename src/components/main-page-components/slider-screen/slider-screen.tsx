@@ -49,11 +49,6 @@ const SliderScreen: React.FC = () => {
                         По этим услугам мы накопили огромную экспертизу и можем предложить лучший сервис и условия, но мы открыты для нового и готовы сделать предложение на любой запрос!
                     </p>
                 </div>
-                <div className={cx('screen__title-block')}>
-                    {/* <p className={cx('screen__index')}>
-                       &rarr;
-                    </p> */}
-                </div>
             </div>
            
 
