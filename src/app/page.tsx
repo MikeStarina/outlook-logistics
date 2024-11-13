@@ -145,10 +145,10 @@ const MainPage: React.FC = () => {
                             subtitle='Cпециализируемся на авто и жд перевозках по России и СНГ'
                         />
                     </Suspense>
+                    <Uslugi />
                     <SliderScreen />
                     <FeaturesScreen />  
                     <StagesScreen />
-                    <Uslugi />
                     <ClientsScreen />
                     <Suspense fallback={null}>
                         <FormScreen />

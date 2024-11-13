@@ -3,7 +3,7 @@
 .screen {
     width: 100%;
     margin: 0 auto;
-    margin-top: 25px;
+    margin-top: 150px;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -187,14 +187,14 @@
 
     &__card-bg {
         position: absolute;
-        top: 25%;
+        top: 0;
         right: 0;
-        bottom: -25%;
+        bottom: 0;
         left: 0;
         background: $main-black;
-        border-radius: 50%;
+        border-radius: 6px;
 
-        @media (max-width: 500px) {
+        @media (max-width: 1400px) {
             top: 0;
             bottom: 0;
             right: 0;
@@ -213,11 +213,9 @@
         flex-direction: column;
         align-items: flex-end;
         padding: 15px;
-        color: $main-black;
+        color: $main-gray;
 
-        &:hover {
-            color: $main-gray;
-        }
+       
 
         & > div {
             margin-top: 15px;
@@ -233,6 +231,9 @@
         @include main-title;
         text-align: right;
 
+        @media (max-width: 1400px) {
+            color: $main-gray;
+        }
         @media (max-width: 768px) {
             font-size: 24px;
         }
@@ -248,6 +249,10 @@
         text-transform: uppercase;
         margin-top: 5px;
         text-align: right;
+
+        @media (max-width: 1400px) {
+            color: $main-gray;
+        }
 
         @media (max-width: 500px) {
             font-size: 14px;
@@ -276,7 +281,7 @@
         justify-content: flex-start;
         align-items: flex-end;
         padding: 15px;
-        color: $main-gray;
+        color: $main-gray !important;
 
         @media (max-width: 500px) {
             //margin-top: 25px;

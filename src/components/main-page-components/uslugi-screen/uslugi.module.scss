@@ -5,7 +5,7 @@
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 25px;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -163,11 +163,6 @@
             aspect-ratio: 2 / 1;
         }
 
-        &:hover > div {
-            transform: translateX(0);
-            border-radius: 0;
-            transition: all .3s ease-out;
-        }
     }
 
     &__card-bg {
@@ -176,11 +171,18 @@
         right: 0;
         left: 0;
         bottom: 0;
-        background-color: $main-blue;
-        //border-radius: 6px;
-        transform: translatex(-100%);
-        border-radius: 50%;
+        background-color: $main-black;
         overflow: hidden;
+
+        &:hover {
+            background: $main-blue;
+            transition: all .3s ease-out;
+
+            & > img {
+                opacity: .75;
+                transition: all .3s ease-out;
+            }
+        }
 
         & > img {
             filter: grayscale(100%);
@@ -188,7 +190,8 @@
             width: auto;
             max-width: 100%;
             object-fit: cover;
-            border-bottom-right-radius: 25%;
+            border-bottom-right-radius: 6px;
+            border-bottom-left-radius: 6px;
 
             @media (max-width: 768px) {
                 height: 65%;

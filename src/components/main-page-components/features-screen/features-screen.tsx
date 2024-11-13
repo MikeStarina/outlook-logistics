@@ -18,7 +18,7 @@ const FeaturesScreen = async () => {
                 </p>
                 <div className={cx('screen__transport')}>
                     {transportCards.map((card, index) => (
-                        <div key={index} className={cx('screen__card')}>
+                        <Link href='/transport' key={index} className={cx('screen__card')}>
                             <span className={cx('screen__card-bg')}></span>
                             <div className={cx('screen__card-img-wrapper')}>
                                 <Image src={card.cover} alt='' />
@@ -27,7 +27,7 @@ const FeaturesScreen = async () => {
                                 <p className={cx('screen__card-title')}>{card.name}</p>
                                 <p className={cx('screen__card-subtitle')}>{card.description}</p>
                             </div>                        
-                        </div>
+                        </Link>
                     ))}
 
                     <Link href='/transport' className={cx('screen__last-card')}>
