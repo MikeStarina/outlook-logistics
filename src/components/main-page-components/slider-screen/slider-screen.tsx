@@ -1,4 +1,4 @@
-
+import React from 'react'
 import styles from './slider-screen.module.scss';
 import Image from 'next/image';
 import classNames from "classnames/bind";
@@ -36,7 +36,7 @@ const arr = [
 
 
 
-const SliderScreen: React.FC = () => {
+const SliderScreen = () => {
     
     
     return (

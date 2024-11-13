@@ -1,4 +1,5 @@
 'use client'
+import React from 'react'
 import { ChangeEvent, useState } from "react";
 import styles from './main-form.module.scss';
 import { sendFormData } from "@/actions/actions";
@@ -13,7 +14,7 @@ const initialState = {
     phone: '',
 }
 
-const MainForm = () => {
+const MainForm: React.FC = () => {
 
         const [ state, setState ] = useState<{from:string,to:string,phone:string}>(initialState);
         const [ disabled, setDisabled ] = useState<{text: string, isDisabled: boolean}>({text: 'Рассчитать', isDisabled: false});

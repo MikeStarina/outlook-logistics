@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './first-screen.module.scss';
 import MainForm from "@/components/main-form/main-form";
 import classNames from "classnames/bind";
