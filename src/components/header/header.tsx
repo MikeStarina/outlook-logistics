@@ -1,10 +1,7 @@
-import React from "react";
-//import styles from './header.module.css';
 import styles from './header.module.scss'
 import Link from "next/link";
 import Image from "next/image";
 import MenuButton from "../menu-button/menu-button";
-import Menu from "../menu/menu";
 import full_logo440px_white from '../../../public/full_logo440px_white.svg';
 import icon_logo from '../../../public/icon_logo.svg';
 import classnames from 'classnames/bind';
@@ -12,7 +9,7 @@ const cx = classnames.bind(styles)
 
 
 
-const Header: React.FC = () => {
+const Header = () => {
 
     
 

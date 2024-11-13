@@ -1,12 +1,11 @@
-'use client'
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import styles from './form-screen.module.scss';
 import LeadForm from '@/components/lead-form/lead-form';
 import classNames from 'classnames/bind';
 import Link from 'next/link';
+import dynamic from "next/dynamic";
 const cx = classNames.bind(styles);
-import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
-
+import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps'
 
 const FormScreen: React.FC = () => {
 

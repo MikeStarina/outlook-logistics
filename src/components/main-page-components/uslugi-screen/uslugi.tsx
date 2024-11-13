@@ -1,8 +1,5 @@
-'use client'
-import React from "react";
 import styles from './uslugi.module.scss';
 import classNames from "classnames/bind";
-import { getServices } from "@/utils/constants";
 import Link from "next/link";
 import Image from "next/image";
 import autoCover from '../../../../public/auto_cover.jpg';
@@ -18,7 +15,7 @@ const cx = classNames.bind(styles);
 
 
 
-const Uslusgi: React.FC = async () => {
+const Uslusgi = () => {
 
 
     return (

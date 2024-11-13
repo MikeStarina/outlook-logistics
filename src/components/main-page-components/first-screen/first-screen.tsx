@@ -1,9 +1,6 @@
-import React from "react";
 import styles from './first-screen.module.scss';
 import MainForm from "@/components/main-form/main-form";
 import classNames from "classnames/bind";
-//import img from '../../../../public/container_white.png'
-//import Image from "next/image";
 import Link from "next/link";
 const cx = classNames.bind(styles);
 
