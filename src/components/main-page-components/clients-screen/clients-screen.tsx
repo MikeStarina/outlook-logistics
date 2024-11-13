@@ -18,7 +18,7 @@ import Image from "next/image";
 
 
 
-const ClientsScreen: React.FC = () => {
+const ClientsScreen = () => {
 
     return (
         <section className={cx('screen')}>

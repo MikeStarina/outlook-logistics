@@ -15,7 +15,7 @@ const cx = classNames.bind(styles);
 
 
 
-const Uslusgi = () => {
+const Uslusgi: React.FC = () => {
 
 
     return (

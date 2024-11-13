@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './footer.module.scss';
 import classNames from 'classnames/bind';
 import Link from "next/link";
