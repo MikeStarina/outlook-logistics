@@ -27,7 +27,7 @@ const darkTheme = createTheme({
 const FtlCalc: React.FC = () => {
     const dispatch = useAppDispatch();
     const [getSearchData, data] = useGetAtiCitySearchDataMutation();
-    const { validCity, carType } = useAppSelector((store) => store.ftlCalc);
+    const { validCity } = useAppSelector((store) => store.ftlCalc);
     const cities = data && data?.data?.cities;
     const direction = data && data?.data?.direction;
     //const { formData } = useAppSelector((store) => store.ftlCalc);
@@ -73,6 +73,7 @@ const FtlCalc: React.FC = () => {
 
     const keyDownHandler = (e: any) => {
         //дописать
+        return e
     }
 
 

@@ -17,7 +17,7 @@ type TProps = {
 }
 
 
-const FirstScreen: React.FC<TProps> = ({mainText, links, cover, subtitle}) => {
+const FirstScreen: React.FC<TProps> = ({mainText, links, subtitle}) => {
 
     return (
 

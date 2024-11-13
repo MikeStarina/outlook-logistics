@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./zd-calc.module.css";
 import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 import { actions as basicCalcActions } from "@/redux/basic-calc-slice/basic-calc.slice";
@@ -12,12 +12,12 @@ import {
     useGetFescoValidToLoactionsDataQuery
 } from "@/api/api";
 import Button from "@mui/material/Button";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+// import InputLabel from "@mui/material/InputLabel";
+// import MenuItem from "@mui/material/MenuItem";
+// import FormControl from "@mui/material/FormControl";
+// import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
-import { carTypes } from "@/utils/constants";
+// import { carTypes } from "@/utils/constants";
 import { TFescoLocations } from "@/utils/types";
 import { useDispatch } from "react-redux";
 
@@ -35,7 +35,7 @@ const darkTheme = createTheme({
 
 const ZdCalc: React.FC = () => {
     const dispatch = useAppDispatch();
-    const { validLocFrom, validLocTo, locToList } = useAppSelector(
+    const { validLocFrom, validLocTo } = useAppSelector(
         (store) => store.zdCalc
     );
 
@@ -52,13 +52,13 @@ const ZdCalc: React.FC = () => {
         dispatch(zdCalcActions.setValidLocFromValue(validLocFrom));
     };
 
-    const locToSelectHandler = (e: any) => {
-        dispatch(zdCalcActions.setLocToValue(e.target.textContent));
-        const validLocTo = filteredData?.filter(
-            (item) => item.loc_name === e.target.textContent
-        )[0];
-        dispatch(zdCalcActions.setValidLocToValue(validLocTo));
-    };
+    // const locToSelectHandler = (e: any) => {
+    //     dispatch(zdCalcActions.setLocToValue(e.target.textContent));
+    //     const validLocTo = filteredData?.filter(
+    //         (item) => item.loc_name === e.target.textContent
+    //     )[0];
+    //     dispatch(zdCalcActions.setValidLocToValue(validLocTo));
+    // };
 
     const submitHandler = (e: any) => {
         e.preventDefault();

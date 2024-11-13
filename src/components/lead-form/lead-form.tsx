@@ -39,7 +39,7 @@ const LeadForm: React.FC = () => {
     const submitHandler = async (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
         
-        const response = await sendFormData(callBackData);
+        sendFormData(callBackData);
         setCallBackData({
             name: '',
             phone: '',

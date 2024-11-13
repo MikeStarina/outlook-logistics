@@ -1,13 +1,7 @@
 'use client'
-import React, { Suspense } from "react";
+import React from "react";
 import styles from './contacts-screen.module.scss';
 import classNames from 'classnames/bind';
-import Image from "next/image";
-import Link from "next/link";
-import vk_logo_black from '../../../../public/vk_logo_black.png';
-import instagram_logo_black from '../../../../public/instagram_logo_black.png';
-import strela_small_logo_black from '../../../../public/strela_small_logo_black.png';
-import { YMaps, Map, Placemark, ZoomControl } from '@pbe/react-yandex-maps';
 
 const cx = classNames.bind(styles);
 

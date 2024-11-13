@@ -1,6 +1,5 @@
 'use client'
-import React, { useState } from "react";
-import Menu from "../menu/menu";
+import React from "react";
 import styles from './menu-button.module.scss';
 import { useAppDispatch } from "@/redux/hooks";
 import { actions as utilsActions } from "@/redux/utils-slice/utils";

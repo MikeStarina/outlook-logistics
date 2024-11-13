@@ -29,7 +29,7 @@ const MainForm: React.FC = () => {
         const formSubmitHandler = async (e: any) => {
             e.preventDefault();
             setDisabled({text: 'ОТПРАВКА...', isDisabled: true})
-            const response = await sendFormData(state);
+            sendFormData(state);
             setState(initialState);
             window.location.href = 'https://outlook-logistics.ru/thanks';
             setDisabled({text: 'РАССЧИТАТЬ', isDisabled: false})

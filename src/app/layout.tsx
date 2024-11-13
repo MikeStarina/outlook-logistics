@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import Head from 'next/head';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import TopButton from '@/components/topButton/top-button';
 import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import ReduxProvider from '../redux/redux-provider';
-import Menu from '@/components/menu/menu';
+import dynamic from 'next/dynamic';
+const Menu = dynamic(() => import('@/components/menu/menu'), { ssr: false })
 import './globals.css';
 
 
@@ -16,8 +16,6 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  // Also supported by less commonly used
-  // interactiveWidget: 'resizes-visual',
 }
 
 export const metadata: Metadata = {

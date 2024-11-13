@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from "react"
+import React from "react"
 import styles from './statistics.module.scss';
 import classNames from "classnames/bind";
 const cx = classNames.bind(styles)

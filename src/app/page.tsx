@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     title: 'Перевозка грузов от логистической компании в Санкт-Петербурге цены в outlook-logistics',
     description: 'Перевозка грузов цена услуг в транспортной компании в Санкт-Петербурге Outlook. Оформить заявку на перевозку груза и рассчитать стоимость вы можете на сайте частной логистической компании.',
     keywords: 'Логистическая компания, перевозка грузов, санкт-петербург, оформить заявку, заказать, цены, стоимость, рассчитать, частная, сайт, услуга',
+    metadataBase: new URL('https://outlook-logistics.ru'),
     openGraph: {
         type: 'website',
         url: 'https://outlook-logistics.ru',
@@ -146,8 +147,8 @@ const MainPage: React.FC = () => {
                     </Suspense>
                     <SliderScreen />
                     <FeaturesScreen />  
-                    <Uslugi />
                     <StagesScreen />
+                    <Uslugi />
                     <ClientsScreen />
                     <Suspense fallback={null}>
                         <FormScreen />

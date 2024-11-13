@@ -33,6 +33,11 @@
         border-radius: 6px;
         height: 40px;
         padding: 0 10px;
+
+        &:focus {
+            border: none;
+            outline: 1px solid $main-blue;
+        }
     }
 
     &__button {

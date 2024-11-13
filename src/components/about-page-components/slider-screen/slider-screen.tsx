@@ -2,8 +2,8 @@
 import React, { useEffect } from "react";
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import ReactDOM from 'react-dom/client'
-import { EmblaOptionsType } from 'embla-carousel-react'
+// import ReactDOM from 'react-dom/client'
+// import { EmblaOptionsType } from 'embla-carousel-react'
 //import { Swiper } from 'swiper/react';
 //import { SwiperSlide } from 'swiper/react';
 import slideOne from '../../../../public/aboutSlideOne.jpg';
