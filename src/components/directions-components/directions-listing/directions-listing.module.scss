@@ -1,0 +1,35 @@
+@import '../../../app/css-constants';
+
+.screen {
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 6px;
+    background: $main-gray;
+    padding: 25px 0;
+
+    &__listing {
+        width: 100%;
+        padding: 0 25px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    &__card {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        background: $main-black;
+        color: $main-gray;
+        @include secondary-title;
+        padding: 25px 0;
+
+        &:hover {
+            color: $main-gray;
+            background: $main-blue;
+            transition: all .3s ease-out;
+        }
+    }
+}

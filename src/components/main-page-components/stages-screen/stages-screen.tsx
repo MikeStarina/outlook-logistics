@@ -93,7 +93,7 @@ const StagesScreen = () => {
                         <Link href='/contacts' className={cx('screen__card-button-link')}>
                             контакты
                         </Link>
-                        <Link href='' className={cx('screen__card-button-link')}>
+                        <Link href='/transport' className={cx('screen__card-button-link')}>
                             парк
                         </Link>
                     </div>

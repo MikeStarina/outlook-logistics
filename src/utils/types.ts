@@ -227,3 +227,15 @@ export type TAtiCitySearchResponse = {
     direction: string,
     cities: Array<TCity>,
 }
+
+
+export type TDirections = {
+    "from": string,
+    "to": string,
+    "meta_title": string,
+    "meta_keywords": string,
+    "meta_description": string,
+    "content": string,
+    "type": string,
+    "slug": string
+}

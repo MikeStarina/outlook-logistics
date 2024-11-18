@@ -1,9 +1,7 @@
 @import '../../app/css-constants';
 
 .form {
-    //margin: 70px 0 0 0;
     width: 100%;
-    //height: 500px;
     border: none;
     display: flex;
     justify-content: center;
@@ -31,28 +29,29 @@
     }
 
     &__input-label {
-        font-size: var(--buttonTextL);
-        line-height: 25px;
-        color: white;
-        font-weight: 400;
+        @include subtext;
+        color: $main-black;
     }
     
     
     &__input {
+        @include subtext;
         width: 100%;
-        height: 46px;
-        border: 1px solid white;
+        height: 40px;
+        border: 1px solid $main-black;
         border-radius: 6px;
         padding: 0 15px;
         background-color: transparent;
         font-family: inherit;
         font-size: 20px;
-        color: white;
+        color: $main-black;
         box-sizing: border-box;
+        
     }
 
     &__input:focus {
-        outline: 1px solid white;    
+        border: none;
+        outline: 1px solid $main-blue;    
     }
     
     &__input-option {
@@ -63,7 +62,7 @@
     }
 
     &__submit-button {
-        @include button-outlined-white;
+        @include button-outlined-black;
         // width: 150px;
         // height: 40px;
         // border: 1px solid white;

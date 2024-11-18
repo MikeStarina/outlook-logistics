@@ -34,9 +34,10 @@ const Footer: React.FC = () => {
                     </div>
 
                     <div className={cx('footer__credits')}>
-                        <Link href='/' className={cx('footer__footer-link')}>О нас</Link>
-                        <Link href='/' className={cx('footer__footer-link')}>Услуги</Link>
-                        <Link href='/' className={cx('footer__footer-link')}>Транспортный парк</Link>
+                        <Link href='/about' className={cx('footer__footer-link')}>О нас</Link>
+                        <Link href='/uslugi' className={cx('footer__footer-link')}>Услуги</Link>
+                        <Link href='/transport' className={cx('footer__footer-link')}>Транспортный парк</Link>
+                        <Link href='/directions' className={cx('footer__footer-link')}>Направления перевозок</Link>
                         <Link href='/' className={cx('footer__footer-link')}>Отраслевые сервисы</Link>
                         <Link href='/' className={cx('footer__footer-link')}>Блог</Link>
                     </div>

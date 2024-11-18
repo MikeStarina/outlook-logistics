@@ -14,10 +14,23 @@ type TProps = {
     }[];
     subtitle?: string;
     cover: boolean;
+    titleType?: 'h1' | 'p'
 }
 
 
-const FirstScreen: React.FC<TProps> = ({mainText, links, subtitle}) => {
+const FirstScreen: React.FC<TProps> = ({mainText, links, subtitle, titleType = 'h1'}) => {
+
+    const title = () => {
+        if (titleType === 'h1') {
+            return (
+                <h1 className={cx('screen__main-title')}>{mainText}</h1>
+            )
+        }
+
+        if (titleType === 'p') {
+            <p className={cx('screen__main-title')}>{mainText}</p>
+        }
+    }
 
     return (
 
@@ -25,7 +38,7 @@ const FirstScreen: React.FC<TProps> = ({mainText, links, subtitle}) => {
         <section className={cx('screen')}>
             <div className={cx('screen__column', 'screen__column--wide')}>
                 <div className={cx('screen__title-wrapper')}>
-                    <h1 className={cx('screen__main-title')}>{mainText}</h1>
+                    {title()}
                     {subtitle && <p className={cx('screen__subtitle')}>{subtitle}</p>}
                     <div className={cx('screen__buttons-wrapper')}>
                         {links && links.map((i, id) => 

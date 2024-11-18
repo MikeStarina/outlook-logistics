@@ -24,6 +24,7 @@ export const metadata: Metadata = {
         description: 'Транспортно-логистическая компания OUTLOOK-LOGISTICS. Перевозки для бизнеса по России',
         siteName: 'OUTLOOK LOGISTICS',
         title: 'OUTLOOK LOGISTICS - Логистические услуги. Грузоперевозки для бизнеса',
+        images: '/opengraph-image.png'
     }
 }
 

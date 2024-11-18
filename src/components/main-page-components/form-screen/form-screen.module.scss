@@ -69,12 +69,13 @@
         width: 100%;
         border: none;
         border-radius: 6px;
-        background-color: $main-black;
+        background-color: $main-gray;
         display: flex;
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
         padding: 50px;
+        box-shadow: 0 0 10px 5px rgba(0,0,0,.1);
 
         @media (max-width: 768px) {
             padding: 30px;

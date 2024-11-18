@@ -1,0 +1,74 @@
+@import '../../../app/css-constants';
+.screen {
+    width: 100%;
+    border-radius: 6px;
+    margin-top: 25px;
+    background: $main-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 25px;
+
+    &__head {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 25px;
+        padding: 50px 50px 0;
+    }
+
+    &__title {
+        @include main-title;
+        color: $main-black;
+    }
+
+    &__subtitle {
+        @include subtext;
+        color: $main-black;
+        max-width: 50%;
+    }
+
+    &__cards-wrapper {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 25px;
+        padding: 0 25px;
+    }
+
+    &__card {
+        border-radius: 6px;
+        background: $main-black;
+        padding: 25px;
+        width: 33%;
+        aspect-ratio: 2 / 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 25px;
+
+        &:hover {
+            background: $main-blue;
+            transition: all .3s ease-out;
+        }
+    }
+
+    &__card-index {
+        @include secondary-title;
+        color: $main-gray;
+    }
+
+    &__card-title {
+        @include secondary-title;
+        color: $main-gray;
+        text-transform: uppercase;
+    }
+
+  
+}
