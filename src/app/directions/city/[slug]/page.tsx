@@ -36,7 +36,13 @@ export async function generateMetadata(
             }
     }
 
-  }
+}
+
+export async function generateStaticParams() {
+    const data = await getDirections();
+    return data.map(i => ({ slug: i.slug }))
+}
+
 
 
 
