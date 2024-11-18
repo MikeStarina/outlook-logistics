@@ -28,10 +28,10 @@ export const metadata: Metadata = {
 
 
 
-export default async function Page ({ params }: { params: { type: string }}) {
+export default async function Page () {
 
     const directions = await getDirections()
-    const filteredArr = directions.filter(i => i.type === params.type);
+    const filteredArr = directions.filter(i => i.type === 'city');
 
     return (
         <main className={cx('page')}>
