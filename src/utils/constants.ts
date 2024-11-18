@@ -1,4 +1,4 @@
-import { TFescoCarTypes, TCarType } from "./types";
+import { TFescoCarTypes, TCarType, TDirections } from "./types";
 import { TServicesStateObj } from "@/service/services";
 import { TItem } from "@/service/features";
 import carImage from '../../public/car-main.png';
@@ -47,6 +47,19 @@ export const fescoCarTypes: Array<TFescoCarTypes> = [
 
 export const getServices = async (): Promise<Array<TServicesStateObj>> => {
     const data: Array<TServicesStateObj> = await fetch(`${apiUrl}/api/services/`, {
+        next: { revalidate: 3600 },
+        method: 'GET'
+    }).then(res => res.json());
+
+    //const data: Array<TServicesStateObj> = [];
+
+    if (!data) {
+        return [];
+    }
+    return data;
+}
+export const getDirections = async (): Promise<Array<TDirections>> => {
+    const data: Array<TDirections> = await fetch(`${apiUrl}/api/directions/`, {
         next: { revalidate: 3600 },
         method: 'GET'
     }).then(res => res.json());

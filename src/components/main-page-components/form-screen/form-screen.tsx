@@ -24,16 +24,16 @@ const FormScreen: React.FC = () => {
                         </p>
                     </div>
                     <div className={cx('screen__links-wrapper')}>
-                        <Link href='/' className={cx('screen__link')}>
+                        <Link href='/about' className={cx('screen__link')}>
                                 О нас
                         </Link>
-                        <Link href='/' className={cx('screen__link')}>
+                        <Link href='/transport' className={cx('screen__link')}>
                             
 
                                 Парк
 
                         </Link>
-                        <Link href='/' className={cx('screen__link')}>
+                        <Link href='/uslugi' className={cx('screen__link')}>
                           
                                 Услуги
 

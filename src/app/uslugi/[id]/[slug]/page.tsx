@@ -209,6 +209,7 @@ const Page: React.FC<any> = async ({ params }: { params: { slug: string, id: str
                     {text: 'Контакты', href: '/contacts'},
                   ]}
                   cover={false}
+                  titleType='p'
                 />
             </section>
            

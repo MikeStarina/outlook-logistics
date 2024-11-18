@@ -183,6 +183,7 @@ const Page: React.FC<{ params: { id: string } }> = async ({ params }) => {
           mainText={`OUTLOOK — ${filteredService?.name}`}
           links={[{text: 'Услуги', href: '/uslugi'}, {text: 'О нас', href: '/about'}]}
           cover={false}
+          titleType="p"
         />
       </section>
       <section className={filteredFeatures.length !== 0 ? styles.features_screen : styles.features_screen_disabled}>
