@@ -8,7 +8,6 @@ import Uslusgi from '@/components/main-page-components/uslugi-screen/uslugi';
 import FormScreen from '@/components/main-page-components/form-screen/form-screen';
 import StagesScreen from '@/components/main-page-components/stages-screen/stages-screen';
 import ClientsScreen from '@/components/main-page-components/clients-screen/clients-screen';
-import DirectionsListing from '@/components/directions-components/directions-listing/directions-listing';
 import { notFound } from 'next/navigation';
 const cx = classNames.bind(styles);
 
