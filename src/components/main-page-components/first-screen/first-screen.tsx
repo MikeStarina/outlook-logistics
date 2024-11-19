@@ -28,7 +28,9 @@ const FirstScreen: React.FC<TProps> = ({mainText, links, subtitle, titleType = '
         }
 
         if (titleType === 'p') {
-            <p className={cx('screen__main-title')}>{mainText}</p>
+            return (
+                <p className={cx('screen__main-title')}>{mainText}</p>
+            )
         }
     }
 

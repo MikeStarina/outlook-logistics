@@ -64,10 +64,11 @@ export default async function Page ({ params }: { params: { type: string, slug: 
                 titleType='p'
             />
             {item && <div className={cx('page__content')} dangerouslySetInnerHTML={{ __html: item?.content}}></div>}
+            
+            <Uslusgi />
             <div className={cx('page__wrapper')}>
                 <Calc />
             </div>
-            <Uslusgi />
             <StagesScreen />
             <ClientsScreen />
             <FormScreen />
