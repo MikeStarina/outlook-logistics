@@ -1,9 +1,15 @@
+@import '../../../css-constants';
+
 .page {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     overflow: hidden;
     padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   
     @media (max-width: 600px) {
       padding: 0 15px;
@@ -12,5 +18,27 @@
     &__wrapper {
       width: 100%;
       margin: 25px 0 150px;
+    }
+
+    &__content {
+      width: 100%;
+      padding: 0 50px;
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 25px;
+      order: 99;
+
+      & > h1 {
+        @include main-title;
+        color: $main-black;
+      }
+
+      & > p {
+        @include subtext;
+        color: $main-black;
+      }
     }
 }
