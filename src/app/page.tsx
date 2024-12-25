@@ -9,6 +9,7 @@ import ClientsScreen from '@/components/main-page-components/clients-screen/clie
 import FormScreen from '@/components/main-page-components/form-screen/form-screen';
 import Uslugi from '@/components/main-page-components/uslugi-screen/uslugi'
 import classNames from 'classnames/bind';
+import FeedbackScreen from '@/components/feedback/feedback-screen';
 const cx = classNames.bind(styles)
 
 
@@ -150,6 +151,7 @@ const MainPage: React.FC = () => {
                     <SliderScreen />
                     <FeaturesScreen />  
                     <StagesScreen />
+                    <FeedbackScreen />
                     <ClientsScreen />
                     <Suspense fallback={null}>
                         <FormScreen />
@@ -159,3 +161,17 @@ const MainPage: React.FC = () => {
 }
 
 export default MainPage;
+
+
+/**
+ * Мне нужно создать кое-какие вещи. Я делаю страницы про направления перевозок для сайта логистической компании OUTLOOK LOGISTICS и мне нужно помочь с сео продвижением. Я пришлю список направлений. для каждого из них нужно будет создать: 1. - метатеги title, description, keywords по всем правилам поисковых систем. 2. Заголовок и текст для каждой страницы. Текст должен быть от 600 до 1000 символов с пробелами. пожалуйста используй ключевые слова "перевозки", "автоперевозки", "грузоперевозки", "...для бизнеса" а также другие, которые сочтешь уместными (мы продвигаем в основном авто и жд перевозки). Результат выведи ввиде json с массивом объектов как этот: {
+"from": "", //Город отправления
+"to": "", // Город назначения
+"meta_title": "", //здесь метатег title
+"meta_keywords": "", //здесь метатег keywords
+"meta_description": "", //здесь метатег description
+"content": "", //сюда помести созданный текст и заголовок причем оберни из сразу в html. Заголовок в h1, а текст в p
+"type": "city", //это не меняется
+"slug": "" //Сюда придумай читаемый урл
+}
+ */

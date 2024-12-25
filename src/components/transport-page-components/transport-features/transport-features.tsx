@@ -4,6 +4,10 @@ import classNames from 'classnames/bind'
 import { transportCards } from '@/utils/constants'
 import Image from 'next/image'
 import Link from 'next/link'
+import car1 from '../../../../public/cars/1.jpg';
+import car2 from '../../../../public/cars/2.jpg';
+import car3 from '../../../../public/cars/3.jpg';
+import car4 from '../../../../public/cars/4.jpg';
 const cx = classNames.bind(styles)
 
 const TransportFeatures: React.FC = () => {
@@ -40,6 +44,21 @@ const TransportFeatures: React.FC = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            <div className={cx('screen__gallery')}>
+                <div className={cx('screen__gallery-card')}>
+                    <Image src={car1} alt=''></Image>
+                </div>
+                <div className={cx('screen__gallery-card')}>
+                    <Image src={car2} alt=''></Image>
+                </div>
+                <div className={cx('screen__gallery-card')}>
+                    <Image src={car3} alt=''></Image>
+                </div>
+                <div className={cx('screen__gallery-card')}>
+                    <Image src={car4} alt=''></Image>
+                </div>
             </div>
 
             <div className={cx('screen__lead-block')}>

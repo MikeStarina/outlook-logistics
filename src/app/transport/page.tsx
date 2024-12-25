@@ -7,6 +7,8 @@ import FormScreen from '@/components/main-page-components/form-screen/form-scree
 import SliderScreen from '@/components/main-page-components/slider-screen/slider-screen'
 import BreadcrumbsComponent from '@/components/breadcrumbs/breadcrumbs'
 import { Metadata } from 'next/types'
+import ClientsScreen from '@/components/main-page-components/clients-screen/clients-screen'
+import FeedbackScreen from '@/components/feedback/feedback-screen'
 const cx = classNames.bind(styles)
 
 export const metadata: Metadata = {
@@ -91,6 +93,8 @@ const Page: React.FC = () => {
             />
             <TransportFeatures />
             <SliderScreen />
+            <FeedbackScreen />
+            <ClientsScreen />
             <FormScreen />
         </main>
     )

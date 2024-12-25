@@ -5,16 +5,16 @@
     box-sizing: border-box;
     position: relative;
     margin: 0 auto;
-    padding: 200px 120px 100px;
+    padding: 100px 50px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 150px;
+    gap: 50px 100px;
     flex-wrap: wrap;
     background: $main-gray;       
-    margin-top: 100px;
-    border-radius: 6px;
+    margin-top: 25px;
+    border-radius: 6px 6px 0 0;
 
     @media (max-width: 1024px) {
         padding: 150px 80px 80px;
@@ -35,8 +35,21 @@
 
     &__client-logo {
         filter: grayscale(100%);
+        opacity: 75%;
+        min-height: 50px;
         max-height: 50px;
         width: auto;
+
+        &--small {
+            min-height: 30px;
+            max-height: 30px;
+        }
+
+        &:hover {
+            filter: grayscale(0%);
+            opacity: 100%;
+            transition: all .3s ease-out;
+        }
 
         @media (max-width: 768px) {
             max-height: 40px;
