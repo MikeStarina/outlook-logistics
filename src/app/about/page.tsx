@@ -2,14 +2,14 @@ import React from 'react';
 import styles from './page.module.scss';
 import { Metadata } from 'next';
 import MainContainer from '@/components/container/main-container';
-import FeedBackScreen from '@/components/about-page-components/feedback-screen/feedback-screen';
 import ClientsScreen from '@/components/main-page-components/clients-screen/clients-screen';
-import ContactsScreen from '@/components/main-page-components/contacts-screen/contacts-screen';
 import BreadcrumbsComponent from '@/components/breadcrumbs/breadcrumbs';
 import FirstScreen from '@/components/main-page-components/first-screen/first-screen';
 import ValuesScreen from '@/components/about-page-components/values/values-screen';
-import FeaturesScreen from '@/components/main-page-components/features-screen/features-screen';
 import FormScreen from '@/components/main-page-components/form-screen/form-screen';
+import TeamScreen from '@/components/about-page-components/team-screen/team-screen';
+import SocialResponse from '@/components/about-page-components/social-response/social-response';
+import FeedbackScreen from '@/components/feedback/feedback-screen';
 
 
 export const metadata: Metadata = {
@@ -43,19 +43,20 @@ const AboutPage = () => {
                 </div>
                 <FirstScreen
                     mainText='OUTLOOK — О нас'
-                    subtitle='Делаем больше других, чтобы перевозки были удобными и безопасными, а бизнес - честным и предсказуемым!'
+                    subtitle='Команда, достижения, социальная ответственность'
                     cover={false}
                     links={[
                         {text: 'Контакты', href: '/contacts'},
                         {text: 'Услуги', href: '/uslugi'},
                     ]}
                 />
-                <FeedBackScreen />  
+                <TeamScreen />
                 <ValuesScreen />
-                <FeaturesScreen />
+                <SocialResponse />
+                <FeedbackScreen />
+                {/* <FeaturesScreen /> */}
                 <ClientsScreen />
                 <FormScreen />
-                <ContactsScreen />
             </main>
         </MainContainer>
     );

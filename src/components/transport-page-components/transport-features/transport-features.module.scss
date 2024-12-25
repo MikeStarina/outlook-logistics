@@ -266,4 +266,34 @@
             margin: 25px 0 0 0;
         }
     }
+
+    &__gallery {
+        margin-top: 25px;
+        width: 100%;
+        padding: 0 25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    &__gallery-card {
+        border-radius: 6px;
+        width: 25%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+
+        & > img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+            object-position: top right;
+            filter: grayscale(100%);
+        }
+
+        & > img:hover {
+            filter: grayscale(0);
+            transition: all .3s ease-out;
+        }
+    }
 }

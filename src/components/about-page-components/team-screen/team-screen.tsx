@@ -1,78 +1,63 @@
+'use client'
 import React from "react";
-import styles from './team-screen.module.css';
-import CEO from '../../../../public/CEO.webp';
-import CDO from '../../../../public/CDO.webp';
-import cfo from '../../../../public/cfo.png';
-import ropp from '../../../../public/ropp.webp';
-import logist from '../../../../public/logist.png';
+import styles from './team-screen.module.scss'
+import classNames from "classnames/bind";
 import Image from "next/image";
+import nikitaM from '../../../../public/team/nikitaM.jpg'
+import irinaI from '../../../../public/team/irinaI.png'
+import artemS from '../../../../public/team/artemS.jpg'
+import maksimS from '../../../../public/team/maksimS.jpg'
+const cx = classNames.bind(styles);
 
-
-
-
+const data = [
+    {
+        id: 1,
+        photo: nikitaM,
+        name: 'Мальцев Никита',
+        position: 'Ведущий менеджер ОП'
+    },
+    {
+        id: 2,
+        photo: irinaI,
+        name: 'Иванова Ирина',
+        position: 'Ведущий логист'
+    },
+    {
+        id: 3,
+        photo: artemS,
+        name: 'Самусенко Артем',
+        position: 'Генеральный директор'
+    },
+    {
+        id: 4,
+        photo: maksimS,
+        name: 'Шелепенок Максим',
+        position: 'Учредитель'
+    },
+]
 
 
 const TeamScreen: React.FC = () => {
 
     return (
-        <section className={styles.screen}>
-            <div className={styles.profile_wrapper}>
-                    <div className={styles.avatar_wrapper}>
-                        <Image src={CEO} alt='CEO photo' className={styles.avatar_ceo} />
+        <section className={cx('screen')}>
+                <div className={cx('screen__title-wrapper')}>
+                    <h2 className={cx('screen__title')}>OUTLOOK - <i>КОМАНДА</i></h2>
+                    <p className={cx('screen__subtitle')}>Делаем больше других, чтобы перевозки были удобными и безопасными, а бизнес - честным и предсказуемым!</p>
+                </div>
+                <div className={cx('screen__team-block')}>
+                    {data && data.map(i =>
+                    <div className={cx('screen__team-card')} key={i.id}>
+                        <div className={cx('screen__img-wrapper')}>
+                            <Image src={i.photo} alt={i.name}></Image>
+                        </div>
+                        <div className={cx('screen__text-wrapper')}>
+                            <p className={cx('screen__card-text')}>{i.name}</p>
+                            <p className={cx('screen__card-text')}>{i.position}</p>
+                        </div>
                     </div>
-                    <div className={styles.credits_wrapper}>
-                        <p className={styles.credits}>Самусенко А.В.</p>
-                        <p className={styles.credits}>Генеральный Директор</p>
-                    </div>
-                    
-               
-            </div>
-            <div className={styles.profile_wrapper}>
-                    <div className={styles.avatar_wrapper}>
-                        <Image src={cfo} alt='cfo photo' className={styles.avatar_cfo} />
-                    </div>
-                    <div className={styles.credits_wrapper}>
-                        <p className={styles.credits}>Шелепенок М.В.</p>
-                        <p className={styles.credits}>Коммерческий Директор</p>
-                    </div>
-                    
-               
-            </div>
-            <div className={styles.profile_wrapper}>
-                    <div className={styles.avatar_wrapper}>
-                        <Image src={logist} alt='Logist photo' className={styles.avatar_logist} />
-                    </div>
-                    <div className={styles.credits_wrapper}>
-                        <p className={styles.credits}>Старина М.А.</p>
-                        <p className={styles.credits}>Старший Логист</p>
-                    </div>
-                    
-               
-            </div>
-            <div className={styles.profile_wrapper}>
-                    <div className={styles.avatar_wrapper}>
-                        <Image src={ropp} alt='Rop photo' className={styles.avatar_rop} />
-                    </div>
-                    <div className={styles.credits_wrapper}>
-                        <p className={styles.credits}>Петухов Н.А.</p>
-                        <p className={styles.credits}>Руководитель ОП</p>
-                    </div>
-                    
-               
-            </div>
-            <div className={styles.profile_wrapper}>
-                    <div className={styles.avatar_wrapper}>
-                        <Image src={CDO} alt='CDO photo' className={styles.avatar_cdo} />
-                    </div>
-                    <div className={styles.credits_wrapper}>
-                        <p className={styles.credits}>Гапанёнок Д.В.</p>
-                        <p className={styles.credits}>Директор по развитию</p>
-                    </div>
-                    
-               
-            </div>
-          
-
+                    )}
+                </div>
         </section>
     )
 }

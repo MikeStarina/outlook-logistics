@@ -1,0 +1,107 @@
+@import '../../app/css-constants';
+.screen {
+    width: 100%;
+    margin-top: 25px;
+    padding: 100px 0 0 0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: $main-black;
+
+   
+
+    &__title-wrapper {
+        width: calc(50% - 50px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+        margin-left: 50px;
+
+        @media (max-width: 900px) {
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+    
+    }
+
+    &__title {
+        @include main-title;
+        color: $main-gray;
+    }
+    &__subtitle {
+        @include subtext;
+        color: $main-gray;
+    }
+
+    &__cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(150px, 1fr));
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 25px;
+        margin-top: 100px;
+        padding: 0 25px 25px;
+        flex-wrap: wrap;
+
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(2, minmax(150px, 1fr));
+        }
+        @media (max-width: 600px) {
+            grid-template-columns: repeat(1, minmax(150px, 1fr));
+            padding: 0 15px 15px;
+        }
+    }
+
+    &__card {
+        min-width: 150px;
+        width: 100%;
+        border-radius: 6px;
+        background-color: $main-blue;
+        padding: 20px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 25px;
+
+        
+    }
+
+    &__card-text {
+        @include subtext;
+        color: $main-gray;
+
+        &--sign {
+            font-weight: 600;
+        }
+    }
+
+    &__card-sign-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__card-signs {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    &__arrow {
+        @include main-title;
+        color: $main-gray;
+        transform: rotate(-45deg);
+    }
+}

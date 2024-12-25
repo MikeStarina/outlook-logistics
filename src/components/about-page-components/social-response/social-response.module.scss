@@ -1,0 +1,121 @@
+@import '../../../app/css-constants';
+.screen {
+    width: 100%;
+    margin-top: 25px;
+    padding: 100px 25px 25px 0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: $main-gray;
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+
+    @media (max-width: 500px) {
+        padding: 10px;
+        padding-bottom: 25px;
+    }
+
+    &__title-wrapper {
+        width: calc(50% - 50px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 10px;
+        margin-left: 50px;
+
+        @media (max-width: 900px) {
+            width: 100%;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    
+    }
+
+    &__title {
+        @include main-title;
+    }
+    &__subtitle {
+        @include subtext;
+    }
+
+
+    &__table {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        margin-top: 100px;
+        gap: 25px;
+
+        @media (max-width: 900px) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__table-column {
+        width: 50%;
+        display: flex;
+        border-radius: 6px;
+        padding: 50px;
+
+        @media (max-width: 900px) {
+            width: 100%;
+        }    
+
+        &--left {
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 50px;
+
+            @media (max-width: 900px) {
+                padding: 0px 15px;
+            }    
+        }
+        &--right {
+            aspect-ratio: 3 / 2;
+            overflow: hidden;
+
+            & > img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                transform: scale(200%);
+                filter: grayscale(100%);
+
+
+                @media (max-width: 900px) {
+                    object-position: top left;
+                }   
+                
+            }
+
+            & > img:hover {
+                filter: grayscale(0%);
+                transition: all .3s ease-out;
+            }
+
+            @media (max-width: 900px) {
+                aspect-ratio: 2 / 1;
+            }   
+        }
+    }
+
+    &__text {
+        @include subtext;
+    }
+
+    &__link {
+        text-decoration: underline;
+        color: inherit;
+
+        &::after {
+            content: ' →';
+        }
+    }
+}
