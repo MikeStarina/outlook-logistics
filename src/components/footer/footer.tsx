@@ -40,6 +40,7 @@ const Footer: React.FC = () => {
                         <Link href='/directions' className={cx('footer__footer-link')}>Направления перевозок</Link>
                         <Link href='/' className={cx('footer__footer-link')}>Отраслевые сервисы</Link>
                         <Link href='/' className={cx('footer__footer-link')}>Блог</Link>
+                        <Link href='/docs' className={cx('footer__footer-link')}>Документы</Link>
                     </div>
 
 
