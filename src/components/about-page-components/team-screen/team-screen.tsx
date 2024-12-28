@@ -7,6 +7,7 @@ import nikitaM from '../../../../public/team/nikitaM.jpg'
 import irinaI from '../../../../public/team/irinaI.png'
 import artemS from '../../../../public/team/artemS.jpg'
 import maksimS from '../../../../public/team/maksimS.jpg'
+import daniil from '../../../../public/team/daniil.jpg'
 const cx = classNames.bind(styles);
 
 const data = [
@@ -33,6 +34,12 @@ const data = [
         photo: maksimS,
         name: 'Шелепенок Максим',
         position: 'Учредитель'
+    },
+    {
+        id: 5,
+        photo: daniil,
+        name: 'Гапаненок Даниил',
+        position: 'Руководитель отдела развития'
     },
 ]
 
