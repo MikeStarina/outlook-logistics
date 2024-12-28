@@ -20,7 +20,7 @@ const data = [
     {
         id: 2,
         photo: irinaI,
-        name: 'Иванова Ирина',
+        name: 'Глазова Ирина',
         position: 'Ведущий логист'
     },
     {
